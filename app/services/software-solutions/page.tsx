@@ -366,16 +366,55 @@ function ProcessSection() {
                 {activeStep === i && <div className="w-1 h-6 rounded-full flex-shrink-0" style={{ background: ps.accent }} />}
               </button>
             ))}
-            <div className="flex gap-3 mt-4">
-              <button onClick={() => setActiveStep(a => Math.max(0, a - 1))}
-                className="flex-1 py-2.5 rounded-xl text-sm font-bold"
-                style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", color: "rgba(255,255,255," + (activeStep === 0 ? "0.2)" : "0.6)"), cursor: activeStep === 0 ? "not-allowed" : "pointer" }}>
-                Prev
+            <div className="flex items-center gap-4 mt-4 p-3 rounded-xl" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
+              <button
+                onClick={() => setActiveStep(a => Math.max(0, a - 1))}
+                disabled={activeStep === 0}
+                aria-label="Previous step"
+                className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300"
+                style={{
+                  background: "rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  color: activeStep === 0 ? "rgba(255,255,255,0.15)" : "rgba(255,255,255,0.7)",
+                  cursor: activeStep === 0 ? "not-allowed" : "pointer",
+                }}>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </button>
-              <button onClick={() => setActiveStep(a => Math.min(processSteps.length - 1, a + 1))}
-                className="flex-1 py-2.5 rounded-xl text-sm font-bold"
-                style={{ background: activeStep === processSteps.length - 1 ? "rgba(255,255,255,0.1)" : step.accent, color: "#0a0f1e", cursor: activeStep === processSteps.length - 1 ? "not-allowed" : "pointer" }}>
-                Next
+
+              <div className="flex-1">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: step.accent }}>
+                    Step {activeStep + 1} of {processSteps.length}
+                  </span>
+                  <span className="text-[10px] font-semibold" style={{ color: "rgba(255,255,255,0.3)" }}>{step.weeks}</span>
+                </div>
+                <div className="flex gap-1.5">
+                  {processSteps.map((ps, i) => (
+                    <div key={ps.num} className="flex-1 h-1.5 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.08)" }}>
+                      <div
+                        className="h-full rounded-full transition-all duration-500 ease-out"
+                        style={{
+                          width: i <= activeStep ? "100%" : "0%",
+                          background: i <= activeStep ? ps.accent : "transparent",
+                        }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <button
+                onClick={() => setActiveStep(a => Math.min(processSteps.length - 1, a + 1))}
+                disabled={activeStep === processSteps.length - 1}
+                aria-label="Next step"
+                className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300"
+                style={{
+                  background: activeStep === processSteps.length - 1 ? "rgba(255,255,255,0.04)" : step.accent,
+                  boxShadow: activeStep === processSteps.length - 1 ? "none" : `0 0 16px ${step.accent}60`,
+                  color: activeStep === processSteps.length - 1 ? "rgba(255,255,255,0.15)" : "#0a0f1e",
+                  cursor: activeStep === processSteps.length - 1 ? "not-allowed" : "pointer",
+                }}>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </button>
             </div>
           </div>

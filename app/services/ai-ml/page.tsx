@@ -82,29 +82,104 @@ const aiStack = [
   {
     category: "LLM Providers",
     pills: ["OpenAI", "Anthropic", "Google Gemini", "Llama"],
-    color: "#00A99D",
+    color: "#00cfb4",
+    icon: <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>,
   },
   {
     category: "Frameworks",
     pills: ["LangChain", "LlamaIndex", "Hugging Face", "CrewAI"],
-    color: "#1B3C6E",
+    color: "#60a5fa",
+    icon: <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>,
   },
   {
     category: "ML Libraries",
     pills: ["TensorFlow", "PyTorch", "scikit-learn", "XGBoost"],
-    color: "#7c3aed",
+    color: "#a78bfa",
+    icon: <><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.6"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.6"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.6"/></>,
   },
   {
     category: "Vector DBs",
     pills: ["Pinecone", "Weaviate", "Chroma", "pgvector"],
-    color: "#0e7490",
+    color: "#22d3ee",
+    icon: <><ellipse cx="12" cy="5" rx="8" ry="3" stroke="currentColor" strokeWidth="1.6"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></>,
   },
   {
     category: "Infrastructure",
     pills: ["AWS SageMaker", "GCP Vertex AI", "Azure ML"],
-    color: "#b45309",
+    color: "#fb923c",
+    icon: <path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>,
   },
 ];
+
+function AIStackPipeline() {
+  const [ticks, setTicks] = useState<number[]>(aiStack.map(() => 0));
+  useEffect(() => {
+    const t = setInterval(() => {
+      setTicks((prev) => prev.map((v, i) => (v + 1) % aiStack[i].pills.length));
+    }, 1400);
+    return () => clearInterval(t);
+  }, []);
+
+  return (
+    <div className="relative">
+      {/* Connecting spine */}
+      <div
+        aria-hidden="true"
+        className="hidden sm:block absolute top-8 bottom-8 z-0"
+        style={{ left: "27px", width: "2px", background: "linear-gradient(180deg, #00cfb4, #60a5fa, #a78bfa, #22d3ee, #fb923c)", opacity: 0.35 }}
+      />
+      <div className="space-y-5">
+        {aiStack.map((group, i) => (
+          <div key={group.category} className="relative flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+            {/* Node icon */}
+            <div className="relative z-10 flex-shrink-0 hidden sm:flex items-center justify-center">
+              <div
+                className="w-14 h-14 rounded-2xl flex items-center justify-center"
+                style={{ background: `${group.color}18`, border: `1px solid ${group.color}40`, boxShadow: `0 0 24px ${group.color}25` }}
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ color: group.color }}>{group.icon}</svg>
+              </div>
+            </div>
+
+            {/* Card */}
+            <div
+              className="flex-1 rounded-2xl p-5 sm:p-6 transition-all duration-300 hover:-translate-y-0.5"
+              style={{ background: "rgba(255,255,255,0.03)", border: `1px solid ${group.color}25`, boxShadow: `0 4px 24px rgba(0,0,0,0.2)` }}
+            >
+              <div className="flex items-center gap-3 mb-3 sm:hidden">
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: `${group.color}18`, border: `1px solid ${group.color}40` }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style={{ color: group.color }}>{group.icon}</svg>
+                </div>
+                <span className="text-xs font-bold uppercase tracking-widest" style={{ color: group.color }}>{group.category}</span>
+              </div>
+              <span className="hidden sm:block text-xs font-bold uppercase tracking-widest mb-3" style={{ color: group.color }}>{group.category}</span>
+              <div className="flex flex-wrap gap-2">
+                {group.pills.map((pill, j) => {
+                  const active = ticks[i] === j;
+                  return (
+                    <span
+                      key={pill}
+                      className="px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-500"
+                      style={{
+                        color: active ? "#0f2447" : "rgba(255,255,255,0.85)",
+                        background: active ? group.color : `${group.color}12`,
+                        border: `1px solid ${active ? group.color : group.color + "35"}`,
+                        boxShadow: active ? `0 0 18px ${group.color}70` : "none",
+                        transform: active ? "translateY(-2px)" : "translateY(0)",
+                      }}
+                    >
+                      {pill}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 const phases = [
   {
@@ -510,10 +585,16 @@ export default function AiMlPage() {
       </section>
 
       {/* AI STACK */}
-      <section className="py-24 bg-[#0f2447]">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-24 relative overflow-hidden" style={{ background: "#0a1628" }}>
+        <div aria-hidden="true" className="absolute inset-0 opacity-[0.04]" style={{
+          backgroundImage: "linear-gradient(rgba(0,207,180,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(0,207,180,0.5) 1px, transparent 1px)",
+          backgroundSize: "44px 44px",
+        }} />
+        <div aria-hidden="true" className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full opacity-20 blur-3xl pointer-events-none" style={{ background: "radial-gradient(ellipse, #00cfb4 0%, transparent 70%)" }} />
+
+        <div className="max-w-4xl mx-auto px-6 relative">
           <div className="text-center mb-16">
-            <p className="text-[#00A99D] text-sm font-semibold uppercase tracking-widest mb-3">
+            <p className="text-[#00cfb4] text-sm font-semibold uppercase tracking-widest mb-3">
               Technology
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Our AI Stack</h2>
@@ -522,35 +603,7 @@ export default function AiMlPage() {
             </p>
           </div>
 
-          <div className="space-y-8">
-            {aiStack.map((group, i) => (
-              <div
-                key={i}
-                className="bg-[#0f2447] border border-[#1B3C6E]/40 rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center gap-4"
-              >
-                <div
-                  className="text-xs font-bold uppercase tracking-widest min-w-[150px]"
-                  style={{ color: group.color }}
-                >
-                  {group.category}
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {group.pills.map((pill, j) => (
-                    <span
-                      key={j}
-                      className="px-4 py-1.5 rounded-full text-sm font-medium text-white/90 border"
-                      style={{
-                        borderColor: group.color + "40",
-                        background: group.color + "12",
-                      }}
-                    >
-                      {pill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+          <AIStackPipeline />
         </div>
       </section>
 
