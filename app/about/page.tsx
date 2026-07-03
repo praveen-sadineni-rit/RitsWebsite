@@ -682,7 +682,16 @@ export default function AboutPage() {
               {/* Flag accent bar */}
               <div style={{ position:"absolute", top:0, left:0, right:0, height:4, background:"linear-gradient(90deg,#3C3B6E,#ffffff,#B22234)" }}/>
               <div style={{ display:"flex", alignItems:"center", gap:14, marginBottom:20 }}>
-                <div style={{ width:52, height:52, borderRadius:14, background:"linear-gradient(135deg,#3C3B6E,#B22234)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:26, boxShadow:"0 6px 20px rgba(60,59,110,0.25)" }}>🇺🇸</div>
+                <div style={{ width:52, height:52, borderRadius:14, overflow:"hidden", boxShadow:"0 6px 20px rgba(60,59,110,0.25)", flexShrink:0 }}>
+                  <svg viewBox="0 0 7410 3900" width="52" height="52" style={{ display:"block" }}>
+                    <rect width="7410" height="3900" fill="#b22234"/>
+                    <g fill="#fff">
+                      <rect y="300" width="7410" height="300"/><rect y="900" width="7410" height="300"/><rect y="1500" width="7410" height="300"/>
+                      <rect y="2100" width="7410" height="300"/><rect y="2700" width="7410" height="300"/><rect y="3300" width="7410" height="300"/>
+                    </g>
+                    <rect width="2964" height="2100" fill="#3c3b6e"/>
+                  </svg>
+                </div>
                 <div>
                   <p style={{ color:"#94a3b8", fontSize:11, fontWeight:700, letterSpacing:"0.1em", textTransform:"uppercase", margin:0 }}>United States</p>
                   <p style={{ color:"#0f2447", fontSize:18, fontWeight:800, margin:0 }}>Rock Hill, SC</p>
@@ -694,18 +703,24 @@ export default function AboutPage() {
                   331 E Main Street, Suite 200<br/>Rock Hill, SC 29730
                 </address>
               </div>
-              <div style={{ display:"flex", flexWrap:"wrap", gap:8 }}>
-                {["Headquarters","Client Relations","Sales"].map(tag => (
-                  <span key={tag} style={{ fontSize:11, fontWeight:600, color:"#3b82f6", background:"rgba(59,130,246,0.08)", border:"1px solid rgba(59,130,246,0.2)", borderRadius:99, padding:"3px 10px" }}>{tag}</span>
-                ))}
-              </div>
             </div>
 
             {/* India */}
             <div style={{ background:"white", border:"1px solid #e2e8f0", borderRadius:20, padding:"32px 28px", position:"relative", overflow:"hidden", boxShadow:"0 4px 24px rgba(27,60,110,0.08)" }}>
               <div style={{ position:"absolute", top:0, left:0, right:0, height:4, background:"linear-gradient(90deg,#FF9933,#ffffff,#138808)" }}/>
               <div style={{ display:"flex", alignItems:"center", gap:14, marginBottom:20 }}>
-                <div style={{ width:52, height:52, borderRadius:14, background:"linear-gradient(135deg,#FF9933,#138808)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:26, boxShadow:"0 6px 20px rgba(255,153,51,0.25)" }}>🇮🇳</div>
+                <div style={{ width:52, height:52, borderRadius:14, overflow:"hidden", boxShadow:"0 6px 20px rgba(255,153,51,0.25)", flexShrink:0 }}>
+                  <svg viewBox="0 0 900 600" width="52" height="52" style={{ display:"block" }}>
+                    <rect width="900" height="200" fill="#FF9933"/>
+                    <rect y="200" width="900" height="200" fill="#fff"/>
+                    <rect y="400" width="900" height="200" fill="#138808"/>
+                    <circle cx="450" cy="300" r="80" fill="none" stroke="#000080" strokeWidth="4"/>
+                    <circle cx="450" cy="300" r="8" fill="#000080"/>
+                    {Array.from({ length: 24 }).map((_, i) => (
+                      <line key={i} x1="450" y1="300" x2={450 + 80 * Math.cos((i * 15 * Math.PI) / 180)} y2={300 + 80 * Math.sin((i * 15 * Math.PI) / 180)} stroke="#000080" strokeWidth="2"/>
+                    ))}
+                  </svg>
+                </div>
                 <div>
                   <p style={{ color:"#94a3b8", fontSize:11, fontWeight:700, letterSpacing:"0.1em", textTransform:"uppercase", margin:0 }}>India</p>
                   <p style={{ color:"#0f2447", fontSize:18, fontWeight:800, margin:0 }}>Hyderabad, TS</p>
@@ -718,11 +733,6 @@ export default function AboutPage() {
                   HUDA Techno Enclave-III, Opp. Raheja Mind Space<br/>
                   Madhapur, Hyderabad, 500081
                 </address>
-              </div>
-              <div style={{ display:"flex", flexWrap:"wrap", gap:8 }}>
-                {["Engineering","AI & ML","Delivery"].map(tag => (
-                  <span key={tag} style={{ fontSize:11, fontWeight:600, color:"#10b981", background:"rgba(16,185,129,0.08)", border:"1px solid rgba(16,185,129,0.2)", borderRadius:99, padding:"3px 10px" }}>{tag}</span>
-                ))}
               </div>
             </div>
           </div>
