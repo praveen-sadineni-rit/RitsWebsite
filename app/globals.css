@@ -281,6 +281,7 @@ body {
 }
 .marquee-left  { animation: marquee-left  28s linear infinite; }
 .marquee-right { animation: marquee-right 22s linear infinite; }
+.marquee-slow  { animation: marquee-left  70s linear infinite; }
 .marquee-track { display: flex; width: max-content; }
 .marquee-track:hover { animation-play-state: paused; }
 

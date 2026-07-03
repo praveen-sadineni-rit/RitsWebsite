@@ -817,6 +817,22 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 w-full">
+        {/* Independence Day banner */}
+        <div className="relative overflow-hidden border-b border-white/10" style={{ background: "linear-gradient(90deg, #B22234, #1B3C6E)" }}>
+          <div className="marquee-track marquee-slow py-2">
+            {Array.from({ length: 2 }).map((_, i) => (
+              <div key={i} className="flex items-center flex-shrink-0">
+                {Array.from({ length: 6 }).map((_, j) => (
+                  <span key={j} className="flex items-center gap-2 px-8 text-white text-xs font-semibold tracking-wide whitespace-nowrap">
+                    🎆 Happy Independence Day from Resource Innovative Technologies
+                    <span className="text-white/50">&middot;</span>
+                    celebrating freedom, innovation, and the people who build the future 🇺🇸
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
         <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-4 pb-4">
           <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 items-center">
           <div className="">{/* text col */}
