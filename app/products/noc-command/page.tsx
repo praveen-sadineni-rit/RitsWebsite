@@ -232,6 +232,168 @@ const SEVERITIES = [
   { level: "SEV-4", label: "Low, Advisory only", detail: "Appears in the dashboard. Zero interruption to anyone.", color: "#94a3b8" },
 ];
 
+/* ── Live Dashboard mock data ── */
+const DASH_STATS = [
+  { label: "SEV-1 Open", value: "4", sub: "Critical, immediate", color: "#ef4444", icon: "bell" },
+  { label: "Open Alerts", value: "17", sub: "6 SEV-2 active", color: "#f97316", icon: "bell" },
+  { label: "Open Incidents", value: "5", sub: "Across all sites", color: "#eab308", icon: "warning" },
+  { label: "SLA Compliance", value: "98.4%", sub: "30-day rolling", color: "#22c55e", icon: "trend" },
+  { label: "MTTD / MTTR", value: "2.3m", sub: "MTTR: 28 min", color: "#6366f1", icon: "clock" },
+  { label: "Delivery Health", value: "78%", sub: "2 pipelines failing", color: "#ef4444", icon: "trendDown" },
+];
+
+const DASH_ALERTS = [
+  { sev: "SEV-1", title: "Cosmos DB Throughput Throttling", src: "COSMOS-NOC-PROD · Azure UK South", time: "17 minutes ago", status: "OPEN" },
+  { sev: "SEV-1", title: "Core Router CR-01 BGP Session Down", src: "CR-01-LON · London DC1", time: "18 minutes ago", status: "OPEN" },
+  { sev: "SEV-2", title: "Azure VM PROD-APP-03 Unresponsive", src: "PROD-APP-03 · Azure UK South", time: "19 minutes ago", status: "OPEN" },
+  { sev: "SEV-2", title: "Switch SW-DIST-04 High Packet Loss", src: "SW-DIST-04 · London DC1", time: "22 minutes ago", status: "OPEN" },
+  { sev: "SEV-1", title: "Azure ExpressRoute Circuit ERX-001 Down", src: "ERX-001 · London DC1", time: "27 minutes ago", status: "ACKNOWLEDGED" },
+  { sev: "SEV-2", title: "Load Balancer LB-PROD-01 Backend Pool Degraded", src: "LB-PROD-01 · Azure UK South", time: "27 minutes ago", status: "OPEN" },
+  { sev: "SEV-1", title: "Firewall FW-CORE-01 CPU at 99%", src: "FW-CORE-01 · Manchester DC2", time: "33 minutes ago", status: "ASSIGNED" },
+  { sev: "SEV-2", title: "AKS Node Pool aks-nodepool-01 NotReady", src: "AKS-NODE-POOL-01 · Azure UK South", time: "40 minutes ago", status: "ACKNOWLEDGED" },
+];
+
+const DASH_DEVICES = [
+  { label: "Healthy", value: 8, color: "#22c55e" },
+  { label: "Degraded", value: 9, color: "#f97316" },
+  { label: "Down", value: 3, color: "#ef4444" },
+];
+
+const DASH_INCIDENTS = [
+  { sev: "SEV-1", title: "Core Router BGP Failure, London DC1", meta: "INC-001 · 18 minutes ago", status: "IN PROGRESS", statusColor: "#f59e0b" },
+  { sev: "SEV-1", title: "Firewall CPU Saturation, FW-CORE-01", meta: "INC-006 · 33 minutes ago", status: "IN PROGRESS", statusColor: "#f59e0b" },
+  { sev: "SEV-1", title: "ExpressRoute Failure + AKS Node Degradation", meta: "INC-002 · 40 minutes ago", status: "ACK'D", statusColor: "#3b82f6" },
+  { sev: "SEV-2", title: "VPN Tunnel Failure, Manchester Branch", meta: "INC-003 · about 1 hour ago", status: "IN PROGRESS", statusColor: "#f59e0b" },
+  { sev: "SEV-3", title: "Database Server Memory Pressure, SRV-DB-02", meta: "INC-004 · about 1 hour ago", status: "NEW", statusColor: "#8b5cf6" },
+];
+
+const SEV_COLOR: Record<string, string> = { "SEV-1": "#ef4444", "SEV-2": "#f97316", "SEV-3": "#eab308" };
+
+const DASH_ICONS: Record<string, JSX.Element> = {
+  bell: <path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
+  warning: <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
+  trend: <path d="M23 6l-9.5 9.5-5-5L1 18M17 6h6v6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
+  trendDown: <path d="M23 18l-9.5-9.5-5 5L1 6M17 18h6v-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
+  clock: <><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.8"/><path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></>,
+};
+
+function LiveDashboardMock() {
+  const total = DASH_DEVICES.reduce((s, d) => s + d.value, 0);
+  let acc = 0;
+  const segments = DASH_DEVICES.map((d) => {
+    const start = (acc / total) * 360;
+    acc += d.value;
+    const end = (acc / total) * 360;
+    return { ...d, start, end };
+  });
+  const gradient = `conic-gradient(${segments.map((s) => `${s.color} ${s.start}deg ${s.end}deg`).join(", ")})`;
+
+  return (
+    <div style={{ borderRadius: 18, overflow: "hidden", border: "1px solid #e2e8f0", background: "#f8fafc" }}>
+      <style>{`
+        @keyframes dashRowIn { from { opacity:0; transform:translateX(-8px); } to { opacity:1; transform:translateX(0); } }
+        .dash-row { opacity:0; animation: dashRowIn 0.45s ease forwards; }
+        @keyframes dashLivePulse { 0%,100% { opacity:1; box-shadow:0 0 0 0 rgba(239,68,68,0.5);} 50% { opacity:0.6; box-shadow:0 0 0 5px rgba(239,68,68,0);} }
+        .dash-live-dot { animation: dashLivePulse 1.6s ease-in-out infinite; }
+      `}</style>
+
+      {/* Stat cards */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 1, background: "#e2e8f0" }}>
+        {DASH_STATS.map((s) => (
+          <div key={s.label} style={{ background: "#ffffff", padding: "16px 18px", position: "relative", overflow: "hidden" }}>
+            <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: s.color }} />
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10 }}>
+              <span style={{ fontSize: 9.5, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#94a3b8" }}>{s.label}</span>
+              <span style={{ width: 22, height: 22, borderRadius: 7, background: `${s.color}15`, color: s.color, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none">{DASH_ICONS[s.icon]}</svg>
+              </span>
+            </div>
+            <p style={{ fontSize: "1.6rem", fontWeight: 800, color: s.color, margin: "0 0 3px", lineHeight: 1 }}>{s.value}</p>
+            <p style={{ fontSize: 10.5, color: "#94a3b8", margin: 0 }}>{s.sub}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Feed + sidebar */}
+      <div style={{ display: "grid", gridTemplateColumns: "1.6fr 1fr", gap: 1, background: "#e2e8f0" }}>
+        {/* Live alert feed */}
+        <div style={{ background: "#ffffff", padding: "18px 20px" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 14 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <span className="dash-live-dot" style={{ width: 7, height: 7, borderRadius: "50%", background: "#ef4444" }} />
+              <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.06em", color: "#0f2447" }}>LIVE ALERT FEED</span>
+            </div>
+            <span style={{ fontSize: 10.5, fontWeight: 700, color: "#00A99D" }}>VIEW ALL →</span>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            {DASH_ALERTS.map((a, i) => (
+              <div key={i} className="dash-row" style={{ animationDelay: `${i * 60}ms`, display: "flex", alignItems: "center", gap: 12, padding: "10px 6px", borderBottom: i < DASH_ALERTS.length - 1 ? "1px solid #f1f5f9" : "none" }}>
+                <span style={{ flexShrink: 0, fontSize: 9.5, fontWeight: 800, padding: "3px 8px", borderRadius: 6, background: `${SEV_COLOR[a.sev]}15`, color: SEV_COLOR[a.sev] }}>{a.sev}</span>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <p style={{ fontSize: 12.5, fontWeight: 700, color: "#0f2447", margin: 0, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{a.title}</p>
+                  <p style={{ fontSize: 10.5, color: "#94a3b8", margin: 0 }}>{a.src}</p>
+                </div>
+                <div style={{ flexShrink: 0, textAlign: "right" }}>
+                  <p style={{ fontSize: 10, color: "#94a3b8", margin: "0 0 2px" }}>{a.time}</p>
+                  <span style={{ fontSize: 9, fontWeight: 700, color: a.status === "OPEN" ? "#ef4444" : "#94a3b8" }}>{a.status}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Sidebar: device health + incidents */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 1, background: "#e2e8f0" }}>
+          <div style={{ background: "#ffffff", padding: "18px 20px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style={{ color: "#6366f1" }}><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" strokeWidth="1.8"/></svg>
+              <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.06em", color: "#0f2447" }}>DEVICE HEALTH</span>
+            </div>
+            <div style={{ display: "flex", justifyContent: "center", marginBottom: 16 }}>
+              <div style={{ position: "relative", width: 110, height: 110, borderRadius: "50%", background: gradient, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <div style={{ width: 72, height: 72, borderRadius: "50%", background: "#ffffff", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+                  <span style={{ fontSize: 20, fontWeight: 800, color: "#0f2447" }}>{total}</span>
+                  <span style={{ fontSize: 8, fontWeight: 700, color: "#94a3b8", letterSpacing: "0.06em" }}>DEVICES</span>
+                </div>
+              </div>
+            </div>
+            <div style={{ display: "flex", justifyContent: "space-around" }}>
+              {DASH_DEVICES.map((d) => (
+                <div key={d.label} style={{ textAlign: "center" }}>
+                  <p style={{ fontSize: 15, fontWeight: 800, color: d.color, margin: 0 }}>{d.value}</p>
+                  <p style={{ fontSize: 9, fontWeight: 700, color: "#94a3b8", letterSpacing: "0.05em", textTransform: "uppercase", margin: 0 }}>{d.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ background: "#ffffff", padding: "18px 20px", flex: 1 }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style={{ color: "#f59e0b" }}><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.06em", color: "#0f2447" }}>ACTIVE INCIDENTS</span>
+              </div>
+              <span style={{ fontSize: 10.5, fontWeight: 700, color: "#00A99D" }}>ALL →</span>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              {DASH_INCIDENTS.map((inc, i) => (
+                <div key={i} className="dash-row" style={{ animationDelay: `${i * 70 + 200}ms` }}>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 3 }}>
+                    <span style={{ fontSize: 9, fontWeight: 800, padding: "2px 7px", borderRadius: 5, background: `${SEV_COLOR[inc.sev]}15`, color: SEV_COLOR[inc.sev] }}>{inc.sev}</span>
+                    <span style={{ fontSize: 8.5, fontWeight: 700, padding: "2px 7px", borderRadius: 5, background: `${inc.statusColor}15`, color: inc.statusColor }}>{inc.status}</span>
+                  </div>
+                  <p style={{ fontSize: 11.5, fontWeight: 700, color: "#0f2447", margin: "0 0 2px", lineHeight: 1.3 }}>{inc.title}</p>
+                  <p style={{ fontSize: 9.5, color: "#94a3b8", margin: 0 }}>{inc.meta}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const DIFFERENTIATION = [
   { old: "Show you 200 alerts", noc: "Show you the 3 that matter" },
   { old: "Tell you something broke", noc: "Tell you why it broke and how to fix it" },
@@ -490,6 +652,22 @@ export default function NocCommandPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* LIVE DASHBOARD */}
+        <section style={{ background: "#ffffff", padding: "96px 0" }}>
+          <div className="max-w-7xl mx-auto px-6 lg:px-10">
+            <div ref={(el) => addReveal(el, 20)} className="reveal" style={{ textAlign: "center", marginBottom: "48px" }}>
+              <p className="section-eyebrow">See it in action</p>
+              <h2 style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 800, color: "#0f2447", letterSpacing: "-0.02em", marginBottom: "1rem" }}>
+                One screen. Everything that matters.
+              </h2>
+              <p style={{ color: "#495057", fontSize: "1rem", maxWidth: "60ch", margin: "0 auto" }}>
+                Real-time alerts, incidents, and device health, live as they happen across your estate.
+              </p>
+            </div>
+            <LiveDashboardMock />
           </div>
         </section>
 
