@@ -80,14 +80,46 @@ const departmentColors: Record<string, string> = {
 };
 
 const perks = [
-  { label: "Competitive Salary", desc: "Market-rate + performance bonuses" },
-  { label: "Health Benefits", desc: "Medical, dental & vision coverage" },
-  { label: "Remote Work", desc: "Work from anywhere in the world" },
-  { label: "Learning Budget", desc: "$2,000/year for courses & conferences" },
-  { label: "Flexible Hours", desc: "Async-first, no rigid 9-to-5" },
-  { label: "Annual Team Retreat", desc: "We all meet up once a year, in person" },
-  { label: "Equipment Stipend", desc: "Best-in-class gear, fully covered" },
-  { label: "90-Day Onboarding", desc: "Structured ramp so you hit the ground running" },
+  {
+    label: "Competitive Salary", desc: "Market-rate + performance bonuses",
+    color: "#00A99D", bg: "#e6f7f6",
+    icon: <path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
+  },
+  {
+    label: "Health Benefits", desc: "Medical, dental & vision coverage",
+    color: "#db2777", bg: "#fff0f8",
+    icon: <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 10-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
+  },
+  {
+    label: "Remote Work", desc: "Work from anywhere in the world",
+    color: "#2563eb", bg: "#eef4ff",
+    icon: <><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.8"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" stroke="currentColor" strokeWidth="1.8"/></>,
+  },
+  {
+    label: "Learning Budget", desc: "$2,000/year for courses & conferences",
+    color: "#7c3aed", bg: "#f3eeff",
+    icon: <path d="M22 10L12 4 2 10l10 6 10-6zM6 12.5V17c0 1.1 2.7 3 6 3s6-1.9 6-3v-4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
+  },
+  {
+    label: "Flexible Hours", desc: "Async-first, no rigid 9-to-5",
+    color: "#ea580c", bg: "#fff7ed",
+    icon: <><circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.8"/><path d="M12 7v5l3.5 2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></>,
+  },
+  {
+    label: "Annual Team Retreat", desc: "We all meet up once a year, in person",
+    color: "#059669", bg: "#edfaf5",
+    icon: <path d="M3 21l6-14 4 8 3-5 5 11H3z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
+  },
+  {
+    label: "Equipment Stipend", desc: "Best-in-class gear, fully covered",
+    color: "#0891b2", bg: "#ecfeff",
+    icon: <><rect x="3" y="4" width="18" height="12" rx="2" stroke="currentColor" strokeWidth="1.8"/><path d="M8 20h8M12 16v4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></>,
+  },
+  {
+    label: "90-Day Onboarding", desc: "Structured ramp so you hit the ground running",
+    color: "#d97706", bg: "#fffbeb",
+    icon: <path d="M9 11l3 3L22 4M21 12v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h11" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
+  },
 ];
 
 function TeamBubbles() {
@@ -201,25 +233,40 @@ export default function CareersPage() {
               {
                 title: "Remote-First Culture",
                 desc: "Work from anywhere. We care about output, not office attendance. Our processes are designed for async collaboration.",
+                color: "#2563eb", bg: "#eef4ff",
+                icon: <path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20M12 2a10 10 0 100 20 10 10 0 000-20z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>,
               },
               {
                 title: "Senior Team",
                 desc: "You'll work alongside senior engineers and leaders who love to share knowledge. Every day is a learning opportunity.",
+                color: "#7c3aed", bg: "#f3eeff",
+                icon: <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
               },
               {
                 title: "Real Ownership",
                 desc: "Your ideas are heard. You'll own meaningful parts of the product and have real influence on roadmap decisions.",
+                color: "#059669", bg: "#edfaf5",
+                icon: <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
               },
               {
                 title: "Competitive Pay + Equity",
                 desc: "Top-of-market salaries and equity in the projects you help build. When the company wins, you win.",
+                color: "#d97706", bg: "#fffbeb",
+                icon: <path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
               },
             ].map((card) => (
               <div
                 key={card.title}
-                className="bg-gray-50 border border-gray-100 rounded-2xl p-8 hover:shadow-md transition"
+                className="bg-gray-50 border border-gray-100 rounded-2xl p-8 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
               >
-                <div className="w-10 h-10 rounded-full bg-[#1B3C6E] mb-5" />
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                  style={{ background: card.bg, color: card.color }}
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    {card.icon}
+                  </svg>
+                </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
                   {card.title}
                 </h3>
@@ -374,9 +421,16 @@ export default function CareersPage() {
             {perks.map((perk) => (
               <div
                 key={perk.label}
-                className="bg-gray-50 border border-gray-100 rounded-2xl p-6 hover:shadow-sm transition"
+                className="bg-gray-50 border border-gray-100 rounded-2xl p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
               >
-                <div className="w-8 h-8 rounded-lg bg-[#1B3C6E] mb-4" />
+                <div
+                  className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
+                  style={{ background: perk.bg, color: perk.color }}
+                >
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    {perk.icon}
+                  </svg>
+                </div>
                 <h3 className="font-semibold text-gray-900 mb-1">
                   {perk.label}
                 </h3>
