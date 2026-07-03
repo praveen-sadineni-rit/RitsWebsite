@@ -68,16 +68,68 @@ const jobs = [
     description:
       "We're growing fast and need a Talent Acquisition Specialist to help us find and hire exceptional people. You'll manage full-cycle recruiting across technical and non-technical roles, build talent pipelines, and create a great candidate experience from first touch to offer. Experience hiring engineers in a remote-first environment is a strong plus.",
   },
+  {
+    id: 8,
+    title: "Business Analyst",
+    department: "Business",
+    location: "Rock Hill, SC",
+    type: "Full-time",
+    openDate: "06/15/2026",
+    closeDate: "07/10/2026",
+    description:
+      "Seeking qualified Business Analyst with a master's in Management, Business Administration, or CSA and 6 months of work experience for requirement gathering sessions with stakeholders using techniques such as brainstorming, interviews, focus groups, and document analysis. Uses source-to-target mappings, functional specifications, and data dictionaries on a regular basis to identify impacted areas. Examines and reviews clinical data available from existing information sources and collects data statistics and informative summaries. Performs GAP and risk analysis of existing applications and evaluates the benefits of new functionalities and features. Produces Business Requirements Documents (BRD) and Functional Design Documents (FDD), and documents Epics and User Stories in Jira, sharing them with all parties involved in the project. Frequent/occasional travel may be required to unanticipated work-site locations within the US as a roving employee. No relocation required.",
+    skills: ["Requirement Gathering", "Brainstorming", "Focus Groups", "Data Mapping", "BRD", "FDD", "GAP Analysis", "Jira", "User Stories"],
+    mailApply: true,
+  },
+  {
+    id: 9,
+    title: "Software Developer",
+    department: "Engineering",
+    location: "Rock Hill, SC",
+    type: "Full-time",
+    openDate: "06/15/2026",
+    closeDate: "07/10/2026",
+    description:
+      "Seeking qualified Software Developer with a master's in Science, Engineering, or CIS and 6 months of work experience with strong C#/.NET experience, building and maintaining cross-platform mobile apps using .NET MAUI/Xamarin, following clean architecture, MVVM, and solid engineering practices. Hands-on with Azure DevOps CI/CD, iOS/Android build pipelines, provisioning/certificates, and troubleshooting complex build/release issues across macOS/Windows environments. Comfortable owning features end-to-end, including requirements, implementation, debugging, and production support, while collaborating with teams and continuously learning new tech stacks. Frequent/occasional travel may be required to unanticipated work-site locations within the US as a roving employee. No relocation required.",
+    skills: ["C#/.NET", ".NET MAUI", "Xamarin", "MVVM", "Azure DevOps", "CI/CD", "iOS/Android", "macOS/Windows"],
+    mailApply: true,
+  },
+  {
+    id: 10,
+    title: "Software Engineer",
+    department: "Engineering",
+    location: "Rock Hill, SC",
+    type: "Full-time",
+    openDate: "06/15/2026",
+    closeDate: "07/10/2026",
+    description:
+      "Seeking qualified Software Engineer with a master's in Information Systems, CS, or Engineering and 6 months of work experience to design, develop, and maintain backend services using Java and Spring Boot. Creates REST APIs and maintains interface specifications using Swagger/OpenAPI for system integrations. Applies core Java concepts including multithreading, concurrency handling, exception management, and collections for real-time processing. Implements application security and compliance updates, including Blackduck vulnerability remediation and internal code policy changes across multiple services. Must be willing to travel and work at unanticipated worksite locations in the US. Travel may be required at least once or twice a month based on end-clients' needs as a roving employee. No relocation required.",
+    skills: ["Java", "Spring Boot", "REST APIs", "Swagger/OpenAPI", "Multithreading", "Blackduck", "App Security"],
+    mailApply: true,
+  },
 ];
 
-const filters = ["All", "Engineering", "Design", "Product", "Operations"];
+const filters = ["All", "Engineering", "Design", "Product", "Operations", "Business"];
 
 const departmentColors: Record<string, string> = {
   Engineering: "bg-blue-100 text-blue-700",
   Design: "bg-purple-100 text-purple-700",
   Product: "bg-green-100 text-green-700",
   Operations: "bg-orange-100 text-orange-700",
+  Business: "bg-teal-100 text-teal-700",
 };
+
+const SKILL_PALETTE = [
+  { bg: "#eef4ff", text: "#2563eb" },
+  { bg: "#f3eeff", text: "#7c3aed" },
+  { bg: "#edfaf5", text: "#059669" },
+  { bg: "#fff7ed", text: "#ea580c" },
+  { bg: "#fff0f8", text: "#db2777" },
+  { bg: "#e6f7f6", text: "#00877d" },
+  { bg: "#fffbeb", text: "#d97706" },
+  { bg: "#ecfeff", text: "#0891b2" },
+  { bg: "#f0fdf4", text: "#16a34a" },
+];
 
 const perks = [
   {
@@ -346,15 +398,54 @@ export default function CareersPage() {
 
                 {openJob === job.id && (
                   <div className="px-6 pb-6 border-t border-gray-100 pt-4">
+                    {(job.openDate || job.closeDate) && (
+                      <div className="flex flex-wrap gap-x-6 gap-y-1 mb-4 text-sm text-gray-500">
+                        {job.openDate && (
+                          <span><span className="font-semibold text-gray-700">Date of Opening:</span> {job.openDate}</span>
+                        )}
+                        {job.closeDate && (
+                          <span><span className="font-semibold text-gray-700">Date of Closing:</span> {job.closeDate}</span>
+                        )}
+                      </div>
+                    )}
                     <p className="text-gray-600 leading-relaxed mb-5">
                       {job.description}
                     </p>
-                    <a
-                      href="mailto:careers@rits-it.com"
-                      className="inline-block bg-[#1B3C6E] hover:bg-[#0f2447] text-white font-semibold px-6 py-2.5 rounded-lg transition"
-                    >
-                      Apply Now
-                    </a>
+                    {job.skills && job.skills.length > 0 && (
+                      <div className="flex flex-wrap gap-2 mb-5">
+                        {job.skills.map((skill, i) => (
+                          <span
+                            key={skill}
+                            className="text-xs font-semibold px-3 py-1.5 rounded-full"
+                            style={{
+                              background: SKILL_PALETTE[i % SKILL_PALETTE.length].bg,
+                              color: SKILL_PALETTE[i % SKILL_PALETTE.length].text,
+                            }}
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    {job.mailApply ? (
+                      <div className="bg-gray-50 border border-gray-100 rounded-xl p-5">
+                        <p className="text-sm font-semibold text-gray-900 mb-2">
+                          Aspiring candidates should mail their resumes to:
+                        </p>
+                        <address className="not-italic text-sm text-gray-600 leading-relaxed">
+                          Resource Innovative Technologies LLC<br />
+                          331 E Main Street, Ste 200<br />
+                          Rock Hill, SC 29730
+                        </address>
+                      </div>
+                    ) : (
+                      <a
+                        href="mailto:careers@rits-it.com"
+                        className="inline-block bg-[#1B3C6E] hover:bg-[#0f2447] text-white font-semibold px-6 py-2.5 rounded-lg transition"
+                      >
+                        Apply Now
+                      </a>
+                    )}
                   </div>
                 )}
               </div>
