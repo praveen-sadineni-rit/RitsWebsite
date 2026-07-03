@@ -19,7 +19,7 @@ export default function ManufacturingPage() {
             <span style={{ color: "#00A99D" }}>Starts Here.</span>
           </h1>
           <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-8">
-            IoT, ERP modernization, and AI-powered systems that connect your shop floor to your business — in real time.
+            IoT, ERP modernization, and AI-powered systems that connect your shop floor to your business, in real time.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             {["Industry 4.0 Ready", "IoT Connected", "ERP Integrated"].map((pill) => (
@@ -66,7 +66,7 @@ export default function ManufacturingPage() {
             {[
               {
                 title: "IoT & Sensor Integration",
-                desc: "Connect machines, sensors, and PLCs to a unified data platform — capturing real-time signals from every corner of your plant.",
+                desc: "Connect machines, sensors, and PLCs to a unified data platform, capturing real-time signals from every corner of your plant.",
                 color: "#60a5fa",
                 bg: "#eff6ff",
                 icon: (
@@ -77,7 +77,7 @@ export default function ManufacturingPage() {
               },
               {
                 title: "ERP Modernization",
-                desc: "Migrate from legacy ERP systems to modern cloud-native platforms — without disrupting production schedules.",
+                desc: "Migrate from legacy ERP systems to modern cloud-native platforms, without disrupting production schedules.",
                 color: "#00A99D",
                 bg: "#f0fdfb",
                 icon: (
@@ -157,9 +157,9 @@ export default function ManufacturingPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">How We Deliver</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { num: "01", title: "Plant Assessment & Discovery", desc: "We walk the floor — documenting machines, systems, data flows, and pain points before writing a single line of code." },
+              { num: "01", title: "Plant Assessment & Discovery", desc: "We walk the floor, documenting machines, systems, data flows, and pain points before writing a single line of code." },
               { num: "02", title: "IoT Architecture Design", desc: "Our architects design a secure, scalable IoT backbone connecting your OT and IT environments without disrupting uptime." },
-              { num: "03", title: "Integration & Testing", desc: "We integrate IoT layers, ERP systems, MES platforms, and quality tools — with rigorous testing at every stage." },
+              { num: "03", title: "Integration & Testing", desc: "We integrate IoT layers, ERP systems, MES platforms, and quality tools, with rigorous testing at every stage." },
               { num: "04", title: "Deployment & Training", desc: "We go live with your team, provide hands-on training, and embed continuous improvement loops into your operations." },
             ].map((step) => (
               <div key={step.num} className="p-6 rounded-2xl bg-white/5 border border-white/10">

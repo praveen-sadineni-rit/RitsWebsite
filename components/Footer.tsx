@@ -14,16 +14,18 @@ export default function Footer() {
 
           {/* Column 1 - Brand */}
           <div className="lg:col-span-1 flex flex-col gap-5">
-            {/* Inline SVG Logo */}
-            <div>
-              <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                <rect width="48" height="48" rx="6" fill="#1e5fd4" />
-                <path
-                  d="M10 10 h14 a10 10 0 0 1 0 20 h-4 l10 8 h-8 l-9-8 v8 h-7 z m7 6 v8 h7 a4 4 0 0 0 0-8 z"
-                  fill="white"
-                />
-                <rect x="36" y="36" width="8" height="8" rx="2" fill="#00cfb4" />
+            {/* Brand mark + wordmark */}
+            <div className="flex items-center gap-3">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="40" height="40" rx="8" fill="#00A99D"/>
+                <path d="M10 10H22C25.3 10 28 12.7 28 16C28 18.4 26.6 20.5 24.5 21.5L28.5 30H23L19.5 22H15V30H10V10Z" fill="white"/>
+                <rect x="15" y="14" width="7" height="4" rx="2" fill="#0f2447"/>
+                <path d="M15 24L19.5 20.5L24 24H21.5V30H17.5V24H15Z" fill="#0f2447"/>
               </svg>
+              <div>
+                <div className="text-white font-black text-base leading-tight tracking-tight">RESOURCE</div>
+                <div className="font-semibold text-[9px] tracking-[0.15em] uppercase leading-tight" style={{ color: "#00cfb4" }}>Innovative Technologies</div>
+              </div>
             </div>
 
             <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
@@ -86,8 +88,8 @@ export default function Footer() {
                 { label: "Product Development", href: "/services/product-development" },
                 { label: "AI & Machine Learning", href: "/services/ai-ml" },
                 { label: "Staff Augmentation", href: "/services/staff-augmentation" },
-                { label: "Cloud & DevOps", href: "#" },
-                { label: "Digital Transformation", href: "#" },
+                { label: "Cloud & DevOps", href: "/services/cloud-devops" },
+                { label: "Digital Transformation", href: "/services/digital-transformation" },
               ].map((item) => (
                 <li key={item.label}>
                   <Link
@@ -109,21 +111,21 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               {[
-                "Financial Services",
-                "Healthcare",
-                "E-Commerce",
-                "Manufacturing",
-                "Government",
-                "Education",
-              ].map((label) => (
-                <li key={label}>
-                  <a
-                    href="#"
+                { label: "Financial Services", href: "/industries/fintech" },
+                { label: "Healthcare", href: "/industries/healthcare" },
+                { label: "E-Commerce", href: "/industries/ecommerce" },
+                { label: "Manufacturing", href: "/industries/manufacturing" },
+                { label: "Government", href: "/industries/government" },
+                { label: "Education", href: "/industries/education" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
                     className="text-sm transition-colors hover:text-white"
                     style={{ color: "rgba(255,255,255,0.6)" }}
                   >
-                    {label}
-                  </a>
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>

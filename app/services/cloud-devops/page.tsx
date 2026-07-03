@@ -75,7 +75,7 @@ function PipelineAnim() {
 const capabilities = [
   {
     title: "Cloud Architecture",
-    desc: "Design scalable, cost-efficient cloud infrastructure on AWS, Azure, or GCP — purpose-built for your workload.",
+    desc: "Design scalable, cost-efficient cloud infrastructure on AWS, Azure, or GCP, purpose-built for your workload.",
     icon: "M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z",
     color: "#60a5fa",
   },
@@ -142,7 +142,7 @@ export default function CloudDevOpsPage() {
               <span style={{ color: "#00A99D" }}>Break nothing.</span>
             </h1>
             <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-lg">
-              Modern cloud infrastructure and DevOps practices that let your team deploy with confidence — multiple times a day.
+              Modern cloud infrastructure and DevOps practices that let your team deploy with confidence, multiple times a day.
             </p>
             <div className="flex flex-wrap gap-3 mb-8">
               {["AWS Certified", "Zero-Downtime Deploys", "IaC First"].map(t => (
@@ -180,7 +180,7 @@ export default function CloudDevOpsPage() {
           <div className="text-center mb-14">
             <p className="section-eyebrow">What We Do</p>
             <h2 className="text-3xl font-black text-[#0f172a]">Full-stack cloud expertise</h2>
-            <p className="text-gray-500 mt-3 max-w-xl mx-auto">From architecture design to day-2 operations — we handle the full lifecycle.</p>
+            <p className="text-gray-500 mt-3 max-w-xl mx-auto">From architecture design to day-2 operations, we handle the full lifecycle.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {capabilities.map(c => (
@@ -248,7 +248,7 @@ export default function CloudDevOpsPage() {
       <section className="py-20 px-6" style={{ background: "linear-gradient(135deg, #00A99D 0%, #1B3C6E 100%)" }}>
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-white font-black text-4xl mb-4">Ready to modernize your infrastructure?</h2>
-          <p className="text-white/70 text-lg mb-8">Get a free cloud assessment and a clear roadmap — no strings attached.</p>
+          <p className="text-white/70 text-lg mb-8">Get a free cloud assessment and a clear roadmap, no strings attached.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <a href="/contact" className="btn-outline-white">Book a Free Assessment</a>
           </div>

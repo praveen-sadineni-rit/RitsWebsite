@@ -43,7 +43,7 @@ const differentiators = [
   {
     icon: "🎨",
     headline: "Design-first, always",
-    detail: "UX drives every technical decision. Good design is not a phase — it runs through the entire build.",
+    detail: "UX drives every technical decision. Good design is not a phase, it runs through the entire build.",
   },
   {
     icon: "⚡",
@@ -72,7 +72,7 @@ const caseStudies = [
     tag: "FinTech",
     headline: "0 to MVP in 8 weeks. Series A funded.",
     detail:
-      "We embedded with a fintech founding team to take their payments concept from whiteboard to live product — end to end, on schedule.",
+      "We embedded with a fintech founding team to take their payments concept from whiteboard to live product, end to end, on schedule.",
   },
   {
     tag: "Healthcare SaaS",
@@ -152,7 +152,7 @@ export default function ProductDevelopmentPage() {
               <span className="text-teal-400">Without the chaos.</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto lg:mx-0 mb-14">
-              Full-cycle product engineering — discovery, design, development, launch, and the
+              Full-cycle product engineering, discovery, design, development, launch, and the
               iteration that makes it great.
             </p>
 

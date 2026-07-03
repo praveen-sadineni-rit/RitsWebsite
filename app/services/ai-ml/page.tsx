@@ -122,7 +122,7 @@ const phases = [
     number: "02",
     title: "Model Selection & Training",
     description:
-      "Choose the right architecture — fine-tune existing LLMs or train custom models on your domain-specific data.",
+      "Choose the right architecture, fine-tune existing LLMs or train custom models on your domain-specific data.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
         <circle cx="12" cy="12" r="3" />
@@ -169,7 +169,7 @@ const safetyPrinciples = [
   },
   {
     title: "Explainability",
-    description: "We build AI you can explain — SHAP values, attention maps, decision trails.",
+    description: "We build AI you can explain. SHAP values, attention maps, decision trails.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
         <circle cx="12" cy="12" r="10" />
@@ -429,7 +429,7 @@ export default function AiMlPage() {
 
               <p className="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed">
                 We build intelligent systems using LLMs, computer vision, NLP, and predictive
-                analytics — integrated directly into your product, not bolted on.
+                analytics, integrated directly into your product, not bolted on.
               </p>
 
               {/* Typing animation terminal */}
@@ -481,7 +481,7 @@ export default function AiMlPage() {
               AI use cases we specialize in
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              From foundational models to production pipelines — every AI capability your product needs.
+              From foundational models to production pipelines, every AI capability your product needs.
             </p>
           </div>
 
@@ -613,7 +613,7 @@ export default function AiMlPage() {
               </h2>
               <p className="text-gray-400 leading-relaxed mb-6">
                 Every system we deliver is designed with transparency, fairness, and accountability
-                as first-class requirements — not afterthoughts.
+                as first-class requirements, not afterthoughts.
               </p>
               <div
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00A99D]/30 bg-[#00A99D]/8 text-[#00A99D] text-sm font-medium"

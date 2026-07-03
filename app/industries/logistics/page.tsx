@@ -19,7 +19,7 @@ export default function LogisticsPage() {
             <span style={{ color: "#00A99D" }}>Deliver Smarter.</span>
           </h1>
           <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-8">
-            End-to-end logistics technology — from real-time fleet tracking to warehouse automation and supply chain visibility.
+            End-to-end logistics technology, from real-time fleet tracking to warehouse automation and supply chain visibility.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             {["Real-Time Tracking", "Route Optimization", "Supply Chain Visibility"].map((pill) => (
@@ -78,7 +78,7 @@ export default function LogisticsPage() {
               },
               {
                 title: "Supply Chain Visibility",
-                desc: "End-to-end tracking across suppliers, ports, and last-mile partners — with live alerts and predictive ETAs.",
+                desc: "End-to-end tracking across suppliers, ports, and last-mile partners, with live alerts and predictive ETAs.",
                 color: "#00A99D",
                 bg: "#f0fdfb",
                 icon: (
@@ -160,7 +160,7 @@ export default function LogisticsPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { num: "01", title: "Operations Discovery", desc: "We audit your current logistics stack, identify bottlenecks, and map your full freight and fulfillment flow." },
-              { num: "02", title: "System Architecture", desc: "Our engineers design a modular logistics platform — built for your carrier mix, warehouse setup, and scale." },
+              { num: "02", title: "System Architecture", desc: "Our engineers design a modular logistics platform, built for your carrier mix, warehouse setup, and scale." },
               { num: "03", title: "Integration & Build", desc: "We integrate TMS, WMS, fleet systems, and carrier APIs into one unified operations platform." },
               { num: "04", title: "Go-Live & Optimization", desc: "We launch with live monitoring, then continuously optimize routes, costs, and SLAs using real operational data." },
             ].map((step) => (

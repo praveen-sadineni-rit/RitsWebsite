@@ -72,7 +72,7 @@ export default function EnergyPage() {
               },
               {
                 title: "Energy Analytics & BI",
-                desc: "Unified analytics dashboards that aggregate consumption, generation, and distribution data — surfacing actionable insights for grid operators and executives.",
+                desc: "Unified analytics dashboards that aggregate consumption, generation, and distribution data, surfacing actionable insights for grid operators and executives.",
                 color: "#00A99D",
                 path: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
               },
@@ -136,7 +136,7 @@ export default function EnergyPage() {
               {
                 num: "02",
                 title: "Data Architecture Design",
-                desc: "We design a unified data architecture — from edge collection to cloud storage and analytics — built for scale, resilience, and real-time operational needs.",
+                desc: "We design a unified data architecture, from edge collection to cloud storage and analytics, built for scale, resilience, and real-time operational needs.",
               },
               {
                 num: "03",

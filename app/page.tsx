@@ -92,7 +92,7 @@ const services = [
       </svg>
     ),
     title: "Software Solutions",
-    desc: "Enterprise-grade web, mobile, and API development tailored to your business needs. From MVPs to complex platforms — we build software that lasts.",
+    desc: "Enterprise-grade web, mobile, and API development tailored to your business needs. From MVPs to complex platforms, we build software that lasts.",
     link: "Explore Software Solutions",
   },
   {
@@ -102,7 +102,7 @@ const services = [
       </svg>
     ),
     title: "Product Development",
-    desc: "Full-cycle product engineering — from discovery and UX design to launch and iteration. We turn your vision into a market-ready product.",
+    desc: "Full-cycle product engineering, from discovery and UX design to launch and iteration. We turn your vision into a market-ready product.",
     link: "Explore Product Development",
   },
   {
@@ -123,7 +123,7 @@ const services = [
       </svg>
     ),
     title: "Staff Augmentation",
-    desc: "Scale your engineering team with vetted senior talent. Flexible engagement models that fit your culture, timeline, and budget — ready from day one.",
+    desc: "Scale your engineering team with vetted senior talent. Flexible engagement models that fit your culture, timeline, and budget, ready from day one.",
     link: "Explore Staff Augmentation",
   },
 ];
@@ -139,18 +139,18 @@ const industries = [
 const whyUs = [
   { title: "Senior-only talent", desc: "Every engineer we assign is senior level. No bait-and-switch, no juniors learning on your budget." },
   { title: "Transparent by design", desc: "Weekly written updates, live project dashboards, and no surprise invoices. You always know where things stand." },
-  { title: "Outcome-driven delivery", desc: "We measure success by business results — revenue, growth, time-to-market — not story points or hours billed." },
+  { title: "Outcome-driven delivery", desc: "We measure success by business results, revenue, growth, time-to-market, not story points or hours billed." },
   { title: "90-day post-launch support", desc: "Every engagement includes 90 days of post-launch support as standard. We don't disappear at go-live." },
   { title: "NDA within 24 hours", desc: "Confidentiality agreements signed within 24 hours of first contact. Your IP is protected from day one." },
-  { title: "Dedicated project manager", desc: "A dedicated PM on every project — your single point of contact for communication, planning, and escalations." },
+  { title: "Dedicated project manager", desc: "A dedicated PM on every project, your single point of contact for communication, planning, and escalations." },
 ];
 
 const insights = [
   {
     category: "AI & Technology",
     tag: "Featured",
-    title: "GPT-4o, Gemini 1.5, Claude 3 — What Each Model Actually Does Best in 2025",
-    excerpt: "OpenAI, Google, and Anthropic have each shipped major model upgrades this year. We break down real benchmark differences, cost-per-token tradeoffs, and which tasks each excels at — so you can stop guessing and start building.",
+    title: "GPT-4o, Gemini 1.5, Claude 3. What Each Model Actually Does Best in 2025",
+    excerpt: "OpenAI, Google, and Anthropic have each shipped major model upgrades this year. We break down real benchmark differences, cost-per-token tradeoffs, and which tasks each excels at, so you can stop guessing and start building.",
     author: "MIT Technology Review",
     initials: "MT",
     avatarColor: "#1B3C6E",
@@ -163,7 +163,7 @@ const insights = [
     category: "AI in Enterprise",
     tag: "Trending",
     title: "McKinsey: AI Could Add $4.4 Trillion Annually to the Global Economy",
-    excerpt: "McKinsey's 2025 AI report found that generative AI alone could add the equivalent of $2.6–$4.4 trillion annually across 63 analyzed use cases — with knowledge work and software development leading adoption.",
+    excerpt: "McKinsey's 2025 AI report found that generative AI alone could add the equivalent of $2.6–$4.4 trillion annually across 63 analyzed use cases, with knowledge work and software development leading adoption.",
     author: "McKinsey & Company",
     initials: "MC",
     avatarColor: "#00877d",
@@ -176,7 +176,7 @@ const insights = [
     category: "AI Engineering",
     tag: "New",
     title: "RAG vs. Fine-Tuning: Choosing the Right Strategy for Your LLM Application",
-    excerpt: "Retrieval-Augmented Generation and fine-tuning solve different problems. RAG keeps models current with live data; fine-tuning bakes domain knowledge into weights. Here's how to decide — with real cost and latency comparisons.",
+    excerpt: "Retrieval-Augmented Generation and fine-tuning solve different problems. RAG keeps models current with live data; fine-tuning bakes domain knowledge into weights. Here's how to decide, with real cost and latency comparisons.",
     author: "Google DeepMind Blog",
     initials: "GD",
     avatarColor: "#5b21b6",
@@ -188,7 +188,7 @@ const insights = [
   {
     category: "AI Regulation",
     tag: "Popular",
-    title: "EU AI Act Is Now in Force — What Every Tech Company Must Do by 2026",
+    title: "EU AI Act Is Now in Force. What Every Tech Company Must Do by 2026",
     excerpt: "The European Union's AI Act took effect in August 2024 and begins phased enforcement in 2025–2026. High-risk AI systems face mandatory conformity assessments, transparency requirements, and human oversight rules.",
     author: "European Commission",
     initials: "EC",
@@ -216,7 +216,7 @@ const testimonials = [
     initials: "MW",
   },
   {
-    quote: "From MVP to Series A — Resource IT was our technology partner every step of the way. They think like founders, not just developers.",
+    quote: "From MVP to Series A. Resource IT was our technology partner every step of the way. They think like founders, not just developers.",
     name: "Priya Sharma",
     role: "Founder & CEO",
     company: "HealthTech Startup",
@@ -558,7 +558,7 @@ const ALL_SERVICES = [
     num: "01",
     title: "Software Solutions",
     short: "Web · Mobile · API",
-    desc: "Enterprise-grade web apps, mobile products, and APIs — architected to last and designed to scale. From MVPs to complex distributed systems.",
+    desc: "Enterprise-grade web apps, mobile products, and APIs, architected to last and designed to scale. From MVPs to complex distributed systems.",
     tags: ["React", "Next.js", "Node.js", "PostgreSQL"],
     accent: "#60a5fa",
     href: "/services/software-solutions",
@@ -568,7 +568,7 @@ const ALL_SERVICES = [
     num: "02",
     title: "Product Development",
     short: "Discovery · Design · Launch",
-    desc: "Full-cycle product engineering — from idea and UX research to launch and iteration. We turn vision into market-ready products, fast.",
+    desc: "Full-cycle product engineering, from idea and UX research to launch and iteration. We turn vision into market-ready products, fast.",
     tags: ["Discovery", "UX Design", "Agile", "Go-to-Market"],
     accent: "#00A99D",
     href: "/services/product-development",
@@ -578,7 +578,7 @@ const ALL_SERVICES = [
     num: "03",
     title: "AI & Machine Learning",
     short: "LLMs · NLP · Vision",
-    desc: "Production-ready AI — not just demos. We embed LLMs, computer vision, and predictive models directly into your products and workflows.",
+    desc: "Production-ready AI, not just demos. We embed LLMs, computer vision, and predictive models directly into your products and workflows.",
     tags: ["LLMs", "OpenAI", "Computer Vision", "NLP"],
     accent: "#a78bfa",
     href: "/services/ai-ml",
@@ -588,7 +588,7 @@ const ALL_SERVICES = [
     num: "04",
     title: "Staff Augmentation",
     short: "Vetted · Senior · Ready",
-    desc: "Rigorously screened senior engineers — ID-verified, technically tested, reference-checked. Plug them into your team from day one.",
+    desc: "Rigorously screened senior engineers. ID-verified, technically tested, reference-checked. Plug them into your team from day one.",
     tags: ["Senior Only", "ID Verified", "5-Day Onboard", "Flexible"],
     accent: "#34d399",
     href: "/services/staff-augmentation",
@@ -598,7 +598,7 @@ const ALL_SERVICES = [
     num: "05",
     title: "Cloud & DevOps",
     short: "AWS · GCP · Azure",
-    desc: "Modern cloud infrastructure, CI/CD pipelines, and SRE practices that let your team ship with confidence — multiple times a day.",
+    desc: "Modern cloud infrastructure, CI/CD pipelines, and SRE practices that let your team ship with confidence, multiple times a day.",
     tags: ["AWS", "Kubernetes", "Terraform", "CI/CD"],
     accent: "#fb923c",
     href: "/services/cloud-devops",
@@ -608,7 +608,7 @@ const ALL_SERVICES = [
     num: "06",
     title: "Digital Transformation",
     short: "Strategy · Execution · Scale",
-    desc: "From legacy systems to leading-edge architecture. We reimagine how your business operates — process, technology, and people together.",
+    desc: "From legacy systems to leading-edge architecture. We reimagine how your business operates, process, technology, and people together.",
     tags: ["Modernization", "Data & Analytics", "Change Mgmt", "ROI-Focused"],
     accent: "#f472b6",
     href: "/services/digital-transformation",
@@ -634,7 +634,7 @@ function ServiceShowcase() {
               <span style={{ color: "#00A99D" }}>what&apos;s next.</span>
             </h2>
             <p className="text-white/30 text-sm leading-relaxed max-w-xs">
-              End-to-end technology capabilities — from the first line of code to the right engineer on your team.
+              End-to-end technology capabilities, from the first line of code to the right engineer on your team.
             </p>
           </div>
         </Reveal>
@@ -844,8 +844,8 @@ export default function Home() {
               className="text-white/70 text-lg leading-relaxed mb-10 max-w-xl font-light"
               style={{ animation: "revealUp 0.9s ease 0.3s both" }}
             >
-              Software solutions, AI-powered products, and engineering talent —
-              in the work with your team, invested in the result.
+              Software solutions, AI-powered products, and engineering talent.
+              Embedded in the work with your team, invested in the result.
             </p>
 
             {/* CTAs */}
@@ -900,7 +900,7 @@ export default function Home() {
             </h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
               We believe the only way to truly serve a client is to first get the people right.
-              Every engagement starts with trust — and trust starts with verification.
+              Every engagement starts with trust, and trust starts with verification.
             </p>
           </Reveal>
 
@@ -918,7 +918,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-black text-[#1B3C6E] mb-3">Client First, Always</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                  Your success is our only metric. We don&apos;t place talent and walk away —
+                  Your success is our only metric. We don&apos;t place talent and walk away;
                   we stay accountable to results. Fast turnaround, zero compromise on quality,
                   and a commitment to your timeline that we take personally.
                 </p>
@@ -949,15 +949,15 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-black text-[#1B3C6E] mb-3">Rigorously Vetted Talent</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                  Before any engineer reaches a client, they go through our full screening process —
-                  no shortcuts. We verify who they are, what they know, and that they&apos;re genuinely
+                  Before any engineer reaches a client, they go through our full screening process.
+                  No shortcuts. We verify who they are, what they know, and that they&apos;re genuinely
                   as good as their résumé says. Only the best make it through.
                 </p>
                 <div className="space-y-2.5">
                   {[
                     "Identity & document verification on every candidate",
                     "Multi-round technical screening, not just a résumé review",
-                    "Background checks — employment history confirmed",
+                    "Background checks, employment history confirmed",
                     "Skills validated through real-world problem solving",
                   ].map((item) => (
                     <div key={item} className="flex items-start gap-2.5 text-sm text-gray-600">
@@ -977,17 +977,17 @@ export default function Home() {
                 {
                   icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#00A99D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>,
                   title: "People First",
-                  desc: "We invest in our people — always available, always listening. A supported team delivers exceptional work.",
+                  desc: "We invest in our people, always available, always listening. A supported team delivers exceptional work.",
                 },
                 {
                   icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#00A99D" strokeWidth="2"/><path d="M12 6v6l4 2" stroke="#00A99D" strokeWidth="2" strokeLinecap="round"/></svg>,
                   title: "Strong Foundations",
-                  desc: "Growth takes time. We don't chase shortcuts — we build relationships and capabilities that compound over years.",
+                  desc: "Growth takes time. We don't chase shortcuts, we build relationships and capabilities that compound over years.",
                 },
                 {
                   icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="#00A99D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M22 4L12 14.01l-3-3" stroke="#00A99D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>,
                   title: "Results Focused",
-                  desc: "At the end of the day, what matters is impact. We stay accountable to outcomes — not just deliverables.",
+                  desc: "At the end of the day, what matters is impact. We stay accountable to outcomes, not just deliverables.",
                 },
               ].map((item) => (
                 <div key={item.title} className="flex flex-col items-center">
@@ -1020,7 +1020,7 @@ export default function Home() {
             </div>
             <div className="max-w-xs">
               <p className="text-gray-400 text-sm leading-relaxed mb-5">
-                From FinTech to Healthcare, Government to E-Commerce — we bring
+                From FinTech to Healthcare, Government to E-Commerce, we bring
                 deep domain knowledge to every engagement.
               </p>
               <a href="#contact" className="btn-navy">
@@ -1087,7 +1087,7 @@ export default function Home() {
                 The difference you<br />feel from day one.
               </h2>
               <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-                Six commitments we make to every client — and keep.
+                Six commitments we make to every client, and keep.
               </p>
             </div>
           </Reveal>
@@ -1112,7 +1112,7 @@ export default function Home() {
                     <span className="text-[#00A99D] text-xs font-bold uppercase tracking-widest">01</span>
                   </div>
                   <h3 className="text-2xl font-black text-white mb-3">Senior-only talent</h3>
-                  <p className="text-white/40 text-sm leading-relaxed max-w-md">Every engineer we assign is senior level. No bait-and-switch, no juniors learning on your budget. You asked for senior — you get senior, every single time.</p>
+                  <p className="text-white/40 text-sm leading-relaxed max-w-md">Every engineer we assign is senior level. No bait-and-switch, no juniors learning on your budget. You asked for senior, you get senior, every single time.</p>
                 </div>
                 {/* Floating badge */}
                 <div className="absolute bottom-8 right-8 bg-[#00A99D]/10 border border-[#00A99D]/20 rounded-xl px-4 py-2 text-right">
@@ -1145,7 +1145,7 @@ export default function Home() {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="white" strokeWidth="2" strokeLinecap="round"/><path d="M22 4L12 14.01l-3-3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </div>
                 <h3 className="text-lg font-black text-[#1B3C6E] mb-2">Outcome-driven delivery</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">We measure success by revenue, growth, and time-to-market — not story points or hours billed.</p>
+                <p className="text-gray-400 text-sm leading-relaxed">We measure success by revenue, growth, and time-to-market, not story points or hours billed.</p>
               </div>
             </Reveal>
 
@@ -1210,7 +1210,7 @@ export default function Home() {
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                     </div>
                     <h3 className="text-xl font-black text-white mb-2">Dedicated project manager</h3>
-                    <p className="text-white/40 text-sm leading-relaxed max-w-sm">A dedicated PM on every project — your single point of contact for communication, planning, and escalations.</p>
+                    <p className="text-white/40 text-sm leading-relaxed max-w-sm">A dedicated PM on every project, your single point of contact for communication, planning, and escalations.</p>
                   </div>
                   <a href="#contact" className="flex-shrink-0 btn-primary">
                     Work With Us <ArrowRight size={14} />
@@ -1405,7 +1405,7 @@ export default function Home() {
             <Reveal delay={0.3}>
               <div className="space-y-4">
                 {[
-                  { title: "Direct line to engineers", desc: "No sales layers — you speak to the people building your product." },
+                  { title: "Direct line to engineers", desc: "No sales layers, you speak to the people building your product." },
                   { title: "No commitment required", desc: "Start with a free scoping call. Engage only when it feels right." },
                   { title: "Response within 24 hours", desc: "We follow up fast. Your timeline matters to us." },
                 ].map((item, i) => (

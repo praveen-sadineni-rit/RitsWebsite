@@ -19,7 +19,7 @@ export default function RetailPage() {
             <span style={{ color: "#00A99D" }}>Reimagined.</span>
           </h1>
           <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-8">
-            We build unified commerce platforms — POS, inventory, loyalty, and omnichannel experiences that keep customers coming back.
+            We build unified commerce platforms. POS, inventory, loyalty, and omnichannel experiences that keep customers coming back.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             {["Omnichannel Ready", "Real-Time Inventory", "AI-Powered Personalization"].map((pill) => (
@@ -66,7 +66,7 @@ export default function RetailPage() {
             {[
               {
                 title: "POS & Checkout Systems",
-                desc: "Fast, reliable point-of-sale solutions that work online and offline — built for high-volume retail environments.",
+                desc: "Fast, reliable point-of-sale solutions that work online and offline, built for high-volume retail environments.",
                 color: "#60a5fa",
                 bg: "#eff6ff",
                 icon: (
@@ -162,7 +162,7 @@ export default function RetailPage() {
               { num: "01", title: "Retail Audit & Discovery", desc: "We map your current systems, gaps, and customer journeys to define the right tech stack." },
               { num: "02", title: "Platform Design & Architecture", desc: "Our architects design a scalable, composable commerce platform tailored to your brand." },
               { num: "03", title: "Build & System Integration", desc: "We build and integrate POS, inventory, loyalty, and analytics into a unified platform." },
-              { num: "04", title: "Launch & Continuous Improvement", desc: "We go live fast, then iterate — using real data to optimize performance and experience." },
+              { num: "04", title: "Launch & Continuous Improvement", desc: "We go live fast, then iterate, using real data to optimize performance and experience." },
             ].map((step) => (
               <div key={step.num} className="p-6 rounded-2xl bg-white/5 border border-white/10">
                 <p className="text-[#00A99D] font-black text-3xl mb-3">{step.num}</p>

@@ -60,7 +60,7 @@ const pillars = [
   },
   {
     title: "Legacy System Migration",
-    desc: "Modernize monolithic applications and outdated systems to cloud-native, microservices architectures — with zero data loss.",
+    desc: "Modernize monolithic applications and outdated systems to cloud-native, microservices architectures, with zero data loss.",
     icon: "M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z",
     color: "#a78bfa",
   },
@@ -72,13 +72,13 @@ const pillars = [
   },
   {
     title: "AI-Powered Automation",
-    desc: "Embed AI and machine learning into your workflows — from intelligent document processing to predictive operations.",
+    desc: "Embed AI and machine learning into your workflows, from intelligent document processing to predictive operations.",
     icon: "M13 10V3L4 14h7v7l9-11h-7z",
     color: "#00A99D",
   },
   {
     title: "Customer Experience",
-    desc: "Redesign digital touchpoints — web, mobile, and portal — to deliver seamless, personalized experiences at scale.",
+    desc: "Redesign digital touchpoints, web, mobile, and portal, to deliver seamless, personalized experiences at scale.",
     icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z",
     color: "#fb923c",
   },
@@ -100,9 +100,9 @@ const outcomes = [
 ];
 
 const approach = [
-  { num: "01", title: "Discovery & Assessment", desc: "We map your current state — systems, processes, pain points, and strategic goals. No assumptions." },
+  { num: "01", title: "Discovery & Assessment", desc: "We map your current state, systems, processes, pain points, and strategic goals. No assumptions." },
   { num: "02", title: "Transformation Roadmap", desc: "A prioritized, phased roadmap with clear ROI milestones. You see the full plan before a single line of code is written." },
-  { num: "03", title: "Agile Execution", desc: "Cross-functional squads deliver transformation in sprints — iterating quickly, validating constantly." },
+  { num: "03", title: "Agile Execution", desc: "Cross-functional squads deliver transformation in sprints, iterating quickly, validating constantly." },
   { num: "04", title: "Measure & Scale", desc: "We instrument outcomes from day one so you can see the impact and scale what's working." },
 ];
 
@@ -121,7 +121,7 @@ export default function DigitalTransformationPage() {
               <span style={{ color: "#00A99D" }}>to leading edge.</span>
             </h1>
             <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-lg">
-              We don&apos;t just digitize existing processes — we reimagine how your business operates and competes in a digital-first world.
+              We don&apos;t just digitize existing processes, we reimagine how your business operates and competes in a digital-first world.
             </p>
             <div className="flex flex-wrap gap-3 mb-8">
               {["Strategy + Execution", "Measurable ROI", "Change Management"].map(t => (
@@ -159,7 +159,7 @@ export default function DigitalTransformationPage() {
           <div className="text-center mb-14">
             <p className="section-eyebrow">What We Transform</p>
             <h2 className="text-3xl font-black text-[#0f172a]">Every layer of your business</h2>
-            <p className="text-gray-500 mt-3 max-w-xl mx-auto">Digital transformation isn&apos;t just software — it&apos;s people, process, and technology working together.</p>
+            <p className="text-gray-500 mt-3 max-w-xl mx-auto">Digital transformation isn&apos;t just software, it&apos;s people, process, and technology working together.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {pillars.map(p => (

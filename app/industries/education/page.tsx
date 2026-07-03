@@ -60,13 +60,13 @@ export default function EducationPage() {
           <p className="section-eyebrow">Solutions</p>
           <h2 className="font-black text-3xl text-[#0f2447] mb-4">Built for modern education</h2>
           <p className="text-gray-500 text-lg mb-12 max-w-2xl">
-            Purpose-built EdTech solutions that meet students, educators, and administrators where they are — and take them further.
+            Purpose-built EdTech solutions that meet students, educators, and administrators where they are, and take them further.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 title: "LMS Development",
-                desc: "Custom learning management systems built on open standards — featuring course authoring, progress tracking, and seamless third-party integrations.",
+                desc: "Custom learning management systems built on open standards, featuring course authoring, progress tracking, and seamless third-party integrations.",
                 color: "#60a5fa",
                 path: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
               },
@@ -84,7 +84,7 @@ export default function EducationPage() {
               },
               {
                 title: "Learning Analytics & Reporting",
-                desc: "Real-time dashboards that surface at-risk students, course completion trends, and learning outcome metrics — enabling data-driven academic decisions.",
+                desc: "Real-time dashboards that surface at-risk students, course completion trends, and learning outcome metrics, enabling data-driven academic decisions.",
                 color: "#34d399",
                 path: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
               },
@@ -136,7 +136,7 @@ export default function EducationPage() {
               {
                 num: "02",
                 title: "UX Design & Architecture",
-                desc: "Student-centered UX design and scalable cloud architecture form the foundation — ensuring the platform is intuitive for learners of all ages and abilities.",
+                desc: "Student-centered UX design and scalable cloud architecture form the foundation, ensuring the platform is intuitive for learners of all ages and abilities.",
               },
               {
                 num: "03",

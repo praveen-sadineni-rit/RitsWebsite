@@ -30,7 +30,7 @@ const jobs = [
     location: "Remote",
     type: "Full-time",
     description:
-      "Join us as an AI/ML Engineer to build intelligent features into our products — from LLM integrations and RAG pipelines to custom model fine-tuning and inference optimization. You'll work on real problems with real data and have the freedom to choose the right tools. Python, PyTorch or TensorFlow, and experience deploying models to production are required.",
+      "Join us as an AI/ML Engineer to build intelligent features into our products, from LLM integrations and RAG pipelines to custom model fine-tuning and inference optimization. You'll work on real problems with real data and have the freedom to choose the right tools. Python, PyTorch or TensorFlow, and experience deploying models to production are required.",
   },
   {
     id: 4,
@@ -85,7 +85,7 @@ const perks = [
   { label: "Remote Work", desc: "Work from anywhere in the world" },
   { label: "Learning Budget", desc: "$2,000/year for courses & conferences" },
   { label: "Flexible Hours", desc: "Async-first, no rigid 9-to-5" },
-  { label: "Annual Team Retreat", desc: "We all meet up once a year — in person" },
+  { label: "Annual Team Retreat", desc: "We all meet up once a year, in person" },
   { label: "Equipment Stipend", desc: "Best-in-class gear, fully covered" },
   { label: "90-Day Onboarding", desc: "Structured ramp so you hit the ground running" },
 ];
@@ -193,7 +193,7 @@ export default function CareersPage() {
             Why work with us?
           </h2>
           <p className="text-gray-500 text-center max-w-xl mx-auto mb-14">
-            We&apos;ve built a culture where talented people do their best work —
+            We&apos;ve built a culture where talented people do their best work,
             without the noise.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -329,7 +329,7 @@ export default function CareersPage() {
             {[
               {
                 title: "We ship real things.",
-                desc: "Our engineers have autonomy and accountability. There are no endless planning cycles — we scope it, build it, ship it, and learn from it.",
+                desc: "Our engineers have autonomy and accountability. There are no endless planning cycles, we scope it, build it, ship it, and learn from it.",
                 gradient: "from-[#0f2447] to-[#1B3C6E]",
               },
               {

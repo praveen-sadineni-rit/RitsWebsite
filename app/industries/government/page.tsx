@@ -19,7 +19,7 @@ export default function GovPage() {
             <span style={{ color: "#00A99D" }}>Real Results.</span>
           </h1>
           <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-lg">
-            We build secure, scalable civic technology — modernizing government services, citizen portals, and data infrastructure.
+            We build secure, scalable civic technology, modernizing government services, citizen portals, and data infrastructure.
           </p>
           <div className="flex flex-wrap gap-3 mb-10">
             {["FedRAMP Aligned", "ADA Compliant", "SOC 2 Ready"].map((pill) => (
@@ -60,13 +60,13 @@ export default function GovPage() {
           <p className="section-eyebrow">Solutions</p>
           <h2 className="font-black text-3xl text-[#0f2447] mb-4">Built for the public sector</h2>
           <p className="text-gray-500 text-lg mb-12 max-w-2xl">
-            End-to-end digital solutions designed to meet the rigorous demands of government — from security and compliance to usability and scale.
+            End-to-end digital solutions designed to meet the rigorous demands of government, from security and compliance to usability and scale.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 title: "Citizen Self-Service Portals",
-                desc: "Intuitive web and mobile portals that let citizens access government services 24/7 — reducing call center volume and wait times.",
+                desc: "Intuitive web and mobile portals that let citizens access government services 24/7, reducing call center volume and wait times.",
                 color: "#60a5fa",
                 path: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z",
               },
@@ -136,7 +136,7 @@ export default function GovPage() {
               {
                 num: "02",
                 title: "Compliance-First Architecture",
-                desc: "Security and compliance are designed in from day one — FedRAMP, FISMA, ADA, and SOC 2 requirements shape every architectural decision.",
+                desc: "Security and compliance are designed in from day one. FedRAMP, FISMA, ADA, and SOC 2 requirements shape every architectural decision.",
               },
               {
                 num: "03",

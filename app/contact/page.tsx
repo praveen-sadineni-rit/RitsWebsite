@@ -71,7 +71,7 @@ export default function ContactPage() {
             <span style={{ color: "#00A99D" }}>you&apos;re building.</span>
           </h1>
           <p style={{ fontSize: 17, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, maxWidth: 520, margin: "0 auto 40px" }}>
-            Fill out the form and someone from our team will reach out within 24 hours &mdash; usually much sooner.
+            Fill out the form and someone from our team will reach out within 24 hours, usually much sooner.
           </p>
 
           {/* Colorful chips with icons */}

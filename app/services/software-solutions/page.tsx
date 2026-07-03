@@ -82,7 +82,7 @@ const processSteps = [
   {
     weeks: "Week 3–8", num: "02",
     title: "Core Development",
-    description: "Iterative sprints with weekly demos. You see working software early — not a black box that opens at the end.",
+    description: "Iterative sprints with weekly demos. You see working software early, not a black box that opens at the end.",
     highlights: ["Weekly demos", "Feature flags", "Code reviews", "Staging deployments"],
     accent: "#00A99D",
     iconPath: "M16 18L22 12L16 6M8 6L2 12L8 18",
@@ -188,7 +188,7 @@ const whyUs = [
   {
     title: "Clean, documented code",
     description:
-      "You own your codebase. We write it like it will be maintained by a team you hire next year — because it probably will be.",
+      "You own your codebase. We write it like it will be maintained by a team you hire next year, because it probably will be.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
@@ -213,7 +213,7 @@ const whyUs = [
   {
     title: "Performance-first architecture",
     description:
-      "We design for load from day one — caching strategies, query optimization, and horizontal scaling baked in from the start.",
+      "We design for load from day one, caching strategies, query optimization, and horizontal scaling baked in from the start.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -420,7 +420,7 @@ export default function SoftwareSolutionsPage() {
                   <span className="text-[#00A99D]">And keeps running.</span>
                 </h1>
                 <p className="text-xl text-blue-100/80 leading-relaxed mb-10">
-                  We build enterprise-grade web apps, mobile products, and APIs —
+                  We build enterprise-grade web apps, mobile products, and APIs,
                   architected to last and designed to scale.
                 </p>
 
@@ -593,7 +593,7 @@ export default function SoftwareSolutionsPage() {
                   Our tech <span style={{ color: "#00A99D" }}>stack.</span>
                 </h2>
                 <p className="text-white/40 text-sm max-w-sm lg:text-right leading-relaxed">
-                  We build high-performance, scalable software using a modern, battle-tested technology stack — engineered for speed, reliability, and long-term growth.
+                  We build high-performance, scalable software using a modern, battle-tested technology stack, engineered for speed, reliability, and long-term growth.
                 </p>
               </div>
             </div>
@@ -657,7 +657,7 @@ export default function SoftwareSolutionsPage() {
                 </h2>
                 <p className="text-gray-500 text-lg leading-relaxed mb-8">
                   We are not a body-shop. We are an engineering partner that takes ownership of
-                  outcomes — not just outputs. Here is what that looks like in practice.
+                  outcomes, not just outputs. Here is what that looks like in practice.
                 </p>
                 <a
                   href="/contact"
@@ -697,7 +697,7 @@ export default function SoftwareSolutionsPage() {
               Ready to build your next product?
             </h2>
             <p className="text-blue-100/70 text-lg mb-10 leading-relaxed">
-              Tell us what you are building. We will scope it, plan it, and ship it — on time and on budget.
+              Tell us what you are building. We will scope it, plan it, and ship it, on time and on budget.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

@@ -121,7 +121,7 @@ const approachSteps = [
     step: "02",
     title: "Architecture & Security Design",
     description:
-      "Our architects design bank-grade system blueprints — zero-trust networks, encrypted data flows, and PCI-DSS aligned infrastructure.",
+      "Our architects design bank-grade system blueprints, zero-trust networks, encrypted data flows, and PCI-DSS aligned infrastructure.",
   },
   {
     step: "03",
@@ -157,7 +157,7 @@ export default function FintechPage() {
             Engineered for Trust.
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
-            We build secure, compliant, high-performance financial platforms — from payment APIs to wealth management dashboards.
+            We build secure, compliant, high-performance financial platforms, from payment APIs to wealth management dashboards.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             {["PCI-DSS Compliant", "Real-Time Processing", "Bank-Grade Security"].map((pill) => (
@@ -212,7 +212,7 @@ export default function FintechPage() {
               End-to-End FinTech Solutions
             </h2>
             <p className="text-gray-500 mt-4 max-w-xl mx-auto">
-              From core banking to open finance — we design and build every layer of your financial technology stack.
+              From core banking to open finance, we design and build every layer of your financial technology stack.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

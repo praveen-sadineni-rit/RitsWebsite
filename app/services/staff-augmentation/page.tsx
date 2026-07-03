@@ -102,7 +102,7 @@ const MODELS = [
     name: "Part-Time",
     hours: "20 hrs/week",
     min: "Project basis",
-    description: "Targeted expertise on a specific problem — a migration, a feature spike, a security audit — without the full-time commitment.",
+    description: "Targeted expertise on a specific problem, a migration, a feature spike, a security audit, without the full-time commitment.",
     highlight: false,
   },
   {
@@ -117,7 +117,7 @@ const MODELS = [
 const TIMELINE = [
   { day: "Day 1", action: "Receive requirements", note: "Role brief, tech stack, culture context" },
   { day: "Day 2", action: "Shortlist submitted", note: "2-3 fully vetted candidates with profiles" },
-  { day: "Day 3", action: "Interviews", note: "You choose who to meet — we handle scheduling" },
+  { day: "Day 3", action: "Interviews", note: "You choose who to meet, we handle scheduling" },
   { day: "Day 4", action: "Offer & acceptance", note: "Contract signed, paperwork completed" },
   { day: "Day 5", action: "Onboarded", note: "Engineer in your tools, first standup done" },
 ];
@@ -441,7 +441,7 @@ export default function StaffAugmentationPage() {
                 </h2>
               </div>
               <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.85rem", maxWidth: 300, lineHeight: 1.6, margin: 0 }}>
-                Not seeing your stack? We place across <strong style={{ color: "rgba(255,255,255,0.7)" }}>every technology</strong> — if the role exists in tech, we can fill it.
+                Not seeing your stack? We place across <strong style={{ color: "rgba(255,255,255,0.7)" }}>every technology</strong>, if the role exists in tech, we can fill it.
               </p>
             </div>
 

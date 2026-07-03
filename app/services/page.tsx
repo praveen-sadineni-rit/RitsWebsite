@@ -187,7 +187,7 @@ const processSteps = [
   {
     number: "02",
     title: "Team Assembly",
-    description: "We match the right talent to your project — engineers, designers, architects, and PMs — based on your stack, timeline, and culture.",
+    description: "We match the right talent to your project, engineers, designers, architects, and PMs, based on your stack, timeline, and culture.",
     timeline: "Week 2–3",
   },
   {
@@ -306,7 +306,7 @@ export default function ServicesPage() {
                   maxWidth: 500,
                 }}
               >
-                From a single engineer to a full product team — we have the capability, the talent, and the commitment to deliver.
+                From a single engineer to a full product team, we have the capability, the talent, and the commitment to deliver.
               </p>
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
                 <Link
@@ -678,7 +678,7 @@ export default function ServicesPage() {
                 Technologies We Work With
               </h2>
               <p style={{ color: "#64748b", fontSize: "1.05rem", maxWidth: 520, margin: "0 auto" }}>
-                We pick the right tool for each challenge — not the trendy one.
+                We pick the right tool for each challenge, not the trendy one.
               </p>
             </div>
 

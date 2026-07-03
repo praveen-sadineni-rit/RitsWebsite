@@ -125,7 +125,7 @@ const approachSteps = [
     step: "03",
     title: "Build & Integration",
     description:
-      "Our engineers build and test every integration — EHR APIs, payer systems, medical devices — with clinical validation at each milestone.",
+      "Our engineers build and test every integration. EHR APIs, payer systems, medical devices, with clinical validation at each milestone.",
   },
   {
     step: "04",
@@ -155,7 +155,7 @@ export default function HealthcarePage() {
             Systems that Scale.
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
-            We build HIPAA-compliant healthcare platforms that connect patients, providers, and data — securely and reliably.
+            We build HIPAA-compliant healthcare platforms that connect patients, providers, and data, securely and reliably.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             {["HIPAA Compliant", "HL7 & FHIR Ready", "EHR Integrated"].map((pill) => (
@@ -210,7 +210,7 @@ export default function HealthcarePage() {
               End-to-End Healthcare Solutions
             </h2>
             <p className="text-gray-500 mt-4 max-w-xl mx-auto">
-              From EHR integrations to patient engagement — we build every layer of your digital health platform with compliance built in.
+              From EHR integrations to patient engagement, we build every layer of your digital health platform with compliance built in.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

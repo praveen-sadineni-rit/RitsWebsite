@@ -33,7 +33,7 @@ const pillars = [
     ),
     title: "People First",
     description:
-      "We invest in the humans behind the work — our consultants, our clients, and the teams we build together.",
+      "We invest in the humans behind the work, our consultants, our clients, and the teams we build together.",
   },
   {
     icon: (
@@ -65,7 +65,7 @@ const timeline = [
     year: "2018",
     title: "Launched AI & ML Practice",
     description:
-      "Early movers in enterprise AI — we built our artificial intelligence and machine learning practice before it became mainstream.",
+      "Early movers in enterprise AI, we built our artificial intelligence and machine learning practice before it became mainstream.",
   },
   {
     year: "2020",
@@ -83,7 +83,7 @@ const timeline = [
     year: "2024",
     title: "Product Development Studio Launched",
     description:
-      "We launched our dedicated product studio — helping clients go from idea to production-ready software with speed and precision.",
+      "We launched our dedicated product studio, helping clients go from idea to production-ready software with speed and precision.",
   },
 ];
 
@@ -98,7 +98,7 @@ const values = [
   },
   {
     title: "Partnership",
-    description: "We succeed when our clients succeed. That is not a tagline — it is how we operate.",
+    description: "We succeed when our clients succeed. That is not a tagline, it is how we operate.",
   },
   {
     title: "Innovation",
@@ -340,7 +340,7 @@ export default function AboutPage() {
               </h1>
               <p style={{ color: "#475569", fontSize: "1.1rem", lineHeight: 1.8, marginBottom: "2rem" }}>
                 Resource Innovative Technologies was founded on the conviction that the right talent, matched thoughtfully,
-                can transform any organization. Over a decade later, that belief drives everything we do — from staffing
+                can transform any organization. Over a decade later, that belief drives everything we do, from staffing
                 senior engineers to building full-scale software products for enterprises worldwide.
               </p>
 
@@ -434,7 +434,7 @@ export default function AboutPage() {
               fontStyle: "italic",
             }}
           >
-            &ldquo;Our mission is to connect the right talent with the right opportunity &mdash; and build technology that
+            &ldquo;Our mission is to connect the right talent with the right opportunity, and build technology that
             genuinely moves businesses forward.&rdquo;
           </p>
 
@@ -509,7 +509,7 @@ export default function AboutPage() {
             <div style={{ gridColumn: "span 4", background: "white", border: "1px solid #e2e8f0", borderRadius: 20, padding: 28, boxShadow: "0 4px 20px rgba(0,0,0,0.05)" }}>
               <div style={{ fontSize: 36, marginBottom: 12 }}>🧠</div>
               <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#0f2447", marginBottom: 8 }}>AI-First Since 2018</h3>
-              <p style={{ fontSize: "0.85rem", color: "#64748b", lineHeight: 1.6, margin: 0 }}>We launched our AI & ML practice years before it became mainstream — not chasing trends, setting them.</p>
+              <p style={{ fontSize: "0.85rem", color: "#64748b", lineHeight: 1.6, margin: 0 }}>We launched our AI & ML practice years before it became mainstream, not chasing trends, setting them.</p>
             </div>
 
             {/* Clients counter */}
@@ -526,7 +526,7 @@ export default function AboutPage() {
               <div style={{ fontSize: 48, flexShrink: 0 }}>🏗️</div>
               <div>
                 <h3 style={{ fontSize: "1.15rem", fontWeight: 800, color: "#0f2447", marginBottom: 8 }}>End-to-End: Idea → Production</h3>
-                <p style={{ fontSize: "0.85rem", color: "#64748b", lineHeight: 1.6, margin: 0 }}>We cover the full cycle — staffing, software development, AI integration, DevOps, and post-launch support. One partner for everything tech.</p>
+                <p style={{ fontSize: "0.85rem", color: "#64748b", lineHeight: 1.6, margin: 0 }}>We cover the full cycle, staffing, software development, AI integration, DevOps, and post-launch support. One partner for everything tech.</p>
               </div>
             </div>
 
@@ -602,7 +602,7 @@ export default function AboutPage() {
               },
               {
                 title: "Partnership",
-                desc: "We succeed when our clients succeed. That is not a tagline — it is how we operate.",
+                desc: "We succeed when our clients succeed. That is not a tagline, it is how we operate.",
                 color: "#a78bfa",
                 glow: "rgba(167,139,250,0.15)",
                 svg: (
@@ -714,7 +714,9 @@ export default function AboutPage() {
               <div style={{ display:"flex", gap:10, alignItems:"flex-start", marginBottom:16 }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink:0, marginTop:2 }}><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="rgba(0,169,157,0.15)" stroke="#00A99D" strokeWidth="2"/><circle cx="12" cy="9" r="2.5" fill="#00A99D"/></svg>
                 <address style={{ fontStyle:"normal", color:"#475569", fontSize:14, lineHeight:1.7 }}>
-                  Hyderabad, Telangana<br/>India — 500 081
+                  Unit No 304, Section A, Third Floor, SBR Pearl<br/>
+                  HUDA Techno Enclave-III, Opp. Raheja Mind Space<br/>
+                  Madhapur, Hyderabad, 500081
                 </address>
               </div>
               <div style={{ display:"flex", flexWrap:"wrap", gap:8 }}>

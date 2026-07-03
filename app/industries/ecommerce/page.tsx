@@ -7,7 +7,7 @@ const solutions = [
   {
     title: "Custom Storefront Development",
     description:
-      "Performance-first storefronts built with Next.js, Remix, or your framework of choice — optimized for Core Web Vitals and conversion.",
+      "Performance-first storefronts built with Next.js, Remix, or your framework of choice, optimized for Core Web Vitals and conversion.",
     color: "#60a5fa",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
@@ -209,7 +209,7 @@ export default function EcommercePage() {
               End-to-End Commerce Solutions
             </h2>
             <p className="text-gray-500 mt-4 max-w-xl mx-auto">
-              From storefront to fulfillment — we build every layer of your commerce stack to convert, retain, and scale.
+              From storefront to fulfillment, we build every layer of your commerce stack to convert, retain, and scale.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

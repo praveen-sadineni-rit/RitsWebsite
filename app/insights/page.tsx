@@ -29,6 +29,18 @@ const TAG_MAP: Record<string, string[]> = {
   Industry: ["enterprise", "startup", "funding", "acquisition", "regulation", "policy", "job"],
 };
 
+// Reject titles containing non-Latin scripts (CJK, Cyrillic, Arabic, Hebrew, Devanagari, etc.)
+const NON_LATIN_SCRIPT = /[぀-ヿ㐀-鿿가-힯Ѐ-ӿ؀-ۿ֐-׿ऀ-ॿ฀-๿]/;
+
+function isEnglish(title: string): boolean {
+  if (NON_LATIN_SCRIPT.test(title)) return false;
+  // Require the title to be mostly ASCII letters/punctuation (allow accented Latin chars)
+  const letters = title.replace(/[^a-zA-ZÀ-ɏ]/g, "");
+  const total = title.replace(/\s/g, "");
+  if (total.length === 0) return false;
+  return letters.length / total.length > 0.6;
+}
+
 function matchesFilter(article: Article, filter: string): boolean {
   if (filter === "All") return true;
   const keywords = TAG_MAP[filter] ?? [];
@@ -162,9 +174,12 @@ export default function InsightsPage() {
         }
       }
 
+      // Keep English-only titles
+      const englishOnly = results.filter(a => isEnglish(a.title));
+
       // Sort by date descending
-      results.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-      setArticles(results);
+      englishOnly.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+      setArticles(englishOnly);
       setLastUpdated(new Date());
     } catch {
       setError("Could not load live feed. Check your connection.");
@@ -195,7 +210,7 @@ export default function InsightsPage() {
                 <span style={{ color: "#00A99D" }}>right now.</span>
               </h1>
               <p className="text-white/50 mt-3 text-sm max-w-lg">
-                Live articles from Hacker News and Dev.to — AI, ML, LLMs, and everything in between. Updated in real time.
+                Live articles from Hacker News and Dev.to. AI, ML, LLMs, and everything in between. Updated in real time.
               </p>
             </div>
             <div className="flex items-center gap-4">
