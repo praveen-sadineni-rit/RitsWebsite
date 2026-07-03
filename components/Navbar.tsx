@@ -17,6 +17,7 @@ const SERVICE_COLUMNS = [
     links: [
       { label: "Staffing Solutions", href: "/services/staff-augmentation" },
       { label: "Staff Augmentation", href: "/services/staff-augmentation" },
+      { label: "Non-IT Staffing", href: "/services/non-it-staffing" },
       { label: "Recruitment Process Outsourcing", href: "/services/staff-augmentation" },
       { label: "Contract-to-Hire", href: "/services/staff-augmentation" },
     ],
@@ -29,8 +30,8 @@ const SERVICE_COLUMNS = [
       { label: "AI & Machine Learning", href: "/services/ai-ml" },
       { label: "Cloud & DevOps", href: "/services/cloud-devops" },
       { label: "Product Engineering", href: "/services/product-development" },
-      { label: "Backend & API Engineering", href: "/services/software-solutions" },
-      { label: "Mobile Development", href: "/services/software-solutions" },
+      { label: "Backend & API Engineering", href: "/services/software-solutions#backend" },
+      { label: "Mobile Development", href: "/services/software-solutions#mobile" },
     ],
   },
   {
