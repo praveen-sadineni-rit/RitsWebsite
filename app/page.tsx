@@ -753,13 +753,13 @@ function ServiceShowcase() {
 function LogoItem({ client }: { client: { name: string; img: string; seal?: boolean } }) {
   const [imgError, setImgError] = useState(false);
   return (
-    <div className="flex items-center justify-center" style={{ height: client.seal ? 64 : 40 }}>
+    <div className="flex items-center justify-center" style={{ height: client.seal ? 140 : 88 }}>
       {!imgError ? (
         <img
           src={client.img}
           alt={client.name}
           className="object-contain"
-          style={{ height: client.seal ? 64 : 36, width: client.seal ? 64 : "auto", maxWidth: client.seal ? 64 : 120 }}
+          style={{ height: client.seal ? 140 : 78, width: client.seal ? 140 : "auto", maxWidth: client.seal ? 140 : 240 }}
           onError={() => setImgError(true)}
         />
       ) : (
@@ -771,18 +771,18 @@ function LogoItem({ client }: { client: { name: string; img: string; seal?: bool
 
 /* ── Client Logos ── */
 const CLIENT_LOGOS = [
-  { name: "IBM",           img: "/logos/IBM.png",                              seal: false },
-  { name: "Kyndryl",      img: "/logos/Kyndryl.png",                          seal: false },
-  { name: "Thermo Fisher", img: "/logos/Thermo%20Fisher.png",                 seal: false },
-  { name: "Marriott",     img: "/logos/Marriot.png",                          seal: false },
-  { name: "Whataburger",  img: "/logos/whataburger.png",                      seal: false },
-  { name: "Virginia",     img: "/logos/File_Seal%20of%20Virgini.png",         seal: true  },
-  { name: "Georgia",      img: "/logos/GEORGIA.png",                          seal: true  },
-  { name: "Idaho",        img: "/logos/Idaho%20State%20Seal.png",             seal: true  },
-  { name: "Mississippi",  img: "/logos/Seal%20of%20Mississippi%20.png",       seal: true  },
-  { name: "Florida",      img: "/logos/The%20Official%20State%20Florida.png", seal: true  },
-  { name: "Arkansas",     img: "/logos/What%20is%20the%20Arkansas.png",       seal: true  },
-  { name: "State Seal",   img: "/logos/The%20Official%20State%20S.png",       seal: true  },
+  { name: "IBM",           img: "/logos/ibm.png",           seal: false },
+  { name: "Kyndryl",      img: "/logos/kyndryl.png",        seal: false },
+  { name: "Thermo Fisher", img: "/logos/thermo-fisher.png", seal: false },
+  { name: "Marriott",     img: "/logos/marriott.png",       seal: false },
+  { name: "Whataburger",  img: "/logos/whataburger.png",    seal: false },
+  { name: "Virginia",     img: "/logos/virginia.png",       seal: true  },
+  { name: "Georgia",      img: "/logos/georgia.png",        seal: true  },
+  { name: "Idaho",        img: "/logos/idaho.png",          seal: true  },
+  { name: "Mississippi",  img: "/logos/mississippi.png",    seal: true  },
+  { name: "Florida",      img: "/logos/florida.png",        seal: true  },
+  { name: "Arkansas",     img: "/logos/arkansas.png",       seal: true  },
+  { name: "New Mexico",   img: "/logos/new-mexico.png",     seal: true  },
 ];
 
 /* ═══════════════════════════════════════════════════════ */
