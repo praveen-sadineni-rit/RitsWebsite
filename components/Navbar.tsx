@@ -16,10 +16,9 @@ const SERVICE_COLUMNS = [
     accent: "#00A99D",
     links: [
       { label: "Staffing Solutions", href: "/services/staff-augmentation" },
-      { label: "Staff Augmentation", href: "/services/staff-augmentation" },
       { label: "Non-IT Staffing", href: "/services/non-it-staffing" },
-      { label: "Recruitment Process Outsourcing", href: "/services/staff-augmentation" },
-      { label: "Contract-to-Hire", href: "/services/staff-augmentation" },
+      { label: "Recruitment Process Outsourcing", href: "/services/staff-augmentation#how-we-vet" },
+      { label: "Contract-to-Hire", href: "/services/staff-augmentation#contract-to-hire" },
     ],
   },
   {

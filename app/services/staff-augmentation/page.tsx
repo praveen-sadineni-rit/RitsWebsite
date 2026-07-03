@@ -112,6 +112,14 @@ const MODELS = [
     description: "Scale a pod of 3-10 vetted engineers around your core team. Same vetting process, coordinated onboarding, single point of contact.",
     highlight: false,
   },
+  {
+    name: "Contract-to-Hire",
+    hours: "Full-time 40 hrs/week",
+    min: "Convert anytime",
+    description: "Evaluate a consultant on real work before committing to a full-time offer. If it's a fit, we convert the engagement, no re-hiring process, no lost momentum.",
+    highlight: false,
+    anchorId: "contract-to-hire",
+  },
 ];
 
 const TIMELINE = [
@@ -470,7 +478,7 @@ export default function StaffAugmentationPage() {
             </div>
             <div ref={(el) => addReveal(el, 6)} className="reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
               {MODELS.map((model) => (
-                <div key={model.name} style={{ borderRadius: "10px", padding: "36px 32px", background: model.highlight ? "linear-gradient(135deg, #0f2447 0%, #1B3C6E 100%)" : "#f8f9fa", border: model.highlight ? "none" : "1px solid #dce4f0", position: "relative" }}>
+                <div id={model.anchorId} key={model.name} className="scroll-mt-28" style={{ borderRadius: "10px", padding: "36px 32px", background: model.highlight ? "linear-gradient(135deg, #0f2447 0%, #1B3C6E 100%)" : "#f8f9fa", border: model.highlight ? "none" : "1px solid #dce4f0", position: "relative" }}>
                   {model.highlight && (
                     <span style={{ position: "absolute", top: "20px", right: "20px", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", padding: "4px 10px", borderRadius: "100px", background: "#00A99D", color: "#ffffff" }}>Most popular</span>
                   )}
