@@ -1,6 +1,92 @@
 "use client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useState, useEffect } from "react";
+
+const FLOATING_SUBJECTS = [
+  { emoji: "📐", top: "6%", left: "8%", color: "#60a5fa", delay: "0s", duration: "3.2s" },
+  { emoji: "🔬", top: "10%", left: "78%", color: "#34d399", delay: "0.4s", duration: "3.6s" },
+  { emoji: "🌍", top: "68%", left: "4%", color: "#fb923c", delay: "0.8s", duration: "3.4s" },
+  { emoji: "💡", top: "72%", left: "82%", color: "#fbbf24", delay: "1.1s", duration: "3s" },
+  { emoji: "🎨", top: "38%", left: "86%", color: "#f472b6", delay: "0.6s", duration: "3.8s" },
+  { emoji: "📊", top: "42%", left: "2%", color: "#a78bfa", delay: "1.4s", duration: "3.3s" },
+];
+
+const SPARKLES = [
+  { top: "16%", left: "34%", delay: "0s" },
+  { top: "24%", left: "62%", delay: "0.7s" },
+  { top: "60%", left: "28%", delay: "1.3s" },
+  { top: "55%", left: "68%", delay: "0.4s" },
+  { top: "8%", left: "50%", delay: "1s" },
+];
+
+function LearningVisual() {
+  return (
+    <div className="relative w-full max-w-md mx-auto" style={{ height: 380 }}>
+      <style>{`
+        @keyframes eduFloat { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-14px) rotate(-6deg); } }
+        .edu-float { animation: eduFloat 3s ease-in-out infinite; }
+        @keyframes eduTwinkle { 0%,100% { opacity: 0.15; transform: scale(0.7); } 50% { opacity: 1; transform: scale(1.15); } }
+        .edu-twinkle { animation: eduTwinkle 2.2s ease-in-out infinite; }
+        @keyframes eduGlowPulse { 0%,100% { opacity: 0.5; transform: scale(1); } 50% { opacity: 0.8; transform: scale(1.08); } }
+        .edu-glow { animation: eduGlowPulse 3.5s ease-in-out infinite; }
+        @keyframes eduCapBob { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-6px) rotate(4deg); } }
+        .edu-cap { animation: eduCapBob 2.6s ease-in-out infinite; transform-origin: center; }
+        @keyframes eduRayspin { to { transform: rotate(360deg); } }
+        .edu-rays { animation: eduRayspin 24s linear infinite; transform-origin: center; }
+      `}</style>
+
+      {/* Warm glow backdrop */}
+      <div className="edu-glow absolute inset-0 rounded-full" style={{ background: "radial-gradient(circle, rgba(251,191,36,0.18) 0%, rgba(244,114,182,0.1) 45%, transparent 70%)" }} />
+
+      {/* Twinkling sparkles */}
+      {SPARKLES.map((s, i) => (
+        <span key={i} className="edu-twinkle absolute text-lg" style={{ top: s.top, left: s.left, animationDelay: s.delay }}>✨</span>
+      ))}
+
+      {/* Floating subject bubbles */}
+      {FLOATING_SUBJECTS.map((s, i) => (
+        <div key={i} className="edu-float absolute flex items-center justify-center rounded-2xl shadow-lg"
+          style={{ top: s.top, left: s.left, width: 54, height: 54, background: `${s.color}22`, border: `2px solid ${s.color}55`, animationDelay: s.delay, animationDuration: s.duration, boxShadow: `0 8px 20px ${s.color}30` }}>
+          <span style={{ fontSize: 24 }}>{s.emoji}</span>
+        </div>
+      ))}
+
+      {/* Central open book + graduation cap */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <svg width="180" height="180" viewBox="0 0 200 200" className="relative">
+          {/* Spinning soft rays */}
+          <g className="edu-rays" opacity="0.15">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <rect key={i} x="98" y="10" width="4" height="30" rx="2" fill="#fbbf24" transform={`rotate(${i * 45} 100 100)`} />
+            ))}
+          </g>
+
+          {/* Book base */}
+          <path d="M100 70 L30 88 V150 L100 134 Z" fill="#00A99D" />
+          <path d="M100 70 L170 88 V150 L100 134 Z" fill="#00877d" />
+          <path d="M100 70 L30 88 V96 L100 78 Z" fill="#5eead4" opacity="0.7" />
+          <path d="M100 70 L170 88 V96 L100 78 Z" fill="#5eead4" opacity="0.5" />
+          {/* Page lines */}
+          {[100, 112, 124].map((y, i) => (
+            <line key={i} x1="42" y1={y} x2="92" y2={y - 8} stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" />
+          ))}
+          {[100, 112, 124].map((y, i) => (
+            <line key={i} x1="108" y1={y - 8} x2="158" y2={y} stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" />
+          ))}
+
+          {/* Graduation cap on top, bobbing */}
+          <g className="edu-cap">
+            <path d="M100 34 L146 54 L100 74 L54 54 Z" fill="#0f2447" />
+            <path d="M100 74 L100 90 Q100 98 115 98 Q130 98 130 90 L130 62" fill="none" stroke="#0f2447" strokeWidth="4" strokeLinecap="round" />
+            <circle cx="130" cy="62" r="4.5" fill="#fbbf24" />
+            <line x1="130" y1="62" x2="130" y2="80" stroke="#fbbf24" strokeWidth="2" />
+          </g>
+        </svg>
+      </div>
+    </div>
+  );
+}
 
 export default function EducationPage() {
   return (
@@ -12,25 +98,31 @@ export default function EducationPage() {
         className="pt-24 pb-20 px-6"
         style={{ background: "linear-gradient(135deg, #0f2447 0%, #1B3C6E 50%, #0f2447 100%)" }}
       >
-        <div className="max-w-6xl mx-auto">
-          <p className="text-[#00A99D] text-xs font-bold tracking-widest uppercase mb-4">Education</p>
-          <h1 className="font-black text-white leading-tight mb-6" style={{ fontSize: "clamp(2rem,4vw,3rem)" }}>
-            Learning Technology<br />
-            <span style={{ color: "#00A99D" }}>That Scales.</span>
-          </h1>
-          <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-lg">
-            We build EdTech platforms, LMS solutions, and student engagement tools that make learning more accessible, measurable, and effective.
-          </p>
-          <div className="flex flex-wrap gap-3 mb-10">
-            {["FERPA Compliant", "LTI Standards", "Mobile-First"].map((pill) => (
-              <span key={pill} className="px-4 py-1.5 rounded-full text-xs font-semibold text-white/80 border border-white/20 bg-white/5">
-                {pill}
-              </span>
-            ))}
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="text-[#00A99D] text-xs font-bold tracking-widest uppercase mb-4">Education</p>
+            <h1 className="font-black text-white leading-tight mb-6" style={{ fontSize: "clamp(2rem,4vw,3rem)" }}>
+              Learning Technology<br />
+              <span style={{ color: "#00A99D" }}>That Scales.</span>
+            </h1>
+            <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-lg">
+              We build EdTech platforms, LMS solutions, and student engagement tools that make learning more accessible, measurable, and effective.
+            </p>
+            <div className="flex flex-wrap gap-3 mb-10">
+              {["FERPA Compliant", "LTI Standards", "Mobile-First"].map((pill) => (
+                <span key={pill} className="px-4 py-1.5 rounded-full text-xs font-semibold text-white/80 border border-white/20 bg-white/5">
+                  {pill}
+                </span>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <a href="/contact" className="btn-primary">Start the Conversation</a>
+              <a href="/services" className="btn-outline-white">View Services</a>
+            </div>
           </div>
-          <div className="flex flex-wrap gap-4">
-            <a href="/contact" className="btn-primary">Start the Conversation</a>
-            <a href="/services" className="btn-outline-white">View Services</a>
+
+          <div className="hidden lg:block">
+            <LearningVisual />
           </div>
         </div>
       </section>

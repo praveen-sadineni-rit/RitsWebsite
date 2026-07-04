@@ -1,6 +1,86 @@
 "use client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useState, useEffect } from "react";
+
+const GRID_NODES = [
+  { label: "Substation A", angle: -90, color: "#00cfb4" },
+  { label: "Solar Farm", angle: -30, color: "#fbbf24" },
+  { label: "Wind Site", angle: 30, color: "#60a5fa" },
+  { label: "Substation B", angle: 90, color: "#00cfb4" },
+  { label: "Battery Storage", angle: 150, color: "#a78bfa" },
+  { label: "Smart Meter Hub", angle: -150, color: "#34d399" },
+];
+
+function EnergyGridVisual() {
+  const [tick, setTick] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setTick((n) => n + 1), 1400);
+    return () => clearInterval(t);
+  }, []);
+
+  const R = 150, cx = 200, cy = 200;
+  const nodePos = GRID_NODES.map((n) => {
+    const rad = (n.angle * Math.PI) / 180;
+    return { ...n, x: cx + R * Math.cos(rad), y: cy + R * Math.sin(rad) };
+  });
+
+  return (
+    <div className="relative w-full max-w-md mx-auto">
+      <style>{`
+        @keyframes energyFlow { to { stroke-dashoffset: -20; } }
+        .energy-line { stroke-dasharray: 1.5 5; stroke-linecap: round; animation: energyFlow 0.9s linear infinite; }
+        @keyframes energyPulseRing { 0% { r: 14; opacity: 0.8; } 100% { r: 34; opacity: 0; } }
+        .energy-ring { animation: energyPulseRing 1.8s ease-out infinite; }
+        @keyframes energyNodeBlink { 0%,100% { opacity: 0.7; } 50% { opacity: 1; } }
+      `}</style>
+      <svg viewBox="0 0 400 400" className="w-full h-auto">
+        {/* Connecting lines */}
+        {nodePos.map((n, i) => (
+          <line key={i} x1={cx} y1={cy} x2={n.x} y2={n.y} className="energy-line" stroke={`${n.color}70`} strokeWidth="2" />
+        ))}
+
+        {/* Outer dashed ring */}
+        <circle cx={cx} cy={cy} r={R} fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1" strokeDasharray="3 6" />
+
+        {/* Central hub pulse rings */}
+        <circle className="energy-ring" cx={cx} cy={cy} r="14" fill="none" stroke="#00A99D" strokeWidth="2" />
+        <circle className="energy-ring" cx={cx} cy={cy} r="14" fill="none" stroke="#00A99D" strokeWidth="2" style={{ animationDelay: "0.9s" }} />
+
+        {/* Central hub */}
+        <circle cx={cx} cy={cy} r="26" fill="#0f2447" stroke="#00A99D" strokeWidth="2" />
+        <path d={`M${cx - 5} ${cy - 12} L${cx - 10} ${cy + 2} L${cx - 2} ${cy + 2} L${cx - 6} ${cy + 12} L${cx + 10} ${cy - 4} L${cx + 2} ${cy - 4} Z`} fill="#00cfb4" />
+
+        {/* Nodes */}
+        {nodePos.map((n, i) => {
+          const active = tick % GRID_NODES.length === i;
+          return (
+            <g key={i}>
+              <circle cx={n.x} cy={n.y} r={active ? 9 : 7} fill={n.color} style={{ animation: "energyNodeBlink 1.6s ease-in-out infinite", transition: "r 0.4s ease" }} opacity={active ? 1 : 0.75} />
+              {active && <circle cx={n.x} cy={n.y} r="16" fill="none" stroke={n.color} strokeWidth="1.5" opacity="0.5" />}
+            </g>
+          );
+        })}
+      </svg>
+
+      {/* Node labels */}
+      <div className="grid grid-cols-2 gap-x-6 gap-y-2 mt-2 px-4">
+        {GRID_NODES.map((n, i) => (
+          <div key={n.label} className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: n.color, opacity: tick % GRID_NODES.length === i ? 1 : 0.5 }} />
+            <span className="text-xs" style={{ color: tick % GRID_NODES.length === i ? "rgba(255,255,255,0.9)" : "rgba(255,255,255,0.4)" }}>{n.label}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Status readout */}
+      <div className="flex items-center justify-center gap-2 mt-4">
+        <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#00cfb4", animation: "energyNodeBlink 1.6s ease-in-out infinite" }} />
+        <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#00cfb4" }}>Grid Status: Optimal</span>
+      </div>
+    </div>
+  );
+}
 
 export default function EnergyPage() {
   return (
@@ -12,25 +92,31 @@ export default function EnergyPage() {
         className="pt-24 pb-20 px-6"
         style={{ background: "linear-gradient(135deg, #0f2447 0%, #1B3C6E 50%, #0f2447 100%)" }}
       >
-        <div className="max-w-6xl mx-auto">
-          <p className="text-[#00A99D] text-xs font-bold tracking-widest uppercase mb-4">Energy &amp; Utilities</p>
-          <h1 className="font-black text-white leading-tight mb-6" style={{ fontSize: "clamp(2rem,4vw,3rem)" }}>
-            Power the<br />
-            <span style={{ color: "#00A99D" }}>Future.</span>
-          </h1>
-          <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-lg">
-            We build smart grid systems, energy analytics platforms, and sustainability tools that help utilities and energy companies operate more efficiently.
-          </p>
-          <div className="flex flex-wrap gap-3 mb-10">
-            {["Smart Grid Ready", "IoT Connected", "ESG Reporting"].map((pill) => (
-              <span key={pill} className="px-4 py-1.5 rounded-full text-xs font-semibold text-white/80 border border-white/20 bg-white/5">
-                {pill}
-              </span>
-            ))}
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="text-[#00A99D] text-xs font-bold tracking-widest uppercase mb-4">Energy &amp; Utilities</p>
+            <h1 className="font-black text-white leading-tight mb-6" style={{ fontSize: "clamp(2rem,4vw,3rem)" }}>
+              Power the<br />
+              <span style={{ color: "#00A99D" }}>Future.</span>
+            </h1>
+            <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-lg">
+              We build smart grid systems, energy analytics platforms, and sustainability tools that help utilities and energy companies operate more efficiently.
+            </p>
+            <div className="flex flex-wrap gap-3 mb-10">
+              {["Smart Grid Ready", "IoT Connected", "ESG Reporting"].map((pill) => (
+                <span key={pill} className="px-4 py-1.5 rounded-full text-xs font-semibold text-white/80 border border-white/20 bg-white/5">
+                  {pill}
+                </span>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <a href="/contact" className="btn-primary">Talk to an Energy Expert</a>
+              <a href="/services" className="btn-outline-white">View Services</a>
+            </div>
           </div>
-          <div className="flex flex-wrap gap-4">
-            <a href="/contact" className="btn-primary">Talk to an Energy Expert</a>
-            <a href="/services" className="btn-outline-white">View Services</a>
+
+          <div className="hidden lg:block">
+            <EnergyGridVisual />
           </div>
         </div>
       </section>
