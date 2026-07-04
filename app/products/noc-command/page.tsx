@@ -71,8 +71,22 @@ function TopologyDiagram() {
         .topo-line { stroke-dasharray: 1.5 7; stroke-linecap: round; animation: topoFlow 1.1s linear infinite; }
         @keyframes topoPulse { 0%,100% { opacity: 0.5; transform: scale(1); } 50% { opacity: 1; transform: scale(1.6); } }
         .topo-joint { animation: topoPulse 1.6s ease-in-out infinite; transform-origin: center; }
+        @keyframes swipeHint { 0%,100% { transform: translateX(0); opacity: 0.5; } 50% { transform: translateX(6px); opacity: 1; } }
+        .topo-swipe-icon { animation: swipeHint 1.4s ease-in-out infinite; }
+        .topo-scroll { scrollbar-width: thin; scrollbar-color: rgba(0,207,180,0.5) transparent; }
+        .topo-scroll::-webkit-scrollbar { height: 8px; }
+        .topo-scroll::-webkit-scrollbar-thumb { background: rgba(0,207,180,0.5); border-radius: 99px; }
+        .topo-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,0.04); }
       `}</style>
-      <div className="overflow-x-auto">
+
+      {/* Mobile-only swipe hint */}
+      <div className="sm:hidden flex items-center justify-center gap-2 py-2.5" style={{ background: "rgba(0,207,180,0.08)", borderBottom: "1px solid rgba(0,207,180,0.15)" }}>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" style={{ color: "#00cfb4" }}><path d="M9 18l-6-6 6-6M3 12h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        <span style={{ fontSize: 11.5, fontWeight: 700, color: "#00cfb4", letterSpacing: "0.02em" }}>Swipe to explore the full map</span>
+        <svg className="topo-swipe-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" style={{ color: "#00cfb4" }}><path d="M15 18l6-6-6-6M21 12H3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+      </div>
+
+      <div className="overflow-x-auto topo-scroll">
         <div style={{ position: "relative", width: W, height: H, margin: "0 auto" }}>
           {/* Grid backdrop */}
           <div aria-hidden="true" style={{ position: "absolute", inset: 0, opacity: 0.05, backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
