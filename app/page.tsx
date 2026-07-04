@@ -393,7 +393,7 @@ function NeuralNetwork() {
             ctx.fill();
 
             // Label pill
-            const fontSize = 9 + depth * 3;
+            const fontSize = 13 + depth * 4;
             ctx.font = "bold " + fontSize + "px -apple-system,sans-serif";
             const tw = ctx.measureText(tech.label).width;
             const pw = tw + 10;
