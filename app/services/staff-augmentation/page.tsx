@@ -344,7 +344,7 @@ export default function StaffAugmentationPage() {
                   Vetted senior talent who integrate into your team from day one. No ramp-up theatre, no bait-and-switch.
                 </p>
 
-                <div style={{ display: "flex", flexWrap: "nowrap", gap: "12px", marginBottom: "2.5rem" }}>
+                <div className="flex-wrap sm:flex-nowrap" style={{ display: "flex", gap: "12px", marginBottom: "2.5rem" }}>
                   {[
                     { value: "5-day avg.", label: "placement" },
                     { value: "Senior only", label: "no juniors placed" },

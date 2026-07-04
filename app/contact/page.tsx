@@ -216,7 +216,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }} className="sm:grid-cols-2 grid-cols-1">
+                <div style={{ display: "grid", gap: 16, marginBottom: 16 }} className="grid-cols-1 sm:grid-cols-2">
                   <div>
                     <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 13, fontWeight: 600, color: "#374151", marginBottom: 6 }}>
                       <span style={{ display:"inline-flex", alignItems:"center", justifyContent:"center", width:22, height:22, borderRadius:6, background:"#e0f2fe" }}>
