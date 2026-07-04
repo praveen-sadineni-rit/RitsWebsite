@@ -196,7 +196,7 @@ export default function Footer() {
           className="border-t py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs"
           style={{ borderColor: "rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.4)" }}
         >
-          <p>&copy; 2025 Resource Innovative Technologies. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Resource Innovative Technologies. All rights reserved.</p>
           <div className="flex gap-4">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <span style={{ color: "rgba(255,255,255,0.2)" }}>|</span>
