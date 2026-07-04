@@ -26,7 +26,6 @@ const SERVICE_COLUMNS = [
     category: "Technology",
     accent: "#60a5fa",
     links: [
-      { label: "NOC Command (Product)", href: "/products/noc-command" },
       { label: "Software Development", href: "/services/software-solutions" },
       { label: "AI & Machine Learning", href: "/services/ai-ml" },
       { label: "Cloud & DevOps", href: "/services/cloud-devops" },
