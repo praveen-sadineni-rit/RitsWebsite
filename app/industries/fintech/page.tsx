@@ -219,7 +219,8 @@ export default function FintechPage() {
             {solutions.map((sol) => (
               <div
                 key={sol.title}
-                className="hover:shadow-lg transition-all hover:-translate-y-1 border border-gray-100 rounded-2xl p-6"
+                id={sol.title === "Core Banking Systems" ? "banking" : sol.title === "Wealth Management Platforms" ? "wealth-management" : sol.title === "Compliance Automation" ? "insurance-tech" : undefined}
+                className="hover:shadow-lg transition-all hover:-translate-y-1 border border-gray-100 rounded-2xl p-6 scroll-mt-24"
               >
                 <div
                   className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"

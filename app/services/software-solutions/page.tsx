@@ -288,7 +288,7 @@ function ProcessSection() {
   const pctWidth = String(((activeStep + 1) / processSteps.length) * 100) + "%";
 
   return (
-    <section className="py-24 px-6" style={{ background: "#0a0f1e" }}>
+    <section id="process" className="py-24 px-6 scroll-mt-24" style={{ background: "#0a0f1e" }}>
       <div className="max-w-6xl mx-auto">
 
         <div className="mb-14">
@@ -571,7 +571,7 @@ export default function SoftwareSolutionsPage() {
             {/* Bottom row — 3 equal cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
               {capabilities.slice(2).map(cap => (
-                <div id={cap.title === "Backend & API Engineering" ? "backend" : undefined} key={cap.title} className="group relative rounded-2xl p-7 overflow-hidden cursor-default transition-all duration-300 hover:-translate-y-0.5 scroll-mt-28"
+                <div id={cap.title === "Backend & API Engineering" ? "backend" : cap.title === "System Integrations" ? "system-integrations" : undefined} key={cap.title} className="group relative rounded-2xl p-7 overflow-hidden cursor-default transition-all duration-300 hover:-translate-y-0.5 scroll-mt-28"
                   style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}>
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
                     style={{ background: `radial-gradient(ellipse at 20% 20%, ${cap.glow} 0%, transparent 70%)` }} />

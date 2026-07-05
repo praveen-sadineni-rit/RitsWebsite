@@ -136,7 +136,8 @@ export default function RetailPage() {
             ].map((card) => (
               <div
                 key={card.title}
-                className="p-6 rounded-2xl border border-gray-100 hover:shadow-lg transition-all hover:-translate-y-1"
+                id={card.title === "Omnichannel Platforms" ? "omnichannel" : undefined}
+                className="p-6 rounded-2xl border border-gray-100 hover:shadow-lg transition-all hover:-translate-y-1 scroll-mt-24"
               >
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"

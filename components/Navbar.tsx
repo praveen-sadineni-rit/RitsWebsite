@@ -39,9 +39,9 @@ const SERVICE_COLUMNS = [
     accent: "#a78bfa",
     links: [
       { label: "Digital Transformation", href: "/services/digital-transformation" },
-      { label: "System Integrations", href: "/services/software-solutions" },
-      { label: "Process Automation", href: "/services/ai-ml" },
-      { label: "Legacy Modernization", href: "/services/digital-transformation" },
+      { label: "System Integrations", href: "/services/software-solutions#system-integrations" },
+      { label: "Process Automation", href: "/services/digital-transformation#process-automation" },
+      { label: "Legacy Modernization", href: "/services/digital-transformation#legacy-modernization" },
     ],
   },
   {
@@ -49,7 +49,7 @@ const SERVICE_COLUMNS = [
     accent: "#34d399",
     links: [
       { label: "About Us", href: "/about" },
-      { label: "Our Process", href: "/services/software-solutions" },
+      { label: "Our Process", href: "/services/software-solutions#process" },
       { label: "Case Studies", href: "/insights" },
       { label: "Careers", href: "/careers" },
     ],
@@ -62,9 +62,9 @@ const INDUSTRY_COLUMNS = [
     accent: "#34d399",
     links: [
       { label: "FinTech", href: "/industries/fintech" },
-      { label: "Banking & Lending", href: "/industries/fintech" },
-      { label: "Wealth Management", href: "/industries/fintech" },
-      { label: "Insurance Tech", href: "/industries/fintech" },
+      { label: "Banking & Lending", href: "/industries/fintech#banking" },
+      { label: "Wealth Management", href: "/industries/fintech#wealth-management" },
+      { label: "Insurance Tech", href: "/industries/fintech#insurance-tech" },
     ],
   },
   {
@@ -72,9 +72,9 @@ const INDUSTRY_COLUMNS = [
     accent: "#f472b6",
     links: [
       { label: "Healthcare", href: "/industries/healthcare" },
-      { label: "Telehealth", href: "/industries/healthcare" },
-      { label: "Clinical Systems", href: "/industries/healthcare" },
-      { label: "Pharma & Biotech", href: "/industries/healthcare" },
+      { label: "Telehealth", href: "/industries/healthcare#telehealth" },
+      { label: "Clinical Systems", href: "/industries/healthcare#clinical-systems" },
+      { label: "Pharma & Biotech", href: "/industries/healthcare#pharma-biotech" },
     ],
   },
   {
@@ -83,7 +83,7 @@ const INDUSTRY_COLUMNS = [
     links: [
       { label: "E-Commerce", href: "/industries/ecommerce" },
       { label: "Retail", href: "/industries/retail" },
-      { label: "Omnichannel Experience", href: "/industries/retail" },
+      { label: "Omnichannel Experience", href: "/industries/retail#omnichannel" },
       { label: "Logistics & Supply Chain", href: "/industries/logistics" },
     ],
   },

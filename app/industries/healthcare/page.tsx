@@ -217,7 +217,8 @@ export default function HealthcarePage() {
             {solutions.map((sol) => (
               <div
                 key={sol.title}
-                className="hover:shadow-lg transition-all hover:-translate-y-1 border border-gray-100 rounded-2xl p-6"
+                id={sol.title === "Telehealth Platforms" ? "telehealth" : sol.title === "Clinical Workflow Automation" ? "clinical-systems" : sol.title === "Health Data Analytics" ? "pharma-biotech" : undefined}
+                className="hover:shadow-lg transition-all hover:-translate-y-1 border border-gray-100 rounded-2xl p-6 scroll-mt-24"
               >
                 <div
                   className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"

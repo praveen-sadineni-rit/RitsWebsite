@@ -163,7 +163,7 @@ export default function DigitalTransformationPage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {pillars.map(p => (
-              <div key={p.title} className="p-6 rounded-2xl border border-gray-100 hover:shadow-lg transition-all hover:-translate-y-1">
+              <div key={p.title} id={p.title === "Legacy System Migration" ? "legacy-modernization" : p.title === "AI-Powered Automation" ? "process-automation" : undefined} className="p-6 rounded-2xl border border-gray-100 hover:shadow-lg transition-all hover:-translate-y-1 scroll-mt-24">
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: `${p.color}15` }}>
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                     <path d={p.icon} stroke={p.color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
