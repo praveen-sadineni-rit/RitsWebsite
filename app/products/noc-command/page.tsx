@@ -16,16 +16,16 @@ function IconArrow() {
 const TOPO_TENANT = { label: "RITS Azure Tenant", sub: "Resource Innovative Technologies Solutions Ltd", subs: 2, resources: 14, x: 430, y: 30, w: 240, h: 92 };
 
 const TOPO_SUBS = [
-  { id: "prod", label: "RITS-Production", meta: "f2a-4c1b", region: "UK South", status: "warning", note: "3 alerts", x: 195, y: 178, w: 210, h: 84 },
-  { id: "dev", label: "RITS-Development", meta: "e3d-5a2f", region: "UK West", status: "healthy", x: 695, y: 178, w: 210, h: 84 },
+  { id: "prod", label: "RITS-Production", meta: "f2a-4c1b", region: "East US", status: "warning", note: "3 alerts", x: 195, y: 178, w: 210, h: 84 },
+  { id: "dev", label: "RITS-Development", meta: "e3d-5a2f", region: "West US", status: "healthy", x: 695, y: 178, w: 210, h: 84 },
 ];
 
 const TOPO_RGS = [
-  { id: "web", parent: "prod", label: "rg-prod-web", region: "UK South", svcs: 2, status: "healthy", x: 80, y: 322, w: 150, h: 68 },
-  { id: "data", parent: "prod", label: "rg-prod-data", region: "UK South", svcs: 2, status: "warning", badge: 1, x: 260, y: 322, w: 150, h: 68 },
-  { id: "infra", parent: "prod", label: "rg-prod-infra", region: "UK South", svcs: 4, status: "warning", badge: 2, x: 440, y: 322, w: 150, h: 68 },
-  { id: "ai", parent: "dev", label: "rg-prod-ai", region: "UK South", svcs: 2, status: "healthy", x: 660, y: 322, w: 150, h: 68 },
-  { id: "devrg", parent: "dev", label: "rg-dev", region: "UK West", svcs: 2, status: "healthy", x: 860, y: 322, w: 150, h: 68 },
+  { id: "web", parent: "prod", label: "rg-prod-web", region: "East US", svcs: 2, status: "healthy", x: 80, y: 322, w: 150, h: 68 },
+  { id: "data", parent: "prod", label: "rg-prod-data", region: "East US", svcs: 2, status: "warning", badge: 1, x: 260, y: 322, w: 150, h: 68 },
+  { id: "infra", parent: "prod", label: "rg-prod-infra", region: "East US", svcs: 4, status: "warning", badge: 2, x: 440, y: 322, w: 150, h: 68 },
+  { id: "ai", parent: "dev", label: "rg-prod-ai", region: "East US", svcs: 2, status: "healthy", x: 660, y: 322, w: 150, h: 68 },
+  { id: "devrg", parent: "dev", label: "rg-dev", region: "West US", svcs: 2, status: "healthy", x: 860, y: 322, w: 150, h: 68 },
 ];
 
 const TOPO_SERVICES = [
@@ -257,14 +257,14 @@ const DASH_STATS = [
 ];
 
 const DASH_ALERTS = [
-  { sev: "SEV-1", title: "Cosmos DB Throughput Throttling", src: "COSMOS-NOC-PROD · Azure UK South", time: "17 minutes ago", status: "OPEN" },
-  { sev: "SEV-1", title: "Core Router CR-01 BGP Session Down", src: "CR-01-LON · London DC1", time: "18 minutes ago", status: "OPEN" },
-  { sev: "SEV-2", title: "Azure VM PROD-APP-03 Unresponsive", src: "PROD-APP-03 · Azure UK South", time: "19 minutes ago", status: "OPEN" },
-  { sev: "SEV-2", title: "Switch SW-DIST-04 High Packet Loss", src: "SW-DIST-04 · London DC1", time: "22 minutes ago", status: "OPEN" },
-  { sev: "SEV-1", title: "Azure ExpressRoute Circuit ERX-001 Down", src: "ERX-001 · London DC1", time: "27 minutes ago", status: "ACKNOWLEDGED" },
-  { sev: "SEV-2", title: "Load Balancer LB-PROD-01 Backend Pool Degraded", src: "LB-PROD-01 · Azure UK South", time: "27 minutes ago", status: "OPEN" },
-  { sev: "SEV-1", title: "Firewall FW-CORE-01 CPU at 99%", src: "FW-CORE-01 · Manchester DC2", time: "33 minutes ago", status: "ASSIGNED" },
-  { sev: "SEV-2", title: "AKS Node Pool aks-nodepool-01 NotReady", src: "AKS-NODE-POOL-01 · Azure UK South", time: "40 minutes ago", status: "ACKNOWLEDGED" },
+  { sev: "SEV-1", title: "Cosmos DB Throughput Throttling", src: "COSMOS-NOC-PROD · Azure East US", time: "17 minutes ago", status: "OPEN" },
+  { sev: "SEV-1", title: "Core Router CR-01 BGP Session Down", src: "CR-01-RH · Rock Hill DC1", time: "18 minutes ago", status: "OPEN" },
+  { sev: "SEV-2", title: "Azure VM PROD-APP-03 Unresponsive", src: "PROD-APP-03 · Azure East US", time: "19 minutes ago", status: "OPEN" },
+  { sev: "SEV-2", title: "Switch SW-DIST-04 High Packet Loss", src: "SW-DIST-04 · Rock Hill DC1", time: "22 minutes ago", status: "OPEN" },
+  { sev: "SEV-1", title: "Azure ExpressRoute Circuit ERX-001 Down", src: "ERX-001 · Rock Hill DC1", time: "27 minutes ago", status: "ACKNOWLEDGED" },
+  { sev: "SEV-2", title: "Load Balancer LB-PROD-01 Backend Pool Degraded", src: "LB-PROD-01 · Azure East US", time: "27 minutes ago", status: "OPEN" },
+  { sev: "SEV-1", title: "Firewall FW-CORE-01 CPU at 99%", src: "FW-CORE-01 · Charlotte DC2", time: "33 minutes ago", status: "ASSIGNED" },
+  { sev: "SEV-2", title: "AKS Node Pool aks-nodepool-01 NotReady", src: "AKS-NODE-POOL-01 · Azure East US", time: "40 minutes ago", status: "ACKNOWLEDGED" },
 ];
 
 const DASH_DEVICES = [
@@ -274,10 +274,10 @@ const DASH_DEVICES = [
 ];
 
 const DASH_INCIDENTS = [
-  { sev: "SEV-1", title: "Core Router BGP Failure, London DC1", meta: "INC-001 · 18 minutes ago", status: "IN PROGRESS", statusColor: "#f59e0b" },
+  { sev: "SEV-1", title: "Core Router BGP Failure, Rock Hill DC1", meta: "INC-001 · 18 minutes ago", status: "IN PROGRESS", statusColor: "#f59e0b" },
   { sev: "SEV-1", title: "Firewall CPU Saturation, FW-CORE-01", meta: "INC-006 · 33 minutes ago", status: "IN PROGRESS", statusColor: "#f59e0b" },
   { sev: "SEV-1", title: "ExpressRoute Failure + AKS Node Degradation", meta: "INC-002 · 40 minutes ago", status: "ACK'D", statusColor: "#3b82f6" },
-  { sev: "SEV-2", title: "VPN Tunnel Failure, Manchester Branch", meta: "INC-003 · about 1 hour ago", status: "IN PROGRESS", statusColor: "#f59e0b" },
+  { sev: "SEV-2", title: "VPN Tunnel Failure, Charlotte Branch", meta: "INC-003 · about 1 hour ago", status: "IN PROGRESS", statusColor: "#f59e0b" },
   { sev: "SEV-3", title: "Database Server Memory Pressure, SRV-DB-02", meta: "INC-004 · about 1 hour ago", status: "NEW", statusColor: "#8b5cf6" },
 ];
 
