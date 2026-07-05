@@ -4,6 +4,133 @@ import { useState, useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+/* ── Hero announcement banner ──
+   Auto-detects US federal holidays by date (see FEDERAL_HOLIDAYS below) and shows
+   the matching message on the day itself, hiding automatically the next day.
+   To run a manual/custom promo instead (overrides the holiday check), set
+   MANUAL_ANNOUNCEMENT.active to true and fill in the fields. */
+const MANUAL_ANNOUNCEMENT: { active: boolean; message: string; subMessage: string; background: string } = {
+  active: false,
+  message: "",
+  subMessage: "",
+  background: "linear-gradient(90deg, #B22234, #1B3C6E)",
+};
+
+/* Nth weekday of a month, e.g. 3rd Monday of January. weekday: 0=Sun..6=Sat, n: 1-based */
+function nthWeekdayOfMonth(year: number, month: number, weekday: number, n: number): Date {
+  const first = new Date(year, month, 1);
+  const offset = (weekday - first.getDay() + 7) % 7;
+  return new Date(year, month, 1 + offset + (n - 1) * 7);
+}
+
+/* Last weekday of a month, e.g. last Monday of May */
+function lastWeekdayOfMonth(year: number, month: number, weekday: number): Date {
+  const lastDay = new Date(year, month + 1, 0);
+  const offset = (lastDay.getDay() - weekday + 7) % 7;
+  return new Date(year, month, lastDay.getDate() - offset);
+}
+
+type Holiday = {
+  name: string;
+  message: string;
+  subMessage: string;
+  background: string;
+  getDate: (year: number) => Date;
+};
+
+/* All 11 US federal holidays, with accurate floating-date rules baked in */
+const FEDERAL_HOLIDAYS: Holiday[] = [
+  {
+    name: "New Year's Day",
+    message: "🎉 Happy New Year from Resource Innovative Technologies",
+    subMessage: "wishing you a year of growth, innovation, and success 🎊",
+    background: "linear-gradient(90deg, #6d28d9, #1B3C6E)",
+    getDate: (y) => new Date(y, 0, 1),
+  },
+  {
+    name: "Martin Luther King Jr. Day",
+    message: "✊🏾 Honoring Martin Luther King Jr. Day",
+    subMessage: "celebrating his legacy of equality, justice, and service",
+    background: "linear-gradient(90deg, #1B3C6E, #00A99D)",
+    getDate: (y) => nthWeekdayOfMonth(y, 0, 1, 3),
+  },
+  {
+    name: "Presidents Day",
+    message: "🇺🇸 Happy Presidents Day from Resource Innovative Technologies",
+    subMessage: "honoring the leadership and legacy of our nation's presidents",
+    background: "linear-gradient(90deg, #B22234, #1B3C6E)",
+    getDate: (y) => nthWeekdayOfMonth(y, 1, 1, 3),
+  },
+  {
+    name: "Memorial Day",
+    message: "🎖️ Honoring Memorial Day",
+    subMessage: "remembering and honoring those who made the ultimate sacrifice",
+    background: "linear-gradient(90deg, #0f2447, #B22234)",
+    getDate: (y) => lastWeekdayOfMonth(y, 4, 1),
+  },
+  {
+    name: "Juneteenth",
+    message: "✊🏿 Happy Juneteenth",
+    subMessage: "celebrating freedom, resilience, and progress",
+    background: "linear-gradient(90deg, #b45309, #1B3C6E)",
+    getDate: (y) => new Date(y, 5, 19),
+  },
+  {
+    name: "Independence Day",
+    message: "🎆 Happy Independence Day from Resource Innovative Technologies",
+    subMessage: "celebrating freedom, innovation, and the people who build the future 🇺🇸",
+    background: "linear-gradient(90deg, #B22234, #1B3C6E)",
+    getDate: (y) => new Date(y, 6, 4),
+  },
+  {
+    name: "Labor Day",
+    message: "🛠️ Happy Labor Day from Resource Innovative Technologies",
+    subMessage: "celebrating the hard work and dedication of teams everywhere",
+    background: "linear-gradient(90deg, #00A99D, #1B3C6E)",
+    getDate: (y) => nthWeekdayOfMonth(y, 8, 1, 1),
+  },
+  {
+    name: "Columbus Day",
+    message: "🧭 Happy Columbus Day",
+    subMessage: "marking a moment in the history of exploration",
+    background: "linear-gradient(90deg, #7c3aed, #1B3C6E)",
+    getDate: (y) => nthWeekdayOfMonth(y, 9, 1, 2),
+  },
+  {
+    name: "Veterans Day",
+    message: "🎖️ Honoring Veterans Day",
+    subMessage: "thank you to all who served",
+    background: "linear-gradient(90deg, #0f2447, #B22234)",
+    getDate: (y) => new Date(y, 10, 11),
+  },
+  {
+    name: "Thanksgiving Day",
+    message: "🦃 Happy Thanksgiving from Resource Innovative Technologies",
+    subMessage: "grateful for our clients, partners, and team",
+    background: "linear-gradient(90deg, #b45309, #00A99D)",
+    getDate: (y) => nthWeekdayOfMonth(y, 10, 4, 4),
+  },
+  {
+    name: "Christmas Day",
+    message: "🎄 Merry Christmas from Resource Innovative Technologies",
+    subMessage: "wishing you joy, peace, and prosperity this holiday season",
+    background: "linear-gradient(90deg, #b91c1c, #00A99D)",
+    getDate: (y) => new Date(y, 11, 25),
+  },
+];
+
+function isSameCalendarDay(a: Date, b: Date): boolean {
+  return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+}
+
+function getTodaysHolidayAnnouncement(): { active: boolean; message: string; subMessage: string; background: string } {
+  if (MANUAL_ANNOUNCEMENT.active) return MANUAL_ANNOUNCEMENT;
+  const today = new Date();
+  const holiday = FEDERAL_HOLIDAYS.find((h) => isSameCalendarDay(h.getDate(today.getFullYear()), today));
+  if (!holiday) return { active: false, message: "", subMessage: "", background: "" };
+  return { active: true, message: holiday.message, subMessage: holiday.subMessage, background: holiday.background };
+}
+
 /* ── Scroll reveal hook ── */
 function useReveal(delay = 0) {
   const ref = useRef<HTMLDivElement>(null);
@@ -790,6 +917,15 @@ export default function Home() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
+  // Computed client-side (not at build time) so the banner reflects the visitor's actual date,
+  // since this page is statically generated and wouldn't otherwise re-check the date per visit.
+  const [announcement, setAnnouncement] = useState<{ active: boolean; message: string; subMessage: string; background: string }>({
+    active: false, message: "", subMessage: "", background: "",
+  });
+  useEffect(() => {
+    setAnnouncement(getTodaysHolidayAnnouncement());
+  }, []);
+
   return (
     <main className="bg-white text-gray-900">
       <Navbar />
@@ -817,22 +953,24 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 w-full">
-        {/* Independence Day banner */}
-        <div className="relative overflow-hidden border-b border-white/10" style={{ background: "linear-gradient(90deg, #B22234, #1B3C6E)" }}>
-          <div className="marquee-track marquee-slow py-2">
-            {Array.from({ length: 2 }).map((_, i) => (
-              <div key={i} className="flex items-center flex-shrink-0">
-                {Array.from({ length: 6 }).map((_, j) => (
-                  <span key={j} className="flex items-center gap-2 px-8 text-white text-xs font-semibold tracking-wide whitespace-nowrap">
-                    🎆 Happy Independence Day from Resource Innovative Technologies
-                    <span className="text-white/50">&middot;</span>
-                    celebrating freedom, innovation, and the people who build the future 🇺🇸
-                  </span>
-                ))}
-              </div>
-            ))}
+        {/* Holiday announcement banner — auto-detected client-side, see getTodaysHolidayAnnouncement() above */}
+        {announcement.active && (
+          <div className="relative overflow-hidden border-b border-white/10" style={{ background: announcement.background }}>
+            <div className="marquee-track marquee-slow py-2">
+              {Array.from({ length: 2 }).map((_, i) => (
+                <div key={i} className="flex items-center flex-shrink-0">
+                  {Array.from({ length: 6 }).map((_, j) => (
+                    <span key={j} className="flex items-center gap-2 px-8 text-white text-xs font-semibold tracking-wide whitespace-nowrap">
+                      {announcement.message}
+                      <span className="text-white/50">&middot;</span>
+                      {announcement.subMessage}
+                    </span>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
         <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-4 pb-4">
           <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 items-center">
           <div className="">{/* text col */}
@@ -1113,14 +1251,14 @@ export default function Home() {
 
             {/* Card 1 — large, spans 2 cols, dark navy */}
             <Reveal className="md:col-span-2">
-              <div className="relative rounded-2xl bg-[#0f2447] p-10 h-full min-h-[260px] overflow-hidden group">
+              <div className="relative rounded-2xl bg-[#0f2447] p-10 h-full min-h-[260px] overflow-hidden group flex flex-col">
                 <div className="absolute inset-0 opacity-10" style={{
                   backgroundImage: "radial-gradient(circle at 80% 50%, #00A99D 0%, transparent 60%)"
                 }}/>
                 {/* Decorative circles */}
                 <div className="absolute -right-8 -bottom-8 w-48 h-48 rounded-full border border-white/5"/>
                 <div className="absolute -right-4 -bottom-4 w-32 h-32 rounded-full border border-white/5"/>
-                <div className="relative z-10">
+                <div className="relative z-10 flex-1">
                   <div className="flex items-center gap-3 mb-5">
                     <div className="w-10 h-10 rounded-xl bg-[#00A99D]/20 flex items-center justify-center">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#00A99D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -1128,10 +1266,10 @@ export default function Home() {
                     <span className="text-[#00A99D] text-xs font-bold uppercase tracking-widest">01</span>
                   </div>
                   <h3 className="text-2xl font-black text-white mb-3">Senior-only talent</h3>
-                  <p className="text-white/40 text-sm leading-relaxed max-w-md">Every engineer we assign is senior level. No bait-and-switch, no juniors learning on your budget. You asked for senior, you get senior, every single time.</p>
+                  <p className="text-white/40 text-sm leading-relaxed max-w-md md:pr-24">Every engineer we assign is senior level. No bait-and-switch, no juniors learning on your budget. You asked for senior, you get senior, every single time.</p>
                 </div>
-                {/* Floating badge */}
-                <div className="absolute bottom-8 right-8 bg-[#00A99D]/10 border border-[#00A99D]/20 rounded-xl px-4 py-2 text-right">
+                {/* Badge: stacked below text on mobile, floating bottom-right on desktop */}
+                <div className="relative z-10 mt-6 self-start md:absolute md:mt-0 md:bottom-8 md:right-8 md:self-auto bg-[#00A99D]/10 border border-[#00A99D]/20 rounded-xl px-4 py-2 text-left md:text-right">
                   <div className="text-2xl font-black text-[#00A99D]">100%</div>
                   <div className="text-white/30 text-xs">Senior engineers</div>
                 </div>
