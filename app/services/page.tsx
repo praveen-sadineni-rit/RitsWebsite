@@ -6,96 +6,133 @@ import Link from "next/link";
 
 function FloatingServices() {
   const items = [
-    { icon: "M16 18L22 12L16 6M8 6L2 12L8 18", label: "Software", color: "#60a5fa", delay: "0s", orbit: 110 },
-    { icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5", label: "Product", color: "#00A99D", delay: "0.5s", orbit: 80 },
-    { icon: "M12 2v4M12 18v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M2 12h4M18 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83", label: "AI & ML", color: "#a78bfa", delay: "1s", orbit: 130 },
-    { icon: "M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z", label: "Staff Aug", color: "#34d399", delay: "1.5s", orbit: 90 },
-    { icon: "M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z", label: "Cloud", color: "#fb923c", delay: "0.8s", orbit: 120 },
-    { icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z", label: "Analytics", color: "#f472b6", delay: "0.3s", orbit: 100 },
+    { icon: "M16 18L22 12L16 6M8 6L2 12L8 18", label: "Software", color: "#60a5fa" },
+    { icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5", label: "Product", color: "#00A99D" },
+    { icon: "M12 2v4M12 18v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M2 12h4M18 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83", label: "AI & ML", color: "#a78bfa" },
+    { icon: "M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z", label: "Staff Aug", color: "#34d399" },
+    { icon: "M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z", label: "Cloud", color: "#fb923c" },
+    { icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z", label: "Analytics", color: "#f472b6" },
   ];
+
+  // Fixed-position constellation: nodes evenly placed around a core, connected
+  // by data lines. Coordinate space matches the SVG viewBox below.
+  const VW = 460, VH = 420, cx = 230, cy = 210, rx = 162, ry = 148;
+  const nodes = items.map((it, i) => {
+    const angle = ((-90 + i * 60) * Math.PI) / 180;
+    return { ...it, x: cx + rx * Math.cos(angle), y: cy + ry * Math.sin(angle) };
+  });
+
   return (
-    <div style={{ position: "relative", width: "100%", height: 420, display: "flex", alignItems: "center", justifyContent: "center", userSelect: "none" }}>
+    <div
+      style={{
+        position: "relative",
+        width: "100%",
+        maxWidth: VW,
+        margin: "0 auto",
+        aspectRatio: `${VW} / ${VH}`,
+        userSelect: "none",
+      }}
+    >
       <style>{`
-        @keyframes orbit { from{transform:rotate(0deg) translateX(var(--r)) rotate(0deg)} to{transform:rotate(360deg) translateX(var(--r)) rotate(-360deg)} }
-        @keyframes pulse-ring { 0%,100%{transform:scale(1);opacity:0.15} 50%{transform:scale(1.12);opacity:0.25} }
+        @keyframes cst-dash { to { stroke-dashoffset: -24; } }
+        @keyframes cst-ring { 0%,100%{ transform:scale(1); opacity:.16 } 50%{ transform:scale(1.16); opacity:.32 } }
+        @keyframes cst-bob  { 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(-6px) } }
+        @keyframes cst-core { 0%,100%{ opacity:.5 } 50%{ opacity:1 } }
+        .cst-line { stroke-dasharray:5 7; animation:cst-dash 1.1s linear infinite; }
+        .cst-node { animation:cst-bob 4s ease-in-out infinite; }
+        .cst-core { animation:cst-core 2.6s ease-in-out infinite; }
+        @media (prefers-reduced-motion: reduce) {
+          .cst-line, .cst-node, .cst-core, .cst-ring, .cst-pulse { animation:none !important; }
+        }
       `}</style>
-      {[70, 110, 150].map((r, i) => (
-        <div key={r} style={{
-          position: "absolute",
-          width: r * 2,
-          height: r * 2,
-          borderRadius: "50%",
-          border: "1px solid rgba(255,255,255,0.05)",
-          animation: `pulse-ring ${3 + i}s ease-in-out ${i * 0.5}s infinite`,
-        }} />
-      ))}
-      <div style={{
-        position: "absolute",
-        width: 64,
-        height: 64,
-        borderRadius: "50%",
-        background: "rgba(0,169,157,0.2)",
-        border: "1px solid rgba(0,169,157,0.4)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        zIndex: 10,
-      }}>
-        <div style={{
-          width: 32,
-          height: 32,
-          borderRadius: "50%",
-          background: "rgba(0,169,157,0.4)",
-          border: "1px solid rgba(0,169,157,0.6)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}>
-          <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#00A99D" }} />
-        </div>
-      </div>
-      {items.map((item, i) => {
-        const angle = (i / items.length) * 360;
-        const r = item.orbit;
-        const x = Math.cos((angle * Math.PI) / 180) * r;
-        const y = Math.sin((angle * Math.PI) / 180) * r;
-        return (
-          <div key={item.label} style={{
+
+      {/* Lines, pulses, rings and core all share one SVG coordinate space */}
+      <svg viewBox={`0 0 ${VW} ${VH}`} width="100%" height="100%" fill="none" aria-hidden>
+        {nodes.map((n, i) => (
+          <g key={`link-${n.label}`}>
+            <line
+              x1={cx} y1={cy} x2={n.x} y2={n.y}
+              stroke={n.color} strokeOpacity="0.4" strokeWidth="1.5"
+              className="cst-line" style={{ animationDelay: `${i * 0.13}s` }}
+            />
+            <circle r="3" fill={n.color} className="cst-pulse">
+              <animateMotion
+                dur={`${2.4 + i * 0.25}s`}
+                repeatCount="indefinite"
+                path={`M${cx},${cy} L${n.x},${n.y}`}
+              />
+            </circle>
+          </g>
+        ))}
+
+        {[46, 68, 92].map((r, i) => (
+          <circle
+            key={r} cx={cx} cy={cy} r={r}
+            stroke="#00A99D" strokeOpacity="0.16" strokeWidth="1"
+            className="cst-ring"
+            style={{ transformOrigin: `${cx}px ${cy}px`, animation: `cst-ring ${3 + i}s ease-in-out ${i * 0.4}s infinite` }}
+          />
+        ))}
+
+        <circle cx={cx} cy={cy} r="31" fill="rgba(0,169,157,0.16)" stroke="rgba(0,169,157,0.5)" strokeWidth="1.5" />
+        <circle cx={cx} cy={cy} r="16" fill="rgba(0,169,157,0.45)" className="cst-core" />
+        <text x={cx} y={cy + 4} textAnchor="middle" fontSize="11" fontWeight="800" fill="#e6fffb" letterSpacing="1.5">RITS</text>
+      </svg>
+
+      {/* Capability chips overlaid at exact node coordinates (percent-based so they track on resize) */}
+      {nodes.map((n, i) => (
+        <div
+          key={n.label}
+          style={{
             position: "absolute",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: 6,
-            transform: `translate(${x}px, ${y}px)`,
-            animation: `orbit ${8 + i}s linear ${item.delay} infinite`,
-            ["--r" as string]: `${r}px`,
-          }}>
-            <div style={{
-              width: 44,
-              height: 44,
-              borderRadius: 16,
+            left: `${(n.x / VW) * 100}%`,
+            top: `${(n.y / VH) * 100}%`,
+            transform: "translate(-50%, -50%)",
+          }}
+        >
+          <div
+            className="cst-node"
+            style={{
+              animationDelay: `${i * 0.35}s`,
               display: "flex",
+              flexDirection: "column",
               alignItems: "center",
-              justifyContent: "center",
-              background: `${item.color}20`,
-              border: `1px solid ${item.color}40`,
-              boxShadow: `0 0 16px ${item.color}30`,
-            }}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d={item.icon} stroke={item.color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              gap: 6,
+            }}
+          >
+            <div
+              style={{
+                width: 46,
+                height: 46,
+                borderRadius: 16,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                background: `${n.color}22`,
+                border: `1px solid ${n.color}55`,
+                boxShadow: `0 0 18px ${n.color}30`,
+                backdropFilter: "blur(2px)",
+              }}
+            >
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none">
+                <path d={n.icon} stroke={n.color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <span style={{
-              fontSize: 9,
-              fontWeight: 700,
-              textTransform: "uppercase",
-              letterSpacing: "0.15em",
-              whiteSpace: "nowrap",
-              color: `${item.color}99`,
-            }}>{item.label}</span>
+            <span
+              style={{
+                fontSize: 9,
+                fontWeight: 700,
+                textTransform: "uppercase",
+                letterSpacing: "0.14em",
+                whiteSpace: "nowrap",
+                color: `${n.color}cc`,
+              }}
+            >
+              {n.label}
+            </span>
           </div>
-        );
-      })}
+        </div>
+      ))}
     </div>
   );
 }
