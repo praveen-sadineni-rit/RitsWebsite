@@ -245,26 +245,31 @@ const techStack = [
   {
     category: "Frontend",
     color: "#4a9eff",
+    icon: "M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5zM3 9h18M7 6h.01",
     tags: ["React", "Next.js", "Vue", "Angular", "React Native", "Flutter"],
   },
   {
     category: "Backend",
     color: "#00d4c8",
+    icon: "M5 4h14a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5a1 1 0 011-1zM5 14h14a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4a1 1 0 011-1zM8 7h.01M8 17h.01",
     tags: ["Node.js", "Python", "Java", "Go", ".NET", "FastAPI"],
   },
   {
     category: "AI / ML",
     color: "#a855f7",
+    icon: "M9 3v2m6-2v2M9 19v2m6-2v2M3 9h2m14 0h2M3 15h2m14 0h2M6 6h12v12H6zM10 10h4v4h-4z",
     tags: ["OpenAI", "LangChain", "TensorFlow", "PyTorch", "Hugging Face"],
   },
   {
     category: "Cloud",
     color: "#f59e0b",
+    icon: "M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z",
     tags: ["AWS", "GCP", "Azure", "Vercel", "Docker", "Kubernetes"],
   },
   {
     category: "Database",
     color: "#10b981",
+    icon: "M4 5a8 3 0 0016 0 8 3 0 00-16 0zM4 5v6a8 3 0 0016 0V5M4 11v6a8 3 0 0016 0v-6",
     tags: ["PostgreSQL", "MongoDB", "Redis", "Supabase", "MySQL"],
   },
 ];
@@ -719,63 +724,79 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
+            <div
+              style={{ display: "grid", gap: 20 }}
+              className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            >
               {techStack.map((group) => (
                 <div
                   key={group.category}
                   style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 24,
-                    flexWrap: "wrap",
+                    background: "rgba(255,255,255,0.03)",
+                    border: `1px solid ${group.color}22`,
+                    borderRadius: 16,
+                    padding: 24,
+                    transition: "all 0.3s ease",
+                  }}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)";
+                    (e.currentTarget as HTMLDivElement).style.borderColor = `${group.color}55`;
+                    (e.currentTarget as HTMLDivElement).style.boxShadow = `0 16px 44px ${group.color}18`;
+                    (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.05)";
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
+                    (e.currentTarget as HTMLDivElement).style.borderColor = `${group.color}22`;
+                    (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
+                    (e.currentTarget as HTMLDivElement).style.background = "rgba(255,255,255,0.03)";
                   }}
                 >
-                  <div
-                    style={{
-                      minWidth: 100,
-                      color: group.color,
-                      fontWeight: 700,
-                      fontSize: "0.8rem",
-                      letterSpacing: "0.1em",
-                      textTransform: "uppercase",
-                    }}
-                  >
-                    {group.category}
+                  <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
+                    <div
+                      style={{
+                        width: 40,
+                        height: 40,
+                        borderRadius: 12,
+                        background: `${group.color}18`,
+                        border: `1px solid ${group.color}40`,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexShrink: 0,
+                      }}
+                    >
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d={group.icon} stroke={group.color} strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </div>
+                    <span
+                      style={{
+                        color: group.color,
+                        fontWeight: 700,
+                        fontSize: "0.85rem",
+                        letterSpacing: "0.08em",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      {group.category}
+                    </span>
+                    <span style={{ marginLeft: "auto", color: "#64748b", fontSize: "0.72rem", fontWeight: 600 }}>
+                      {group.tags.length} tools
+                    </span>
                   </div>
-                  <div
-                    style={{
-                      width: 40,
-                      height: 1,
-                      background: `${group.color}40`,
-                      flexShrink: 0,
-                    }}
-                  />
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+                  <div style={{ height: 1, background: `${group.color}20`, marginBottom: 16 }} />
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
                     {group.tags.map((tag) => (
                       <span
                         key={tag}
                         style={{
                           background: `${group.color}12`,
-                          border: `1px solid ${group.color}35`,
+                          border: `1px solid ${group.color}30`,
                           color: "#e2e8f0",
-                          borderRadius: 100,
-                          padding: "6px 16px",
-                          fontSize: "0.875rem",
+                          borderRadius: 8,
+                          padding: "6px 12px",
+                          fontSize: "0.82rem",
                           fontWeight: 500,
-                          transition: "all 0.2s ease",
-                          cursor: "default",
-                        }}
-                        onMouseEnter={e => {
-                          (e.currentTarget as HTMLSpanElement).style.background = `${group.color}25`;
-                          (e.currentTarget as HTMLSpanElement).style.borderColor = group.color;
-                          (e.currentTarget as HTMLSpanElement).style.color = "#ffffff";
-                          (e.currentTarget as HTMLSpanElement).style.transform = "translateY(-1px)";
-                        }}
-                        onMouseLeave={e => {
-                          (e.currentTarget as HTMLSpanElement).style.background = `${group.color}12`;
-                          (e.currentTarget as HTMLSpanElement).style.borderColor = `${group.color}35`;
-                          (e.currentTarget as HTMLSpanElement).style.color = "#e2e8f0";
-                          (e.currentTarget as HTMLSpanElement).style.transform = "translateY(0)";
                         }}
                       >
                         {tag}
