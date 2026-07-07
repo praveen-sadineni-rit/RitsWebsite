@@ -477,7 +477,13 @@ export default function AboutPage() {
           </div>
 
           {/* Bento grid */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(12, 1fr)", gridTemplateRows: "auto", gap: 16 }}>
+          <style>{`
+            @media (max-width: 768px) {
+              .bento-grid { grid-template-columns: 1fr !important; }
+              .bento-grid > * { grid-column: auto !important; grid-row: auto !important; min-height: 0 !important; }
+            }
+          `}</style>
+          <div className="bento-grid" style={{ display: "grid", gridTemplateColumns: "repeat(12, 1fr)", gridTemplateRows: "auto", gap: 16 }}>
 
             {/* Big hero card — Talent */}
             <div style={{ gridColumn: "span 5", gridRow: "span 2", background: "linear-gradient(135deg,#0f2447 0%,#1B3C6E 100%)", borderRadius: 20, padding: 36, position: "relative", overflow: "hidden", minHeight: 280 }}>
@@ -536,7 +542,7 @@ export default function AboutPage() {
               <div style={{ fontSize: 36, marginBottom: 12 }}>🚀</div>
               <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "white", marginBottom: 8 }}>Product Studio</h3>
               <p style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.6, margin: 0 }}>Napkin sketch to market-ready product. Our dedicated studio takes you from 0 to launch with design, engineering, and strategy.</p>
-              <div style={{ marginTop: 16, display: "flex", gap: 8 }}>
+              <div style={{ marginTop: 16, display: "flex", flexWrap: "wrap", gap: 8 }}>
                 {["Discovery","Design","Build","Launch"].map(s => (
                   <span key={s} style={{ fontSize: 10, fontWeight: 700, color: "#00cfb4", background: "rgba(0,207,180,0.12)", border: "1px solid rgba(0,207,180,0.2)", borderRadius: 99, padding: "3px 8px" }}>{s}</span>
                 ))}
