@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -175,45 +175,97 @@ const perks = [
 ];
 
 function TeamBubbles() {
-  const [pulse, setPulse] = useState(0);
-  useEffect(() => {
-    const t = setInterval(() => setPulse(p => p+1), 600);
-    return () => clearInterval(t);
-  }, []);
+  // Connected constellation: role nodes evenly ringed around a "We're hiring" hub,
+  // linked by data lines with pulses flowing outward (the team growing).
   const members = [
-    { initials:"RK", role:"AI Engineer", color:"#60a5fa", x:50, y:20, size:52 },
-    { initials:"SM", role:"Full Stack", color:"#00A99D", x:20, y:45, size:48 },
-    { initials:"JP", role:"Product", color:"#a78bfa", x:75, y:48, size:44 },
-    { initials:"AT", role:"DevOps", color:"#34d399", x:40, y:70, size:50 },
-    { initials:"MK", role:"UX/UI", color:"#f472b6", x:65, y:22, size:42 },
-    { initials:"DL", role:"Mobile", color:"#fb923c", x:15, y:72, size:46 },
-    { initials:"PR", role:"QA", color:"#fbbf24", x:82, y:72, size:40 },
-    { initials:"VC", role:"Backend", color:"#00A99D", x:35, y:30, size:38 },
+    { initials:"RK", role:"AI Engineer", color:"#60a5fa" },
+    { initials:"MK", role:"UX/UI", color:"#f472b6" },
+    { initials:"JP", role:"Product", color:"#a78bfa" },
+    { initials:"PR", role:"QA", color:"#fbbf24" },
+    { initials:"AT", role:"DevOps", color:"#34d399" },
+    { initials:"DL", role:"Mobile", color:"#fb923c" },
+    { initials:"SM", role:"Full Stack", color:"#00A99D" },
+    { initials:"VC", role:"Backend", color:"#22d3ee" },
   ];
+  const VW = 480, VH = 380, cx = 240, cy = 190, rx = 188, ry = 150;
+  const nodes = members.map((m, i) => {
+    const a = ((-90 + i * 45) * Math.PI) / 180;
+    return { ...m, x: cx + rx * Math.cos(a), y: cy + ry * Math.sin(a) };
+  });
+
   return (
-    <div className="relative w-full h-72 select-none">
-      {members.map((m, i) => (
-        <div key={m.initials} className="absolute flex flex-col items-center gap-1 transition-transform duration-1000"
-          style={{ left:`${m.x}%`, top:`${m.y}%`, transform:"translate(-50%,-50%)" }}>
-          <div className="rounded-full flex items-center justify-center font-black text-white shadow-lg"
-            style={{
-              width:m.size, height:m.size,
-              background:`${m.color}25`,
-              border:`2px solid ${m.color}60`,
-              fontSize: m.size*0.28,
-              boxShadow: pulse%members.length===i ? `0 0 20px ${m.color}80, 0 0 40px ${m.color}40` : `0 0 8px ${m.color}30`,
-              transition:"box-shadow 0.4s ease",
-              color: m.color,
-            }}>
-            {m.initials}
+    <div
+      className="select-none"
+      style={{ position: "relative", width: "100%", maxWidth: VW, margin: "0 auto", aspectRatio: `${VW} / ${VH}` }}
+    >
+      <style>{`
+        @keyframes tb-dash { to { stroke-dashoffset:-24; } }
+        @keyframes tb-ring { 0%,100%{ transform:scale(1); opacity:.16 } 50%{ transform:scale(1.16); opacity:.32 } }
+        @keyframes tb-bob  { 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(-6px) } }
+        .tb-line { stroke-dasharray:5 7; animation:tb-dash 1.1s linear infinite; }
+        .tb-node { animation:tb-bob 4s ease-in-out infinite; }
+        @media (prefers-reduced-motion: reduce) {
+          .tb-line, .tb-node, .tb-ring, .tb-pulse { animation:none !important; }
+        }
+      `}</style>
+
+      <svg viewBox={`0 0 ${VW} ${VH}`} width="100%" height="100%" fill="none" aria-hidden>
+        {nodes.map((n, i) => (
+          <g key={`link-${n.initials}`}>
+            <line
+              x1={cx} y1={cy} x2={n.x} y2={n.y}
+              stroke={n.color} strokeOpacity="0.4" strokeWidth="1.5"
+              className="tb-line" style={{ animationDelay: `${i * 0.12}s` }}
+            />
+            <circle r="3" fill={n.color} className="tb-pulse">
+              <animateMotion dur={`${2.4 + i * 0.22}s`} repeatCount="indefinite" path={`M${cx},${cy} L${n.x},${n.y}`} />
+            </circle>
+          </g>
+        ))}
+        {[54, 78, 104].map((r, i) => (
+          <circle
+            key={r} cx={cx} cy={cy} r={r}
+            stroke="#00A99D" strokeOpacity="0.16" strokeWidth="1"
+            className="tb-ring"
+            style={{ transformOrigin: `${cx}px ${cy}px`, animation: `tb-ring ${3 + i}s ease-in-out ${i * 0.4}s infinite` }}
+          />
+        ))}
+      </svg>
+
+      {/* Role nodes overlaid at exact coordinates */}
+      {nodes.map((n, i) => (
+        <div
+          key={n.initials}
+          style={{ position: "absolute", left: `${(n.x / VW) * 100}%`, top: `${(n.y / VH) * 100}%`, transform: "translate(-50%, -50%)" }}
+        >
+          <div
+            className="tb-node flex flex-col items-center gap-1"
+            style={{ animationDelay: `${i * 0.3}s` }}
+          >
+            <div
+              className="rounded-full flex items-center justify-center font-black"
+              style={{
+                width: 46, height: 46,
+                background: `${n.color}22`,
+                border: `2px solid ${n.color}60`,
+                boxShadow: `0 0 16px ${n.color}30`,
+                fontSize: 13,
+                color: n.color,
+              }}
+            >
+              {n.initials}
+            </div>
+            <span className="text-[9px] font-semibold whitespace-nowrap" style={{ color: `${n.color}b3` }}>{n.role}</span>
           </div>
-          <span className="text-[9px] font-semibold whitespace-nowrap" style={{ color:`${m.color}80` }}>{m.role}</span>
         </div>
       ))}
-      {/* Center: hiring badge */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-1">
-        <div className="px-4 py-2 rounded-full text-xs font-black text-white border border-white/20 backdrop-blur-sm"
-          style={{ background:"rgba(27,60,110,0.8)", boxShadow:"0 0 30px rgba(0,169,157,0.2)" }}>
+
+      {/* Center hiring hub */}
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div
+          className="px-4 py-2 rounded-full text-xs font-black text-white border border-white/20 backdrop-blur-sm"
+          style={{ background: "rgba(27,60,110,0.9)", boxShadow: "0 0 30px rgba(0,169,157,0.35)" }}
+        >
           We&apos;re hiring ✦
         </div>
       </div>
