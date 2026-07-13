@@ -4,7 +4,88 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const jobs = [
+type Job = {
+  id: number;
+  title: string;
+  department: string;
+  location: string;
+  type: string;
+  description: string;
+  openDate?: string;
+  closeDate?: string;
+  skills?: string[];
+  mailApply?: boolean;
+  experience?: string;
+  workMode?: string;
+  openings?: number;
+  responsibilities?: string[];
+  applyEmails?: string[];
+};
+
+const jobs: Job[] = [
+  {
+    id: 11,
+    title: "Delivery Manager – US Staffing",
+    department: "Operations",
+    location: "Hyderabad, India (Onsite)",
+    type: "Full-time",
+    experience: "12+ years total; 6+ years as a Delivery Manager in US Staffing",
+    workMode: "5 Days Onsite – Near Rayadurg Metro, Karachi Bakery",
+    description:
+      "RITS is looking for an experienced Delivery Manager to partner with our US Recruitment and Sales teams to drive successful client delivery, business growth, and operational excellence.",
+    responsibilities: [
+      "Manage end-to-end delivery for US staffing accounts: quality, timely closures, and client satisfaction",
+      "Collaborate with US Recruitment and Sales teams to meet client hiring goals",
+      "Build strong client relationships, lead negotiations, and deliver across accounts",
+      "Drive growth within existing accounts and support new business initiatives",
+      "Present daily, weekly, and monthly delivery and performance reports to management",
+    ],
+    skills: ["US Staffing Delivery", "Client Management", "Stakeholder Management", "Negotiation", "Business Development", "Communication"],
+    applyEmails: ["hr@rits-it.com", "charan@rits-it.com"],
+  },
+  {
+    id: 12,
+    title: "US HR Specialist",
+    department: "Operations",
+    location: "Hyderabad, India (Onsite)",
+    type: "Full-time",
+    experience: "5+ years in US HR / HR Operations",
+    workMode: "5 Days Onsite – Near Rayadurg Metro, Karachi Bakery",
+    openings: 2,
+    description:
+      "We are looking for experienced US HR Specialists with strong expertise in US HR operations, payroll, compliance, and employee lifecycle management to join our growing team.",
+    responsibilities: [
+      "Handle employee onboarding, documentation, and lifecycle management",
+      "Manage and process ADP payroll accurately and within timelines",
+      "Perform E-Verify processes and ensure employment eligibility compliance",
+      "Coordinate with immigration attorneys for H1B, OPT, and CPT visa processes",
+      "Maintain accurate employee records, HR documentation, and compliance files",
+      "Track employee timesheets and follow up on submissions and approvals",
+      "Ensure adherence to US HR policies, labor laws, and compliance requirements",
+    ],
+    skills: ["US HR Operations", "ADP Payroll", "E-Verify", "Onboarding", "Visa Documentation", "H1B/OPT/CPT", "Compliance"],
+    applyEmails: ["charan@rits-it.com", "hr@rits-it.com"],
+  },
+  {
+    id: 13,
+    title: "USA Immigration Specialist",
+    department: "Operations",
+    location: "Hyderabad, India (Onsite)",
+    type: "Full-time",
+    workMode: "5 Days Onsite",
+    description:
+      "We are looking for an experienced USA Immigration Specialist to work closely with our Immigration and HR teams. The ideal candidate has strong knowledge of US immigration processes, contract documentation, and compliance requirements.",
+    responsibilities: [
+      "Review and manage immigration contracts, agreements, and documentation",
+      "Work directly with the immigration team on CPT, OPT, H1B, and other visa processes",
+      "Coordinate document collection, verification, and compliance tracking",
+      "Maintain accurate immigration records, case updates, and status reports",
+      "Collaborate with candidates, employees, attorneys, and internal teams",
+      "Ensure timely completion of immigration tasks while maintaining compliance standards",
+    ],
+    skills: ["US Immigration", "CPT/OPT/H1B", "Contract Review", "Documentation", "Compliance", "Coordination"],
+    applyEmails: ["charan@rits-it.com", "hr@rits-it.com"],
+  },
   {
     id: 1,
     title: "Senior Full Stack Engineer",
@@ -450,7 +531,7 @@ export default function CareersPage() {
 
                 {openJob === job.id && (
                   <div className="px-6 pb-6 border-t border-gray-100 pt-4">
-                    {(job.openDate || job.closeDate) && (
+                    {(job.openDate || job.closeDate || job.experience || job.workMode || job.openings) && (
                       <div className="flex flex-wrap gap-x-6 gap-y-1 mb-4 text-sm text-gray-500">
                         {job.openDate && (
                           <span><span className="font-semibold text-gray-700">Date of Opening:</span> {job.openDate}</span>
@@ -458,11 +539,33 @@ export default function CareersPage() {
                         {job.closeDate && (
                           <span><span className="font-semibold text-gray-700">Date of Closing:</span> {job.closeDate}</span>
                         )}
+                        {job.experience && (
+                          <span><span className="font-semibold text-gray-700">Experience:</span> {job.experience}</span>
+                        )}
+                        {job.workMode && (
+                          <span><span className="font-semibold text-gray-700">Work Mode:</span> {job.workMode}</span>
+                        )}
+                        {job.openings && (
+                          <span><span className="font-semibold text-gray-700">Open Positions:</span> {job.openings}</span>
+                        )}
                       </div>
                     )}
                     <p className="text-gray-600 leading-relaxed mb-5">
                       {job.description}
                     </p>
+                    {job.responsibilities && job.responsibilities.length > 0 && (
+                      <div className="mb-5">
+                        <p className="text-sm font-semibold text-gray-900 mb-2">Key Responsibilities</p>
+                        <ul className="space-y-1.5">
+                          {job.responsibilities.map((r) => (
+                            <li key={r} className="flex gap-2 text-gray-600 text-sm leading-relaxed">
+                              <span className="text-[#00A99D] mt-0.5 shrink-0">✓</span>
+                              <span>{r}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                     {job.skills && job.skills.length > 0 && (
                       <div className="flex flex-wrap gap-2 mb-5">
                         {job.skills.map((skill, i) => (
@@ -489,6 +592,23 @@ export default function CareersPage() {
                           331 E Main Street, Ste 200<br />
                           Rock Hill, SC 29730
                         </address>
+                      </div>
+                    ) : job.applyEmails && job.applyEmails.length > 0 ? (
+                      <div className="bg-gray-50 border border-gray-100 rounded-xl p-5">
+                        <p className="text-sm font-semibold text-gray-900 mb-3">
+                          Send your resume to:
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {job.applyEmails.map((em) => (
+                            <a
+                              key={em}
+                              href={`mailto:${em}`}
+                              className="inline-block bg-[#1B3C6E] hover:bg-[#0f2447] text-white font-semibold px-5 py-2 rounded-lg transition text-sm"
+                            >
+                              {em}
+                            </a>
+                          ))}
+                        </div>
                       </div>
                     ) : (
                       <a
