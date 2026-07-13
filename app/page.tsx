@@ -877,16 +877,19 @@ function ServiceShowcase() {
 }
 
 /* ── Logo Item ── */
-function LogoItem({ client }: { client: { name: string; img: string; seal?: boolean } }) {
+function LogoItem({ client }: { client: { name: string; img: string; seal?: boolean; big?: boolean } }) {
   const [imgError, setImgError] = useState(false);
+  const containerH = client.seal ? 140 : client.big ? 118 : 88;
+  const imgH = client.seal ? 140 : client.big ? 112 : 78;
+  const imgMaxW = client.seal ? 140 : client.big ? 200 : 240;
   return (
-    <div className="flex items-center justify-center" style={{ height: client.seal ? 140 : 88 }}>
+    <div className="flex items-center justify-center" style={{ height: containerH }}>
       {!imgError ? (
         <img
           src={client.img}
           alt={client.name}
           className="object-contain"
-          style={{ height: client.seal ? 140 : 78, width: client.seal ? 140 : "auto", maxWidth: client.seal ? 140 : 240 }}
+          style={{ height: imgH, width: client.seal ? 140 : "auto", maxWidth: imgMaxW }}
           onError={() => setImgError(true)}
         />
       ) : (
@@ -902,7 +905,7 @@ const CLIENT_LOGOS = [
   { name: "Kyndryl",      img: "/logos/kyndryl.png",        seal: false },
   { name: "Thermo Fisher", img: "/logos/thermo-fisher.png", seal: false },
   { name: "Marriott",     img: "/logos/marriott.png",       seal: false },
-  { name: "Whataburger",  img: "/logos/whataburger.svg",    seal: false },
+  { name: "Whataburger",  img: "/logos/whataburger.svg",    seal: false, big: true },
   { name: "Harness",      img: "/logos/harness.svg",        seal: false },
   { name: "Persistent",   img: "/logos/persistent.svg",     seal: false },
   { name: "Virginia",     img: "/logos/virginia.png",       seal: true  },
