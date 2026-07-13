@@ -879,9 +879,9 @@ function ServiceShowcase() {
 /* ── Logo Item ── */
 function LogoItem({ client }: { client: { name: string; img: string; seal?: boolean; big?: boolean } }) {
   const [imgError, setImgError] = useState(false);
-  const containerH = client.seal ? 140 : client.big ? 118 : 88;
-  const imgH = client.seal ? 140 : client.big ? 112 : 78;
-  const imgMaxW = client.seal ? 140 : client.big ? 200 : 240;
+  const containerH = client.seal ? 140 : client.big ? 100 : 72;
+  const imgH = client.seal ? 140 : client.big ? 92 : 60;
+  const imgMaxW = client.seal ? 140 : client.big ? 168 : 190;
   return (
     <div className="flex items-center justify-center" style={{ height: containerH }}>
       {!imgError ? (
