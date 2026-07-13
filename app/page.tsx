@@ -903,8 +903,8 @@ function LogoItem({ client }: { client: { name: string; img: string; seal?: bool
 const CLIENT_LOGOS = [
   { name: "IBM",           img: "/logos/ibm.png",           seal: false },
   { name: "Kyndryl",      img: "/logos/kyndryl.png",        seal: false },
-  { name: "Thermo Fisher", img: "/logos/thermo-fisher.png", seal: false },
-  { name: "Marriott",     img: "/logos/marriott.png",       seal: false },
+  { name: "Thermo Fisher", img: "/logos/thermo-fisher.svg", seal: false },
+  { name: "Marriott",     img: "/logos/marriott.svg",       seal: false },
   { name: "Whataburger",  img: "/logos/whataburger.svg",    seal: false, big: true },
   { name: "Harness",      img: "/logos/harness.svg",        seal: false },
   { name: "Persistent",   img: "/logos/persistent.svg",     seal: false },
