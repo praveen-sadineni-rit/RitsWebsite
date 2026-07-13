@@ -902,7 +902,7 @@ const CLIENT_LOGOS = [
   { name: "Kyndryl",      img: "/logos/kyndryl.png",        seal: false },
   { name: "Thermo Fisher", img: "/logos/thermo-fisher.png", seal: false },
   { name: "Marriott",     img: "/logos/marriott.png",       seal: false },
-  { name: "Whataburger",  img: "/logos/whataburger.png",    seal: false },
+  { name: "Whataburger",  img: "/logos/whataburger.svg",    seal: false },
   { name: "Harness",      img: "/logos/harness.svg",        seal: false },
   { name: "Persistent",   img: "/logos/persistent.svg",     seal: false },
   { name: "Virginia",     img: "/logos/virginia.png",       seal: true  },
