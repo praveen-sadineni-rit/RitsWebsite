@@ -904,6 +904,7 @@ const CLIENT_LOGOS = [
   { name: "Marriott",     img: "/logos/marriott.png",       seal: false },
   { name: "Whataburger",  img: "/logos/whataburger.png",    seal: false },
   { name: "Harness",      img: "/logos/harness.svg",        seal: false },
+  { name: "Persistent",   img: "/logos/persistent.svg",     seal: false },
   { name: "Virginia",     img: "/logos/virginia.png",       seal: true  },
   { name: "Georgia",      img: "/logos/georgia.png",        seal: true  },
   { name: "Idaho",        img: "/logos/idaho.png",          seal: true  },
