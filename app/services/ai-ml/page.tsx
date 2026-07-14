@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FDEModel from "@/components/FDEModel";
 
 const typingStrings = [
   "Analyzing data...",
@@ -582,6 +583,18 @@ export default function AiMlPage() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* FDE MODEL (draft) */}
+      <section className="py-24 px-6" style={{ background: "#07111f" }}>
+        <div className="text-center mb-14 max-w-3xl mx-auto">
+          <p className="text-[#00cfb4] text-sm font-semibold uppercase tracking-widest mb-3">How We Engage</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">The Forward Deployed Engineer Model</h2>
+          <p className="text-gray-400 text-lg">
+            Our engineers embed inside your team, understand the problem firsthand, and build, ship, and iterate on AI solutions alongside you.
+          </p>
+        </div>
+        <FDEModel />
       </section>
 
       {/* AI STACK */}
