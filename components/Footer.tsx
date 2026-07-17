@@ -10,10 +10,10 @@ export default function Footer() {
     <footer style={{ backgroundColor: "#0f2447" }} className="text-white pt-16 pb-0">
       <div className="max-w-7xl mx-auto px-6">
         {/* 5-column grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12">
 
           {/* Column 1 - Brand */}
-          <div className="lg:col-span-1 flex flex-col gap-5">
+          <div className="lg:col-span-2 flex flex-col gap-5">
             {/* Brand mark + wordmark */}
             <div className="flex items-center gap-3">
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,15 +32,56 @@ export default function Footer() {
               Building tomorrow&apos;s technology, today.
             </p>
 
-            <address className="not-italic text-sm space-y-1" style={{ color: "rgba(255,255,255,0.55)" }}>
-              <p>331 E Main Street, Suite 200</p>
-              <p>Rock Hill, SC 29730</p>
-              <p className="mt-2">
-                <a href="tel:2485226740" className="hover:text-white transition-colors">248-522-6740</a>
-              </p>
-              <p>
-                <a href="mailto:info@rits-it.com" className="hover:text-white transition-colors">info@rits-it.com</a>
-              </p>
+            <address className="not-italic text-sm space-y-4" style={{ color: "rgba(255,255,255,0.55)" }}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
+              {/* United States */}
+              <div>
+                <div className="flex items-center gap-2 mb-1.5">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
+                    <path d="M12 21s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10z" stroke="#00cfb4" strokeWidth="1.7" strokeLinejoin="round" />
+                    <circle cx="12" cy="11" r="2.3" stroke="#00cfb4" strokeWidth="1.7" />
+                  </svg>
+                  <span className="text-white font-semibold text-[13px] tracking-wide">United States</span>
+                  <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ background: "rgba(0,207,180,0.12)", color: "#00cfb4" }}>HQ</span>
+                </div>
+                <p className="pl-[23px] leading-relaxed">
+                  331 E Main Street, Suite 200<br />
+                  Rock Hill, SC 29730
+                </p>
+                <div className="space-y-1.5 pl-[23px] pt-3">
+                  <p className="flex items-center gap-2">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
+                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z" stroke="#00cfb4" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <a href="tel:2485226740" className="hover:text-white transition-colors">248-522-6740</a>
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
+                      <path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="#00cfb4" strokeWidth="1.6" strokeLinejoin="round" />
+                      <path d="M2.5 7l9.5 6 9.5-6" stroke="#00cfb4" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <a href="mailto:info@rits-it.com" className="hover:text-white transition-colors">info@rits-it.com</a>
+                  </p>
+                </div>
+              </div>
+
+              {/* India */}
+              <div>
+                <div className="flex items-center gap-2 mb-1.5">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
+                    <path d="M12 21s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10z" stroke="#00cfb4" strokeWidth="1.7" strokeLinejoin="round" />
+                    <circle cx="12" cy="11" r="2.3" stroke="#00cfb4" strokeWidth="1.7" />
+                  </svg>
+                  <span className="text-white font-semibold text-[13px] tracking-wide">India</span>
+                  <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ background: "rgba(0,207,180,0.12)", color: "#00cfb4" }}>Dev Center</span>
+                </div>
+                <p className="pl-[23px] leading-relaxed">
+                  Unit No 304, Section A, Third Floor, SBR Pearl<br />
+                  HUDA Techno Enclave-III, Opp. Raheja Mind Space<br />
+                  Madhapur, Hyderabad, 500081
+                </p>
+              </div>
+              </div>
             </address>
 
             {/* Social Icons */}
@@ -75,60 +116,6 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-          </div>
-
-          {/* Column 2 - Services */}
-          <div className="lg:col-span-1">
-            <h3 className="text-sm font-semibold uppercase tracking-widest mb-5" style={{ color: "#00cfb4" }}>
-              Services
-            </h3>
-            <ul className="space-y-3">
-              {[
-                { label: "Software Solutions", href: "/services/software-solutions" },
-                { label: "Product Development", href: "/services/product-development" },
-                { label: "AI & Machine Learning", href: "/services/ai-ml" },
-                { label: "Staff Augmentation", href: "/services/staff-augmentation" },
-                { label: "Cloud & DevOps", href: "/services/cloud-devops" },
-                { label: "Digital Transformation", href: "/services/digital-transformation" },
-              ].map((item) => (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="text-sm transition-colors hover:text-white"
-                    style={{ color: "rgba(255,255,255,0.6)" }}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 3 - Industries */}
-          <div className="lg:col-span-1">
-            <h3 className="text-sm font-semibold uppercase tracking-widest mb-5" style={{ color: "#00cfb4" }}>
-              Industries
-            </h3>
-            <ul className="space-y-3">
-              {[
-                { label: "Financial Services", href: "/industries/fintech" },
-                { label: "Healthcare", href: "/industries/healthcare" },
-                { label: "E-Commerce", href: "/industries/ecommerce" },
-                { label: "Manufacturing", href: "/industries/manufacturing" },
-                { label: "Government", href: "/industries/government" },
-                { label: "Education", href: "/industries/education" },
-              ].map((item) => (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="text-sm transition-colors hover:text-white"
-                    style={{ color: "rgba(255,255,255,0.6)" }}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
 
           {/* Column 4 - Company */}
