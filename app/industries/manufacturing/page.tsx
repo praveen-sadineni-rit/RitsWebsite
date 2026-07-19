@@ -13,10 +13,10 @@ export default function ManufacturingPage() {
         className="pt-24 pb-20 px-6"
       >
         <div className="max-w-5xl mx-auto text-center">
-          <p className="text-[#00A99D] uppercase tracking-widest text-sm font-semibold mb-4">Manufacturing</p>
+          <p className="text-[#E8B53D] uppercase tracking-widest text-sm font-semibold mb-4">Manufacturing</p>
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
             Smart Manufacturing{" "}
-            <span style={{ color: "#00A99D" }}>Starts Here.</span>
+            <span style={{ color: "#E8B53D" }}>Starts Here.</span>
           </h1>
           <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-8">
             IoT, ERP modernization, and AI-powered systems that connect your shop floor to your business, in real time.
@@ -78,11 +78,11 @@ export default function ManufacturingPage() {
               {
                 title: "ERP Modernization",
                 desc: "Migrate from legacy ERP systems to modern cloud-native platforms, without disrupting production schedules.",
-                color: "#00A99D",
+                color: "#E8B53D",
                 bg: "#f0fdfb",
                 icon: (
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                    <path d="M4 7v10M8 5v14M12 3v18M16 5v14M20 7v10" stroke="#00A99D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M4 7v10M8 5v14M12 3v18M16 5v14M20 7v10" stroke="#E8B53D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 ),
               },
@@ -153,7 +153,7 @@ export default function ManufacturingPage() {
       {/* Approach */}
       <section className="py-20 px-6" style={{ background: "#0f2447" }}>
         <div className="max-w-5xl mx-auto">
-          <p className="text-[#00A99D] uppercase tracking-widest text-sm font-semibold mb-4">Our Approach</p>
+          <p className="text-[#E8B53D] uppercase tracking-widest text-sm font-semibold mb-4">Our Approach</p>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">How We Deliver</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -163,7 +163,7 @@ export default function ManufacturingPage() {
               { num: "04", title: "Deployment & Training", desc: "We go live with your team, provide hands-on training, and embed continuous improvement loops into your operations." },
             ].map((step) => (
               <div key={step.num} className="p-6 rounded-2xl bg-white/5 border border-white/10">
-                <p className="text-[#00A99D] font-black text-3xl mb-3">{step.num}</p>
+                <p className="text-[#E8B53D] font-black text-3xl mb-3">{step.num}</p>
                 <h3 className="text-white font-semibold text-lg mb-2">{step.title}</h3>
                 <p className="text-white/40 text-sm leading-relaxed">{step.desc}</p>
               </div>
@@ -175,7 +175,7 @@ export default function ManufacturingPage() {
       {/* CTA */}
       <section
         className="py-20 px-6 text-center"
-        style={{ background: "linear-gradient(135deg, #1B3C6E 0%, #00A99D 100%)" }}
+        style={{ background: "linear-gradient(135deg, #1B3C6E 0%, #E8B53D 100%)" }}
       >
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">

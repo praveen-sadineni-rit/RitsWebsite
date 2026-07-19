@@ -15,7 +15,7 @@ const ROLES = [
   {
     title: "Finance & Accounting",
     desc: "AP/AR clerks, staff accountants, controllers, bookkeepers, payroll specialists.",
-    color: "#00A99D", bg: "#e6f7f6",
+    color: "#E8B53D", bg: "#e6f7f6",
     icon: <path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
   },
   {
@@ -72,13 +72,13 @@ export default function NonITStaffingPage() {
           className="py-24 md:py-32"
         >
           <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)", backgroundSize: "48px 48px", pointerEvents: "none" }} />
-          <div aria-hidden="true" style={{ position: "absolute", top: "-80px", right: "-80px", width: "420px", height: "420px", background: "radial-gradient(circle, rgba(0,169,157,0.12) 0%, transparent 70%)", pointerEvents: "none" }} />
+          <div aria-hidden="true" style={{ position: "absolute", top: "-80px", right: "-80px", width: "420px", height: "420px", background: "radial-gradient(circle, rgba(232,181,61,0.12) 0%, transparent 70%)", pointerEvents: "none" }} />
 
           <div className="max-w-5xl mx-auto px-6 lg:px-10 relative text-center">
-            <p className="section-eyebrow" style={{ color: "#00A99D" }}>Non-IT Staffing</p>
+            <p className="section-eyebrow" style={{ color: "#E8B53D" }}>Non-IT Staffing</p>
             <h1 style={{ fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 900, lineHeight: 1.1, color: "#ffffff", letterSpacing: "-0.02em", marginBottom: "1.25rem" }}>
               Great teams aren&apos;t just engineers.{" "}
-              <span style={{ color: "#00A99D" }}>We staff the rest too.</span>
+              <span style={{ color: "#E8B53D" }}>We staff the rest too.</span>
             </h1>
             <p style={{ fontSize: "1.125rem", lineHeight: 1.7, color: "rgba(255,255,255,0.72)", maxWidth: "58ch", margin: "0 auto 2.5rem" }}>
               From finance and HR to customer support and logistics, we help organizations build strong operational teams with pre-screened, reliable talent.
@@ -91,7 +91,7 @@ export default function NonITStaffingPage() {
                 { value: "Flexible", label: "contract, C2H, full-time" },
               ].map((s) => (
                 <div key={s.value} style={{ display: "inline-flex", alignItems: "center", gap: "10px", padding: "10px 18px", background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.14)", borderRadius: "6px" }}>
-                  <span style={{ fontWeight: 800, fontSize: "0.95rem", color: "#00cfb4", letterSpacing: "-0.01em" }}>{s.value}</span>
+                  <span style={{ fontWeight: 800, fontSize: "0.95rem", color: "#F3C34E", letterSpacing: "-0.01em" }}>{s.value}</span>
                   <span style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.55)" }}>{s.label}</span>
                 </div>
               ))}
@@ -108,7 +108,7 @@ export default function NonITStaffingPage() {
         <section id="roles" style={{ background: "#f8f9fa" }} className="py-20 px-6">
           <div className="max-w-6xl mx-auto">
             <div style={{ marginBottom: "3rem", textAlign: "center" }}>
-              <p className="section-eyebrow" style={{ color: "#00A99D" }}>Roles we cover</p>
+              <p className="section-eyebrow" style={{ color: "#E8B53D" }}>Roles we cover</p>
               <h2 style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 800, color: "#0f2447", letterSpacing: "-0.02em" }}>
                 Specialized staffing across every operational function.
               </h2>
@@ -135,7 +135,7 @@ export default function NonITStaffingPage() {
         <section style={{ background: "#ffffff" }} className="py-20 px-6">
           <div className="max-w-6xl mx-auto">
             <div style={{ marginBottom: "2.5rem", textAlign: "center" }}>
-              <p className="section-eyebrow" style={{ color: "#00A99D" }}>Industries we serve</p>
+              <p className="section-eyebrow" style={{ color: "#E8B53D" }}>Industries we serve</p>
               <h2 style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 800, color: "#0f2447", letterSpacing: "-0.02em" }}>
                 We understand your industry&apos;s hiring urgency.
               </h2>
@@ -157,7 +157,7 @@ export default function NonITStaffingPage() {
         <section style={{ background: "linear-gradient(135deg, #0f2447 0%, #1B3C6E 100%)" }} className="py-20 px-6">
           <div className="max-w-6xl mx-auto">
             <div style={{ marginBottom: "3rem", textAlign: "center" }}>
-              <p className="section-eyebrow" style={{ color: "#00cfb4" }}>Why choose us</p>
+              <p className="section-eyebrow" style={{ color: "#F3C34E" }}>Why choose us</p>
               <h2 style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 800, color: "#ffffff", letterSpacing: "-0.02em" }}>
                 Staffing that keeps pace with your business.
               </h2>
@@ -165,8 +165,8 @@ export default function NonITStaffingPage() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "20px" }}>
               {WHY_US.map((item) => (
                 <div key={item.title} style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "14px", padding: "24px" }}>
-                  <div style={{ width: 32, height: 32, borderRadius: "50%", background: "rgba(0,207,180,0.15)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "14px" }}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#00cfb4" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <div style={{ width: 32, height: 32, borderRadius: "50%", background: "rgba(232,181,61,0.15)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "14px" }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#F3C34E" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   </div>
                   <h3 style={{ fontWeight: 700, fontSize: "1rem", color: "#ffffff", marginBottom: "8px" }}>{item.title}</h3>
                   <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.6 }}>{item.desc}</p>

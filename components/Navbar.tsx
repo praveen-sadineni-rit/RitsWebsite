@@ -14,7 +14,7 @@ const navLinks = [
 const SERVICE_COLUMNS = [
   {
     category: "Talent",
-    accent: "#00A99D",
+    accent: "#E8B53D",
     links: [
       { label: "Staffing Solutions", href: "/services/staff-augmentation" },
       { label: "Non-IT Staffing", href: "/services/non-it-staffing" },
@@ -146,18 +146,14 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="flex items-center justify-between h-18 py-3">
 
-            {/* Logo */}
-            <a href="/" className="flex items-center gap-3 flex-shrink-0">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="40" height="40" rx="5" fill="#1B3C6E"/>
-                <path d="M10 10H22C25.3 10 28 12.7 28 16C28 18.4 26.6 20.5 24.5 21.5L28.5 30H23L19.5 22H15V30H10V10Z" fill="white"/>
-                <rect x="15" y="14" width="7" height="4" rx="2" fill="#00A99D"/>
-                <path d="M15 24L19.5 20.5L24 24H21.5V30H17.5V24H15Z" fill="#00A99D"/>
-              </svg>
-              <div>
-                <div className="text-[#1B3C6E] font-black text-base leading-tight tracking-tight">RESOURCE</div>
-                <div className="text-[#00A99D] font-semibold text-[9px] tracking-[0.15em] uppercase leading-tight">Innovative Technologies</div>
-              </div>
+            {/* Logo — white version on the dark navbar, dark version on light */}
+            <a href="/" className="flex items-center flex-shrink-0">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={dark ? "/rits-logo-white.png" : "/rits-logo-dark.png"}
+                alt="Resource Innovative Technologies"
+                className="h-9 w-auto"
+              />
             </a>
 
             {/* Desktop nav */}
@@ -179,7 +175,7 @@ export default function Navbar() {
                   </a>
                   {/* Underline indicator */}
                   {activeMenu === link.label && (
-                    <div className="absolute bottom-0 left-4 right-4 h-0.5 bg-[#00A99D]" />
+                    <div className="absolute bottom-0 left-4 right-4 h-0.5 bg-[#E8B53D]" />
                   )}
                 </div>
               ))}
@@ -198,7 +194,7 @@ export default function Navbar() {
                   className="absolute top-1 w-5 h-5 rounded-full flex items-center justify-center transition-all duration-300 shadow-md"
                   style={{
                     left: dark ? "calc(100% - 24px)" : "4px",
-                    background: dark ? "#00A99D" : "white",
+                    background: dark ? "#E8B53D" : "white",
                   }}
                 >
                   {dark ? (
@@ -257,7 +253,7 @@ export default function Navbar() {
               {/* Bottom bar */}
               <div className="mt-8 pt-6 border-t border-white/8 flex items-center justify-between">
                 <p className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>Trusted by 50+ companies worldwide</p>
-                <a href="/contact" className="flex items-center gap-2 text-sm font-bold px-5 py-2 rounded-lg transition-all" style={{ background: "#00A99D", color: "white" }}>
+                <a href="/contact" className="flex items-center gap-2 text-sm font-bold px-5 py-2 rounded-lg transition-all" style={{ background: "#E8B53D", color: "white" }}>
                   Talk to an Expert
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </a>
@@ -291,7 +287,7 @@ export default function Navbar() {
               </div>
               <div className="mt-8 pt-6 border-t border-white/8 flex items-center justify-between">
                 <p className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>Solutions tailored to your industry</p>
-                <a href="/contact" className="flex items-center gap-2 text-sm font-bold px-5 py-2 rounded-lg transition-all" style={{ background: "#00A99D", color: "white" }}>
+                <a href="/contact" className="flex items-center gap-2 text-sm font-bold px-5 py-2 rounded-lg transition-all" style={{ background: "#E8B53D", color: "white" }}>
                   Talk to an Expert
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </a>
@@ -347,7 +343,7 @@ export default function Navbar() {
                             </div>
                           </div>
                         ))}
-                        <a href={link.href} onClick={() => setMobileOpen(false)} className="inline-flex items-center gap-1 text-sm font-bold text-[#00A99D]">
+                        <a href={link.href} onClick={() => setMobileOpen(false)} className="inline-flex items-center gap-1 text-sm font-bold text-[#E8B53D]">
                           View all {link.label}
                           <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                         </a>

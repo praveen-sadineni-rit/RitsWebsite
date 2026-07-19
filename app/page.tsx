@@ -51,7 +51,7 @@ const FEDERAL_HOLIDAYS: Holiday[] = [
     name: "Martin Luther King Jr. Day",
     message: "✊🏾 Honoring Martin Luther King Jr. Day",
     subMessage: "celebrating his legacy of equality, justice, and service",
-    background: "linear-gradient(90deg, #1B3C6E, #00A99D)",
+    background: "linear-gradient(90deg, #1B3C6E, #E8B53D)",
     getDate: (y) => nthWeekdayOfMonth(y, 0, 1, 3),
   },
   {
@@ -86,7 +86,7 @@ const FEDERAL_HOLIDAYS: Holiday[] = [
     name: "Labor Day",
     message: "🛠️ Happy Labor Day from Resource Innovative Technologies",
     subMessage: "celebrating the hard work and dedication of teams everywhere",
-    background: "linear-gradient(90deg, #00A99D, #1B3C6E)",
+    background: "linear-gradient(90deg, #E8B53D, #1B3C6E)",
     getDate: (y) => nthWeekdayOfMonth(y, 8, 1, 1),
   },
   {
@@ -107,14 +107,14 @@ const FEDERAL_HOLIDAYS: Holiday[] = [
     name: "Thanksgiving Day",
     message: "🦃 Happy Thanksgiving from Resource Innovative Technologies",
     subMessage: "grateful for our clients, partners, and team",
-    background: "linear-gradient(90deg, #b45309, #00A99D)",
+    background: "linear-gradient(90deg, #b45309, #E8B53D)",
     getDate: (y) => nthWeekdayOfMonth(y, 10, 4, 4),
   },
   {
     name: "Christmas Day",
     message: "🎄 Merry Christmas from Resource Innovative Technologies",
     subMessage: "wishing you joy, peace, and prosperity this holiday season",
-    background: "linear-gradient(90deg, #b91c1c, #00A99D)",
+    background: "linear-gradient(90deg, #b91c1c, #E8B53D)",
     getDate: (y) => new Date(y, 11, 25),
   },
 ];
@@ -199,7 +199,7 @@ const ArrowRight = ({ size = 16 }: { size?: number }) => (
 
 const CheckIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="flex-shrink-0 mt-0.5">
-    <path d="M20 6L9 17L4 12" stroke="#00A99D" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M20 6L9 17L4 12" stroke="#E8B53D" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
@@ -283,7 +283,7 @@ const insights = [
     avatarColor: "#1B3C6E",
     date: "June 12, 2025",
     readTime: "7 min read",
-    gradient: "linear-gradient(135deg, #0f2447 0%, #1B3C6E 50%, #00A99D 100%)",
+    gradient: "linear-gradient(135deg, #0f2447 0%, #1B3C6E 50%, #E8B53D 100%)",
     href: "https://www.technologyreview.com/",
   },
   {
@@ -293,10 +293,10 @@ const insights = [
     excerpt: "McKinsey's 2025 AI report found that generative AI alone could add the equivalent of $2.6–$4.4 trillion annually across 63 analyzed use cases, with knowledge work and software development leading adoption.",
     author: "McKinsey & Company",
     initials: "MC",
-    avatarColor: "#00877d",
+    avatarColor: "#B0810E",
     date: "May 20, 2025",
     readTime: "5 min read",
-    gradient: "linear-gradient(135deg, #003d3a 0%, #00A99D 100%)",
+    gradient: "linear-gradient(135deg, #003d3a 0%, #E8B53D 100%)",
     href: "https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai",
   },
   {
@@ -369,7 +369,7 @@ function NeuralNetwork() {
     const N = 120;
 
     const TECHS = [
-      { label: "AI", color: "#00A99D" },
+      { label: "AI", color: "#E8B53D" },
       { label: "Node.js", color: "#68d391" },
       { label: "LLM", color: "#a78bfa" },
       { label: "Data", color: "#60a5fa" },
@@ -377,7 +377,7 @@ function NeuralNetwork() {
       { label: "Python", color: "#fbbf24" },
       { label: "Cloud", color: "#34d399" },
       { label: "ML", color: "#f472b6" },
-      { label: "API", color: "#00A99D" },
+      { label: "API", color: "#E8B53D" },
       { label: "DevOps", color: "#fb923c" },
       { label: "TypeScript", color: "#60a5fa" },
       { label: "Docker", color: "#38bdf8" },
@@ -393,7 +393,7 @@ function NeuralNetwork() {
       { label: "Redis", color: "#fb923c" },
       { label: "PostgreSQL", color: "#60a5fa" },
       { label: "NLP", color: "#f472b6" },
-      { label: "RAG", color: "#00A99D" },
+      { label: "RAG", color: "#E8B53D" },
       { label: "Microservices", color: "#fbbf24" },
       { label: "Azure", color: "#38bdf8" },
       { label: "GCP", color: "#68d391" },
@@ -409,7 +409,7 @@ function NeuralNetwork() {
       { label: "Snowflake", color: "#38bdf8" },
       { label: "dbt", color: "#68d391" },
       { label: "Airflow", color: "#34d399" },
-      { label: "FastAPI", color: "#00A99D" },
+      { label: "FastAPI", color: "#E8B53D" },
       { label: "Go", color: "#38bdf8" },
       { label: "Rust", color: "#fb923c" },
       { label: "Java", color: "#fbbf24" },
@@ -426,7 +426,7 @@ function NeuralNetwork() {
       { label: "PyTorch", color: "#f472b6" },
       { label: "TensorFlow", color: "#fbbf24" },
       { label: "Fine-Tuning", color: "#a78bfa" },
-      { label: "Embeddings", color: "#00A99D" },
+      { label: "Embeddings", color: "#E8B53D" },
       { label: "Zero-Shot", color: "#e2e8f0" },
     ];
 
@@ -483,7 +483,7 @@ function NeuralNetwork() {
           const d = Math.sqrt(dx * dx + dy * dy);
           if (d < 72) {
             const alpha = (1 - d / 72) * 0.3 * Math.min(a.depth, b.depth);
-            ctx.strokeStyle = "rgba(0,169,157," + alpha + ")";
+            ctx.strokeStyle = "rgba(232,181,61," + alpha + ")";
             ctx.lineWidth = 0.6;
             ctx.beginPath();
             ctx.moveTo(a.sx, a.sy);
@@ -577,8 +577,8 @@ function NeuralNetwork() {
 
       // Central ambient glow
       const cg = ctx.createRadialGradient(cx, cy, 0, cx, cy, 90);
-      cg.addColorStop(0, "rgba(0,169,157,0.05)");
-      cg.addColorStop(1, "rgba(0,169,157,0)");
+      cg.addColorStop(0, "rgba(232,181,61,0.05)");
+      cg.addColorStop(1, "rgba(232,181,61,0)");
       ctx.fillStyle = cg;
       ctx.beginPath();
       ctx.arc(cx, cy, 90, 0, Math.PI * 2);
@@ -594,7 +594,7 @@ function NeuralNetwork() {
       const startAngle = Math.PI / 2 + totalAngle / 2;
       const charSpacing = totalAngle / (text.length - 1);
       // Indices of R (0), I (10), T (22) in "RESOURCE  INNOVATIVE  TECHNOLOGIES"
-      const ritIndices: Record<number, string> = { 0: "#00cfb4", 10: "#60a5fa", 22: "#f472b6" };
+      const ritIndices: Record<number, string> = { 0: "#F3C34E", 10: "#60a5fa", 22: "#f472b6" };
 
       for (let k = 0; k < text.length; k++) {
         const charAngle = startAngle - k * charSpacing;
@@ -611,7 +611,7 @@ function NeuralNetwork() {
       // Decorative arc line under text
       ctx.beginPath();
       ctx.arc(cx, cy, arcR + 12, Math.PI / 2 - totalAngle / 2, Math.PI / 2 + totalAngle / 2);
-      ctx.strokeStyle = "rgba(0,169,157,0.18)";
+      ctx.strokeStyle = "rgba(232,181,61,0.18)";
       ctx.lineWidth = 0.8;
       ctx.stroke();
 
@@ -622,7 +622,7 @@ function NeuralNetwork() {
       ctx.save();
       ctx.translate(chipLx, chipLy);
       ctx.rotate(chipL - Math.PI / 2);
-      ctx.fillStyle = "#00A99D";
+      ctx.fillStyle = "#E8B53D";
       ctx.beginPath();
       ctx.moveTo(0, -5);
       ctx.lineTo(4, 0);
@@ -639,7 +639,7 @@ function NeuralNetwork() {
       ctx.save();
       ctx.translate(chipRx, chipRy);
       ctx.rotate(chipR - Math.PI / 2);
-      ctx.fillStyle = "#00A99D";
+      ctx.fillStyle = "#E8B53D";
       ctx.beginPath();
       ctx.moveTo(0, -5);
       ctx.lineTo(4, 0);
@@ -697,7 +697,7 @@ const ALL_SERVICES = [
     short: "Discovery · Design · Launch",
     desc: "Full-cycle product engineering, from idea and UX research to launch and iteration. We turn vision into market-ready products, fast.",
     tags: ["Discovery", "UX Design", "Agile", "Go-to-Market"],
-    accent: "#00A99D",
+    accent: "#E8B53D",
     href: "/services/product-development",
     iconPath: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
   },
@@ -753,12 +753,12 @@ function ServiceShowcase() {
 
         {/* Header */}
         <Reveal className="mb-14">
-          <p className="text-[#00A99D] text-xs font-bold uppercase tracking-widest mb-3">What We Do</p>
-          <div className="w-10 h-1 bg-[#00A99D] rounded mb-5" />
+          <p className="text-[#E8B53D] text-xs font-bold uppercase tracking-widest mb-3">What We Do</p>
+          <div className="w-10 h-1 bg-[#E8B53D] rounded mb-5" />
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <h2 className="text-4xl md:text-5xl font-black text-white leading-tight" style={{ letterSpacing: "-0.02em" }}>
               Six ways we build<br />
-              <span style={{ color: "#00A99D" }}>what&apos;s next.</span>
+              <span style={{ color: "#E8B53D" }}>what&apos;s next.</span>
             </h2>
             <p className="text-white/30 text-sm leading-relaxed max-w-xs">
               End-to-end technology capabilities, from the first line of code to the right engineer on your team.
@@ -945,7 +945,7 @@ export default function Home() {
           }}/>
           {/* Decorative shapes */}
           <div className="absolute top-0 right-0 w-2/3 h-full opacity-10" style={{
-            background: "radial-gradient(ellipse at 80% 50%, #00A99D 0%, transparent 60%)"
+            background: "radial-gradient(ellipse at 80% 50%, #E8B53D 0%, transparent 60%)"
           }}/>
           <div className="absolute bottom-0 left-0 w-1/2 h-1/2 opacity-5" style={{
             background: "radial-gradient(ellipse at 20% 80%, #ffffff 0%, transparent 60%)"
@@ -981,8 +981,8 @@ export default function Home() {
           <div className="">{/* text col */}
             {/* Eyebrow */}
             <div className="animate-fade-up mb-6">
-              <span className="inline-flex items-center gap-2 text-[#00A99D] text-sm font-semibold uppercase tracking-widest">
-                <span className="w-8 h-px bg-[#00A99D]" />
+              <span className="inline-flex items-center gap-2 text-[#E8B53D] text-sm font-semibold uppercase tracking-widest">
+                <span className="w-8 h-px bg-[#E8B53D]" />
                 Talent · Tech · Transformation
               </span>
             </div>
@@ -995,7 +995,7 @@ export default function Home() {
             >
               The right technology
               <br />
-              <span className="text-[#00A99D]">changes everything.</span>
+              <span className="text-[#E8B53D]">changes everything.</span>
             </h1>
 
             {/* Subtext */}
@@ -1099,9 +1099,9 @@ export default function Home() {
 
             {/* Pillar 2 — People Vetted */}
             <Reveal delay={0.1}>
-              <div className="h-full rounded-2xl border border-[#00A99D]/15 p-10 bg-[#f0fdfb] relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-1 h-full bg-[#00A99D] rounded-l-2xl" />
-                <div className="w-12 h-12 rounded-xl bg-[#00A99D] flex items-center justify-center mb-6">
+              <div className="h-full rounded-2xl border border-[#E8B53D]/15 p-10 bg-[#f0fdfb] relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-1 h-full bg-[#E8B53D] rounded-l-2xl" />
+                <div className="w-12 h-12 rounded-xl bg-[#E8B53D] flex items-center justify-center mb-6">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                     <path d="M20 6L9 17l-5-5" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -1134,17 +1134,17 @@ export default function Home() {
             <div className="rounded-2xl bg-[#0f2447] px-10 py-10 grid md:grid-cols-3 gap-8 text-center">
               {[
                 {
-                  icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#00A99D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+                  icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#E8B53D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>,
                   title: "People First",
                   desc: "We invest in our people, always available, always listening. A supported team delivers exceptional work.",
                 },
                 {
-                  icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#00A99D" strokeWidth="2"/><path d="M12 6v6l4 2" stroke="#00A99D" strokeWidth="2" strokeLinecap="round"/></svg>,
+                  icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#E8B53D" strokeWidth="2"/><path d="M12 6v6l4 2" stroke="#E8B53D" strokeWidth="2" strokeLinecap="round"/></svg>,
                   title: "Strong Foundations",
                   desc: "Growth takes time. We don't chase shortcuts, we build relationships and capabilities that compound over years.",
                 },
                 {
-                  icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="#00A99D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M22 4L12 14.01l-3-3" stroke="#00A99D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>,
+                  icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="#E8B53D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M22 4L12 14.01l-3-3" stroke="#E8B53D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>,
                   title: "Results Focused",
                   desc: "At the end of the day, what matters is impact. We stay accountable to outcomes, not just deliverables.",
                 },
@@ -1203,7 +1203,7 @@ export default function Home() {
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gray-200 text-sm font-medium text-[#1B3C6E] hover:bg-[#1B3C6E] hover:text-white hover:border-[#1B3C6E] transition-all duration-200 whitespace-nowrap">
                     {ind}
                   </a>
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00A99D] opacity-40 flex-shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#E8B53D] opacity-40 flex-shrink-0" />
                 </span>
               ))}
             </div>
@@ -1221,7 +1221,7 @@ export default function Home() {
               {[...[...industries].reverse(), ...[...industries].reverse()].map((ind, i) => (
                 <span key={i} className="inline-flex items-center gap-3 mx-3">
                   <a href="#contact"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gray-100 bg-[#f8f9fa] text-sm font-medium text-gray-500 hover:bg-[#00A99D] hover:text-white hover:border-[#00A99D] transition-all duration-200 whitespace-nowrap">
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gray-100 bg-[#f8f9fa] text-sm font-medium text-gray-500 hover:bg-[#E8B53D] hover:text-white hover:border-[#E8B53D] transition-all duration-200 whitespace-nowrap">
                     {ind}
                   </a>
                   <span className="w-1.5 h-1.5 rounded-full bg-[#1B3C6E] opacity-20 flex-shrink-0" />
@@ -1258,24 +1258,24 @@ export default function Home() {
             <Reveal className="md:col-span-2">
               <div className="relative rounded-2xl bg-[#0f2447] p-10 h-full min-h-[260px] overflow-hidden group flex flex-col">
                 <div className="absolute inset-0 opacity-10" style={{
-                  backgroundImage: "radial-gradient(circle at 80% 50%, #00A99D 0%, transparent 60%)"
+                  backgroundImage: "radial-gradient(circle at 80% 50%, #E8B53D 0%, transparent 60%)"
                 }}/>
                 {/* Decorative circles */}
                 <div className="absolute -right-8 -bottom-8 w-48 h-48 rounded-full border border-white/5"/>
                 <div className="absolute -right-4 -bottom-4 w-32 h-32 rounded-full border border-white/5"/>
                 <div className="relative z-10 flex-1">
                   <div className="flex items-center gap-3 mb-5">
-                    <div className="w-10 h-10 rounded-xl bg-[#00A99D]/20 flex items-center justify-center">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#00A99D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    <div className="w-10 h-10 rounded-xl bg-[#E8B53D]/20 flex items-center justify-center">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#E8B53D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                     </div>
-                    <span className="text-[#00A99D] text-xs font-bold uppercase tracking-widest">01</span>
+                    <span className="text-[#E8B53D] text-xs font-bold uppercase tracking-widest">01</span>
                   </div>
                   <h3 className="text-2xl font-black text-white mb-3">Senior-only talent</h3>
                   <p className="text-white/40 text-sm leading-relaxed max-w-md md:pr-24">Every engineer we assign is senior level. No bait-and-switch, no juniors learning on your budget. You asked for senior, you get senior, every single time.</p>
                 </div>
                 {/* Badge: stacked below text on mobile, floating bottom-right on desktop */}
-                <div className="relative z-10 mt-6 self-start md:absolute md:mt-0 md:bottom-8 md:right-8 md:self-auto bg-[#00A99D]/10 border border-[#00A99D]/20 rounded-xl px-4 py-2 text-left md:text-right">
-                  <div className="text-2xl font-black text-[#00A99D]">100%</div>
+                <div className="relative z-10 mt-6 self-start md:absolute md:mt-0 md:bottom-8 md:right-8 md:self-auto bg-[#E8B53D]/10 border border-[#E8B53D]/20 rounded-xl px-4 py-2 text-left md:text-right">
+                  <div className="text-2xl font-black text-[#E8B53D]">100%</div>
                   <div className="text-white/30 text-xs">Senior engineers</div>
                 </div>
               </div>
@@ -1283,12 +1283,12 @@ export default function Home() {
 
             {/* Card 2 — teal accent */}
             <Reveal delay={0.08}>
-              <div className="relative rounded-2xl bg-[#f0fdfb] border border-[#00A99D]/15 p-8 h-full min-h-[260px] overflow-hidden group hover:shadow-lg transition-shadow duration-300">
+              <div className="relative rounded-2xl bg-[#f0fdfb] border border-[#E8B53D]/15 p-8 h-full min-h-[260px] overflow-hidden group hover:shadow-lg transition-shadow duration-300">
                 <div className="absolute top-0 right-0 w-32 h-32 opacity-5" style={{
-                  background: "radial-gradient(circle, #00A99D 0%, transparent 70%)"
+                  background: "radial-gradient(circle, #E8B53D 0%, transparent 70%)"
                 }}/>
-                <span className="text-[#00A99D] text-xs font-bold uppercase tracking-widest mb-4 block">02</span>
-                <div className="w-10 h-10 rounded-xl bg-[#00A99D] flex items-center justify-center mb-5">
+                <span className="text-[#E8B53D] text-xs font-bold uppercase tracking-widest mb-4 block">02</span>
+                <div className="w-10 h-10 rounded-xl bg-[#E8B53D] flex items-center justify-center mb-5">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="white" strokeWidth="2"/><circle cx="12" cy="12" r="3" stroke="white" strokeWidth="2"/></svg>
                 </div>
                 <h3 className="text-lg font-black text-[#1B3C6E] mb-2">Transparent by design</h3>
@@ -1327,10 +1327,10 @@ export default function Home() {
                       {["Launch", "30d", "60d", "90d"].map((label, i) => (
                         <div key={label} className="flex items-center gap-2">
                           <div className="flex flex-col items-center gap-1">
-                            <div className={`w-3 h-3 rounded-full ${i === 0 ? "bg-[#1B3C6E]" : "bg-[#00A99D]"}`}/>
+                            <div className={`w-3 h-3 rounded-full ${i === 0 ? "bg-[#1B3C6E]" : "bg-[#E8B53D]"}`}/>
                             <span className="text-[10px] font-bold text-[#1B3C6E]/50">{label}</span>
                           </div>
-                          {i < 3 && <div className="w-8 h-px bg-[#00A99D]/30 mb-3"/>}
+                          {i < 3 && <div className="w-8 h-px bg-[#E8B53D]/30 mb-3"/>}
                         </div>
                       ))}
                     </div>
@@ -1360,7 +1360,7 @@ export default function Home() {
             <Reveal delay={0.16} className="md:col-span-2">
               <div className="relative rounded-2xl bg-[#1B3C6E] p-10 h-full overflow-hidden group">
                 <div className="absolute inset-0 opacity-10" style={{
-                  backgroundImage: "radial-gradient(circle at 20% 50%, #00A99D 0%, transparent 50%)"
+                  backgroundImage: "radial-gradient(circle at 20% 50%, #E8B53D 0%, transparent 50%)"
                 }}/>
                 <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
                   <div>
@@ -1454,7 +1454,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <div className="relative h-full flex flex-col justify-between p-8 min-h-[480px]">
                   <div className="flex items-center gap-2">
-                    <span className="bg-[#00A99D] text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
+                    <span className="bg-[#E8B53D] text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
                       {insights[0].tag}
                     </span>
                     <span className="bg-white/10 text-white/70 text-[10px] font-semibold uppercase tracking-widest px-3 py-1 rounded-full backdrop-blur-sm">
@@ -1462,7 +1462,7 @@ export default function Home() {
                     </span>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-black text-white leading-tight mb-3 group-hover:text-[#00A99D] transition-colors duration-300" style={{ letterSpacing: "-0.01em" }}>
+                    <h3 className="text-2xl font-black text-white leading-tight mb-3 group-hover:text-[#E8B53D] transition-colors duration-300" style={{ letterSpacing: "-0.01em" }}>
                       {insights[0].title}
                     </h3>
                     <p className="text-white/60 text-sm leading-relaxed mb-6 line-clamp-2">{insights[0].excerpt}</p>
@@ -1476,7 +1476,7 @@ export default function Home() {
                           <div className="text-white/40 text-[10px]">{insights[0].date} · {insights[0].readTime}</div>
                         </div>
                       </div>
-                      <div className="w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center group-hover:bg-[#00A99D] group-hover:border-[#00A99D] transition-all duration-300">
+                      <div className="w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center group-hover:bg-[#E8B53D] group-hover:border-[#E8B53D] transition-all duration-300">
                         <ArrowRight size={14} />
                       </div>
                     </div>
@@ -1533,9 +1533,9 @@ export default function Home() {
             <div className="text-center mb-10">
               <div className="flex items-end justify-center gap-6 flex-wrap mb-3 select-none">
                 <span className="word-spotlight word-spotlight-1 text-5xl lg:text-6xl font-black text-white tracking-tight">BUILD.</span>
-                <span className="text-[#00A99D] text-3xl font-black mb-2">→</span>
+                <span className="text-[#E8B53D] text-3xl font-black mb-2">→</span>
                 <span className="word-spotlight word-spotlight-2 text-5xl lg:text-6xl font-black text-white tracking-tight">LAUNCH.</span>
-                <span className="text-[#00A99D] text-3xl font-black mb-2">→</span>
+                <span className="text-[#E8B53D] text-3xl font-black mb-2">→</span>
                 <span className="word-spotlight word-spotlight-3 text-5xl lg:text-6xl font-black text-white tracking-tight">GROW.</span>
               </div>
               <p className="text-white/40 text-sm tracking-widest uppercase mt-6">with Resource Innovative Technologies</p>
@@ -1569,9 +1569,9 @@ export default function Home() {
                   { title: "Response within 24 hours", desc: "We follow up fast. Your timeline matters to us." },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-3">
-                    <div className="mt-1 w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style={{ background: "rgba(0,169,157,0.15)" }}>
+                    <div className="mt-1 w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style={{ background: "rgba(232,181,61,0.15)" }}>
                       <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
-                        <path d="M20 6L9 17L4 12" stroke="#00A99D" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M20 6L9 17L4 12" stroke="#E8B53D" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     </div>
                     <div>
@@ -1601,7 +1601,7 @@ export default function Home() {
               {submitted ? (
                 <div className="flex items-center gap-3 bg-white/10 text-white px-8 py-6 rounded-xl border border-white/20">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 6L9 17L4 12" stroke="#00A99D" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M20 6L9 17L4 12" stroke="#E8B53D" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                   <span className="font-semibold">Thank you! We&apos;ll be in touch within 24 hours.</span>
                 </div>
@@ -1609,7 +1609,7 @@ export default function Home() {
                 <form onSubmit={(e) => { e.preventDefault(); if (email) setSubmitted(true); }} className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-4">
                   <p className="text-white/60 text-sm">Drop your email and we&apos;ll reach out to understand your project.</p>
                   <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="your@company.com" required
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/15 text-white placeholder-white/30 focus:outline-none focus:border-[#00A99D] transition-colors text-sm" />
+                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/15 text-white placeholder-white/30 focus:outline-none focus:border-[#E8B53D] transition-colors text-sm" />
                   <button type="submit" className="btn-primary w-full justify-center">Send Message <ArrowRight size={14} /></button>
                 </form>
               )}

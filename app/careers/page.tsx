@@ -197,7 +197,7 @@ const departmentColors: Record<string, string> = {
   Design: "bg-purple-100 text-purple-700",
   Product: "bg-green-100 text-green-700",
   Operations: "bg-orange-100 text-orange-700",
-  Business: "bg-teal-100 text-teal-700",
+  Business: "bg-amber-100 text-amber-700",
 };
 
 const SKILL_PALETTE = [
@@ -206,7 +206,7 @@ const SKILL_PALETTE = [
   { bg: "#edfaf5", text: "#059669" },
   { bg: "#fff7ed", text: "#ea580c" },
   { bg: "#fff0f8", text: "#db2777" },
-  { bg: "#e6f7f6", text: "#00877d" },
+  { bg: "#e6f7f6", text: "#B0810E" },
   { bg: "#fffbeb", text: "#d97706" },
   { bg: "#ecfeff", text: "#0891b2" },
   { bg: "#f0fdf4", text: "#16a34a" },
@@ -215,7 +215,7 @@ const SKILL_PALETTE = [
 const perks = [
   {
     label: "Competitive Salary", desc: "Market-rate + performance bonuses",
-    color: "#00A99D", bg: "#e6f7f6",
+    color: "#E8B53D", bg: "#e6f7f6",
     icon: <path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
   },
   {
@@ -265,7 +265,7 @@ function TeamBubbles() {
     { initials:"PR", role:"QA", color:"#fbbf24" },
     { initials:"AT", role:"DevOps", color:"#34d399" },
     { initials:"DL", role:"Mobile", color:"#fb923c" },
-    { initials:"SM", role:"Full Stack", color:"#00A99D" },
+    { initials:"SM", role:"Full Stack", color:"#E8B53D" },
     { initials:"VC", role:"Backend", color:"#22d3ee" },
   ];
   const VW = 480, VH = 380, cx = 240, cy = 190, rx = 188, ry = 150;
@@ -306,7 +306,7 @@ function TeamBubbles() {
         {[54, 78, 104].map((r, i) => (
           <circle
             key={r} cx={cx} cy={cy} r={r}
-            stroke="#00A99D" strokeOpacity="0.16" strokeWidth="1"
+            stroke="#E8B53D" strokeOpacity="0.16" strokeWidth="1"
             className="tb-ring"
             style={{ transformOrigin: `${cx}px ${cy}px`, animation: `tb-ring ${3 + i}s ease-in-out ${i * 0.4}s infinite` }}
           />
@@ -345,7 +345,7 @@ function TeamBubbles() {
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <div
           className="px-4 py-2 rounded-full text-xs font-black text-white border border-white/20 backdrop-blur-sm"
-          style={{ background: "rgba(27,60,110,0.9)", boxShadow: "0 0 30px rgba(0,169,157,0.35)" }}
+          style={{ background: "rgba(27,60,110,0.9)", boxShadow: "0 0 30px rgba(232,181,61,0.35)" }}
         >
           We&apos;re hiring ✦
         </div>
@@ -371,12 +371,12 @@ export default function CareersPage() {
       <section className="bg-[#0a1628] text-white py-28 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-[#00A99D] uppercase tracking-widest text-sm font-semibold mb-4">
+            <p className="text-[#E8B53D] uppercase tracking-widest text-sm font-semibold mb-4">
               Join the Team
             </p>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
               Build the future.{" "}
-              <span className="text-[#00A99D]">With people who actually care.</span>
+              <span className="text-[#E8B53D]">With people who actually care.</span>
             </h1>
             <p className="text-gray-300 text-lg max-w-2xl mb-10">
               We&apos;re a team of engineers, product thinkers, and talent experts who
@@ -484,7 +484,7 @@ export default function CareersPage() {
                 className={`px-5 py-2 rounded-full text-sm font-medium transition ${
                   activeFilter === f
                     ? "bg-[#1B3C6E] text-white shadow"
-                    : "bg-white text-gray-600 border border-gray-200 hover:border-[#00A99D] hover:text-[#1B3C6E]"
+                    : "bg-white text-gray-600 border border-gray-200 hover:border-[#E8B53D] hover:text-[#1B3C6E]"
                 }`}
               >
                 {f}
@@ -559,7 +559,7 @@ export default function CareersPage() {
                         <ul className="space-y-1.5">
                           {job.responsibilities.map((r) => (
                             <li key={r} className="flex gap-2 text-gray-600 text-sm leading-relaxed">
-                              <span className="text-[#00A99D] mt-0.5 shrink-0">✓</span>
+                              <span className="text-[#E8B53D] mt-0.5 shrink-0">✓</span>
                               <span>{r}</span>
                             </li>
                           ))}

@@ -195,7 +195,7 @@ function AnimatedGlobe() {
     };
 
     const offices = [
-      { lon: 78.5, lat: 17.4, color: "#00cfb4" },
+      { lon: 78.5, lat: 17.4, color: "#F3C34E" },
       { lon: -80.8, lat: 35.2, color: "#60a5fa" },
     ];
 
@@ -293,7 +293,7 @@ function AnimatedGlobe() {
         <canvas ref={ref} style={{ display: "block", borderRadius: "50%", background: "radial-gradient(ellipse at 38% 32%, #0d2060 0%, #040c20 70%)" }} />
       </div>
       <div style={{ marginTop: 18, display: "flex", gap: 12 }}>
-        {[{ color: "#00cfb4", label: "Hyderabad, India" }, { color: "#60a5fa", label: "Rock Hill, USA" }].map(item => (
+        {[{ color: "#F3C34E", label: "Hyderabad, India" }, { color: "#60a5fa", label: "Rock Hill, USA" }].map(item => (
           <div key={item.label} style={{ display: "flex", alignItems: "center", gap: 6, background: "rgba(15,25,60,0.7)", borderRadius: 99, padding: "5px 14px", border: "1px solid rgba(255,255,255,0.08)", backdropFilter: "blur(8px)" }}>
             <div style={{ width: 8, height: 8, borderRadius: "50%", background: item.color, boxShadow: `0 0 8px ${item.color}` }} />
             <span style={{ fontSize: 11, color: "rgba(255,255,255,0.75)", fontWeight: 600 }}>{item.label}</span>
@@ -357,7 +357,7 @@ export default function AboutPage() {
               `}</style>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
                 {[
-                  { icon: "🤝", label: "50+ Clients", bg: "linear-gradient(135deg,#00A99D,#0284c7)", ring: "rgba(0,169,157,0.35)" },
+                  { icon: "🤝", label: "50+ Clients", bg: "linear-gradient(135deg,#E8B53D,#0284c7)", ring: "rgba(232,181,61,0.35)" },
                   { icon: "🌍", label: "Global Reach", bg: "linear-gradient(135deg,#f59e0b,#ef4444)", ring: "rgba(245,158,11,0.35)" },
                   { icon: "💡", label: "AI-First", bg: "linear-gradient(135deg,#10b981,#0ea5e9)", ring: "rgba(16,185,129,0.35)" },
                 ].map((chip) => (
@@ -472,7 +472,7 @@ export default function AboutPage() {
       <section style={{ background: "#f8fafc" }} className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div style={{ textAlign: "center", marginBottom: 48 }}>
-            <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#00A99D", marginBottom: 10 }}>What we&apos;re made of</p>
+            <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#E8B53D", marginBottom: 10 }}>What we&apos;re made of</p>
             <h2 style={{ fontSize: "clamp(1.6rem,3vw,2.4rem)", fontWeight: 800, color: "#0f172a", margin: 0 }}>The pillars behind everything we build.</h2>
           </div>
 
@@ -487,16 +487,16 @@ export default function AboutPage() {
 
             {/* Big hero card — Talent */}
             <div style={{ gridColumn: "span 5", gridRow: "span 2", background: "linear-gradient(135deg,#0f2447 0%,#1B3C6E 100%)", borderRadius: 20, padding: 36, position: "relative", overflow: "hidden", minHeight: 280 }}>
-              <div style={{ position: "absolute", top: -40, right: -40, width: 200, height: 200, borderRadius: "50%", background: "rgba(0,169,157,0.12)" }} />
-              <div style={{ position: "absolute", bottom: -20, left: -20, width: 120, height: 120, borderRadius: "50%", background: "rgba(0,169,157,0.08)" }} />
+              <div style={{ position: "absolute", top: -40, right: -40, width: 200, height: 200, borderRadius: "50%", background: "rgba(232,181,61,0.12)" }} />
+              <div style={{ position: "absolute", bottom: -20, left: -20, width: 120, height: 120, borderRadius: "50%", background: "rgba(232,181,61,0.08)" }} />
               <div style={{ fontSize: 42, marginBottom: 16 }}>🎯</div>
-              <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#00cfb4", marginBottom: 10 }}>Talent First</p>
+              <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#F3C34E", marginBottom: 10 }}>Talent First</p>
               <h3 style={{ fontSize: "1.6rem", fontWeight: 800, color: "white", lineHeight: 1.25, marginBottom: 14 }}>Senior engineers only. No exceptions.</h3>
               <p style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.7, margin: 0 }}>Every person we place or put on your project has 5+ years of hands-on experience. We don't use junior engineers to pad margins.</p>
             </div>
 
             {/* Speed card */}
-            <div style={{ gridColumn: "span 4", background: "linear-gradient(135deg,#00A99D 0%,#0284c7 100%)", borderRadius: 20, padding: 28, position: "relative", overflow: "hidden" }}>
+            <div style={{ gridColumn: "span 4", background: "linear-gradient(135deg,#E8B53D 0%,#0284c7 100%)", borderRadius: 20, padding: 28, position: "relative", overflow: "hidden" }}>
               <div style={{ fontSize: 36, marginBottom: 12 }}>⚡</div>
               <h3 style={{ fontSize: "1.2rem", fontWeight: 800, color: "white", marginBottom: 8 }}>5-Day Average Placement</h3>
               <p style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.6, margin: 0 }}>From brief to shortlisted candidates in under a week. No slow agency cycles.</p>
@@ -538,13 +538,13 @@ export default function AboutPage() {
 
             {/* Products */}
             <div style={{ gridColumn: "span 5", background: "linear-gradient(135deg,#0f2447 0%,#1e3a5f 100%)", borderRadius: 20, padding: 28, position: "relative", overflow: "hidden" }}>
-              <div style={{ position: "absolute", top: -30, right: -30, width: 150, height: 150, borderRadius: "50%", background: "rgba(0,169,157,0.1)" }} />
+              <div style={{ position: "absolute", top: -30, right: -30, width: 150, height: 150, borderRadius: "50%", background: "rgba(232,181,61,0.1)" }} />
               <div style={{ fontSize: 36, marginBottom: 12 }}>🚀</div>
               <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "white", marginBottom: 8 }}>Product Studio</h3>
               <p style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.6, margin: 0 }}>Napkin sketch to market-ready product. Our dedicated studio takes you from 0 to launch with design, engineering, and strategy.</p>
               <div style={{ marginTop: 16, display: "flex", flexWrap: "wrap", gap: 8 }}>
                 {["Discovery","Design","Build","Launch"].map(s => (
-                  <span key={s} style={{ fontSize: 10, fontWeight: 700, color: "#00cfb4", background: "rgba(0,207,180,0.12)", border: "1px solid rgba(0,207,180,0.2)", borderRadius: 99, padding: "3px 8px" }}>{s}</span>
+                  <span key={s} style={{ fontSize: 10, fontWeight: 700, color: "#F3C34E", background: "rgba(232,181,61,0.12)", border: "1px solid rgba(232,181,61,0.2)", borderRadius: 99, padding: "3px 8px" }}>{s}</span>
                 ))}
               </div>
             </div>
@@ -556,7 +556,7 @@ export default function AboutPage() {
       {/* VALUES */}
       <section style={{ background: "linear-gradient(135deg,#0a1628 0%,#0f2447 50%,#0d1e3a 100%)", padding: "96px 24px", position: "relative", overflow: "hidden" }}>
         {/* Background pattern */}
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle, rgba(0,169,157,0.06) 1px, transparent 1px)", backgroundSize: "40px 40px", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle, rgba(232,181,61,0.06) 1px, transparent 1px)", backgroundSize: "40px 40px", pointerEvents: "none" }} />
 
         <style>{`
           @keyframes drawLine { from { stroke-dashoffset: 300; } to { stroke-dashoffset: 0; } }
@@ -577,7 +577,7 @@ export default function AboutPage() {
 
         <div className="max-w-6xl mx-auto" style={{ position: "relative" }}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#00cfb4", marginBottom: 10 }}>Our DNA</p>
+            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#F3C34E", marginBottom: 10 }}>Our DNA</p>
             <h2 style={{ fontSize: "clamp(1.6rem,3vw,2.4rem)", fontWeight: 800, color: "white", margin: 0 }}>What We Stand For</h2>
           </div>
 
@@ -586,12 +586,12 @@ export default function AboutPage() {
               {
                 title: "Integrity",
                 desc: "We do what we say. Always. No surprises, no fine print.",
-                color: "#00cfb4",
-                glow: "rgba(0,207,180,0.15)",
+                color: "#F3C34E",
+                glow: "rgba(232,181,61,0.15)",
                 svg: (
                   <svg className="val-svg" width="52" height="52" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#00cfb4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <polyline points="9 12 11 14 15 10" stroke="#00cfb4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#F3C34E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <polyline points="9 12 11 14 15 10" stroke="#F3C34E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 ),
               },
@@ -670,7 +670,7 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <span style={{ display:"inline-flex", alignItems:"center", gap:6, fontSize:12, fontWeight:700, letterSpacing:"0.12em", textTransform:"uppercase", color:"#00A99D", background:"rgba(0,169,157,0.1)", border:"1px solid rgba(0,169,157,0.25)", borderRadius:99, padding:"6px 16px", marginBottom:16 }}>
+            <span style={{ display:"inline-flex", alignItems:"center", gap:6, fontSize:12, fontWeight:700, letterSpacing:"0.12em", textTransform:"uppercase", color:"#E8B53D", background:"rgba(232,181,61,0.1)", border:"1px solid rgba(232,181,61,0.25)", borderRadius:99, padding:"6px 16px", marginBottom:16 }}>
               🌐 Our Offices
             </span>
             <h2 style={{ fontSize:"clamp(1.8rem,3vw,2.5rem)", fontWeight:900, color:"#0f2447", marginBottom:12 }}>
@@ -704,7 +704,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div style={{ display:"flex", gap:10, alignItems:"flex-start", marginBottom:16 }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink:0, marginTop:2 }}><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="rgba(0,169,157,0.15)" stroke="#00A99D" strokeWidth="2"/><circle cx="12" cy="9" r="2.5" fill="#00A99D"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink:0, marginTop:2 }}><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="rgba(232,181,61,0.15)" stroke="#E8B53D" strokeWidth="2"/><circle cx="12" cy="9" r="2.5" fill="#E8B53D"/></svg>
                 <address style={{ fontStyle:"normal", color:"#475569", fontSize:14, lineHeight:1.7 }}>
                   331 E Main Street, Suite 200<br/>Rock Hill, SC 29730
                 </address>
@@ -733,7 +733,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div style={{ display:"flex", gap:10, alignItems:"flex-start", marginBottom:16 }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink:0, marginTop:2 }}><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="rgba(0,169,157,0.15)" stroke="#00A99D" strokeWidth="2"/><circle cx="12" cy="9" r="2.5" fill="#00A99D"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink:0, marginTop:2 }}><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="rgba(232,181,61,0.15)" stroke="#E8B53D" strokeWidth="2"/><circle cx="12" cy="9" r="2.5" fill="#E8B53D"/></svg>
                 <address style={{ fontStyle:"normal", color:"#475569", fontSize:14, lineHeight:1.7 }}>
                   Unit No 304, Section A, Third Floor, SBR Pearl<br/>
                   HUDA Techno Enclave-III, Opp. Raheja Mind Space<br/>

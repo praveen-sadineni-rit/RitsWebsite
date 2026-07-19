@@ -13,10 +13,10 @@ export default function RetailPage() {
         className="pt-24 pb-20 px-6"
       >
         <div className="max-w-5xl mx-auto text-center">
-          <p className="text-[#00A99D] uppercase tracking-widest text-sm font-semibold mb-4">Retail</p>
+          <p className="text-[#E8B53D] uppercase tracking-widest text-sm font-semibold mb-4">Retail</p>
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
             Retail{" "}
-            <span style={{ color: "#00A99D" }}>Reimagined.</span>
+            <span style={{ color: "#E8B53D" }}>Reimagined.</span>
           </h1>
           <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-8">
             We build unified commerce platforms. POS, inventory, loyalty, and omnichannel experiences that keep customers coming back.
@@ -79,12 +79,12 @@ export default function RetailPage() {
               {
                 title: "Inventory Management",
                 desc: "Real-time stock visibility across all locations, with automated replenishment and shrinkage tracking built in.",
-                color: "#00A99D",
+                color: "#E8B53D",
                 bg: "#f0fdfb",
                 icon: (
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                    <path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" stroke="#00A99D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M16 3H8a2 2 0 00-2 2v2h12V5a2 2 0 00-2-2zM12 12v4M10 14h4" stroke="#00A99D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" stroke="#E8B53D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M16 3H8a2 2 0 00-2 2v2h12V5a2 2 0 00-2-2zM12 12v4M10 14h4" stroke="#E8B53D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 ),
               },
@@ -156,7 +156,7 @@ export default function RetailPage() {
       {/* Approach */}
       <section className="py-20 px-6" style={{ background: "#0f2447" }}>
         <div className="max-w-5xl mx-auto">
-          <p className="text-[#00A99D] uppercase tracking-widest text-sm font-semibold mb-4">Our Approach</p>
+          <p className="text-[#E8B53D] uppercase tracking-widest text-sm font-semibold mb-4">Our Approach</p>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">How We Deliver</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -166,7 +166,7 @@ export default function RetailPage() {
               { num: "04", title: "Launch & Continuous Improvement", desc: "We go live fast, then iterate, using real data to optimize performance and experience." },
             ].map((step) => (
               <div key={step.num} className="p-6 rounded-2xl bg-white/5 border border-white/10">
-                <p className="text-[#00A99D] font-black text-3xl mb-3">{step.num}</p>
+                <p className="text-[#E8B53D] font-black text-3xl mb-3">{step.num}</p>
                 <h3 className="text-white font-semibold text-lg mb-2">{step.title}</h3>
                 <p className="text-white/40 text-sm leading-relaxed">{step.desc}</p>
               </div>
@@ -178,7 +178,7 @@ export default function RetailPage() {
       {/* CTA */}
       <section
         className="py-20 px-6 text-center"
-        style={{ background: "linear-gradient(135deg, #1B3C6E 0%, #00A99D 100%)" }}
+        style={{ background: "linear-gradient(135deg, #1B3C6E 0%, #E8B53D 100%)" }}
       >
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">

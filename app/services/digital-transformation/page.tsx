@@ -10,7 +10,7 @@ function TransformAnim() {
     { label: "Legacy", icon: "M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v11m0 0H5m4 0h10m-10 0v4a2 2 0 002 2h4a2 2 0 002-2v-4m0 0h4", color: "#94a3b8", bg: "#f1f5f9" },
     { label: "Assess", icon: "M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z", color: "#60a5fa", bg: "#eff6ff" },
     { label: "Design", icon: "M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z", color: "#a78bfa", bg: "#f5f3ff" },
-    { label: "Build", icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4", color: "#00A99D", bg: "#f0fdfb" },
+    { label: "Build", icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4", color: "#E8B53D", bg: "#f0fdfb" },
     { label: "Modern", icon: "M13 10V3L4 14h7v7l9-11h-7z", color: "#34d399", bg: "#f0fdf4" },
   ];
 
@@ -74,7 +74,7 @@ const pillars = [
     title: "AI-Powered Automation",
     desc: "Embed AI and machine learning into your workflows, from intelligent document processing to predictive operations.",
     icon: "M13 10V3L4 14h7v7l9-11h-7z",
-    color: "#00A99D",
+    color: "#E8B53D",
   },
   {
     title: "Customer Experience",
@@ -115,10 +115,10 @@ export default function DigitalTransformationPage() {
       <section style={{ background: "linear-gradient(135deg, #0f2447 0%, #0f2447 60%, #0f2447 100%)" }} className="pt-24 pb-20 px-6">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-[#00A99D] text-xs font-bold tracking-widest uppercase mb-4">Digital Transformation</p>
+            <p className="text-[#E8B53D] text-xs font-bold tracking-widest uppercase mb-4">Digital Transformation</p>
             <h1 className="text-white font-black leading-tight mb-6" style={{ fontSize: "clamp(2rem,4vw,3rem)" }}>
               From legacy<br />
-              <span style={{ color: "#00A99D" }}>to leading edge.</span>
+              <span style={{ color: "#E8B53D" }}>to leading edge.</span>
             </h1>
             <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-lg">
               We don&apos;t just digitize existing processes, we reimagine how your business operates and competes in a digital-first world.
@@ -187,7 +187,7 @@ export default function DigitalTransformationPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {approach.map(a => (
               <div key={a.num} className="p-6 rounded-2xl" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
-                <p className="font-black text-3xl text-[#00A99D] mb-3">{a.num}</p>
+                <p className="font-black text-3xl text-[#E8B53D] mb-3">{a.num}</p>
                 <h3 className="font-bold text-white mb-2">{a.title}</h3>
                 <p className="text-white/40 text-sm leading-relaxed">{a.desc}</p>
               </div>
@@ -210,7 +210,7 @@ export default function DigitalTransformationPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6" style={{ background: "linear-gradient(135deg, #1B3C6E 0%, #00A99D 100%)" }}>
+      <section className="py-20 px-6" style={{ background: "linear-gradient(135deg, #1B3C6E 0%, #E8B53D 100%)" }}>
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-white font-black text-4xl mb-4">Ready to transform?</h2>
           <p className="text-white/70 text-lg mb-8">Let&apos;s map your current state and build a roadmap to what&apos;s next.</p>

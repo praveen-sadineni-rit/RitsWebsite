@@ -7,7 +7,7 @@ import Link from "next/link";
 function FloatingServices() {
   const items = [
     { icon: "M16 18L22 12L16 6M8 6L2 12L8 18", label: "Software", color: "#60a5fa" },
-    { icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5", label: "Product", color: "#00A99D" },
+    { icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5", label: "Product", color: "#E8B53D" },
     { icon: "M12 2v4M12 18v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M2 12h4M18 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83", label: "AI & ML", color: "#a78bfa" },
     { icon: "M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z", label: "Staff Aug", color: "#34d399" },
     { icon: "M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z", label: "Cloud", color: "#fb923c" },
@@ -68,14 +68,14 @@ function FloatingServices() {
         {[46, 68, 92].map((r, i) => (
           <circle
             key={r} cx={cx} cy={cy} r={r}
-            stroke="#00A99D" strokeOpacity="0.16" strokeWidth="1"
+            stroke="#E8B53D" strokeOpacity="0.16" strokeWidth="1"
             className="cst-ring"
             style={{ transformOrigin: `${cx}px ${cy}px`, animation: `cst-ring ${3 + i}s ease-in-out ${i * 0.4}s infinite` }}
           />
         ))}
 
-        <circle cx={cx} cy={cy} r="31" fill="rgba(0,169,157,0.16)" stroke="rgba(0,169,157,0.5)" strokeWidth="1.5" />
-        <circle cx={cx} cy={cy} r="16" fill="rgba(0,169,157,0.45)" className="cst-core" />
+        <circle cx={cx} cy={cy} r="31" fill="rgba(232,181,61,0.16)" stroke="rgba(232,181,61,0.5)" strokeWidth="1.5" />
+        <circle cx={cx} cy={cy} r="16" fill="rgba(232,181,61,0.45)" className="cst-core" />
         <text x={cx} y={cy + 4} textAnchor="middle" fontSize="11" fontWeight="800" fill="#e6fffb" letterSpacing="1.5">RITS</text>
       </svg>
 
@@ -159,13 +159,13 @@ const serviceCards = [
   },
   {
     title: "Product Development",
-    gradient: "linear-gradient(135deg, #0f2447 0%, #00A99D 100%)",
-    accentColor: "#00d4c8",
+    gradient: "linear-gradient(135deg, #0f2447 0%, #E8B53D 100%)",
+    accentColor: "#E8B53D",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-        <rect x="6" y="6" width="28" height="28" rx="3" stroke="#00d4c8" strokeWidth="2" fill="none"/>
-        <rect x="11" y="11" width="18" height="18" rx="2" stroke="#00d4c8" strokeWidth="1.5" fill="none" opacity="0.6"/>
-        <rect x="16" y="16" width="8" height="8" rx="1" fill="#00d4c8" opacity="0.8"/>
+        <rect x="6" y="6" width="28" height="28" rx="3" stroke="#E8B53D" strokeWidth="2" fill="none"/>
+        <rect x="11" y="11" width="18" height="18" rx="2" stroke="#E8B53D" strokeWidth="1.5" fill="none" opacity="0.6"/>
+        <rect x="16" y="16" width="8" height="8" rx="1" fill="#E8B53D" opacity="0.8"/>
       </svg>
     ),
     capabilities: [
@@ -196,13 +196,13 @@ const serviceCards = [
   },
   {
     title: "Staff Augmentation",
-    gradient: "linear-gradient(135deg, #0f2447 0%, #1B3C6E 60%, #00A99D 100%)",
-    accentColor: "#00A99D",
+    gradient: "linear-gradient(135deg, #0f2447 0%, #1B3C6E 60%, #E8B53D 100%)",
+    accentColor: "#E8B53D",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-        <circle cx="14" cy="13" r="5" stroke="#00A99D" strokeWidth="2" fill="none"/>
-        <circle cx="26" cy="13" r="5" stroke="#00A99D" strokeWidth="2" fill="none"/>
-        <path d="M6 32c0-5.523 3.582-10 8-10h12c4.418 0 8 4.477 8 10" stroke="#00A99D" strokeWidth="2" strokeLinecap="round"/>
+        <circle cx="14" cy="13" r="5" stroke="#E8B53D" strokeWidth="2" fill="none"/>
+        <circle cx="26" cy="13" r="5" stroke="#E8B53D" strokeWidth="2" fill="none"/>
+        <path d="M6 32c0-5.523 3.582-10 8-10h12c4.418 0 8 4.477 8 10" stroke="#E8B53D" strokeWidth="2" strokeLinecap="round"/>
       </svg>
     ),
     capabilities: [
@@ -250,7 +250,7 @@ const techStack = [
   },
   {
     category: "Backend",
-    color: "#00d4c8",
+    color: "#E8B53D",
     icon: "M5 4h14a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5a1 1 0 011-1zM5 14h14a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4a1 1 0 011-1zM8 7h.01M8 17h.01",
     tags: ["Node.js", "Python", "Java", "Go", ".NET", "FastAPI"],
   },
@@ -317,7 +317,7 @@ export default function ServicesPage() {
               <span
                 style={{
                   display: "inline-block",
-                  color: "#00A99D",
+                  color: "#E8B53D",
                   fontWeight: 600,
                   fontSize: 13,
                   letterSpacing: "0.15em",
@@ -355,7 +355,7 @@ export default function ServicesPage() {
                   href="/contact"
                   style={{
                     display: "inline-block",
-                    background: "#00A99D",
+                    background: "#E8B53D",
                     color: "#ffffff",
                     padding: "14px 32px",
                     borderRadius: 8,
@@ -363,14 +363,14 @@ export default function ServicesPage() {
                     fontSize: "1rem",
                     textDecoration: "none",
                     transition: "all 0.2s ease",
-                    boxShadow: "0 4px 24px rgba(0,169,157,0.35)",
+                    boxShadow: "0 4px 24px rgba(232,181,61,0.35)",
                   }}
                   onMouseEnter={e => {
-                    (e.currentTarget as HTMLAnchorElement).style.background = "#00c4b7";
+                    (e.currentTarget as HTMLAnchorElement).style.background = "#D9A428";
                     (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";
                   }}
                   onMouseLeave={e => {
-                    (e.currentTarget as HTMLAnchorElement).style.background = "#00A99D";
+                    (e.currentTarget as HTMLAnchorElement).style.background = "#E8B53D";
                     (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
                   }}
                 >
@@ -391,8 +391,8 @@ export default function ServicesPage() {
                     transition: "all 0.2s ease",
                   }}
                   onMouseEnter={e => {
-                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "#00A99D";
-                    (e.currentTarget as HTMLAnchorElement).style.color = "#00A99D";
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "#E8B53D";
+                    (e.currentTarget as HTMLAnchorElement).style.color = "#E8B53D";
                   }}
                   onMouseLeave={e => {
                     (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.25)";
@@ -424,7 +424,7 @@ export default function ServicesPage() {
               <span
                 style={{
                   display: "inline-block",
-                  color: "#00A99D",
+                  color: "#E8B53D",
                   fontWeight: 600,
                   fontSize: 13,
                   letterSpacing: "0.15em",
@@ -565,7 +565,7 @@ export default function ServicesPage() {
               <span
                 style={{
                   display: "inline-block",
-                  color: "#00A99D",
+                  color: "#E8B53D",
                   fontWeight: 600,
                   fontSize: 13,
                   letterSpacing: "0.15em",
@@ -607,14 +607,14 @@ export default function ServicesPage() {
                   left: "12.5%",
                   right: "12.5%",
                   height: 2,
-                  background: "linear-gradient(90deg, #00A99D, #4a9eff, #a855f7, #00A99D)",
+                  background: "linear-gradient(90deg, #E8B53D, #4a9eff, #a855f7, #E8B53D)",
                   opacity: 0.3,
                   zIndex: 0,
                 }}
               />
 
               {processSteps.map((step, i) => {
-                const stepColors = ["#4a9eff", "#00A99D", "#a855f7", "#00d4c8"];
+                const stepColors = ["#4a9eff", "#E8B53D", "#a855f7", "#E8B53D"];
                 return (
                   <div
                     key={step.number}
@@ -698,7 +698,7 @@ export default function ServicesPage() {
               <span
                 style={{
                   display: "inline-block",
-                  color: "#00A99D",
+                  color: "#E8B53D",
                   fontWeight: 600,
                   fontSize: 13,
                   letterSpacing: "0.15em",
@@ -812,7 +812,7 @@ export default function ServicesPage() {
         {/* CTA BANNER */}
         <section
           style={{
-            background: "#00A99D",
+            background: "#E8B53D",
             padding: "80px 24px",
             textAlign: "center",
           }}

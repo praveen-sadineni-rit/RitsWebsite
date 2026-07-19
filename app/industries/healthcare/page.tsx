@@ -25,12 +25,12 @@ const solutions = [
     title: "Telehealth Platforms",
     description:
       "Scalable, HIPAA-compliant telehealth solutions with HD video consultations, e-prescriptions, and integrated patient scheduling.",
-    color: "#00A99D",
+    color: "#E8B53D",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
         <path
           d="M15 10l4.553-2.276A1 1 0 0 1 21 8.618v6.764a1 1 0 0 1-1.447.894L15 14M3 8h12a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2z"
-          stroke="#00A99D"
+          stroke="#E8B53D"
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -146,11 +146,11 @@ export default function HealthcarePage() {
         className="pt-32 pb-24 px-6"
       >
         <div className="max-w-5xl mx-auto text-center">
-          <p className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: "#00A99D" }}>
+          <p className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: "#E8B53D" }}>
             Healthcare
           </p>
           <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">
-            Technology that <span style={{ color: "#00A99D" }}>Heals.</span>
+            Technology that <span style={{ color: "#E8B53D" }}>Heals.</span>
             <br />
             Systems that Scale.
           </h1>
@@ -162,7 +162,7 @@ export default function HealthcarePage() {
               <span
                 key={pill}
                 className="px-4 py-1.5 rounded-full text-sm font-medium border"
-                style={{ borderColor: "#00A99D", color: "#00A99D", backgroundColor: "rgba(0,169,157,0.08)" }}
+                style={{ borderColor: "#E8B53D", color: "#E8B53D", backgroundColor: "rgba(232,181,61,0.08)" }}
               >
                 {pill}
               </span>
@@ -238,7 +238,7 @@ export default function HealthcarePage() {
       <section style={{ backgroundColor: "#0f2447" }} className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
-            <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#00A99D" }}>
+            <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#E8B53D" }}>
               Our Process
             </p>
             <h2 className="text-4xl font-extrabold text-white">How We Deliver</h2>
@@ -250,7 +250,7 @@ export default function HealthcarePage() {
                 className="rounded-2xl p-6"
                 style={{ backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
               >
-                <p className="text-4xl font-extrabold mb-3" style={{ color: "#00A99D" }}>
+                <p className="text-4xl font-extrabold mb-3" style={{ color: "#E8B53D" }}>
                   {step.step}
                 </p>
                 <h3 className="text-white font-bold text-lg mb-2">{step.title}</h3>
@@ -264,7 +264,7 @@ export default function HealthcarePage() {
       {/* CTA */}
       <section
         className="py-24 px-6 text-center"
-        style={{ background: "linear-gradient(135deg, #1B3C6E 0%, #00A99D 100%)" }}
+        style={{ background: "linear-gradient(135deg, #1B3C6E 0%, #E8B53D 100%)" }}
       >
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl font-extrabold text-white mb-4">

@@ -13,10 +13,10 @@ export default function GovPage() {
         style={{ background: "linear-gradient(135deg, #0f2447 0%, #1B3C6E 50%, #0f2447 100%)" }}
       >
         <div className="max-w-6xl mx-auto">
-          <p className="text-[#00A99D] text-xs font-bold tracking-widest uppercase mb-4">Government</p>
+          <p className="text-[#E8B53D] text-xs font-bold tracking-widest uppercase mb-4">Government</p>
           <h1 className="font-black text-white leading-tight mb-6" style={{ fontSize: "clamp(2rem,4vw,3rem)" }}>
             Digital Government.<br />
-            <span style={{ color: "#00A99D" }}>Real Results.</span>
+            <span style={{ color: "#E8B53D" }}>Real Results.</span>
           </h1>
           <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-lg">
             We build secure, scalable civic technology, modernizing government services, citizen portals, and data infrastructure.
@@ -73,7 +73,7 @@ export default function GovPage() {
               {
                 title: "Case Management Systems",
                 desc: "Configurable workflows that track citizen cases from intake to resolution, with real-time status updates and audit trails.",
-                color: "#00A99D",
+                color: "#E8B53D",
                 path: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01",
               },
               {
@@ -124,7 +124,7 @@ export default function GovPage() {
       {/* APPROACH */}
       <section className="py-20 px-6" style={{ background: "#0f2447" }}>
         <div className="max-w-6xl mx-auto">
-          <p className="text-[#00A99D] text-xs font-bold tracking-widest uppercase mb-4">Our Approach</p>
+          <p className="text-[#E8B53D] text-xs font-bold tracking-widest uppercase mb-4">Our Approach</p>
           <h2 className="font-black text-3xl text-white mb-12">How we deliver for government</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -154,7 +154,7 @@ export default function GovPage() {
                 className="p-6 rounded-2xl"
                 style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
               >
-                <p className="font-black text-3xl text-[#00A99D] mb-3">{num}</p>
+                <p className="font-black text-3xl text-[#E8B53D] mb-3">{num}</p>
                 <h3 className="font-bold text-white mb-2">{title}</h3>
                 <p className="text-white/40 text-sm leading-relaxed">{desc}</p>
               </div>
@@ -166,7 +166,7 @@ export default function GovPage() {
       {/* CTA */}
       <section
         className="py-20 px-6"
-        style={{ background: "linear-gradient(135deg, #1B3C6E 0%, #00A99D 100%)" }}
+        style={{ background: "linear-gradient(135deg, #1B3C6E 0%, #E8B53D 100%)" }}
       >
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-black text-4xl text-white mb-4">Ready to modernize your agency?</h2>

@@ -33,8 +33,8 @@ const capabilities = [
     subtitle: "Robust server-side systems built for scale, reliability, and seamless integration.",
     desc: "We architect APIs that power your products and connect your entire ecosystem.",
     bullets: ["REST & GraphQL APIs", "Microservices architecture", "Secure authentication", "High-availability systems"],
-    accent: "#00A99D",
-    glow: "rgba(0,169,157,0.12)",
+    accent: "#E8B53D",
+    glow: "rgba(232,181,61,0.12)",
     iconPath: "M4 6h16M4 10h16M4 14h10M4 18h6",
     wide: false,
   },
@@ -84,7 +84,7 @@ const processSteps = [
     title: "Core Development",
     description: "Iterative sprints with weekly demos. You see working software early, not a black box that opens at the end.",
     highlights: ["Weekly demos", "Feature flags", "Code reviews", "Staging deployments"],
-    accent: "#00A99D",
+    accent: "#E8B53D",
     iconPath: "M16 18L22 12L16 6M8 6L2 12L8 18",
   },
   {
@@ -131,7 +131,7 @@ const techStack = [
   {
     category: "Backend & API Engineering",
     sub: "Secure, scalable, optimized for high-traffic workloads.",
-    accent: "#00A99D",
+    accent: "#E8B53D",
     icon: "M4 6h16M4 10h16M4 14h10M4 18h6",
     items: ["Node.js", "Express.js / Fastify", "Python", "Django / Flask / FastAPI", "Go (Golang)", "REST & GraphQL APIs", "Microservices Architecture"],
   },
@@ -234,7 +234,7 @@ function CodeEditor() {
     { indent: 2, content: "timeline: '8 weeks',", color: "#34d399" },
     { indent: 1, content: "});", color: "#e2e8f0" },
     { indent: 1, content: "await test(code, { coverage: '>90%' });", color: "#a78bfa" },
-    { indent: 1, content: "return deploy(code); // ships on time ✓", color: "#00A99D" },
+    { indent: 1, content: "return deploy(code); // ships on time ✓", color: "#E8B53D" },
     { indent: 0, content: "};", color: "#60a5fa" },
   ];
   useEffect(() => {
@@ -251,8 +251,8 @@ function CodeEditor() {
         <div className="w-3 h-3 rounded-full bg-green-500/70"/>
         <span className="ml-3 text-white/30 text-xs font-mono">buildProduct.ts</span>
         <div className="ml-auto flex items-center gap-1">
-          <div className="w-1.5 h-1.5 rounded-full bg-[#00A99D] animate-pulse"/>
-          <span className="text-[#00A99D] text-[10px] font-mono">compiling...</span>
+          <div className="w-1.5 h-1.5 rounded-full bg-[#E8B53D] animate-pulse"/>
+          <span className="text-[#E8B53D] text-[10px] font-mono">compiling...</span>
         </div>
       </div>
       {/* Code */}
@@ -267,14 +267,14 @@ function CodeEditor() {
           <div className="flex">
             <span className="w-6 text-white/20 select-none flex-shrink-0 text-right mr-4">{line+1}</span>
             <span style={{paddingLeft: (lines[line]?.indent||0) * 16}}>
-              <span className="inline-block w-2 h-4 bg-[#00A99D] animate-pulse"/>
+              <span className="inline-block w-2 h-4 bg-[#E8B53D] animate-pulse"/>
             </span>
           </div>
         )}
       </div>
       {/* Status bar */}
       <div className="flex items-center justify-between px-4 py-2 border-t border-white/5 text-[10px] font-mono" style={{background:"#161b22"}}>
-        <span className="text-[#00A99D]">✓ TypeScript</span>
+        <span className="text-[#E8B53D]">✓ TypeScript</span>
         <span className="text-white/30">UTF-8</span>
         <span className="text-white/30">Ln {Math.min(line,lines.length)}, Col 1</span>
       </div>
@@ -292,10 +292,10 @@ function ProcessSection() {
       <div className="max-w-6xl mx-auto">
 
         <div className="mb-14">
-          <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#00A99D" }}>How we work</p>
+          <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#E8B53D" }}>How we work</p>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
             <h2 className="text-white font-black leading-tight" style={{ fontSize: "clamp(2rem,4vw,3rem)" }}>
-              Our <span style={{ color: "#00A99D" }}>process.</span>
+              Our <span style={{ color: "#E8B53D" }}>process.</span>
             </h2>
             <p className="text-sm max-w-xs lg:text-right" style={{ color: "rgba(255,255,255,0.4)" }}>A proven delivery framework refined across 200+ projects.</p>
           </div>
@@ -434,29 +434,29 @@ export default function SoftwareSolutionsPage() {
         {/* HERO */}
         <section className="relative bg-gradient-to-br from-[#0f2447] via-[#1B3C6E] to-[#0f2447] pt-32 pb-24 px-6 overflow-hidden">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-[#00A99D]/10 blur-3xl" />
+            <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-[#E8B53D]/10 blur-3xl" />
             <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-[#1B3C6E]/40 blur-2xl" />
             <div
               className="absolute inset-0 opacity-5"
               style={{
-                backgroundImage: "radial-gradient(#00A99D 1px, transparent 1px)",
+                backgroundImage: "radial-gradient(#E8B53D 1px, transparent 1px)",
                 backgroundSize: "32px 32px",
               }}
             />
           </div>
 
           <div className="relative max-w-6xl mx-auto">
-            <p className="text-[#00A99D]/70 text-sm font-medium tracking-wide mb-6">
+            <p className="text-[#E8B53D]/70 text-sm font-medium tracking-wide mb-6">
               Services
               <span className="mx-2 opacity-50">/</span>
-              <span className="text-[#00A99D]">Software Solutions</span>
+              <span className="text-[#E8B53D]">Software Solutions</span>
             </p>
 
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
                   Software that ships.{" "}
-                  <span className="text-[#00A99D]">And keeps running.</span>
+                  <span className="text-[#E8B53D]">And keeps running.</span>
                 </h1>
                 <p className="text-xl text-blue-100/80 leading-relaxed mb-10">
                   We build enterprise-grade web apps, mobile products, and APIs,
@@ -490,9 +490,9 @@ export default function SoftwareSolutionsPage() {
 
             {/* Header */}
             <div className="mb-6">
-              <p className="text-[#00A99D] text-xs font-bold uppercase tracking-widest mb-3">Capabilities</p>
+              <p className="text-[#E8B53D] text-xs font-bold uppercase tracking-widest mb-3">Capabilities</p>
               <h2 className="text-white font-black leading-tight mb-4" style={{ fontSize: "clamp(2rem,4vw,3rem)" }}>
-                What we <span style={{ color: "#00A99D" }}>build.</span>
+                What we <span style={{ color: "#E8B53D" }}>build.</span>
               </h2>
               <p className="text-white/40 text-base max-w-2xl leading-relaxed">
                 We build intelligent, scalable software solutions designed to modernize operations, automate workflows, and accelerate business growth. Our products combine advanced engineering with AI-driven automation to deliver reliable, high-performance systems across web, mobile, and enterprise environments.
@@ -597,9 +597,9 @@ export default function SoftwareSolutionsPage() {
 
             {/* Why Us strip */}
             <div className="rounded-2xl p-7 flex flex-col lg:flex-row lg:items-center gap-6"
-              style={{ background: "linear-gradient(135deg, rgba(0,169,157,0.08) 0%, rgba(96,165,250,0.06) 100%)", border: "1px solid rgba(0,169,157,0.2)" }}>
+              style={{ background: "linear-gradient(135deg, rgba(232,181,61,0.08) 0%, rgba(96,165,250,0.06) 100%)", border: "1px solid rgba(232,181,61,0.2)" }}>
               <div className="lg:w-48 flex-shrink-0">
-                <p className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: "#00A99D" }}>Why us</p>
+                <p className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: "#E8B53D" }}>Why us</p>
                 <p className="text-white font-black text-lg leading-tight">Why our solutions stand out</p>
               </div>
               <div className="h-px lg:h-12 lg:w-px" style={{ background: "rgba(255,255,255,0.08)" }} />
@@ -607,7 +607,7 @@ export default function SoftwareSolutionsPage() {
                 {capWhyUs.map(w => (
                   <span key={w} className="flex items-center gap-2 text-xs font-medium px-3 py-2 rounded-full"
                     style={{ background: "rgba(255,255,255,0.04)", color: "rgba(255,255,255,0.7)", border: "1px solid rgba(255,255,255,0.08)" }}>
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#00A99D" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#E8B53D" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                     {w}
                   </span>
                 ))}
@@ -626,10 +626,10 @@ export default function SoftwareSolutionsPage() {
 
             {/* Header */}
             <div className="mb-12">
-              <p className="text-[#00A99D] text-xs font-bold uppercase tracking-widest mb-3">Technologies</p>
+              <p className="text-[#E8B53D] text-xs font-bold uppercase tracking-widest mb-3">Technologies</p>
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
                 <h2 className="text-white font-black leading-tight" style={{ fontSize: "clamp(2rem,4vw,3rem)" }}>
-                  Our tech <span style={{ color: "#00A99D" }}>stack.</span>
+                  Our tech <span style={{ color: "#E8B53D" }}>stack.</span>
                 </h2>
                 <p className="text-white/40 text-sm max-w-sm lg:text-right leading-relaxed">
                   We build high-performance, scalable software using a modern, battle-tested technology stack, engineered for speed, reliability, and long-term growth.
@@ -688,7 +688,7 @@ export default function SoftwareSolutionsPage() {
           <div className="max-w-6xl mx-auto">
             <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
               <div>
-                <p className="text-[#00A99D] text-sm font-semibold uppercase tracking-widest mb-3">
+                <p className="text-[#E8B53D] text-sm font-semibold uppercase tracking-widest mb-3">
                   Our difference
                 </p>
                 <h2 className="text-4xl font-bold text-[#1B3C6E] mb-6 leading-tight">
@@ -700,7 +700,7 @@ export default function SoftwareSolutionsPage() {
                 </p>
                 <a
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#1B3C6E] text-white rounded-xl font-semibold hover:bg-[#00A99D] transition-colors duration-300"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#1B3C6E] text-white rounded-xl font-semibold hover:bg-[#E8B53D] transition-colors duration-300"
                 >
                   Start a conversation
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
@@ -713,7 +713,7 @@ export default function SoftwareSolutionsPage() {
                 {whyUs.map((item) => (
                   <div
                     key={item.title}
-                    className="flex gap-5 p-6 rounded-2xl border border-gray-100 hover:border-[#00A99D]/30 hover:shadow-md transition-all duration-300"
+                    className="flex gap-5 p-6 rounded-2xl border border-gray-100 hover:border-[#E8B53D]/30 hover:shadow-md transition-all duration-300"
                   >
                     <div className="w-11 h-11 rounded-xl bg-[#1B3C6E]/5 text-[#1B3C6E] flex items-center justify-center flex-shrink-0">
                       {item.icon}
@@ -741,7 +741,7 @@ export default function SoftwareSolutionsPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contact"
-                className="px-8 py-4 bg-[#00A99D] hover:bg-[#008f84] text-white font-semibold rounded-xl transition-colors duration-300 text-base"
+                className="px-8 py-4 bg-[#E8B53D] hover:bg-[#008f84] text-white font-semibold rounded-xl transition-colors duration-300 text-base"
               >
                 Let us talk
               </a>

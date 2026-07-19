@@ -15,17 +15,9 @@ export default function Footer() {
           {/* Column 1 - Brand */}
           <div className="lg:col-span-2 flex flex-col gap-5">
             {/* Brand mark + wordmark */}
-            <div className="flex items-center gap-3">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="40" height="40" rx="8" fill="#00A99D"/>
-                <path d="M10 10H22C25.3 10 28 12.7 28 16C28 18.4 26.6 20.5 24.5 21.5L28.5 30H23L19.5 22H15V30H10V10Z" fill="white"/>
-                <rect x="15" y="14" width="7" height="4" rx="2" fill="#0f2447"/>
-                <path d="M15 24L19.5 20.5L24 24H21.5V30H17.5V24H15Z" fill="#0f2447"/>
-              </svg>
-              <div>
-                <div className="text-white font-black text-base leading-tight tracking-tight">RESOURCE</div>
-                <div className="font-semibold text-[9px] tracking-[0.15em] uppercase leading-tight" style={{ color: "#00cfb4" }}>Innovative Technologies</div>
-              </div>
+            <div className="flex items-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/rits-logo-white.png" alt="Resource Innovative Technologies" className="h-11 w-auto" />
             </div>
 
             <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
@@ -38,11 +30,11 @@ export default function Footer() {
               <div>
                 <div className="flex items-center gap-2 mb-1.5">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
-                    <path d="M12 21s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10z" stroke="#00cfb4" strokeWidth="1.7" strokeLinejoin="round" />
-                    <circle cx="12" cy="11" r="2.3" stroke="#00cfb4" strokeWidth="1.7" />
+                    <path d="M12 21s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10z" stroke="#F3C34E" strokeWidth="1.7" strokeLinejoin="round" />
+                    <circle cx="12" cy="11" r="2.3" stroke="#F3C34E" strokeWidth="1.7" />
                   </svg>
                   <span className="text-white font-semibold text-[13px] tracking-wide">United States</span>
-                  <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ background: "rgba(0,207,180,0.12)", color: "#00cfb4" }}>HQ</span>
+                  <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ background: "rgba(232,181,61,0.12)", color: "#F3C34E" }}>HQ</span>
                 </div>
                 <p className="pl-[23px] leading-relaxed">
                   331 E Main Street, Suite 200<br />
@@ -51,14 +43,14 @@ export default function Footer() {
                 <div className="space-y-1.5 pl-[23px] pt-3">
                   <p className="flex items-center gap-2">
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
-                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z" stroke="#00cfb4" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z" stroke="#F3C34E" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                     <a href="tel:2485226740" className="hover:text-white transition-colors">248-522-6740</a>
                   </p>
                   <p className="flex items-center gap-2">
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
-                      <path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="#00cfb4" strokeWidth="1.6" strokeLinejoin="round" />
-                      <path d="M2.5 7l9.5 6 9.5-6" stroke="#00cfb4" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="#F3C34E" strokeWidth="1.6" strokeLinejoin="round" />
+                      <path d="M2.5 7l9.5 6 9.5-6" stroke="#F3C34E" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                     <a href="mailto:info@rits-it.com" className="hover:text-white transition-colors">info@rits-it.com</a>
                   </p>
@@ -69,11 +61,11 @@ export default function Footer() {
               <div>
                 <div className="flex items-center gap-2 mb-1.5">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
-                    <path d="M12 21s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10z" stroke="#00cfb4" strokeWidth="1.7" strokeLinejoin="round" />
-                    <circle cx="12" cy="11" r="2.3" stroke="#00cfb4" strokeWidth="1.7" />
+                    <path d="M12 21s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10z" stroke="#F3C34E" strokeWidth="1.7" strokeLinejoin="round" />
+                    <circle cx="12" cy="11" r="2.3" stroke="#F3C34E" strokeWidth="1.7" />
                   </svg>
                   <span className="text-white font-semibold text-[13px] tracking-wide">India</span>
-                  <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ background: "rgba(0,207,180,0.12)", color: "#00cfb4" }}>Dev Center</span>
+                  <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ background: "rgba(232,181,61,0.12)", color: "#F3C34E" }}>Dev Center</span>
                 </div>
                 <p className="pl-[23px] leading-relaxed">
                   Unit No 304, Section A, Third Floor, SBR Pearl<br />
@@ -120,7 +112,7 @@ export default function Footer() {
 
           {/* Column 4 - Company */}
           <div className="lg:col-span-1">
-            <h3 className="text-sm font-semibold uppercase tracking-widest mb-5" style={{ color: "#00cfb4" }}>
+            <h3 className="text-sm font-semibold uppercase tracking-widest mb-5" style={{ color: "#F3C34E" }}>
               Company
             </h3>
             <ul className="space-y-3">
@@ -160,7 +152,7 @@ export default function Footer() {
               <a
                 href="/contact"
                 className="inline-block text-center text-sm font-semibold py-2.5 px-5 rounded-lg transition-opacity hover:opacity-90"
-                style={{ backgroundColor: "#00cfb4", color: "#0f2447" }}
+                style={{ backgroundColor: "#F3C34E", color: "#0f2447" }}
               >
                 Get in Touch
               </a>

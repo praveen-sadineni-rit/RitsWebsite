@@ -63,8 +63,8 @@ function LearningVisual() {
           </g>
 
           {/* Book base */}
-          <path d="M100 70 L30 88 V150 L100 134 Z" fill="#00A99D" />
-          <path d="M100 70 L170 88 V150 L100 134 Z" fill="#00877d" />
+          <path d="M100 70 L30 88 V150 L100 134 Z" fill="#E8B53D" />
+          <path d="M100 70 L170 88 V150 L100 134 Z" fill="#B0810E" />
           <path d="M100 70 L30 88 V96 L100 78 Z" fill="#5eead4" opacity="0.7" />
           <path d="M100 70 L170 88 V96 L100 78 Z" fill="#5eead4" opacity="0.5" />
           {/* Page lines */}
@@ -100,10 +100,10 @@ export default function EducationPage() {
       >
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-[#00A99D] text-xs font-bold tracking-widest uppercase mb-4">Education</p>
+            <p className="text-[#E8B53D] text-xs font-bold tracking-widest uppercase mb-4">Education</p>
             <h1 className="font-black text-white leading-tight mb-6" style={{ fontSize: "clamp(2rem,4vw,3rem)" }}>
               Learning Technology<br />
-              <span style={{ color: "#00A99D" }}>That Scales.</span>
+              <span style={{ color: "#E8B53D" }}>That Scales.</span>
             </h1>
             <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-lg">
               We build EdTech platforms, LMS solutions, and student engagement tools that make learning more accessible, measurable, and effective.
@@ -165,7 +165,7 @@ export default function EducationPage() {
               {
                 title: "Student Engagement Platforms",
                 desc: "Interactive discussion boards, peer collaboration tools, and gamified learning paths that keep students motivated and connected to their peers.",
-                color: "#00A99D",
+                color: "#E8B53D",
                 path: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z",
               },
               {
@@ -216,7 +216,7 @@ export default function EducationPage() {
       {/* APPROACH */}
       <section className="py-20 px-6" style={{ background: "#0f2447" }}>
         <div className="max-w-6xl mx-auto">
-          <p className="text-[#00A99D] text-xs font-bold tracking-widest uppercase mb-4">Our Approach</p>
+          <p className="text-[#E8B53D] text-xs font-bold tracking-widest uppercase mb-4">Our Approach</p>
           <h2 className="font-black text-3xl text-white mb-12">How we deliver for education</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -246,7 +246,7 @@ export default function EducationPage() {
                 className="p-6 rounded-2xl"
                 style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
               >
-                <p className="font-black text-3xl text-[#00A99D] mb-3">{num}</p>
+                <p className="font-black text-3xl text-[#E8B53D] mb-3">{num}</p>
                 <h3 className="font-bold text-white mb-2">{title}</h3>
                 <p className="text-white/40 text-sm leading-relaxed">{desc}</p>
               </div>
@@ -258,7 +258,7 @@ export default function EducationPage() {
       {/* CTA */}
       <section
         className="py-20 px-6"
-        style={{ background: "linear-gradient(135deg, #1B3C6E 0%, #00A99D 100%)" }}
+        style={{ background: "linear-gradient(135deg, #1B3C6E 0%, #E8B53D 100%)" }}
       >
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-black text-4xl text-white mb-4">Ready to transform your institution?</h2>

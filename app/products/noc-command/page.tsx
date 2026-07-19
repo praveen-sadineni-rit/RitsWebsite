@@ -73,17 +73,17 @@ function TopologyDiagram() {
         .topo-joint { animation: topoPulse 1.6s ease-in-out infinite; transform-origin: center; }
         @keyframes swipeHint { 0%,100% { transform: translateX(0); opacity: 0.5; } 50% { transform: translateX(6px); opacity: 1; } }
         .topo-swipe-icon { animation: swipeHint 1.4s ease-in-out infinite; }
-        .topo-scroll { scrollbar-width: thin; scrollbar-color: rgba(0,207,180,0.5) transparent; }
+        .topo-scroll { scrollbar-width: thin; scrollbar-color: rgba(232,181,61,0.5) transparent; }
         .topo-scroll::-webkit-scrollbar { height: 8px; }
-        .topo-scroll::-webkit-scrollbar-thumb { background: rgba(0,207,180,0.5); border-radius: 99px; }
+        .topo-scroll::-webkit-scrollbar-thumb { background: rgba(232,181,61,0.5); border-radius: 99px; }
         .topo-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,0.04); }
       `}</style>
 
       {/* Mobile-only swipe hint */}
-      <div className="sm:hidden flex items-center justify-center gap-2 py-2.5" style={{ background: "rgba(0,207,180,0.08)", borderBottom: "1px solid rgba(0,207,180,0.15)" }}>
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" style={{ color: "#00cfb4" }}><path d="M9 18l-6-6 6-6M3 12h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-        <span style={{ fontSize: 11.5, fontWeight: 700, color: "#00cfb4", letterSpacing: "0.02em" }}>Swipe to explore the full map</span>
-        <svg className="topo-swipe-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" style={{ color: "#00cfb4" }}><path d="M15 18l6-6-6-6M21 12H3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+      <div className="sm:hidden flex items-center justify-center gap-2 py-2.5" style={{ background: "rgba(232,181,61,0.08)", borderBottom: "1px solid rgba(232,181,61,0.15)" }}>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" style={{ color: "#F3C34E" }}><path d="M9 18l-6-6 6-6M3 12h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        <span style={{ fontSize: 11.5, fontWeight: 700, color: "#F3C34E", letterSpacing: "0.02em" }}>Swipe to explore the full map</span>
+        <svg className="topo-swipe-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" style={{ color: "#F3C34E" }}><path d="M15 18l6-6-6-6M21 12H3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
       </div>
 
       <div className="overflow-x-auto topo-scroll">
@@ -203,7 +203,7 @@ const WHAT_IT_IS = [
   {
     title: "Thinks, Not Just Alerts",
     desc: "7 AI agents analyse context, correlate causes, and cut through noise, engineers only see what genuinely matters.",
-    color: "#00cfb4",
+    color: "#F3C34E",
     icon: <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>,
   },
   {
@@ -224,7 +224,7 @@ const COST_SCENARIOS = [
 
 const AGENTS = [
   { name: "Ingestion Analyst", desc: "Reads every alert from every system the moment it fires", color: "#60a5fa" },
-  { name: "Correlation Engine", desc: "Spots that 5 separate alerts are actually one single problem", color: "#00cfb4" },
+  { name: "Correlation Engine", desc: "Spots that 5 separate alerts are actually one single problem", color: "#F3C34E" },
   { name: "Severity Classifier", desc: "Decides what's a genuine emergency vs. background noise", color: "#a78bfa" },
   { name: "Alert Router", desc: "Sends the right alert to the right engineer at the right time", color: "#f472b6" },
   { name: "Triage & Runbook", desc: "Writes step-by-step fix instructions and sends them instantly", color: "#34d399" },
@@ -233,7 +233,7 @@ const AGENTS = [
 ];
 
 const DASHBOARDS = [
-  { persona: "Senior Leadership", name: "Cloud Health", desc: "One screen. Traffic lights. Plain English.", points: ["Certificate expiry warnings", "Budget tracking in real time", "All services status at a glance", "Zero Azure knowledge required"], color: "#00cfb4" },
+  { persona: "Senior Leadership", name: "Cloud Health", desc: "One screen. Traffic lights. Plain English.", points: ["Certificate expiry warnings", "Budget tracking in real time", "All services status at a glance", "Zero Azure knowledge required"], color: "#F3C34E" },
   { persona: "IT Manager", name: "Full Platform View", desc: "Everything in detail.", points: ["Alerts, incidents, topology maps", "No digging through logs", "Root cause already identified", "All in one platform"], color: "#60a5fa" },
   { persona: "On-Call Engineer", name: "Incident Command", desc: "At 3am, what broke, when, why, how to fix it.", points: ["AI-generated runbooks", "Security vulnerability alerts", "Step-by-step resolution guide", "Compliance scores"], color: "#a78bfa" },
   { persona: "Delivery Head", name: "DevOps Center", desc: "Full deployment & pipeline visibility.", points: ["Pipeline failure tracking", "Network health & device status", "Quality gap identification", "Team performance metrics"], color: "#fb923c" },
@@ -337,7 +337,7 @@ function LiveDashboardMock() {
               <span className="dash-live-dot" style={{ width: 7, height: 7, borderRadius: "50%", background: "#ef4444" }} />
               <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.06em", color: "#0f2447" }}>LIVE ALERT FEED</span>
             </div>
-            <span style={{ fontSize: 10.5, fontWeight: 700, color: "#00A99D" }}>VIEW ALL →</span>
+            <span style={{ fontSize: 10.5, fontWeight: 700, color: "#E8B53D" }}>VIEW ALL →</span>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             {DASH_ALERTS.map((a, i) => (
@@ -387,7 +387,7 @@ function LiveDashboardMock() {
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style={{ color: "#f59e0b" }}><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.06em", color: "#0f2447" }}>ACTIVE INCIDENTS</span>
               </div>
-              <span style={{ fontSize: 10.5, fontWeight: 700, color: "#00A99D" }}>ALL →</span>
+              <span style={{ fontSize: 10.5, fontWeight: 700, color: "#E8B53D" }}>ALL →</span>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {DASH_INCIDENTS.map((inc, i) => (
@@ -441,7 +441,7 @@ const DEPLOYMENT = [
 ];
 
 const NEXT_STEPS = [
-  { num: "01", title: "Live Demo (30 min)", desc: "See NOC Command with real data from a sample Azure environment. Watch an alert fire, correlate, classify, and resolve, in under 2 minutes.", color: "#00cfb4" },
+  { num: "01", title: "Live Demo (30 min)", desc: "See NOC Command with real data from a sample Azure environment. Watch an alert fire, correlate, classify, and resolve, in under 2 minutes.", color: "#F3C34E" },
   { num: "02", title: "Pilot Programme", desc: "Connect to your Azure environment in read-only mode. No infrastructure changes. Your real Azure data visible in the dashboards from day one of your Pilot.", color: "#60a5fa" },
   { num: "03", title: "Technical Deep-Dive", desc: "For IT leadership, a full walkthrough of the architecture, security model, and integration points.", color: "#a78bfa" },
 ];
@@ -473,7 +473,7 @@ function LiveAlertDemo() {
     { label: "5 alerts fire simultaneously", color: "#ef4444" },
     { label: "AI correlating causes…", color: "#f97316" },
     { label: "Root cause identified", color: "#eab308" },
-    { label: "Runbook sent to engineer", color: "#00cfb4" },
+    { label: "Runbook sent to engineer", color: "#F3C34E" },
     { label: "✓ Resolved in 41 sec", color: "#34d399" },
   ];
   useEffect(() => {
@@ -483,7 +483,7 @@ function LiveAlertDemo() {
   return (
     <div className="w-full max-w-sm rounded-2xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)" }}>
       <div className="flex items-center gap-2 mb-5">
-        <span className="w-2 h-2 rounded-full" style={{ background: "#00cfb4", animation: "pulse 1.5s ease-in-out infinite" }} />
+        <span className="w-2 h-2 rounded-full" style={{ background: "#F3C34E", animation: "pulse 1.5s ease-in-out infinite" }} />
         <span className="text-[10px] font-bold uppercase tracking-widest text-white/40">Live Incident Feed</span>
       </div>
       <div className="flex flex-col gap-3">
@@ -520,14 +520,14 @@ export default function NocCommandPage() {
         {/* HERO */}
         <section style={{ background: "linear-gradient(135deg, #0a1628 0%, #0f2447 45%, #1B3C6E 100%)", position: "relative", overflow: "hidden" }} className="py-24 md:py-32">
           <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)", backgroundSize: "48px 48px", pointerEvents: "none" }} />
-          <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-100px", width: "460px", height: "460px", background: "radial-gradient(circle, rgba(0,207,180,0.14) 0%, transparent 70%)", pointerEvents: "none" }} />
+          <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-100px", width: "460px", height: "460px", background: "radial-gradient(circle, rgba(232,181,61,0.14) 0%, transparent 70%)", pointerEvents: "none" }} />
 
           <div className="max-w-7xl mx-auto px-6 lg:px-10 relative">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6" style={{ background: "rgba(0,207,180,0.1)", border: "1px solid rgba(0,207,180,0.3)" }}>
-                  <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#00cfb4" }} />
-                  <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#00cfb4" }}>RITS Flagship Product</span>
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6" style={{ background: "rgba(232,181,61,0.1)", border: "1px solid rgba(232,181,61,0.3)" }}>
+                  <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#F3C34E" }} />
+                  <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#F3C34E" }}>RITS Flagship Product</span>
                 </div>
                 <h1 style={{ fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 900, lineHeight: 1.1, color: "#ffffff", letterSpacing: "-0.02em", marginBottom: "1.25rem" }}>
                   NOC Command
@@ -546,7 +546,7 @@ export default function NocCommandPage() {
                     { value: "~80%", label: "noise reduction to engineers" },
                   ].map((s) => (
                     <div key={s.value} style={{ display: "inline-flex", alignItems: "center", gap: "10px", padding: "10px 18px", background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.14)", borderRadius: "6px" }}>
-                      <span style={{ fontWeight: 800, fontSize: "0.95rem", color: "#00cfb4", letterSpacing: "-0.01em" }}>{s.value}</span>
+                      <span style={{ fontWeight: 800, fontSize: "0.95rem", color: "#F3C34E", letterSpacing: "-0.01em" }}>{s.value}</span>
                       <span style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.55)" }}>{s.label}</span>
                     </div>
                   ))}
@@ -595,7 +595,7 @@ export default function NocCommandPage() {
         <section style={{ background: "linear-gradient(135deg, #0f2447 0%, #1B3C6E 100%)", padding: "96px 0" }}>
           <div className="max-w-5xl mx-auto px-6 lg:px-10">
             <div ref={(el) => addReveal(el, 2)} className="reveal" style={{ textAlign: "center", marginBottom: "48px" }}>
-              <p className="section-eyebrow" style={{ color: "#00cfb4" }}>The real cost</p>
+              <p className="section-eyebrow" style={{ color: "#F3C34E" }}>The real cost</p>
               <h2 style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 800, color: "#ffffff", letterSpacing: "-0.02em" }}>
                 Why this matters to your business.
               </h2>
@@ -608,10 +608,10 @@ export default function NocCommandPage() {
                 </div>
               ))}
             </div>
-            <div style={{ textAlign: "center", padding: "28px", borderRadius: "14px", background: "rgba(0,207,180,0.08)", border: "1px solid rgba(0,207,180,0.25)" }}>
+            <div style={{ textAlign: "center", padding: "28px", borderRadius: "14px", background: "rgba(232,181,61,0.08)", border: "1px solid rgba(232,181,61,0.25)" }}>
               <p style={{ fontSize: "1.05rem", color: "white", fontWeight: 700, marginBottom: "6px" }}>$18,000/hour in lost productivity</p>
               <p style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.6)" }}>
-                NOC Command&apos;s 70% MTTR reduction saves your business an average of <strong style={{ color: "#00cfb4" }}>$12,600 per incident</strong>.
+                NOC Command&apos;s 70% MTTR reduction saves your business an average of <strong style={{ color: "#F3C34E" }}>$12,600 per incident</strong>.
               </p>
             </div>
           </div>
@@ -621,7 +621,7 @@ export default function NocCommandPage() {
         <section style={{ background: "#0a1628", padding: "96px 0" }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div ref={(el) => addReveal(el, 4)} className="reveal" style={{ textAlign: "center", marginBottom: "48px" }}>
-              <p className="section-eyebrow" style={{ color: "#00cfb4" }}>The team</p>
+              <p className="section-eyebrow" style={{ color: "#F3C34E" }}>The team</p>
               <h2 style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 800, color: "#ffffff", letterSpacing: "-0.02em" }}>
                 Your 24/7 expert AI team, 7 agents.
               </h2>
@@ -689,7 +689,7 @@ export default function NocCommandPage() {
         <section style={{ background: "#0a1628", padding: "96px 0" }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div ref={(el) => addReveal(el, 21)} className="reveal" style={{ textAlign: "center", marginBottom: "48px" }}>
-              <p className="section-eyebrow" style={{ color: "#00cfb4" }}>Live topology</p>
+              <p className="section-eyebrow" style={{ color: "#F3C34E" }}>Live topology</p>
               <h2 style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 800, color: "#ffffff", letterSpacing: "-0.02em", marginBottom: "1rem" }}>
                 Your entire Azure estate, mapped in real time.
               </h2>
@@ -732,13 +732,13 @@ export default function NocCommandPage() {
         {/* DIFFERENTIATION */}
         <section style={{ background: "linear-gradient(135deg, #0a1020 0%, #0f2447 55%, #1B3C6E 100%)", padding: "96px 0", position: "relative", overflow: "hidden" }}>
           <div aria-hidden="true" style={{ position: "absolute", inset: 0, opacity: 0.035, backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
-          <div aria-hidden="true" style={{ position: "absolute", top: "10%", left: "50%", transform: "translateX(-50%)", width: 500, height: 260, background: "radial-gradient(ellipse, rgba(0,207,180,0.14) 0%, transparent 70%)", pointerEvents: "none" }} />
+          <div aria-hidden="true" style={{ position: "absolute", top: "10%", left: "50%", transform: "translateX(-50%)", width: 500, height: 260, background: "radial-gradient(ellipse, rgba(232,181,61,0.14) 0%, transparent 70%)", pointerEvents: "none" }} />
 
           <style>{`
             @keyframes diffRowIn { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
             .diff-row { opacity:0; animation: diffRowIn 0.6s cubic-bezier(0.22,1,0.36,1) forwards; }
             .diff-row:hover .diff-old { border-color: rgba(239,68,68,0.5) !important; }
-            .diff-row:hover .diff-new { border-color: rgba(0,207,180,0.7) !important; box-shadow: 0 8px 28px rgba(0,207,180,0.25) !important; transform: translateY(-2px); }
+            .diff-row:hover .diff-new { border-color: rgba(232,181,61,0.7) !important; box-shadow: 0 8px 28px rgba(232,181,61,0.25) !important; transform: translateY(-2px); }
             .diff-row:hover .diff-new { transform: translateY(-2px); }
             @keyframes diffPulse { 0%,100% { opacity:0.6; } 50% { opacity:1; } }
             .diff-arrow { animation: diffPulse 1.8s ease-in-out infinite; }
@@ -746,7 +746,7 @@ export default function NocCommandPage() {
 
           <div className="max-w-5xl mx-auto px-6 lg:px-10 relative">
             <div ref={(el) => addReveal(el, 10)} className="reveal" style={{ textAlign: "center", marginBottom: "16px" }}>
-              <p className="section-eyebrow" style={{ color: "#00cfb4" }}>Differentiation</p>
+              <p className="section-eyebrow" style={{ color: "#F3C34E" }}>Differentiation</p>
               <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.2rem)", fontWeight: 800, color: "#ffffff", letterSpacing: "-0.02em", marginBottom: "0.75rem" }}>
                 &ldquo;We already have Azure Monitor / Grafana / PagerDuty&rdquo;
               </h2>
@@ -760,7 +760,7 @@ export default function NocCommandPage() {
               </div>
               <div />
               <div style={{ textAlign: "center" }}>
-                <span style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#00cfb4" }}>NOC Command</span>
+                <span style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#F3C34E" }}>NOC Command</span>
               </div>
             </div>
 
@@ -775,12 +775,12 @@ export default function NocCommandPage() {
                   </div>
 
                   <div className="diff-arrow" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#00cfb4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#F3C34E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   </div>
 
-                  <div className="diff-new" style={{ display: "flex", alignItems: "center", gap: "12px", padding: "16px 20px", borderRadius: "12px", background: "rgba(0,207,180,0.08)", border: "1px solid rgba(0,207,180,0.3)", transition: "all 0.3s ease" }}>
-                    <span style={{ flexShrink: 0, width: 22, height: 22, borderRadius: "50%", background: "rgba(0,207,180,0.2)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#00cfb4" strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <div className="diff-new" style={{ display: "flex", alignItems: "center", gap: "12px", padding: "16px 20px", borderRadius: "12px", background: "rgba(232,181,61,0.08)", border: "1px solid rgba(232,181,61,0.3)", transition: "all 0.3s ease" }}>
+                    <span style={{ flexShrink: 0, width: 22, height: 22, borderRadius: "50%", background: "rgba(232,181,61,0.2)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#F3C34E" strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round"/></svg>
                     </span>
                     <p style={{ fontSize: "0.88rem", color: "white", fontWeight: 700, margin: 0 }}>{row.noc}</p>
                   </div>
@@ -803,13 +803,13 @@ export default function NocCommandPage() {
               <div style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr 1fr", background: "#0f2447" }}>
                 <div style={{ padding: "14px 20px" }}><span style={{ fontSize: "0.7rem", fontWeight: 700, color: "rgba(255,255,255,0.5)", textTransform: "uppercase", letterSpacing: "0.06em" }}>Metric</span></div>
                 <div style={{ padding: "14px 20px" }}><span style={{ fontSize: "0.7rem", fontWeight: 700, color: "rgba(255,255,255,0.5)", textTransform: "uppercase", letterSpacing: "0.06em" }}>Industry Avg</span></div>
-                <div style={{ padding: "14px 20px", background: "rgba(0,207,180,0.15)" }}><span style={{ fontSize: "0.7rem", fontWeight: 700, color: "#00cfb4", textTransform: "uppercase", letterSpacing: "0.06em" }}>With NOC Command</span></div>
+                <div style={{ padding: "14px 20px", background: "rgba(232,181,61,0.15)" }}><span style={{ fontSize: "0.7rem", fontWeight: 700, color: "#F3C34E", textTransform: "uppercase", letterSpacing: "0.06em" }}>With NOC Command</span></div>
               </div>
               {RESULTS.map((row, i) => (
                 <div key={row.metric} style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr 1fr", borderTop: "1px solid #eef1f6" }}>
                   <div style={{ padding: "16px 20px" }}><span style={{ fontSize: "0.88rem", fontWeight: 600, color: "#0f2447" }}>{row.metric}</span></div>
                   <div style={{ padding: "16px 20px" }}><span style={{ fontSize: "0.88rem", color: "#6c757d" }}>{row.industry}</span></div>
-                  <div style={{ padding: "16px 20px", background: "rgba(0,169,157,0.04)" }}><span style={{ fontSize: "0.88rem", fontWeight: 700, color: "#00A99D" }}>{row.noc}</span></div>
+                  <div style={{ padding: "16px 20px", background: "rgba(232,181,61,0.04)" }}><span style={{ fontSize: "0.88rem", fontWeight: 700, color: "#E8B53D" }}>{row.noc}</span></div>
                 </div>
               ))}
             </div>
@@ -831,7 +831,7 @@ export default function NocCommandPage() {
             <div ref={(el) => addReveal(el, 15)} className="reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "20px" }}>
               {SECURITY.map((s) => (
                 <div key={s.title} style={{ background: "#f8f9fa", border: "1px solid #dce4f0", borderRadius: "14px", padding: "24px" }}>
-                  <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ background: "rgba(0,169,157,0.1)", color: "#00A99D" }}>
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ background: "rgba(232,181,61,0.1)", color: "#E8B53D" }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">{s.icon}</svg>
                   </div>
                   <h3 style={{ fontWeight: 700, fontSize: "0.98rem", color: "#0f2447", marginBottom: "8px" }}>{s.title}</h3>
@@ -857,8 +857,8 @@ export default function NocCommandPage() {
             <div ref={(el) => addReveal(el, 17)} className="reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "24px", marginBottom: "32px" }}>
               {DEPLOYMENT.map((d) => (
                 <div key={d.step} style={{ background: "#ffffff", border: "1px solid #dce4f0", borderRadius: "16px", padding: "28px", position: "relative" }}>
-                  <div style={{ width: 40, height: 40, borderRadius: "50%", background: "#00A99D", color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, marginBottom: "16px" }}>{d.step}</div>
-                  <span style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#00A99D" }}>{d.when}</span>
+                  <div style={{ width: 40, height: 40, borderRadius: "50%", background: "#E8B53D", color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, marginBottom: "16px" }}>{d.step}</div>
+                  <span style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#E8B53D" }}>{d.when}</span>
                   <h3 style={{ fontWeight: 700, fontSize: "1.05rem", color: "#0f2447", margin: "6px 0 10px" }}>{d.title}</h3>
                   <p style={{ fontSize: "0.85rem", color: "#6c757d", lineHeight: 1.65 }}>{d.desc}</p>
                 </div>
@@ -873,7 +873,7 @@ export default function NocCommandPage() {
         {/* ABOUT / TRUST */}
         <section style={{ background: "#0f2447", padding: "80px 0" }}>
           <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
-            <p className="section-eyebrow" style={{ color: "#00cfb4" }}>About us</p>
+            <p className="section-eyebrow" style={{ color: "#F3C34E" }}>About us</p>
             <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 800, color: "#ffffff", marginBottom: "1rem" }}>Resource Innovative Technologies (RITS)</h2>
             <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "1rem", lineHeight: 1.8, maxWidth: "68ch", margin: "0 auto 1.5rem" }}>
               RITS is a specialized technology consultancy focused on Azure infrastructure, AI-powered operations, and enterprise platform engineering. NOC Command, our flagship solution, turns proven NOC and DevOps experience into faster incident response, improved reliability, and measurable business outcomes for enterprise clients.
@@ -886,10 +886,10 @@ export default function NocCommandPage() {
 
         {/* NEXT STEP / CTA */}
         <section style={{ background: "linear-gradient(135deg, #0f2447 0%, #0f2447 60%, #1B3C6E 100%)", padding: "96px 0", position: "relative", overflow: "hidden" }}>
-          <div aria-hidden="true" style={{ position: "absolute", bottom: "-60px", left: "-60px", width: "360px", height: "360px", background: "radial-gradient(circle, rgba(0,169,157,0.1) 0%, transparent 70%)", pointerEvents: "none" }} />
+          <div aria-hidden="true" style={{ position: "absolute", bottom: "-60px", left: "-60px", width: "360px", height: "360px", background: "radial-gradient(circle, rgba(232,181,61,0.1) 0%, transparent 70%)", pointerEvents: "none" }} />
           <div className="max-w-6xl mx-auto px-6 lg:px-10 relative">
             <div ref={(el) => addReveal(el, 18)} className="reveal" style={{ textAlign: "center", marginBottom: "48px" }}>
-              <p className="section-eyebrow" style={{ color: "#00cfb4" }}>The next step</p>
+              <p className="section-eyebrow" style={{ color: "#F3C34E" }}>The next step</p>
               <h2 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", fontWeight: 900, color: "#ffffff", letterSpacing: "-0.02em", marginBottom: "1rem", lineHeight: 1.2 }}>
                 &ldquo;The question isn&apos;t whether your systems will have a problem.<br className="hidden md:block"/> The question is whether you&apos;ll know about it before your customers do.&rdquo;
               </h2>

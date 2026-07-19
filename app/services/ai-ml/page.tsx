@@ -83,7 +83,7 @@ const aiStack = [
   {
     category: "LLM Providers",
     pills: ["OpenAI", "Anthropic", "Google Gemini", "Llama"],
-    color: "#00cfb4",
+    color: "#F3C34E",
     icon: <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>,
   },
   {
@@ -127,7 +127,7 @@ function AIStackPipeline() {
       <div
         aria-hidden="true"
         className="hidden sm:block absolute top-8 bottom-8 z-0"
-        style={{ left: "27px", width: "2px", background: "linear-gradient(180deg, #00cfb4, #60a5fa, #a78bfa, #22d3ee, #fb923c)", opacity: 0.35 }}
+        style={{ left: "27px", width: "2px", background: "linear-gradient(180deg, #F3C34E, #60a5fa, #a78bfa, #22d3ee, #fb923c)", opacity: 0.35 }}
       />
       <div className="space-y-5">
         {aiStack.map((group, i) => (
@@ -361,7 +361,7 @@ function PolygonFace() {
       triangles.forEach(([i,j,k]) => {
         const glow = glows.find(g => g.idx===i||g.idx===j||g.idx===k);
         const alpha = glow ? 0.08 + 0.18*(1-Math.abs(glow.t-0.5)*2) : 0.04;
-        const color = glow ? `rgba(0,207,180,${alpha})` : `rgba(0,169,157,${alpha})`;
+        const color = glow ? `rgba(232,181,61,${alpha})` : `rgba(232,181,61,${alpha})`;
         ctx.beginPath();
         ctx.moveTo(pts[i].x,pts[i].y);
         ctx.lineTo(pts[j].x,pts[j].y);
@@ -369,7 +369,7 @@ function PolygonFace() {
         ctx.closePath();
         ctx.fillStyle = color;
         ctx.fill();
-        ctx.strokeStyle = glow ? `rgba(0,207,180,${alpha*3})` : `rgba(0,169,157,0.18)`;
+        ctx.strokeStyle = glow ? `rgba(232,181,61,${alpha*3})` : `rgba(232,181,61,0.18)`;
         ctx.lineWidth = 0.8;
         ctx.stroke();
       });
@@ -382,21 +382,21 @@ function PolygonFace() {
         // Outer glow
         if (glow) {
           const g2 = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,r*5);
-          g2.addColorStop(0,`rgba(0,207,180,${0.5*pulse})`);
-          g2.addColorStop(1,"rgba(0,207,180,0)");
+          g2.addColorStop(0,`rgba(232,181,61,${0.5*pulse})`);
+          g2.addColorStop(1,"rgba(232,181,61,0)");
           ctx.fillStyle=g2; ctx.beginPath(); ctx.arc(p.x,p.y,r*5,0,Math.PI*2); ctx.fill();
         }
         // Core dot
-        ctx.fillStyle = glow ? "#00cfb4" : "rgba(0,169,157,0.55)";
+        ctx.fillStyle = glow ? "#F3C34E" : "rgba(232,181,61,0.55)";
         ctx.beginPath(); ctx.arc(p.x,p.y,r,0,Math.PI*2); ctx.fill();
       });
 
       // Scan line effect
       const scanY = ((frame * 1.2) % (H + 40)) - 20;
       const scanG = ctx.createLinearGradient(0,scanY-15,0,scanY+15);
-      scanG.addColorStop(0,"rgba(0,207,180,0)");
-      scanG.addColorStop(0.5,"rgba(0,207,180,0.06)");
-      scanG.addColorStop(1,"rgba(0,207,180,0)");
+      scanG.addColorStop(0,"rgba(232,181,61,0)");
+      scanG.addColorStop(0.5,"rgba(232,181,61,0.06)");
+      scanG.addColorStop(1,"rgba(232,181,61,0)");
       ctx.fillStyle = scanG;
       ctx.fillRect(0, scanY-15, W, 30);
 
@@ -411,7 +411,7 @@ function PolygonFace() {
       <canvas ref={ref} style={{ background:"transparent", width:"100%", maxWidth:480 }} />
       <div style={{ position:"absolute", bottom:12, left:0, right:0, display:"flex", justifyContent:"center", gap:16 }}>
         {["Neural Mesh","Polygon AI","RIT Vision"].map((label,i) => (
-          <span key={label} style={{ fontSize:9, fontWeight:700, letterSpacing:"0.1em", textTransform:"uppercase", color:`rgba(0,207,180,${0.25+i*0.1})` }}>{label}</span>
+          <span key={label} style={{ fontSize:9, fontWeight:700, letterSpacing:"0.1em", textTransform:"uppercase", color:`rgba(232,181,61,${0.25+i*0.1})` }}>{label}</span>
         ))}
       </div>
     </div>
@@ -466,7 +466,7 @@ export default function AiMlPage() {
           className="absolute inset-0 opacity-20"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,169,157,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(0,169,157,0.3) 1px, transparent 1px)",
+              "linear-gradient(rgba(232,181,61,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(232,181,61,0.3) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
@@ -484,7 +484,7 @@ export default function AiMlPage() {
             {/* Left: text content */}
             <div className="text-center lg:text-left">
               {/* Eyebrow */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00A99D]/40 bg-[#00A99D]/10 text-[#00A99D] text-sm font-medium mb-8 backdrop-blur-sm">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#E8B53D]/40 bg-[#E8B53D]/10 text-[#E8B53D] text-sm font-medium mb-8 backdrop-blur-sm">
                 ✦ AI &amp; Machine Learning
               </div>
 
@@ -492,7 +492,7 @@ export default function AiMlPage() {
                 AI that works in{" "}
                 <span
                   style={{
-                    background: "linear-gradient(90deg, #00A99D, #1B3C6E 80%)",
+                    background: "linear-gradient(90deg, #E8B53D, #1B3C6E 80%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -509,19 +509,19 @@ export default function AiMlPage() {
               </p>
 
               {/* Typing animation terminal */}
-              <div className="inline-flex items-center gap-3 bg-[#0f2447] border border-[#1B3C6E]/60 rounded-xl px-6 py-4 font-mono text-sm md:text-base text-[#00A99D] shadow-lg shadow-[#00A99D]/10">
-                <span className="w-2 h-2 rounded-full bg-[#00A99D] animate-pulse flex-shrink-0" />
+              <div className="inline-flex items-center gap-3 bg-[#0f2447] border border-[#1B3C6E]/60 rounded-xl px-6 py-4 font-mono text-sm md:text-base text-[#E8B53D] shadow-lg shadow-[#E8B53D]/10">
+                <span className="w-2 h-2 rounded-full bg-[#E8B53D] animate-pulse flex-shrink-0" />
                 <span className="min-w-[260px] text-left">
                   {displayText}
-                  <span className="animate-pulse ml-0.5 text-[#00A99D]">|</span>
+                  <span className="animate-pulse ml-0.5 text-[#E8B53D]">|</span>
                 </span>
               </div>
 
               <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-semibold text-white transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 shadow-lg shadow-[#00A99D]/30"
-                  style={{ background: "linear-gradient(135deg, #00A99D, #008a80)" }}
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-semibold text-white transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 shadow-lg shadow-[#E8B53D]/30"
+                  style={{ background: "linear-gradient(135deg, #E8B53D, #008a80)" }}
                 >
                   Start Your AI Project
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
@@ -530,7 +530,7 @@ export default function AiMlPage() {
                 </a>
                 <a
                   href="#use-cases"
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold border border-[#1B3C6E] text-gray-300 hover:border-[#00A99D] hover:text-[#00A99D] transition-all duration-200"
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold border border-[#1B3C6E] text-gray-300 hover:border-[#E8B53D] hover:text-[#E8B53D] transition-all duration-200"
                 >
                   Explore Use Cases
                 </a>
@@ -550,7 +550,7 @@ export default function AiMlPage() {
       <section id="use-cases" className="py-24 bg-[#07111f]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <p className="text-[#00A99D] text-sm font-semibold uppercase tracking-widest mb-3">
+            <p className="text-[#E8B53D] text-sm font-semibold uppercase tracking-widest mb-3">
               What We Build
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -565,11 +565,11 @@ export default function AiMlPage() {
             {useCases.map((uc, i) => (
               <div
                 key={i}
-                className="group relative bg-[#0f2447] border border-[#1B3C6E]/40 rounded-2xl p-7 hover:border-[#00A99D]/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#00A99D]/10 cursor-default"
+                className="group relative bg-[#0f2447] border border-[#1B3C6E]/40 rounded-2xl p-7 hover:border-[#E8B53D]/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#E8B53D]/10 cursor-default"
               >
                 <div
-                  className="inline-flex items-center justify-center w-14 h-14 rounded-xl mb-5 text-[#00A99D] group-hover:scale-110 transition-transform duration-300"
-                  style={{ background: "rgba(0,169,157,0.08)" }}
+                  className="inline-flex items-center justify-center w-14 h-14 rounded-xl mb-5 text-[#E8B53D] group-hover:scale-110 transition-transform duration-300"
+                  style={{ background: "rgba(232,181,61,0.08)" }}
                 >
                   {uc.icon}
                 </div>
@@ -577,7 +577,7 @@ export default function AiMlPage() {
                 <p className="text-gray-400 text-sm leading-relaxed">{uc.description}</p>
                 <div
                   className="absolute bottom-0 left-0 right-0 h-px rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ background: "linear-gradient(90deg, transparent, #00A99D, transparent)" }}
+                  style={{ background: "linear-gradient(90deg, transparent, #E8B53D, transparent)" }}
                 />
               </div>
             ))}
@@ -588,7 +588,7 @@ export default function AiMlPage() {
       {/* FDE MODEL (draft) */}
       <section className="py-24 px-6" style={{ background: "#07111f" }}>
         <div className="text-center mb-14 max-w-3xl mx-auto">
-          <p className="text-[#00cfb4] text-sm font-semibold uppercase tracking-widest mb-3">How We Engage</p>
+          <p className="text-[#F3C34E] text-sm font-semibold uppercase tracking-widest mb-3">How We Engage</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">The Forward Deployed Engineer Model</h2>
           <p className="text-gray-400 text-lg">
             Our engineers embed inside your team, understand the problem firsthand, and build, ship, and iterate on AI solutions alongside you.
@@ -600,14 +600,14 @@ export default function AiMlPage() {
       {/* AI STACK */}
       <section className="py-24 relative overflow-hidden" style={{ background: "#0a1628" }}>
         <div aria-hidden="true" className="absolute inset-0 opacity-[0.04]" style={{
-          backgroundImage: "linear-gradient(rgba(0,207,180,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(0,207,180,0.5) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(rgba(232,181,61,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(232,181,61,0.5) 1px, transparent 1px)",
           backgroundSize: "44px 44px",
         }} />
-        <div aria-hidden="true" className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full opacity-20 blur-3xl pointer-events-none" style={{ background: "radial-gradient(ellipse, #00cfb4 0%, transparent 70%)" }} />
+        <div aria-hidden="true" className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full opacity-20 blur-3xl pointer-events-none" style={{ background: "radial-gradient(ellipse, #F3C34E 0%, transparent 70%)" }} />
 
         <div className="max-w-4xl mx-auto px-6 relative">
           <div className="text-center mb-16">
-            <p className="text-[#00cfb4] text-sm font-semibold uppercase tracking-widest mb-3">
+            <p className="text-[#F3C34E] text-sm font-semibold uppercase tracking-widest mb-3">
               Technology
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Our AI Stack</h2>
@@ -624,7 +624,7 @@ export default function AiMlPage() {
       <section className="py-24 bg-[#07111f]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <p className="text-[#00A99D] text-sm font-semibold uppercase tracking-widest mb-3">
+            <p className="text-[#E8B53D] text-sm font-semibold uppercase tracking-widest mb-3">
               Our Process
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -639,7 +639,7 @@ export default function AiMlPage() {
             {phases.map((phase, i) => (
               <div
                 key={i}
-                className="relative bg-[#0f2447] border border-[#1B3C6E]/40 rounded-2xl p-7 hover:border-[#00A99D]/50 transition-all duration-300 group"
+                className="relative bg-[#0f2447] border border-[#1B3C6E]/40 rounded-2xl p-7 hover:border-[#E8B53D]/50 transition-all duration-300 group"
               >
                 <div
                   className="text-6xl font-black mb-4 leading-none"
@@ -647,7 +647,7 @@ export default function AiMlPage() {
                 >
                   {phase.number}
                 </div>
-                <div className="text-[#00A99D] mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-[#E8B53D] mb-4 group-hover:scale-110 transition-transform duration-300">
                   {phase.icon}
                 </div>
                 <h3 className="text-white font-semibold text-base mb-3">{phase.title}</h3>
@@ -671,7 +671,7 @@ export default function AiMlPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-16 items-start">
             <div className="lg:w-2/5 flex-shrink-0">
-              <p className="text-[#00A99D] text-sm font-semibold uppercase tracking-widest mb-3">
+              <p className="text-[#E8B53D] text-sm font-semibold uppercase tracking-widest mb-3">
                 Responsible AI
               </p>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -682,7 +682,7 @@ export default function AiMlPage() {
                 as first-class requirements, not afterthoughts.
               </p>
               <div
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00A99D]/30 bg-[#00A99D]/8 text-[#00A99D] text-sm font-medium"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#E8B53D]/30 bg-[#E8B53D]/8 text-[#E8B53D] text-sm font-medium"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" strokeLinecap="round" strokeLinejoin="round" />
@@ -695,11 +695,11 @@ export default function AiMlPage() {
               {safetyPrinciples.map((p, i) => (
                 <div
                   key={i}
-                  className="bg-[#0f2447] border border-[#1B3C6E]/40 rounded-2xl p-6 hover:border-[#00A99D]/40 transition-all duration-300 group"
+                  className="bg-[#0f2447] border border-[#1B3C6E]/40 rounded-2xl p-6 hover:border-[#E8B53D]/40 transition-all duration-300 group"
                 >
                   <div
-                    className="inline-flex items-center justify-center w-10 h-10 rounded-lg mb-4 text-[#00A99D]"
-                    style={{ background: "rgba(0,169,157,0.08)" }}
+                    className="inline-flex items-center justify-center w-10 h-10 rounded-lg mb-4 text-[#E8B53D]"
+                    style={{ background: "rgba(232,181,61,0.08)" }}
                   >
                     {p.icon}
                   </div>
@@ -721,18 +721,18 @@ export default function AiMlPage() {
           className="absolute inset-0 opacity-10"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,169,157,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(0,169,157,0.4) 1px, transparent 1px)",
+              "linear-gradient(rgba(232,181,61,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(232,181,61,0.4) 1px, transparent 1px)",
             backgroundSize: "40px 40px",
           }}
         />
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] opacity-20"
           style={{
-            background: "radial-gradient(ellipse, #00A99D 0%, transparent 70%)",
+            background: "radial-gradient(ellipse, #E8B53D 0%, transparent 70%)",
           }}
         />
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00A99D]/40 bg-[#00A99D]/10 text-[#00A99D] text-sm font-medium mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#E8B53D]/40 bg-[#E8B53D]/10 text-[#E8B53D] text-sm font-medium mb-8">
             ✦ Let&apos;s build something intelligent
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
@@ -743,8 +743,8 @@ export default function AiMlPage() {
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-lg font-semibold text-white text-lg transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 shadow-xl shadow-[#00A99D]/30"
-            style={{ background: "linear-gradient(135deg, #00A99D, #008a80)" }}
+            className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-lg font-semibold text-white text-lg transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 shadow-xl shadow-[#E8B53D]/30"
+            style={{ background: "linear-gradient(135deg, #E8B53D, #008a80)" }}
           >
             Get in Touch
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">

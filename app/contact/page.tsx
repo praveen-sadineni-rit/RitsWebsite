@@ -55,20 +55,20 @@ export default function ContactPage() {
       {/* HERO */}
       <section style={{ background: "linear-gradient(135deg, #0f2447 0%, #1B3C6E 60%, #0d3d4a 100%)", padding: "96px 24px 72px", position: "relative", overflow: "hidden" }}>
         {/* Background decoration dots */}
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle, rgba(0,169,157,0.08) 1px, transparent 1px)", backgroundSize: "40px 40px", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle, rgba(232,181,61,0.08) 1px, transparent 1px)", backgroundSize: "40px 40px", pointerEvents: "none" }} />
         <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center", position: "relative" }}>
           <span style={{
             display: "inline-flex", alignItems: "center", gap: 8,
             fontSize: 12, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase",
-            color: "#00A99D", marginBottom: 20, background: "rgba(0,169,157,0.12)",
-            border: "1px solid rgba(0,169,157,0.3)", borderRadius: 99, padding: "6px 16px",
+            color: "#E8B53D", marginBottom: 20, background: "rgba(232,181,61,0.12)",
+            border: "1px solid rgba(232,181,61,0.3)", borderRadius: 99, padding: "6px 16px",
           }}>
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" fill="#00A99D"/><circle cx="5" cy="5" r="2" fill="white"/></svg>
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" fill="#E8B53D"/><circle cx="5" cy="5" r="2" fill="white"/></svg>
             Get In Touch
           </span>
           <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.2rem)", fontWeight: 900, color: "white", lineHeight: 1.2, marginBottom: 20 }}>
             Let&apos;s talk about what<br />
-            <span style={{ color: "#00A99D" }}>you&apos;re building.</span>
+            <span style={{ color: "#E8B53D" }}>you&apos;re building.</span>
           </h1>
           <p style={{ fontSize: 17, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, maxWidth: 520, margin: "0 auto 40px" }}>
             Fill out the form and someone from our team will reach out within 24 hours, usually much sooner.
@@ -79,7 +79,7 @@ export default function ContactPage() {
             {[
               {
                 label: "Response Time", value: "< 24 hours",
-                bg: "linear-gradient(135deg,#00A99D,#00c9b8)", shadow: "rgba(0,169,157,0.4)",
+                bg: "linear-gradient(135deg,#E8B53D,#00c9b8)", shadow: "rgba(232,181,61,0.4)",
                 icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="white" strokeWidth="2"/><path d="M12 7v5l3 3" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>,
               },
               {
@@ -156,7 +156,7 @@ export default function ContactPage() {
                     width: 72,
                     height: 72,
                     borderRadius: "50%",
-                    background: "#00A99D",
+                    background: "#E8B53D",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -222,20 +222,20 @@ export default function ContactPage() {
                       <span style={{ display:"inline-flex", alignItems:"center", justifyContent:"center", width:22, height:22, borderRadius:6, background:"#e0f2fe" }}>
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="#0284c7" strokeWidth="2" strokeLinecap="round"/><circle cx="12" cy="7" r="4" stroke="#0284c7" strokeWidth="2"/></svg>
                       </span>
-                      Full Name <span style={{ color: "#00A99D" }}>*</span>
+                      Full Name <span style={{ color: "#E8B53D" }}>*</span>
                     </label>
                     <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} required placeholder="Jane Smith"
-                      className="border border-gray-200 rounded-lg px-4 py-3 w-full text-sm focus:outline-none focus:border-[#00A99D] transition-colors" />
+                      className="border border-gray-200 rounded-lg px-4 py-3 w-full text-sm focus:outline-none focus:border-[#E8B53D] transition-colors" />
                   </div>
                   <div>
                     <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 13, fontWeight: 600, color: "#374151", marginBottom: 6 }}>
                       <span style={{ display:"inline-flex", alignItems:"center", justifyContent:"center", width:22, height:22, borderRadius:6, background:"#f0fdf4" }}>
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#16a34a" strokeWidth="2"/><polyline points="22,6 12,13 2,6" stroke="#16a34a" strokeWidth="2"/></svg>
                       </span>
-                      Work Email <span style={{ color: "#00A99D" }}>*</span>
+                      Work Email <span style={{ color: "#E8B53D" }}>*</span>
                     </label>
                     <input type="email" name="workEmail" value={formData.workEmail} onChange={handleChange} required placeholder="jane@company.com"
-                      className="border border-gray-200 rounded-lg px-4 py-3 w-full text-sm focus:outline-none focus:border-[#00A99D] transition-colors" />
+                      className="border border-gray-200 rounded-lg px-4 py-3 w-full text-sm focus:outline-none focus:border-[#E8B53D] transition-colors" />
                   </div>
                 </div>
 
@@ -247,7 +247,7 @@ export default function ContactPage() {
                     Company Name
                   </label>
                   <input type="text" name="companyName" value={formData.companyName} onChange={handleChange} placeholder="Acme Corp"
-                    className="border border-gray-200 rounded-lg px-4 py-3 w-full text-sm focus:outline-none focus:border-[#00A99D] transition-colors" />
+                    className="border border-gray-200 rounded-lg px-4 py-3 w-full text-sm focus:outline-none focus:border-[#E8B53D] transition-colors" />
                 </div>
 
                 <div style={{ marginBottom: 16 }}>
@@ -255,10 +255,10 @@ export default function ContactPage() {
                     <span style={{ display:"inline-flex", alignItems:"center", justifyContent:"center", width:22, height:22, borderRadius:6, background:"#fff7ed" }}>
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="#ea580c" strokeWidth="2"/><path d="M21 21l-4.35-4.35" stroke="#ea580c" strokeWidth="2" strokeLinecap="round"/></svg>
                     </span>
-                    What are you looking for? <span style={{ color: "#00A99D" }}>*</span>
+                    What are you looking for? <span style={{ color: "#E8B53D" }}>*</span>
                   </label>
                   <select name="lookingFor" value={formData.lookingFor} onChange={handleChange} required
-                    className="border border-gray-200 rounded-lg px-4 py-3 w-full text-sm focus:outline-none focus:border-[#00A99D] transition-colors bg-white">
+                    className="border border-gray-200 rounded-lg px-4 py-3 w-full text-sm focus:outline-none focus:border-[#E8B53D] transition-colors bg-white">
                     <option value="" disabled>Select an option</option>
                     <option value="software-dev">💻 Software Development</option>
                     <option value="product-dev">🚀 Product Development</option>
@@ -277,7 +277,7 @@ export default function ContactPage() {
                   </label>
                   <textarea name="projectDetails" value={formData.projectDetails} onChange={handleChange} rows={4}
                     placeholder="Briefly describe what you're building or the problem you're trying to solve..."
-                    className="border border-gray-200 rounded-lg px-4 py-3 w-full text-sm focus:outline-none focus:border-[#00A99D] transition-colors"
+                    className="border border-gray-200 rounded-lg px-4 py-3 w-full text-sm focus:outline-none focus:border-[#E8B53D] transition-colors"
                     style={{ resize: "vertical" }} />
                 </div>
 
@@ -289,7 +289,7 @@ export default function ContactPage() {
                     How did you hear about us?
                   </label>
                   <select name="hearAboutUs" value={formData.hearAboutUs} onChange={handleChange}
-                    className="border border-gray-200 rounded-lg px-4 py-3 w-full text-sm focus:outline-none focus:border-[#00A99D] transition-colors bg-white">
+                    className="border border-gray-200 rounded-lg px-4 py-3 w-full text-sm focus:outline-none focus:border-[#E8B53D] transition-colors bg-white">
                     <option value="" disabled>Select an option</option>
                     <option value="google">🔍 Google</option>
                     <option value="linkedin">💼 LinkedIn</option>
@@ -300,11 +300,11 @@ export default function ContactPage() {
                 </div>
 
                 <button type="submit" style={{
-                  background: "linear-gradient(135deg, #00A99D, #0284c7)",
+                  background: "linear-gradient(135deg, #E8B53D, #0284c7)",
                   color: "#ffffff", border: "none", borderRadius: 10,
                   padding: "15px 32px", fontSize: 15, fontWeight: 700,
                   cursor: "pointer", width: "100%", letterSpacing: "0.01em",
-                  boxShadow: "0 4px 16px rgba(0,169,157,0.35)", transition: "opacity 0.2s",
+                  boxShadow: "0 4px 16px rgba(232,181,61,0.35)", transition: "opacity 0.2s",
                   display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
                 }}
                   onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.9")}
@@ -321,10 +321,10 @@ export default function ContactPage() {
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
             {/* Animated ping signal */}
             <div className="relative flex items-center justify-center h-32 mb-6">
-              <div className="absolute w-32 h-32 rounded-full border border-[#00A99D]/10 animate-ping" style={{ animationDuration:"2s" }}/>
-              <div className="absolute w-20 h-20 rounded-full border border-[#00A99D]/20 animate-ping" style={{ animationDuration:"2s", animationDelay:"0.3s" }}/>
-              <div className="absolute w-10 h-10 rounded-full border border-[#00A99D]/40 animate-ping" style={{ animationDuration:"2s", animationDelay:"0.6s" }}/>
-              <div className="w-12 h-12 rounded-full bg-[#00A99D] flex items-center justify-center shadow-lg" style={{ boxShadow:"0 0 30px rgba(0,169,157,0.5)" }}>
+              <div className="absolute w-32 h-32 rounded-full border border-[#E8B53D]/10 animate-ping" style={{ animationDuration:"2s" }}/>
+              <div className="absolute w-20 h-20 rounded-full border border-[#E8B53D]/20 animate-ping" style={{ animationDuration:"2s", animationDelay:"0.3s" }}/>
+              <div className="absolute w-10 h-10 rounded-full border border-[#E8B53D]/40 animate-ping" style={{ animationDuration:"2s", animationDelay:"0.6s" }}/>
+              <div className="w-12 h-12 rounded-full bg-[#E8B53D] flex items-center justify-center shadow-lg" style={{ boxShadow:"0 0 30px rgba(232,181,61,0.5)" }}>
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.5 12 19.79 19.79 0 011.52 3.46a2 2 0 011.99-2.19h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L7.91 8.91a16 16 0 006.18 6.18l.81-.81a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </div>
             </div>
@@ -336,7 +336,7 @@ export default function ContactPage() {
                 borderRadius: 12,
                 padding: "24px 28px",
                 boxShadow: "0 2px 12px rgba(27,60,110,0.06)",
-                borderLeft: "4px solid #00A99D",
+                borderLeft: "4px solid #E8B53D",
               }}
             >
               <p
@@ -345,7 +345,7 @@ export default function ContactPage() {
                   fontWeight: 700,
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
-                  color: "#00A99D",
+                  color: "#E8B53D",
                   marginBottom: 8,
                 }}
               >
@@ -373,7 +373,7 @@ export default function ContactPage() {
                 borderRadius: 12,
                 padding: "24px 28px",
                 boxShadow: "0 2px 12px rgba(27,60,110,0.06)",
-                borderLeft: "4px solid #00A99D",
+                borderLeft: "4px solid #E8B53D",
               }}
             >
               <p
@@ -382,7 +382,7 @@ export default function ContactPage() {
                   fontWeight: 700,
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
-                  color: "#00A99D",
+                  color: "#E8B53D",
                   marginBottom: 8,
                 }}
               >
@@ -410,7 +410,7 @@ export default function ContactPage() {
                 borderRadius: 12,
                 padding: "24px 28px",
                 boxShadow: "0 2px 12px rgba(27,60,110,0.06)",
-                borderLeft: "4px solid #00A99D",
+                borderLeft: "4px solid #E8B53D",
               }}
             >
               <p
@@ -419,7 +419,7 @@ export default function ContactPage() {
                   fontWeight: 700,
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
-                  color: "#00A99D",
+                  color: "#E8B53D",
                   marginBottom: 8,
                 }}
               >
@@ -455,7 +455,7 @@ export default function ContactPage() {
                   fontWeight: 700,
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
-                  color: "#00A99D",
+                  color: "#E8B53D",
                   marginBottom: 10,
                 }}
               >
@@ -558,7 +558,7 @@ export default function ContactPage() {
               fontWeight: 600,
               letterSpacing: "0.1em",
               textTransform: "uppercase",
-              color: "#00A99D",
+              color: "#E8B53D",
               textAlign: "center",
               marginBottom: 12,
             }}
@@ -619,7 +619,7 @@ export default function ContactPage() {
                       width: 28,
                       height: 28,
                       borderRadius: "50%",
-                      background: openFaq === i ? "#00A99D" : "#EFF6FF",
+                      background: openFaq === i ? "#E8B53D" : "#EFF6FF",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",

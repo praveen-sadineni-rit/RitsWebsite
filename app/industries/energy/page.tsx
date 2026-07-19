@@ -4,10 +4,10 @@ import Footer from "@/components/Footer";
 import { useState, useEffect } from "react";
 
 const GRID_NODES = [
-  { label: "Substation A", angle: -90, color: "#00cfb4" },
+  { label: "Substation A", angle: -90, color: "#F3C34E" },
   { label: "Solar Farm", angle: -30, color: "#fbbf24" },
   { label: "Wind Site", angle: 30, color: "#60a5fa" },
-  { label: "Substation B", angle: 90, color: "#00cfb4" },
+  { label: "Substation B", angle: 90, color: "#F3C34E" },
   { label: "Battery Storage", angle: 150, color: "#a78bfa" },
   { label: "Smart Meter Hub", angle: -150, color: "#34d399" },
 ];
@@ -44,12 +44,12 @@ function EnergyGridVisual() {
         <circle cx={cx} cy={cy} r={R} fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1" strokeDasharray="3 6" />
 
         {/* Central hub pulse rings */}
-        <circle className="energy-ring" cx={cx} cy={cy} r="14" fill="none" stroke="#00A99D" strokeWidth="2" />
-        <circle className="energy-ring" cx={cx} cy={cy} r="14" fill="none" stroke="#00A99D" strokeWidth="2" style={{ animationDelay: "0.9s" }} />
+        <circle className="energy-ring" cx={cx} cy={cy} r="14" fill="none" stroke="#E8B53D" strokeWidth="2" />
+        <circle className="energy-ring" cx={cx} cy={cy} r="14" fill="none" stroke="#E8B53D" strokeWidth="2" style={{ animationDelay: "0.9s" }} />
 
         {/* Central hub */}
-        <circle cx={cx} cy={cy} r="26" fill="#0f2447" stroke="#00A99D" strokeWidth="2" />
-        <path d={`M${cx - 5} ${cy - 12} L${cx - 10} ${cy + 2} L${cx - 2} ${cy + 2} L${cx - 6} ${cy + 12} L${cx + 10} ${cy - 4} L${cx + 2} ${cy - 4} Z`} fill="#00cfb4" />
+        <circle cx={cx} cy={cy} r="26" fill="#0f2447" stroke="#E8B53D" strokeWidth="2" />
+        <path d={`M${cx - 5} ${cy - 12} L${cx - 10} ${cy + 2} L${cx - 2} ${cy + 2} L${cx - 6} ${cy + 12} L${cx + 10} ${cy - 4} L${cx + 2} ${cy - 4} Z`} fill="#F3C34E" />
 
         {/* Nodes */}
         {nodePos.map((n, i) => {
@@ -75,8 +75,8 @@ function EnergyGridVisual() {
 
       {/* Status readout */}
       <div className="flex items-center justify-center gap-2 mt-4">
-        <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#00cfb4", animation: "energyNodeBlink 1.6s ease-in-out infinite" }} />
-        <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#00cfb4" }}>Grid Status: Optimal</span>
+        <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#F3C34E", animation: "energyNodeBlink 1.6s ease-in-out infinite" }} />
+        <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#F3C34E" }}>Grid Status: Optimal</span>
       </div>
     </div>
   );
@@ -94,10 +94,10 @@ export default function EnergyPage() {
       >
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-[#00A99D] text-xs font-bold tracking-widest uppercase mb-4">Energy &amp; Utilities</p>
+            <p className="text-[#E8B53D] text-xs font-bold tracking-widest uppercase mb-4">Energy &amp; Utilities</p>
             <h1 className="font-black text-white leading-tight mb-6" style={{ fontSize: "clamp(2rem,4vw,3rem)" }}>
               Power the<br />
-              <span style={{ color: "#00A99D" }}>Future.</span>
+              <span style={{ color: "#E8B53D" }}>Future.</span>
             </h1>
             <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-lg">
               We build smart grid systems, energy analytics platforms, and sustainability tools that help utilities and energy companies operate more efficiently.
@@ -159,7 +159,7 @@ export default function EnergyPage() {
               {
                 title: "Energy Analytics & BI",
                 desc: "Unified analytics dashboards that aggregate consumption, generation, and distribution data, surfacing actionable insights for grid operators and executives.",
-                color: "#00A99D",
+                color: "#E8B53D",
                 path: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
               },
               {
@@ -210,7 +210,7 @@ export default function EnergyPage() {
       {/* APPROACH */}
       <section className="py-20 px-6" style={{ background: "#0f2447" }}>
         <div className="max-w-6xl mx-auto">
-          <p className="text-[#00A99D] text-xs font-bold tracking-widest uppercase mb-4">Our Approach</p>
+          <p className="text-[#E8B53D] text-xs font-bold tracking-widest uppercase mb-4">Our Approach</p>
           <h2 className="font-black text-3xl text-white mb-12">How we deliver for energy</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -240,7 +240,7 @@ export default function EnergyPage() {
                 className="p-6 rounded-2xl"
                 style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
               >
-                <p className="font-black text-3xl text-[#00A99D] mb-3">{num}</p>
+                <p className="font-black text-3xl text-[#E8B53D] mb-3">{num}</p>
                 <h3 className="font-bold text-white mb-2">{title}</h3>
                 <p className="text-white/40 text-sm leading-relaxed">{desc}</p>
               </div>
@@ -252,7 +252,7 @@ export default function EnergyPage() {
       {/* CTA */}
       <section
         className="py-20 px-6"
-        style={{ background: "linear-gradient(135deg, #1B3C6E 0%, #00A99D 100%)" }}
+        style={{ background: "linear-gradient(135deg, #1B3C6E 0%, #E8B53D 100%)" }}
       >
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-black text-4xl text-white mb-4">Ready to power the future?</h2>

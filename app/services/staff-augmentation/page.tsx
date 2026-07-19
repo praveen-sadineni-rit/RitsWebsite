@@ -136,8 +136,8 @@ function VettingPipeline() {
     { label: "Application", icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z", color: "#60a5fa" },
     { label: "ID Verified", icon: "M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2", color: "#34d399" },
     { label: "Tech Screen", icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4", color: "#a78bfa" },
-    { label: "Interview", icon: "M15 10l4.553-2.069A1 1 0 0121 8.82v6.361a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z", color: "#00A99D" },
-    { label: "✓ Placed", icon: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z", color: "#00A99D" },
+    { label: "Interview", icon: "M15 10l4.553-2.069A1 1 0 0121 8.82v6.361a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z", color: "#E8B53D" },
+    { label: "✓ Placed", icon: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z", color: "#E8B53D" },
   ];
   useEffect(() => {
     const t = setInterval(() => setStep(s => (s + 1) % (steps.length + 2)), 1200);
@@ -274,7 +274,7 @@ function KanbanBoard() {
                 >
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 }}>
                     <p style={{ fontSize: "0.8rem", fontWeight: 700, color: "white", margin: 0 }}>{card.role}</p>
-                    <span style={{ fontSize: 10, color: "#00cfb4", fontWeight: 600, background: "rgba(0,207,180,0.12)", borderRadius: 99, padding: "2px 7px", whiteSpace: "nowrap" }}>≈ {card.avail}</span>
+                    <span style={{ fontSize: 10, color: "#F3C34E", fontWeight: 600, background: "rgba(232,181,61,0.12)", borderRadius: 99, padding: "2px 7px", whiteSpace: "nowrap" }}>≈ {card.avail}</span>
                   </div>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 4, marginBottom: 8 }}>
                     {card.tags.map(t => (
@@ -330,15 +330,15 @@ export default function StaffAugmentationPage() {
           className="py-24 md:py-32"
         >
           <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)", backgroundSize: "48px 48px", pointerEvents: "none" }} />
-          <div aria-hidden="true" style={{ position: "absolute", top: "-80px", right: "-80px", width: "420px", height: "420px", background: "radial-gradient(circle, rgba(0,169,157,0.12) 0%, transparent 70%)", pointerEvents: "none" }} />
+          <div aria-hidden="true" style={{ position: "absolute", top: "-80px", right: "-80px", width: "420px", height: "420px", background: "radial-gradient(circle, rgba(232,181,61,0.12) 0%, transparent 70%)", pointerEvents: "none" }} />
 
           <div className="max-w-7xl mx-auto px-6 lg:px-10 relative">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <p className="section-eyebrow" style={{ color: "#00A99D" }}>Staff Augmentation</p>
+                <p className="section-eyebrow" style={{ color: "#E8B53D" }}>Staff Augmentation</p>
                 <h1 style={{ fontSize: "clamp(2.25rem, 5vw, 3.5rem)", fontWeight: 900, lineHeight: 1.1, color: "#ffffff", letterSpacing: "-0.02em", marginBottom: "1.25rem" }}>
                   The right engineer.{" "}
-                  <span style={{ color: "#00A99D" }}>In days, not months.</span>
+                  <span style={{ color: "#E8B53D" }}>In days, not months.</span>
                 </h1>
                 <p style={{ fontSize: "1.125rem", lineHeight: 1.7, color: "rgba(255,255,255,0.72)", maxWidth: "58ch", marginBottom: "2.5rem" }}>
                   Vetted senior talent who integrate into your team from day one. No ramp-up theatre, no bait-and-switch.
@@ -351,7 +351,7 @@ export default function StaffAugmentationPage() {
                     { value: "ID + skills", label: "verified" },
                   ].map((s) => (
                     <div key={s.value} style={{ display: "inline-flex", alignItems: "center", gap: "10px", padding: "10px 18px", background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.14)", borderRadius: "6px" }}>
-                      <span style={{ fontWeight: 800, fontSize: "0.95rem", color: "#00cfb4", fontVariantNumeric: "tabular-nums", letterSpacing: "-0.01em" }}>{s.value}</span>
+                      <span style={{ fontWeight: 800, fontSize: "0.95rem", color: "#F3C34E", fontVariantNumeric: "tabular-nums", letterSpacing: "-0.01em" }}>{s.value}</span>
                       <span style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.55)" }}>{s.label}</span>
                     </div>
                   ))}
@@ -381,7 +381,7 @@ export default function StaffAugmentationPage() {
                 "US & global talent pools",
               ].map((item) => (
                 <span key={item} style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.8rem", fontWeight: 600, color: "#1B3C6E" }}>
-                  <span style={{ width: "18px", height: "18px", borderRadius: "50%", background: "#00A99D", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, color: "white" }}>
+                  <span style={{ width: "18px", height: "18px", borderRadius: "50%", background: "#E8B53D", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, color: "white" }}>
                     <IconCheck />
                   </span>
                   {item}
@@ -398,7 +398,7 @@ export default function StaffAugmentationPage() {
               <p className="section-eyebrow">Our vetting process</p>
               <h2 style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 800, color: "#0f2447", letterSpacing: "-0.02em", marginBottom: "1rem" }}>
                 We check everything.{" "}
-                <span style={{ color: "#00A99D" }}>So you don&apos;t have to.</span>
+                <span style={{ color: "#E8B53D" }}>So you don&apos;t have to.</span>
               </h2>
               <p style={{ color: "#495057", fontSize: "1rem", maxWidth: "54ch", margin: "0 auto", lineHeight: 1.7 }}>
                 Every candidate goes through a five-stage pipeline before you ever see their name. Most don&apos;t make it through.
@@ -406,14 +406,14 @@ export default function StaffAugmentationPage() {
             </div>
 
             <div ref={(el) => addReveal(el, 1)} className="reveal" style={{ position: "relative" }}>
-              <div aria-hidden="true" className="hidden lg:block" style={{ position: "absolute", top: "36px", left: "calc(10% + 36px)", right: "calc(10% + 36px)", height: "2px", background: "linear-gradient(90deg, #00A99D 0%, #1B3C6E 100%)", zIndex: 0 }} />
+              <div aria-hidden="true" className="hidden lg:block" style={{ position: "absolute", top: "36px", left: "calc(10% + 36px)", right: "calc(10% + 36px)", height: "2px", background: "linear-gradient(90deg, #E8B53D 0%, #1B3C6E 100%)", zIndex: 0 }} />
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "24px", position: "relative", zIndex: 1 }}>
                 {VETTING_STEPS.map((step, i) => (
                   <div key={step.number} style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-                    <div style={{ width: "72px", height: "72px", borderRadius: "50%", background: i === 0 ? "#00A99D" : "#ffffff", border: `2px solid ${i === 0 ? "#00A99D" : "#dce4f0"}`, display: "flex", alignItems: "center", justifyContent: "center", color: i === 0 ? "#ffffff" : "#1B3C6E", marginBottom: "16px", boxShadow: "0 2px 12px rgba(0,0,0,0.07)", flexShrink: 0 }}>
+                    <div style={{ width: "72px", height: "72px", borderRadius: "50%", background: i === 0 ? "#E8B53D" : "#ffffff", border: `2px solid ${i === 0 ? "#E8B53D" : "#dce4f0"}`, display: "flex", alignItems: "center", justifyContent: "center", color: i === 0 ? "#ffffff" : "#1B3C6E", marginBottom: "16px", boxShadow: "0 2px 12px rgba(0,0,0,0.07)", flexShrink: 0 }}>
                       <step.Icon />
                     </div>
-                    <span style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.12em", color: "#00A99D", textTransform: "uppercase", marginBottom: "6px" }}>Step {step.number}</span>
+                    <span style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.12em", color: "#E8B53D", textTransform: "uppercase", marginBottom: "6px" }}>Step {step.number}</span>
                     <p style={{ fontWeight: 700, fontSize: "0.9rem", color: "#0f2447", marginBottom: "6px", lineHeight: 1.3 }}>{step.label}</p>
                     <p style={{ fontSize: "0.78rem", color: "#6c757d", lineHeight: 1.5, maxWidth: "18ch" }}>{step.detail}</p>
                   </div>
@@ -423,7 +423,7 @@ export default function StaffAugmentationPage() {
 
             <div ref={(el) => addReveal(el, 2)} className="reveal" style={{ marginTop: "56px", background: "linear-gradient(135deg, #0f2447 0%, #1B3C6E 100%)", borderRadius: "12px", padding: "40px 48px", display: "flex", flexWrap: "wrap", alignItems: "center", gap: "24px", justifyContent: "space-between" }}>
               <div>
-                <span style={{ fontSize: "clamp(3rem, 8vw, 4.5rem)", fontWeight: 900, color: "#00cfb4", lineHeight: 1, fontVariantNumeric: "tabular-nums", letterSpacing: "-0.03em" }}>~15%</span>
+                <span style={{ fontSize: "clamp(3rem, 8vw, 4.5rem)", fontWeight: 900, color: "#F3C34E", lineHeight: 1, fontVariantNumeric: "tabular-nums", letterSpacing: "-0.03em" }}>~15%</span>
                 <p style={{ fontSize: "1.1rem", fontWeight: 700, color: "#ffffff", marginTop: "8px" }}>of applicants pass all five stages.</p>
                 <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.6)", marginTop: "6px", maxWidth: "42ch", lineHeight: 1.6 }}>
                   We run the full pipeline before any candidate reaches you. Your time is spent evaluating finalists, not filtering applicants.
@@ -440,8 +440,8 @@ export default function StaffAugmentationPage() {
             {/* Header */}
             <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: 16, marginBottom: 48 }}>
               <div>
-                <div style={{ display: "inline-flex", alignItems: "center", gap: 7, fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#00cfb4", background: "rgba(0,207,180,0.1)", border: "1px solid rgba(0,207,180,0.25)", borderRadius: 99, padding: "5px 14px", marginBottom: 14 }}>
-                  <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#00cfb4", display: "inline-block", animation: "pulse 1.5s ease-in-out infinite" }} />
+                <div style={{ display: "inline-flex", alignItems: "center", gap: 7, fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#F3C34E", background: "rgba(232,181,61,0.1)", border: "1px solid rgba(232,181,61,0.25)", borderRadius: 99, padding: "5px 14px", marginBottom: 14 }}>
+                  <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#F3C34E", display: "inline-block", animation: "pulse 1.5s ease-in-out infinite" }} />
                   Live Talent Board
                 </div>
                 <h2 style={{ fontSize: "clamp(1.75rem,3.5vw,2.5rem)", fontWeight: 800, color: "white", letterSpacing: "-0.02em", margin: 0 }}>
@@ -457,12 +457,12 @@ export default function StaffAugmentationPage() {
             <KanbanBoard />
 
             {/* Bottom note */}
-            <div style={{ marginTop: 32, display: "flex", alignItems: "center", gap: 10, padding: "14px 20px", background: "rgba(0,207,180,0.06)", border: "1px solid rgba(0,207,180,0.15)", borderRadius: 10 }}>
+            <div style={{ marginTop: 32, display: "flex", alignItems: "center", gap: 10, padding: "14px 20px", background: "rgba(232,181,61,0.06)", border: "1px solid rgba(232,181,61,0.15)", borderRadius: 10 }}>
               <span style={{ fontSize: 18 }}>💡</span>
               <p style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.55)", margin: 0 }}>
                 <strong style={{ color: "white" }}>Not limited to the above.</strong> We also staff cloud architects, data engineers, cybersecurity, blockchain, AR/VR, embedded systems, and more.
               </p>
-              <a href="/contact" style={{ marginLeft: "auto", flexShrink: 0, fontSize: "0.8rem", fontWeight: 700, color: "#00cfb4", textDecoration: "none", whiteSpace: "nowrap" }}>Tell us what you need →</a>
+              <a href="/contact" style={{ marginLeft: "auto", flexShrink: 0, fontSize: "0.8rem", fontWeight: 700, color: "#F3C34E", textDecoration: "none", whiteSpace: "nowrap" }}>Tell us what you need →</a>
             </div>
           </div>
         </section>
@@ -480,12 +480,12 @@ export default function StaffAugmentationPage() {
               {MODELS.map((model) => (
                 <div id={model.anchorId} key={model.name} className="scroll-mt-28" style={{ borderRadius: "10px", padding: "36px 32px", background: model.highlight ? "linear-gradient(135deg, #0f2447 0%, #1B3C6E 100%)" : "#f8f9fa", border: model.highlight ? "none" : "1px solid #dce4f0", position: "relative" }}>
                   {model.highlight && (
-                    <span style={{ position: "absolute", top: "20px", right: "20px", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", padding: "4px 10px", borderRadius: "100px", background: "#00A99D", color: "#ffffff" }}>Most popular</span>
+                    <span style={{ position: "absolute", top: "20px", right: "20px", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", padding: "4px 10px", borderRadius: "100px", background: "#E8B53D", color: "#ffffff" }}>Most popular</span>
                   )}
                   <p style={{ fontWeight: 800, fontSize: "1.3rem", color: model.highlight ? "#ffffff" : "#0f2447", marginBottom: "8px", letterSpacing: "-0.01em" }}>{model.name}</p>
-                  <p style={{ fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.05em", textTransform: "uppercase", color: model.highlight ? "#00cfb4" : "#00A99D", marginBottom: "4px" }}>{model.hours}</p>
+                  <p style={{ fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.05em", textTransform: "uppercase", color: model.highlight ? "#F3C34E" : "#E8B53D", marginBottom: "4px" }}>{model.hours}</p>
                   <p style={{ fontSize: "0.78rem", color: model.highlight ? "rgba(255,255,255,0.5)" : "#6c757d", marginBottom: "20px" }}>{model.min}</p>
-                  <div style={{ width: "40px", height: "3px", background: "#00A99D", borderRadius: "2px", marginBottom: "20px" }} />
+                  <div style={{ width: "40px", height: "3px", background: "#E8B53D", borderRadius: "2px", marginBottom: "20px" }} />
                   <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: model.highlight ? "rgba(255,255,255,0.72)" : "#495057" }}>{model.description}</p>
                 </div>
               ))}
@@ -507,11 +507,11 @@ export default function StaffAugmentationPage() {
             </div>
 
             <div ref={(el) => addReveal(el, 8)} className="reveal" style={{ position: "relative", paddingLeft: "2px" }}>
-              <div aria-hidden="true" style={{ position: "absolute", top: "24px", bottom: "24px", left: "23px", width: "2px", background: "linear-gradient(180deg, #00A99D 0%, #1B3C6E 100%)" }} />
+              <div aria-hidden="true" style={{ position: "absolute", top: "24px", bottom: "24px", left: "23px", width: "2px", background: "linear-gradient(180deg, #E8B53D 0%, #1B3C6E 100%)" }} />
               <div style={{ display: "flex", flexDirection: "column" }}>
                 {TIMELINE.map((item, i) => (
                   <div key={item.day} style={{ display: "flex", gap: "24px", alignItems: "flex-start", paddingBottom: i < TIMELINE.length - 1 ? "32px" : "0" }}>
-                    <div style={{ flexShrink: 0, width: "48px", height: "48px", borderRadius: "50%", background: i === TIMELINE.length - 1 ? "#00A99D" : "#ffffff", border: `2px solid ${i === TIMELINE.length - 1 ? "#00A99D" : "#dce4f0"}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.62rem", fontWeight: 800, letterSpacing: "0.06em", textTransform: "uppercase", color: i === TIMELINE.length - 1 ? "#ffffff" : "#1B3C6E", boxShadow: "0 2px 8px rgba(0,0,0,0.08)", zIndex: 1, position: "relative" }}>
+                    <div style={{ flexShrink: 0, width: "48px", height: "48px", borderRadius: "50%", background: i === TIMELINE.length - 1 ? "#E8B53D" : "#ffffff", border: `2px solid ${i === TIMELINE.length - 1 ? "#E8B53D" : "#dce4f0"}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.62rem", fontWeight: 800, letterSpacing: "0.06em", textTransform: "uppercase", color: i === TIMELINE.length - 1 ? "#ffffff" : "#1B3C6E", boxShadow: "0 2px 8px rgba(0,0,0,0.08)", zIndex: 1, position: "relative" }}>
                       {item.day.replace("Day ", "D")}
                     </div>
                     <div style={{ paddingTop: "10px", paddingBottom: "4px" }}>
@@ -527,10 +527,10 @@ export default function StaffAugmentationPage() {
 
         {/* CTA */}
         <section style={{ background: "linear-gradient(135deg, #0f2447 0%, #0f2447 60%, #1B3C6E 100%)", padding: "96px 0", position: "relative", overflow: "hidden" }}>
-          <div aria-hidden="true" style={{ position: "absolute", bottom: "-60px", left: "-60px", width: "360px", height: "360px", background: "radial-gradient(circle, rgba(0,169,157,0.1) 0%, transparent 70%)", pointerEvents: "none" }} />
+          <div aria-hidden="true" style={{ position: "absolute", bottom: "-60px", left: "-60px", width: "360px", height: "360px", background: "radial-gradient(circle, rgba(232,181,61,0.1) 0%, transparent 70%)", pointerEvents: "none" }} />
           <div className="max-w-7xl mx-auto px-6 lg:px-10 relative" style={{ textAlign: "center" }}>
             <div ref={(el) => addReveal(el, 9)} className="reveal">
-              <p className="section-eyebrow" style={{ color: "#00cfb4" }}>Ready to hire</p>
+              <p className="section-eyebrow" style={{ color: "#F3C34E" }}>Ready to hire</p>
               <h2 style={{ fontSize: "clamp(2rem, 4.5vw, 3rem)", fontWeight: 900, color: "#ffffff", letterSpacing: "-0.025em", marginBottom: "1.25rem", lineHeight: 1.1 }}>
                 Tell us who you need.
               </h2>

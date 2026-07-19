@@ -13,7 +13,7 @@ const industries = [
   {
     title: "Healthcare",
     href: "/industries/healthcare",
-    color: "#00A99D",
+    color: "#E8B53D",
     desc: "HIPAA-compliant systems connecting patients, providers, and data, securely.",
     icon: "M12 8v8M8 12h8M4 7a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2V7z",
   },
@@ -93,15 +93,15 @@ export default function IndustriesPage() {
               right: "-100px",
               width: 460,
               height: 460,
-              background: "radial-gradient(circle, rgba(0,169,157,0.12) 0%, transparent 70%)",
+              background: "radial-gradient(circle, rgba(232,181,61,0.12) 0%, transparent 70%)",
             }}
           />
           <div className="max-w-4xl mx-auto text-center relative">
-            <p className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: "#00A99D" }}>
+            <p className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: "#E8B53D" }}>
               Industries
             </p>
             <h1 className="text-white font-extrabold leading-tight mb-6" style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", letterSpacing: "-0.02em" }}>
-              Deep expertise across the industries that <span style={{ color: "#00A99D" }}>run on technology.</span>
+              Deep expertise across the industries that <span style={{ color: "#E8B53D" }}>run on technology.</span>
             </h1>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-10">
               We pair engineering talent with real domain knowledge, so you get teams that understand your regulations, your users, and your goals from day one.
@@ -117,7 +117,7 @@ export default function IndustriesPage() {
         <section id="all" style={{ background: "#0a1628" }} className="py-24 px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-14">
-              <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#00A99D" }}>
+              <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#E8B53D" }}>
                 Who We Serve
               </p>
               <h2 className="text-white font-extrabold" style={{ fontSize: "clamp(1.8rem, 3vw, 2.6rem)", letterSpacing: "-0.02em" }}>
@@ -156,7 +156,7 @@ export default function IndustriesPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-24 px-6 text-center" style={{ background: "linear-gradient(135deg, #1B3C6E 0%, #00A99D 100%)" }}>
+        <section className="py-24 px-6 text-center" style={{ background: "linear-gradient(135deg, #1B3C6E 0%, #E8B53D 100%)" }}>
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl font-extrabold text-white mb-4">Don&apos;t see your industry?</h2>
             <p className="text-white/80 text-lg mb-8">

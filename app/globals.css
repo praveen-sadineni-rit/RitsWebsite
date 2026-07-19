@@ -25,8 +25,8 @@ body {
   --navy: #1B3C6E;
   --navy-dark: #0f2447;
   --navy-light: #2a5298;
-  --teal: #00A99D;
-  --teal-dark: #00877d;
+  --teal: #E8B53D;
+  --teal-dark: #B0810E;
   --gray-50: #f8f9fa;
   --gray-100: #f1f3f5;
   --gray-200: #e9ecef;
@@ -41,8 +41,8 @@ body {
   align-items: center;
   gap: 8px;
   background: var(--teal);
-  color: white;
-  font-weight: 600;
+  color: #0f2447;
+  font-weight: 700;
   font-size: 0.875rem;
   padding: 14px 28px;
   border-radius: 4px;
@@ -54,7 +54,7 @@ body {
   background: var(--teal-dark);
   border-color: var(--teal-dark);
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(0,169,157,0.3);
+  box-shadow: 0 4px 16px rgba(232,181,61,0.3);
 }
 
 .btn-navy {
@@ -100,7 +100,7 @@ body {
 .word-spotlight { display: inline-block; position: relative; }
 .word-spotlight::after {
   content: ''; position: absolute; left: 0; bottom: -4px; height: 3px;
-  width: 100%; background: #00A99D; border-radius: 2px;
+  width: 100%; background: #E8B53D; border-radius: 2px;
   transform-origin: left; transform: scaleX(0);
   animation: sweepLine 0.45s cubic-bezier(0.22,1,0.36,1) forwards;
 }
@@ -136,7 +136,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--teal);
+  color: #B0810E;
   margin-bottom: 12px;
 }
 

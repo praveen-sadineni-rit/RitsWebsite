@@ -20,7 +20,7 @@ const PILLARS: Pillar[] = [
   {
     key: "customer",
     title: "Customer Partnership",
-    color: "#00A99D",
+    color: "#E8B53D",
     area: "tl",
     items: [
       "Work directly with customer engineering teams",
@@ -132,7 +132,7 @@ export default function FDEModel() {
         >
           {/* hub at 50,50 -> corners + top + bottom */}
           {[
-            { x: 20, y: 30, c: "#00A99D" },
+            { x: 20, y: 30, c: "#E8B53D" },
             { x: 80, y: 30, c: "#60a5fa" },
             { x: 20, y: 74, c: "#a78bfa" },
             { x: 80, y: 74, c: "#fb923c" },
@@ -184,42 +184,42 @@ export default function FDEModel() {
             <div className="relative flex flex-col items-center text-center">
               <div
                 className="relative w-44 h-44 rounded-full flex items-center justify-center"
-                style={{ background: "radial-gradient(circle, rgba(0,169,157,0.2) 0%, rgba(0,169,157,0.03) 70%)", border: "1px solid rgba(0,169,157,0.45)" }}
+                style={{ background: "radial-gradient(circle, rgba(232,181,61,0.2) 0%, rgba(232,181,61,0.03) 70%)", border: "1px solid rgba(232,181,61,0.45)" }}
               >
-                <span className="fde-core-ring absolute inset-[-10px] rounded-full" style={{ border: "1px solid rgba(0,169,157,0.22)" }} />
-                <span className="fde-core-ring absolute inset-[8px] rounded-full" style={{ border: "1px solid rgba(0,169,157,0.14)", animationDelay: "0.7s" }} />
+                <span className="fde-core-ring absolute inset-[-10px] rounded-full" style={{ border: "1px solid rgba(232,181,61,0.22)" }} />
+                <span className="fde-core-ring absolute inset-[8px] rounded-full" style={{ border: "1px solid rgba(232,181,61,0.14)", animationDelay: "0.7s" }} />
 
                 <svg viewBox="0 0 200 185" width="150" height="139" fill="none" aria-label="Forward Deployed Engineer">
                   <g className="fde-figure">
                     {/* torso / hoodie */}
                     <path d="M58 185 Q56 98 84 88 Q92 84 100 84 Q108 84 116 88 Q144 98 142 185 Z"
-                      fill="rgba(0,169,157,0.14)" stroke="#00A99D" strokeWidth="2.5" strokeLinejoin="round" />
+                      fill="rgba(232,181,61,0.14)" stroke="#E8B53D" strokeWidth="2.5" strokeLinejoin="round" />
                     {/* forearms to laptop */}
-                    <path d="M74 108 L88 138" stroke="#00A99D" strokeOpacity="0.4" strokeWidth="12" strokeLinecap="round" />
-                    <path d="M126 108 L112 138" stroke="#00A99D" strokeOpacity="0.4" strokeWidth="12" strokeLinecap="round" />
+                    <path d="M74 108 L88 138" stroke="#E8B53D" strokeOpacity="0.4" strokeWidth="12" strokeLinecap="round" />
+                    <path d="M126 108 L112 138" stroke="#E8B53D" strokeOpacity="0.4" strokeWidth="12" strokeLinecap="round" />
                     {/* neck */}
                     <rect x="92" y="66" width="16" height="22" fill="#123a55" />
                     {/* head */}
-                    <circle cx="100" cy="50" r="20" fill="#123a55" stroke="#00A99D" strokeWidth="2.5" />
+                    <circle cx="100" cy="50" r="20" fill="#123a55" stroke="#E8B53D" strokeWidth="2.5" />
                     {/* hair */}
-                    <path d="M81 51 Q82 30 100 30 Q118 30 119 51 Q110 43 100 43 Q90 43 81 51 Z" fill="#00A99D" />
+                    <path d="M81 51 Q82 30 100 30 Q118 30 119 51 Q110 43 100 43 Q90 43 81 51 Z" fill="#E8B53D" />
                     {/* eyes + smile */}
-                    <circle cx="93" cy="51" r="1.7" fill="#00A99D" />
-                    <circle cx="107" cy="51" r="1.7" fill="#00A99D" />
-                    <path d="M94 59 Q100 63 106 59" stroke="#00A99D" strokeWidth="1.6" strokeLinecap="round" />
+                    <circle cx="93" cy="51" r="1.7" fill="#E8B53D" />
+                    <circle cx="107" cy="51" r="1.7" fill="#E8B53D" />
+                    <path d="M94 59 Q100 63 106 59" stroke="#E8B53D" strokeWidth="1.6" strokeLinecap="round" />
                     {/* laptop screen (in front of torso) */}
-                    <rect x="66" y="120" width="68" height="36" rx="3" fill="#08192e" stroke="#00A99D" strokeWidth="2.5" />
-                    <text x="100" y="144" textAnchor="middle" fontSize="17" fontWeight="900" fill="#00cfb4" className="fde-screenglow">FDE</text>
+                    <rect x="66" y="120" width="68" height="36" rx="3" fill="#08192e" stroke="#E8B53D" strokeWidth="2.5" />
+                    <text x="100" y="144" textAnchor="middle" fontSize="17" fontWeight="900" fill="#F3C34E" className="fde-screenglow">FDE</text>
                     {/* laptop base */}
-                    <path d="M56 156 L144 156 L154 170 L46 170 Z" fill="rgba(0,169,157,0.16)" stroke="#00A99D" strokeWidth="2.5" strokeLinejoin="round" />
+                    <path d="M56 156 L144 156 L154 170 L46 170 Z" fill="rgba(232,181,61,0.16)" stroke="#E8B53D" strokeWidth="2.5" strokeLinejoin="round" />
                     {/* typing hands */}
-                    <ellipse className="fde-type-a" cx="74" cy="161" rx="6" ry="4" fill="#00A99D" opacity="0.55" />
-                    <ellipse className="fde-type-b" cx="126" cy="161" rx="6" ry="4" fill="#00A99D" opacity="0.55" />
+                    <ellipse className="fde-type-a" cx="74" cy="161" rx="6" ry="4" fill="#E8B53D" opacity="0.55" />
+                    <ellipse className="fde-type-b" cx="126" cy="161" rx="6" ry="4" fill="#E8B53D" opacity="0.55" />
                   </g>
                 </svg>
               </div>
               <p className="text-white font-bold mt-3 text-sm">Forward Deployed Engineer</p>
-              <p className="text-[11px] font-semibold tracking-widest uppercase mt-1" style={{ color: "#00A99D" }}>
+              <p className="text-[11px] font-semibold tracking-widest uppercase mt-1" style={{ color: "#E8B53D" }}>
                 Embedded · Collaborative · Impactful
               </p>
             </div>
@@ -246,12 +246,12 @@ export default function FDEModel() {
       {/* Mission banner */}
       <div
         className="mt-6 rounded-2xl px-6 py-4 flex items-center justify-center gap-3 text-center"
-        style={{ background: "linear-gradient(90deg, rgba(0,169,157,0.12), rgba(27,60,110,0.18))", border: "1px solid rgba(0,169,157,0.3)" }}
+        style={{ background: "linear-gradient(90deg, rgba(232,181,61,0.12), rgba(27,60,110,0.18))", border: "1px solid rgba(232,181,61,0.3)" }}
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
-          <circle cx="12" cy="12" r="9" stroke="#00A99D" strokeWidth="1.6" />
-          <circle cx="12" cy="12" r="4" stroke="#00A99D" strokeWidth="1.6" />
-          <circle cx="12" cy="12" r="1" fill="#00A99D" />
+          <circle cx="12" cy="12" r="9" stroke="#E8B53D" strokeWidth="1.6" />
+          <circle cx="12" cy="12" r="4" stroke="#E8B53D" strokeWidth="1.6" />
+          <circle cx="12" cy="12" r="1" fill="#E8B53D" />
         </svg>
         <p className="text-sm text-gray-200">
           <span className="font-bold text-white">Mission:</span> Deliver AI solutions that solve real customer problems and drive lasting impact.

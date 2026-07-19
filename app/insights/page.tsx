@@ -204,10 +204,10 @@ export default function InsightsPage() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
             <div>
-              <p className="text-[#00A99D] text-xs font-bold tracking-widest uppercase mb-3">Live AI Feed</p>
+              <p className="text-[#E8B53D] text-xs font-bold tracking-widest uppercase mb-3">Live AI Feed</p>
               <h1 className="text-white font-black leading-tight" style={{ fontSize: "clamp(2rem,4vw,3rem)" }}>
                 What&apos;s happening in AI,<br />
-                <span style={{ color: "#00A99D" }}>right now.</span>
+                <span style={{ color: "#E8B53D" }}>right now.</span>
               </h1>
               <p className="text-white/50 mt-3 text-sm max-w-lg">
                 Live articles from Hacker News and Dev.to. AI, ML, LLMs, and everything in between. Updated in real time.
@@ -254,9 +254,9 @@ export default function InsightsPage() {
               <button key={f} onClick={() => setFilter(f)}
                 className="px-4 py-1.5 rounded-full text-xs font-bold transition-all duration-200"
                 style={{
-                  background: filter === f ? "#00A99D" : "rgba(255,255,255,0.06)",
+                  background: filter === f ? "#E8B53D" : "rgba(255,255,255,0.06)",
                   color: filter === f ? "white" : "rgba(255,255,255,0.40)",
-                  border: `1px solid ${filter === f ? "#00A99D" : "rgba(255,255,255,0.08)"}`,
+                  border: `1px solid ${filter === f ? "#E8B53D" : "rgba(255,255,255,0.08)"}`,
                 }}>
                 {f}
                 {f !== "All" && !loading && (
@@ -300,7 +300,7 @@ export default function InsightsPage() {
             <div className="text-center py-20 text-gray-400">
               <svg className="mx-auto mb-4" width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
               <p className="font-semibold">No articles match this filter right now.</p>
-              <button onClick={() => setFilter("All")} className="mt-3 text-[#00A99D] text-sm font-semibold hover:underline">Show all</button>
+              <button onClick={() => setFilter("All")} className="mt-3 text-[#E8B53D] text-sm font-semibold hover:underline">Show all</button>
             </div>
           ) : (
             <>
@@ -325,7 +325,7 @@ export default function InsightsPage() {
                     <div className="p-8 flex flex-col justify-between">
                       <div>
                         <div className="flex items-center gap-2 mb-4">
-                          <span className="text-[#00A99D] text-xs font-bold uppercase tracking-widest">Featured</span>
+                          <span className="text-[#E8B53D] text-xs font-bold uppercase tracking-widest">Featured</span>
                           <span className="text-gray-300">·</span>
                           <SourceBadge source={featured.source} />
                         </div>
@@ -355,7 +355,7 @@ export default function InsightsPage() {
                         )}
                       </div>
                       <div className="mt-6">
-                        <span className="inline-flex items-center gap-1.5 text-[#00A99D] text-sm font-bold group-hover:gap-2.5 transition-all">
+                        <span className="inline-flex items-center gap-1.5 text-[#E8B53D] text-sm font-bold group-hover:gap-2.5 transition-all">
                           Read article
                           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                         </span>
@@ -413,7 +413,7 @@ export default function InsightsPage() {
 
               <div className="mt-8 text-center text-gray-400 text-xs">
                 Showing {filtered.length} articles · {filter !== "All" ? `filtered by "${filter}" · ` : ""}
-                <button onClick={() => fetchArticles(true)} className="text-[#00A99D] font-semibold hover:underline ml-1">
+                <button onClick={() => fetchArticles(true)} className="text-[#E8B53D] font-semibold hover:underline ml-1">
                   Refresh for latest
                 </button>
               </div>

@@ -3,7 +3,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const accentColors = ["#60a5fa", "#00A99D", "#a78bfa", "#34d399", "#fb923c", "#f472b6"];
+const accentColors = ["#60a5fa", "#E8B53D", "#a78bfa", "#34d399", "#fb923c", "#f472b6"];
 
 const solutions = [
   {
@@ -27,12 +27,12 @@ const solutions = [
     title: "Payment Processing APIs",
     description:
       "High-throughput, low-latency payment APIs that support global currencies, real-time settlements, and seamless gateway integrations.",
-    color: "#00A99D",
+    color: "#E8B53D",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
         <path
           d="M2 8h20M2 12h6M6 16h4M3 6h18a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z"
-          stroke="#00A99D"
+          stroke="#E8B53D"
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -148,11 +148,11 @@ export default function FintechPage() {
         className="pt-32 pb-24 px-6"
       >
         <div className="max-w-5xl mx-auto text-center">
-          <p className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: "#00A99D" }}>
+          <p className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: "#E8B53D" }}>
             FinTech
           </p>
           <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">
-            Built for <span style={{ color: "#00A99D" }}>Finance.</span>
+            Built for <span style={{ color: "#E8B53D" }}>Finance.</span>
             <br />
             Engineered for Trust.
           </h1>
@@ -164,7 +164,7 @@ export default function FintechPage() {
               <span
                 key={pill}
                 className="px-4 py-1.5 rounded-full text-sm font-medium border"
-                style={{ borderColor: "#00A99D", color: "#00A99D", backgroundColor: "rgba(0,169,157,0.08)" }}
+                style={{ borderColor: "#E8B53D", color: "#E8B53D", backgroundColor: "rgba(232,181,61,0.08)" }}
               >
                 {pill}
               </span>
@@ -240,7 +240,7 @@ export default function FintechPage() {
       <section style={{ backgroundColor: "#0f2447" }} className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
-            <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#00A99D" }}>
+            <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "#E8B53D" }}>
               Our Process
             </p>
             <h2 className="text-4xl font-extrabold text-white">How We Deliver</h2>
@@ -252,7 +252,7 @@ export default function FintechPage() {
                 className="rounded-2xl p-6"
                 style={{ backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
               >
-                <p className="text-4xl font-extrabold mb-3" style={{ color: "#00A99D" }}>
+                <p className="text-4xl font-extrabold mb-3" style={{ color: "#E8B53D" }}>
                   {step.step}
                 </p>
                 <h3 className="text-white font-bold text-lg mb-2">{step.title}</h3>
@@ -266,7 +266,7 @@ export default function FintechPage() {
       {/* CTA */}
       <section
         className="py-24 px-6 text-center"
-        style={{ background: "linear-gradient(135deg, #1B3C6E 0%, #00A99D 100%)" }}
+        style={{ background: "linear-gradient(135deg, #1B3C6E 0%, #E8B53D 100%)" }}
       >
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl font-extrabold text-white mb-4">

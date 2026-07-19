@@ -10,7 +10,7 @@ function PipelineAnim() {
     { label: "Code", icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4", color: "#60a5fa" },
     { label: "Build", icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10", color: "#a78bfa" },
     { label: "Test", icon: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z", color: "#34d399" },
-    { label: "Deploy", icon: "M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z", color: "#00A99D" },
+    { label: "Deploy", icon: "M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z", color: "#E8B53D" },
     { label: "Monitor", icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z", color: "#fb923c" },
   ];
   useEffect(() => {
@@ -27,8 +27,8 @@ function PipelineAnim() {
           <div className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
           <span className="ml-2 text-white/30 text-xs font-mono">CI/CD Pipeline</span>
           <div className="ml-auto flex items-center gap-1">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#00A99D] animate-pulse" />
-            <span className="text-[#00A99D] text-[10px] font-mono">running</span>
+            <div className="w-1.5 h-1.5 rounded-full bg-[#E8B53D] animate-pulse" />
+            <span className="text-[#E8B53D] text-[10px] font-mono">running</span>
           </div>
         </div>
         <div className="p-5 space-y-3">
@@ -95,7 +95,7 @@ const capabilities = [
     title: "Infrastructure as Code",
     desc: "Terraform, Pulumi, and CloudFormation templates that version your infra alongside your application code.",
     icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4",
-    color: "#00A99D",
+    color: "#E8B53D",
   },
   {
     title: "Site Reliability Engineering",
@@ -136,10 +136,10 @@ export default function CloudDevOpsPage() {
       <section style={{ background: "linear-gradient(135deg, #0f2447 0%, #1B3C6E 60%, #0f2447 100%)" }} className="pt-24 pb-20 px-6">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-[#00A99D] text-xs font-bold tracking-widest uppercase mb-4">Cloud & DevOps</p>
+            <p className="text-[#E8B53D] text-xs font-bold tracking-widest uppercase mb-4">Cloud & DevOps</p>
             <h1 className="text-white font-black leading-tight mb-6" style={{ fontSize: "clamp(2rem,4vw,3rem)" }}>
               Ship faster.<br />
-              <span style={{ color: "#00A99D" }}>Break nothing.</span>
+              <span style={{ color: "#E8B53D" }}>Break nothing.</span>
             </h1>
             <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-lg">
               Modern cloud infrastructure and DevOps practices that let your team deploy with confidence, multiple times a day.
@@ -208,7 +208,7 @@ export default function CloudDevOpsPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {stack.map(s => (
               <div key={s.category} className="p-6 rounded-2xl" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
-                <p className="text-[#00A99D] text-xs font-bold uppercase tracking-widest mb-4">{s.category}</p>
+                <p className="text-[#E8B53D] text-xs font-bold uppercase tracking-widest mb-4">{s.category}</p>
                 <div className="flex flex-wrap gap-2">
                   {s.items.map(i => (
                     <span key={i} className="px-3 py-1.5 rounded-lg text-xs font-semibold text-white/70" style={{ background: "rgba(255,255,255,0.06)" }}>{i}</span>
@@ -235,7 +235,7 @@ export default function CloudDevOpsPage() {
               { num: "04", title: "Operate & Optimize", desc: "Ongoing SRE support, cost reviews, and continuous improvement." },
             ].map(s => (
               <div key={s.num} className="text-center">
-                <div className="w-12 h-12 rounded-full bg-[#00A99D]/10 text-[#00A99D] font-black text-sm flex items-center justify-center mx-auto mb-4">{s.num}</div>
+                <div className="w-12 h-12 rounded-full bg-[#E8B53D]/10 text-[#E8B53D] font-black text-sm flex items-center justify-center mx-auto mb-4">{s.num}</div>
                 <h3 className="font-bold text-[#0f172a] mb-2">{s.title}</h3>
                 <p className="text-gray-500 text-sm">{s.desc}</p>
               </div>
@@ -245,7 +245,7 @@ export default function CloudDevOpsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6" style={{ background: "linear-gradient(135deg, #00A99D 0%, #1B3C6E 100%)" }}>
+      <section className="py-20 px-6" style={{ background: "linear-gradient(135deg, #E8B53D 0%, #1B3C6E 100%)" }}>
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-white font-black text-4xl mb-4">Ready to modernize your infrastructure?</h2>
           <p className="text-white/70 text-lg mb-8">Get a free cloud assessment and a clear roadmap, no strings attached.</p>
