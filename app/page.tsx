@@ -450,7 +450,7 @@ function NeuralNetwork() {
 
     const draw = () => {
       ctx.clearRect(0, 0, W, H);
-      angle += 0.004;
+      angle += 0.0013;
 
       const cosA = Math.cos(angle);
       const sinA = Math.sin(angle);
