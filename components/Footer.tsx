@@ -68,9 +68,10 @@ export default function Footer() {
                   <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ background: "rgba(232,181,61,0.12)", color: "#F3C34E" }}>Dev Center</span>
                 </div>
                 <p className="pl-[23px] leading-relaxed">
-                  Unit No 304, Section A, Third Floor, SBR Pearl<br />
-                  HUDA Techno Enclave-III, Opp. Raheja Mind Space<br />
-                  Madhapur, Hyderabad, 500081
+                  Unit No 304, Section A, Third Floor,<br />
+                  SBR Pearl HUDA Techno Enclave-III,<br />
+                  Opp. Raheja Mind Space,<br />
+                  Madhapur, Hyderabad - 500081
                 </p>
               </div>
               </div>

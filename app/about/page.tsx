@@ -735,9 +735,10 @@ export default function AboutPage() {
               <div style={{ display:"flex", gap:10, alignItems:"flex-start", marginBottom:16 }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink:0, marginTop:2 }}><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="rgba(232,181,61,0.15)" stroke="#E8B53D" strokeWidth="2"/><circle cx="12" cy="9" r="2.5" fill="#E8B53D"/></svg>
                 <address style={{ fontStyle:"normal", color:"#475569", fontSize:14, lineHeight:1.7 }}>
-                  Unit No 304, Section A, Third Floor, SBR Pearl<br/>
-                  HUDA Techno Enclave-III, Opp. Raheja Mind Space<br/>
-                  Madhapur, Hyderabad, 500081
+                  Unit No 304, Section A, Third Floor,<br/>
+                  SBR Pearl HUDA Techno Enclave-III,<br/>
+                  Opp. Raheja Mind Space,<br/>
+                  Madhapur, Hyderabad - 500081
                 </address>
               </div>
             </div>
