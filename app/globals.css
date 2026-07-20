@@ -130,6 +130,12 @@ body {
   color: white;
 }
 
+/* ── About bento grid (stack on mobile) ── */
+@media (max-width: 768px) {
+  .bento-grid { grid-template-columns: 1fr !important; }
+  .bento-grid > * { grid-column: auto !important; grid-row: auto !important; min-height: 0 !important; }
+}
+
 /* ── Section label ── */
 .section-eyebrow {
   font-size: 0.75rem;

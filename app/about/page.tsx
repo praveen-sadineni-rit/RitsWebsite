@@ -477,12 +477,6 @@ export default function AboutPage() {
           </div>
 
           {/* Bento grid */}
-          <style>{`
-            @media (max-width: 768px) {
-              .bento-grid { grid-template-columns: 1fr !important; }
-              .bento-grid > * { grid-column: auto !important; grid-row: auto !important; min-height: 0 !important; }
-            }
-          `}</style>
           <div className="bento-grid" style={{ display: "grid", gridTemplateColumns: "repeat(12, 1fr)", gridTemplateRows: "auto", gap: 16 }}>
 
             {/* Big hero card — Talent */}
@@ -723,7 +717,7 @@ export default function AboutPage() {
                     <circle cx="450" cy="300" r="80" fill="none" stroke="#000080" strokeWidth="4"/>
                     <circle cx="450" cy="300" r="8" fill="#000080"/>
                     {Array.from({ length: 24 }).map((_, i) => (
-                      <line key={i} x1="450" y1="300" x2={450 + 80 * Math.cos((i * 15 * Math.PI) / 180)} y2={300 + 80 * Math.sin((i * 15 * Math.PI) / 180)} stroke="#000080" strokeWidth="2"/>
+                      <line key={i} x1="450" y1="300" x2={(450 + 80 * Math.cos((i * 15 * Math.PI) / 180)).toFixed(3)} y2={(300 + 80 * Math.sin((i * 15 * Math.PI) / 180)).toFixed(3)} stroke="#000080" strokeWidth="2"/>
                     ))}
                   </svg>
                 </div>
