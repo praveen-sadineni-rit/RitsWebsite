@@ -31,8 +31,11 @@ export default function ContactPage() {
     lookingFor: "",
     projectDetails: "",
     hearAboutUs: "",
+    company: "", // honeypot
   });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const handleChange = (
@@ -43,9 +46,27 @@ export default function ContactPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError("");
+    setSending(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (res.ok && json.ok) {
+        setSubmitted(true);
+      } else {
+        setError(json.error || "Something went wrong. Please try again or email info@rits-it.com.");
+      }
+    } catch {
+      setError("Network error. Please try again or email info@rits-it.com.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -299,19 +320,32 @@ export default function ContactPage() {
                   </select>
                 </div>
 
-                <button type="submit" style={{
+                {/* Honeypot — hidden from users, catches bots */}
+                <input
+                  type="text" name="company" tabIndex={-1} autoComplete="off"
+                  value={formData.company} onChange={handleChange}
+                  style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+                  aria-hidden="true"
+                />
+
+                {error && (
+                  <p style={{ color: "#b91c1c", fontSize: 13, fontWeight: 600, marginBottom: 12, textAlign: "center" }}>{error}</p>
+                )}
+
+                <button type="submit" disabled={sending} style={{
                   background: "linear-gradient(135deg, #E8B53D, #5E82AE)",
                   color: "#ffffff", border: "none", borderRadius: 10,
                   padding: "15px 32px", fontSize: 15, fontWeight: 700,
-                  cursor: "pointer", width: "100%", letterSpacing: "0.01em",
+                  cursor: sending ? "not-allowed" : "pointer", width: "100%", letterSpacing: "0.01em",
                   boxShadow: "0 4px 16px rgba(232,181,61,0.35)", transition: "opacity 0.2s",
+                  opacity: sending ? 0.7 : 1,
                   display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
                 }}
-                  onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.9")}
-                  onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+                  onMouseEnter={(e) => { if (!sending) e.currentTarget.style.opacity = "0.9"; }}
+                  onMouseLeave={(e) => { if (!sending) e.currentTarget.style.opacity = "1"; }}
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="white" strokeWidth="2" strokeLinecap="round"/><path d="M22 2L15 22l-4-9-9-4 20-7z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  Send Message
+                  {sending ? "Sending…" : "Send Message"}
                 </button>
               </form>
             )}
