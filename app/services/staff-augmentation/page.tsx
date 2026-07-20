@@ -133,9 +133,9 @@ const TIMELINE = [
 function VettingPipeline() {
   const [step, setStep] = useState(0);
   const steps = [
-    { label: "Application", icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z", color: "#60a5fa" },
-    { label: "ID Verified", icon: "M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2", color: "#34d399" },
-    { label: "Tech Screen", icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4", color: "#a78bfa" },
+    { label: "Application", icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z", color: "#86A8CE" },
+    { label: "ID Verified", icon: "M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2", color: "#5E82AE" },
+    { label: "Tech Screen", icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4", color: "#C99A2E" },
     { label: "Interview", icon: "M15 10l4.553-2.069A1 1 0 0121 8.82v6.361a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z", color: "#E8B53D" },
     { label: "✓ Placed", icon: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z", color: "#E8B53D" },
   ];
@@ -185,9 +185,9 @@ function VettingPipeline() {
 const KANBAN_COLUMNS = [
   {
     label: "Engineering",
-    color: "#60a5fa",
-    bg: "rgba(96,165,250,0.08)",
-    border: "rgba(96,165,250,0.2)",
+    color: "#86A8CE",
+    bg: "rgba(134,168,206,0.08)",
+    border: "rgba(134,168,206,0.2)",
     cards: [
       { role: "Frontend Engineer", tags: ["React", "Vue", "Angular"], exp: "6 yrs", avail: "5 days" },
       { role: "Backend Engineer", tags: ["Node", "Python", "Go"], exp: "8 yrs", avail: "3 days" },
@@ -197,9 +197,9 @@ const KANBAN_COLUMNS = [
   },
   {
     label: "AI & Data",
-    color: "#a78bfa",
-    bg: "rgba(167,139,250,0.08)",
-    border: "rgba(167,139,250,0.2)",
+    color: "#C99A2E",
+    bg: "rgba(201,154,46,0.08)",
+    border: "rgba(201,154,46,0.2)",
     cards: [
       { role: "AI / ML Engineer", tags: ["PyTorch", "LLMs", "MLOps"], exp: "5 yrs", avail: "6 days" },
       { role: "Data Engineer", tags: ["Spark", "Airflow", "dbt"], exp: "7 yrs", avail: "4 days" },
@@ -208,9 +208,9 @@ const KANBAN_COLUMNS = [
   },
   {
     label: "Infrastructure",
-    color: "#34d399",
-    bg: "rgba(52,211,153,0.08)",
-    border: "rgba(52,211,153,0.2)",
+    color: "#5E82AE",
+    bg: "rgba(94,130,174,0.08)",
+    border: "rgba(94,130,174,0.2)",
     cards: [
       { role: "DevOps Engineer", tags: ["AWS", "Kubernetes", "Terraform"], exp: "9 yrs", avail: "3 days" },
       { role: "Cloud Architect", tags: ["GCP", "Azure", "CDK"], exp: "10 yrs", avail: "7 days" },
@@ -219,9 +219,9 @@ const KANBAN_COLUMNS = [
   },
   {
     label: "Product & Design",
-    color: "#fb923c",
-    bg: "rgba(251,146,60,0.08)",
-    border: "rgba(251,146,60,0.2)",
+    color: "#E8B53D",
+    bg: "rgba(232,181,61,0.08)",
+    border: "rgba(232,181,61,0.2)",
     cards: [
       { role: "QA Engineer", tags: ["Cypress", "Playwright", "Selenium"], exp: "5 yrs", avail: "4 days" },
       { role: "UX / UI Designer", tags: ["Figma", "Design Systems"], exp: "6 yrs", avail: "6 days" },
@@ -371,7 +371,7 @@ export default function StaffAugmentationPage() {
         </section>
 
         {/* TRUST BAR */}
-        <section style={{ background: "#f0f4fa", borderBottom: "1px solid #dce4f0", padding: "18px 0" }}>
+        <section style={{ background: "#f0f4fa", borderBottom: "1px solid #E6EDF7", padding: "18px 0" }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div style={{ display: "flex", flexWrap: "wrap", gap: "32px", alignItems: "center", justifyContent: "center" }}>
               {[
@@ -410,7 +410,7 @@ export default function StaffAugmentationPage() {
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "24px", position: "relative", zIndex: 1 }}>
                 {VETTING_STEPS.map((step, i) => (
                   <div key={step.number} style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-                    <div style={{ width: "72px", height: "72px", borderRadius: "50%", background: i === 0 ? "#E8B53D" : "#ffffff", border: `2px solid ${i === 0 ? "#E8B53D" : "#dce4f0"}`, display: "flex", alignItems: "center", justifyContent: "center", color: i === 0 ? "#ffffff" : "#1B3C6E", marginBottom: "16px", boxShadow: "0 2px 12px rgba(0,0,0,0.07)", flexShrink: 0 }}>
+                    <div style={{ width: "72px", height: "72px", borderRadius: "50%", background: i === 0 ? "#E8B53D" : "#ffffff", border: `2px solid ${i === 0 ? "#E8B53D" : "#E6EDF7"}`, display: "flex", alignItems: "center", justifyContent: "center", color: i === 0 ? "#ffffff" : "#1B3C6E", marginBottom: "16px", boxShadow: "0 2px 12px rgba(0,0,0,0.07)", flexShrink: 0 }}>
                       <step.Icon />
                     </div>
                     <span style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.12em", color: "#E8B53D", textTransform: "uppercase", marginBottom: "6px" }}>Step {step.number}</span>
@@ -478,7 +478,7 @@ export default function StaffAugmentationPage() {
             </div>
             <div ref={(el) => addReveal(el, 6)} className="reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
               {MODELS.map((model) => (
-                <div id={model.anchorId} key={model.name} className="scroll-mt-28" style={{ borderRadius: "10px", padding: "36px 32px", background: model.highlight ? "linear-gradient(135deg, #0f2447 0%, #1B3C6E 100%)" : "#f8f9fa", border: model.highlight ? "none" : "1px solid #dce4f0", position: "relative" }}>
+                <div id={model.anchorId} key={model.name} className="scroll-mt-28" style={{ borderRadius: "10px", padding: "36px 32px", background: model.highlight ? "linear-gradient(135deg, #0f2447 0%, #1B3C6E 100%)" : "#f8f9fa", border: model.highlight ? "none" : "1px solid #E6EDF7", position: "relative" }}>
                   {model.highlight && (
                     <span style={{ position: "absolute", top: "20px", right: "20px", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", padding: "4px 10px", borderRadius: "100px", background: "#E8B53D", color: "#ffffff" }}>Most popular</span>
                   )}
@@ -511,7 +511,7 @@ export default function StaffAugmentationPage() {
               <div style={{ display: "flex", flexDirection: "column" }}>
                 {TIMELINE.map((item, i) => (
                   <div key={item.day} style={{ display: "flex", gap: "24px", alignItems: "flex-start", paddingBottom: i < TIMELINE.length - 1 ? "32px" : "0" }}>
-                    <div style={{ flexShrink: 0, width: "48px", height: "48px", borderRadius: "50%", background: i === TIMELINE.length - 1 ? "#E8B53D" : "#ffffff", border: `2px solid ${i === TIMELINE.length - 1 ? "#E8B53D" : "#dce4f0"}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.62rem", fontWeight: 800, letterSpacing: "0.06em", textTransform: "uppercase", color: i === TIMELINE.length - 1 ? "#ffffff" : "#1B3C6E", boxShadow: "0 2px 8px rgba(0,0,0,0.08)", zIndex: 1, position: "relative" }}>
+                    <div style={{ flexShrink: 0, width: "48px", height: "48px", borderRadius: "50%", background: i === TIMELINE.length - 1 ? "#E8B53D" : "#ffffff", border: `2px solid ${i === TIMELINE.length - 1 ? "#E8B53D" : "#E6EDF7"}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.62rem", fontWeight: 800, letterSpacing: "0.06em", textTransform: "uppercase", color: i === TIMELINE.length - 1 ? "#ffffff" : "#1B3C6E", boxShadow: "0 2px 8px rgba(0,0,0,0.08)", zIndex: 1, position: "relative" }}>
                       {item.day.replace("Day ", "D")}
                     </div>
                     <div style={{ paddingTop: "10px", paddingBottom: "4px" }}>

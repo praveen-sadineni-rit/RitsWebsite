@@ -60,7 +60,7 @@ function timeAgo(dateStr: string): string {
 function SourceBadge({ source }: { source: Article["source"] }) {
   return (
     <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-widest"
-      style={{ background: source === "HackerNews" ? "#ff6600" + "20" : "#3b49df" + "20", color: source === "HackerNews" ? "#ff6600" : "#3b49df" }}>
+      style={{ background: source === "HackerNews" ? "#E8B53D" + "20" : "#5E82AE" + "20", color: source === "HackerNews" ? "#E8B53D" : "#5E82AE" }}>
       {source === "HackerNews" ? "HN" : "Dev.to"}
     </span>
   );
@@ -68,12 +68,12 @@ function SourceBadge({ source }: { source: Article["source"] }) {
 
 // Deterministic color palette per card based on index
 const CARD_PALETTES = [
-  { bg: "#e6f7f6", border: "#b2e8e5", accent: "#00897b", text: "#0f2447", sub: "#5a8a87", tag: "#b2e8e5", tagText: "#007a6e" },
-  { bg: "#eef4ff", border: "#c7d9f8", accent: "#2563eb", text: "#0f2447", sub: "#4a6da8", tag: "#c7d9f8", tagText: "#1d4ed8" },
-  { bg: "#f3eeff", border: "#d8c8f8", accent: "#7c3aed", text: "#0f2447", sub: "#6b52a8", tag: "#d8c8f8", tagText: "#6d28d9" },
-  { bg: "#edfaf5", border: "#b8edd8", accent: "#059669", text: "#0f2447", sub: "#4a8a6e", tag: "#b8edd8", tagText: "#047857" },
-  { bg: "#fff0f8", border: "#f8c8e5", accent: "#db2777", text: "#0f2447", sub: "#a05070", tag: "#f8c8e5", tagText: "#be185d" },
-  { bg: "#fff7ed", border: "#fdd9b5", accent: "#ea580c", text: "#0f2447", sub: "#a06030", tag: "#fdd9b5", tagText: "#c2410c" },
+  { bg: "#FBF4DD", border: "#b2e8e5", accent: "#00897b", text: "#0f2447", sub: "#5a8a87", tag: "#b2e8e5", tagText: "#007a6e" },
+  { bg: "#EAF1F8", border: "#c7d9f8", accent: "#5E82AE", text: "#0f2447", sub: "#4a6da8", tag: "#c7d9f8", tagText: "#3D5A80" },
+  { bg: "#FBF4DD", border: "#d8c8f8", accent: "#A9781A", text: "#0f2447", sub: "#6b52a8", tag: "#d8c8f8", tagText: "#A9781A" },
+  { bg: "#EAF1F8", border: "#b8edd8", accent: "#3D5A80", text: "#0f2447", sub: "#4a8a6e", tag: "#b8edd8", tagText: "#047857" },
+  { bg: "#FBF4DD", border: "#f8c8e5", accent: "#C99A2E", text: "#0f2447", sub: "#a05070", tag: "#f8c8e5", tagText: "#be185d" },
+  { bg: "#FBF4DD", border: "#fdd9b5", accent: "#A9781A", text: "#0f2447", sub: "#a06030", tag: "#fdd9b5", tagText: "#c2410c" },
 ];
 
 function SkeletonCard({ idx }: { idx: number }) {
@@ -235,11 +235,11 @@ export default function InsightsPage() {
           {/* Source badges */}
           <div className="flex items-center gap-3 mb-6">
             <span className="text-white/20 text-xs">Sources:</span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold" style={{ background: "#ff660020", color: "#ff6600", border: "1px solid #ff660030" }}>
-              <span className="w-1.5 h-1.5 rounded-full bg-[#ff6600] animate-pulse inline-block" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold" style={{ background: "#E8B53D20", color: "#E8B53D", border: "1px solid #E8B53D30" }}>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#E8B53D] animate-pulse inline-block" />
               Hacker News
             </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold" style={{ background: "#3b49df20", color: "#818cf8", border: "1px solid #3b49df30" }}>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold" style={{ background: "#5E82AE20", color: "#818cf8", border: "1px solid #5E82AE30" }}>
               <span className="w-1.5 h-1.5 rounded-full bg-[#818cf8] animate-pulse inline-block" />
               Dev.to
             </span>

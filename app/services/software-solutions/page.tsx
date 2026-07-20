@@ -11,8 +11,8 @@ const capabilities = [
     subtitle: "End-to-end software built with modern frameworks and cloud-native architecture.",
     desc: "We design and develop applications that are fast, secure, and optimized for real-world business use.",
     bullets: ["High-performance web apps", "Cross-platform mobile apps", "Multi-tenant SaaS platforms", "Custom enterprise tools"],
-    accent: "#60a5fa",
-    glow: "rgba(96,165,250,0.12)",
+    accent: "#86A8CE",
+    glow: "rgba(134,168,206,0.12)",
     iconPath: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
     wide: true,
   },
@@ -22,8 +22,8 @@ const capabilities = [
     subtitle: "Transform manual processes into intelligent, self-running workflows.",
     desc: "Our AI engines learn your operations, reduce repetitive work, and improve decision accuracy.",
     bullets: ["Workflow automation", "Document intelligence (OCR + ML)", "Predictive analytics", "Smart communication triggers"],
-    accent: "#a78bfa",
-    glow: "rgba(167,139,250,0.12)",
+    accent: "#C99A2E",
+    glow: "rgba(201,154,46,0.12)",
     iconPath: "M13 10V3L4 14h7v7l9-11h-7z",
     wide: false,
   },
@@ -44,8 +44,8 @@ const capabilities = [
     subtitle: "Connect your business with the tools you already use.",
     desc: "Our integration layer ensures smooth data flow across platforms and enterprise systems.",
     bullets: ["SAP, CRMs, ERPs", "Payment gateways", "Identity providers (OAuth, SSO)", "Custom webhooks & triggers"],
-    accent: "#34d399",
-    glow: "rgba(52,211,153,0.12)",
+    accent: "#5E82AE",
+    glow: "rgba(94,130,174,0.12)",
     iconPath: "M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71",
     wide: false,
   },
@@ -55,8 +55,8 @@ const capabilities = [
     subtitle: "Ship faster with confidence.",
     desc: "We implement automated pipelines, testing frameworks, and deployment workflows that keep your product stable and production-ready.",
     bullets: ["CI/CD pipelines", "Automated testing suites", "Cloud deployment", "Performance monitoring"],
-    accent: "#fb923c",
-    glow: "rgba(251,146,60,0.12)",
+    accent: "#E8B53D",
+    glow: "rgba(232,181,61,0.12)",
     iconPath: "M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18",
     wide: false,
   },
@@ -76,7 +76,7 @@ const processSteps = [
     title: "Architecture & Planning",
     description: "We deep-dive into your requirements, define the data model, choose the right stack, and produce a technical blueprint with milestones.",
     highlights: ["Technical spec", "Stack selection", "Sprint planning", "Risk assessment"],
-    accent: "#60a5fa",
+    accent: "#86A8CE",
     iconPath: "M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7",
   },
   {
@@ -92,7 +92,7 @@ const processSteps = [
     title: "Testing & QA",
     description: "Automated unit, integration, and end-to-end tests run in CI. Manual QA cycles validate edge cases and real-world flows.",
     highlights: ["Automated tests", "Performance testing", "Security scanning", "Accessibility audit"],
-    accent: "#a78bfa",
+    accent: "#C99A2E",
     iconPath: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
   },
   {
@@ -100,7 +100,7 @@ const processSteps = [
     title: "Launch & Handover",
     description: "Production deployment with zero-downtime rollout. Full documentation, knowledge transfer, and a 30-day post-launch support window.",
     highlights: ["Zero-downtime deploy", "Full documentation", "Team training", "30-day support"],
-    accent: "#34d399",
+    accent: "#5E82AE",
     iconPath: "M13 10V3L4 14h7v7l9-11h-7z",
   },
   {
@@ -108,7 +108,7 @@ const processSteps = [
     title: "Support & Evolution",
     description: "Retainer-based engagement for feature additions, performance tuning, dependency upgrades, and monitoring.",
     highlights: ["Feature roadmap", "Dependency updates", "24/7 monitoring", "SLA guarantees"],
-    accent: "#fb923c",
+    accent: "#E8B53D",
     iconPath: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15",
   },
 ];
@@ -117,14 +117,14 @@ const techStack = [
   {
     category: "Frontend Technologies",
     sub: "Crafting fast, responsive, and accessible user experiences.",
-    accent: "#60a5fa",
+    accent: "#86A8CE",
     icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
     items: ["React.js", "Next.js", "Vue.js", "Tailwind CSS", "TypeScript", "Redux / Zustand"],
   },
   {
     category: "Mobile Development",
     sub: "Cross-platform apps with native performance.",
-    accent: "#a78bfa",
+    accent: "#C99A2E",
     icon: "M7 2h10a2 2 0 012 2v16a2 2 0 01-2 2H7a2 2 0 01-2-2V4a2 2 0 012-2zM12 18h.01",
     items: ["React Native", "Flutter", "Expo"],
   },
@@ -138,35 +138,35 @@ const techStack = [
   {
     category: "AI, ML & Automation",
     sub: "Intelligent systems that automate, predict, and enhance operations.",
-    accent: "#f472b6",
+    accent: "#F3C34E",
     icon: "M13 10V3L4 14h7v7l9-11h-7z",
     items: ["Python (AI/ML)", "TensorFlow / PyTorch", "OpenAI / LLM Integrations", "OCR & Document Intelligence", "Predictive Analytics Models", "Workflow Automation Engines"],
   },
   {
     category: "Databases & Storage",
     sub: "Reliable data systems for structured and unstructured workloads.",
-    accent: "#fb923c",
+    accent: "#E8B53D",
     icon: "M3 5a1 1 0 000 2h13a1 1 0 100-2H3zM3 11a1 1 0 000 2h5a1 1 0 000-2H3zM3 17a1 1 0 000 2h5a1 1 0 000-2H3z",
     items: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Firebase", "S3 / Cloud Storage"],
   },
   {
     category: "Cloud & Deployment",
     sub: "Enterprise-grade infrastructure for global scale.",
-    accent: "#34d399",
+    accent: "#5E82AE",
     icon: "M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z",
     items: ["AWS", "Azure", "Google Cloud", "Vercel (Frontend)", "Render (Backend)", "Docker & Containers"],
   },
   {
     category: "DevOps & Quality Engineering",
     sub: "Automated pipelines and testing for smooth, safe releases.",
-    accent: "#fbbf24",
+    accent: "#E8B53D",
     icon: "M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18",
     items: ["CI/CD Pipelines", "GitHub Actions", "Jest / Mocha", "Playwright / Cypress", "Kubernetes (K8s)", "Grafana, Prometheus"],
   },
   {
     category: "Integrations & Enterprise Systems",
     sub: "Connecting your business ecosystem with seamless interoperability.",
-    accent: "#e879f9",
+    accent: "#C99A2E",
     icon: "M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71",
     items: ["SAP", "CRMs & ERPs", "Stripe / Payment Gateways", "OAuth / SSO Authentication", "Custom Webhooks"],
   },
@@ -225,17 +225,17 @@ const whyUs = [
 function CodeEditor() {
   const [line, setLine] = useState(0);
   const lines = [
-    { indent: 0, content: "const buildProduct = async (idea) => {", color: "#60a5fa" },
+    { indent: 0, content: "const buildProduct = async (idea) => {", color: "#86A8CE" },
     { indent: 1, content: "const requirements = await discover(idea);", color: "#e2e8f0" },
     { indent: 1, content: "const architecture = design(requirements);", color: "#e2e8f0" },
     { indent: 1, content: "const code = await develop({", color: "#e2e8f0" },
-    { indent: 2, content: "stack: ['Next.js', 'Node', 'PostgreSQL'],", color: "#34d399" },
-    { indent: 2, content: "quality: 'senior-only',", color: "#34d399" },
-    { indent: 2, content: "timeline: '8 weeks',", color: "#34d399" },
+    { indent: 2, content: "stack: ['Next.js', 'Node', 'PostgreSQL'],", color: "#5E82AE" },
+    { indent: 2, content: "quality: 'senior-only',", color: "#5E82AE" },
+    { indent: 2, content: "timeline: '8 weeks',", color: "#5E82AE" },
     { indent: 1, content: "});", color: "#e2e8f0" },
-    { indent: 1, content: "await test(code, { coverage: '>90%' });", color: "#a78bfa" },
+    { indent: 1, content: "await test(code, { coverage: '>90%' });", color: "#C99A2E" },
     { indent: 1, content: "return deploy(code); // ships on time ✓", color: "#E8B53D" },
-    { indent: 0, content: "};", color: "#60a5fa" },
+    { indent: 0, content: "};", color: "#86A8CE" },
   ];
   useEffect(() => {
     if (line >= lines.length) return;
@@ -247,8 +247,8 @@ function CodeEditor() {
       {/* Window bar */}
       <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5" style={{background:"#161b22"}}>
         <div className="w-3 h-3 rounded-full bg-red-500/70"/>
-        <div className="w-3 h-3 rounded-full bg-yellow-500/70"/>
-        <div className="w-3 h-3 rounded-full bg-green-500/70"/>
+        <div className="w-3 h-3 rounded-full bg-amber-500/70"/>
+        <div className="w-3 h-3 rounded-full bg-slate-500/70"/>
         <span className="ml-3 text-white/30 text-xs font-mono">buildProduct.ts</span>
         <div className="ml-auto flex items-center gap-1">
           <div className="w-1.5 h-1.5 rounded-full bg-[#E8B53D] animate-pulse"/>
@@ -458,7 +458,7 @@ export default function SoftwareSolutionsPage() {
                   Software that ships.{" "}
                   <span className="text-[#E8B53D]">And keeps running.</span>
                 </h1>
-                <p className="text-xl text-blue-100/80 leading-relaxed mb-10">
+                <p className="text-xl text-slate-100/80 leading-relaxed mb-10">
                   We build enterprise-grade web apps, mobile products, and APIs,
                   architected to last and designed to scale.
                 </p>
@@ -597,7 +597,7 @@ export default function SoftwareSolutionsPage() {
 
             {/* Why Us strip */}
             <div className="rounded-2xl p-7 flex flex-col lg:flex-row lg:items-center gap-6"
-              style={{ background: "linear-gradient(135deg, rgba(232,181,61,0.08) 0%, rgba(96,165,250,0.06) 100%)", border: "1px solid rgba(232,181,61,0.2)" }}>
+              style={{ background: "linear-gradient(135deg, rgba(232,181,61,0.08) 0%, rgba(134,168,206,0.06) 100%)", border: "1px solid rgba(232,181,61,0.2)" }}>
               <div className="lg:w-48 flex-shrink-0">
                 <p className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: "#E8B53D" }}>Why us</p>
                 <p className="text-white font-black text-lg leading-tight">Why our solutions stand out</p>
@@ -735,7 +735,7 @@ export default function SoftwareSolutionsPage() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
               Ready to build your next product?
             </h2>
-            <p className="text-blue-100/70 text-lg mb-10 leading-relaxed">
+            <p className="text-slate-100/70 text-lg mb-10 leading-relaxed">
               Tell us what you are building. We will scope it, plan it, and ship it, on time and on budget.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

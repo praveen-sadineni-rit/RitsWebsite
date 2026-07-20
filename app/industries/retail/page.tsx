@@ -67,12 +67,12 @@ export default function RetailPage() {
               {
                 title: "POS & Checkout Systems",
                 desc: "Fast, reliable point-of-sale solutions that work online and offline, built for high-volume retail environments.",
-                color: "#60a5fa",
-                bg: "#eff6ff",
+                color: "#86A8CE",
+                bg: "#EAF1F8",
                 icon: (
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                    <path d="M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" stroke="#60a5fa" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M3 10h18M7 15h.01M12 15h.01M17 15h.01M7 19h.01M12 19h.01M17 19h.01" stroke="#60a5fa" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" stroke="#86A8CE" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M3 10h18M7 15h.01M12 15h.01M17 15h.01M7 19h.01M12 19h.01M17 19h.01" stroke="#86A8CE" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 ),
               },
@@ -91,45 +91,45 @@ export default function RetailPage() {
               {
                 title: "Omnichannel Platforms",
                 desc: "Unify your in-store, online, and mobile shopping experience under one seamless customer journey.",
-                color: "#a78bfa",
-                bg: "#f5f3ff",
+                color: "#C99A2E",
+                bg: "#FBF4DD",
                 icon: (
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                    <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#a78bfa" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 010 18M12 3a15 15 0 000 18" stroke="#a78bfa" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#C99A2E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 010 18M12 3a15 15 0 000 18" stroke="#C99A2E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 ),
               },
               {
                 title: "Customer Loyalty Programs",
                 desc: "Points, rewards, and personalized offers that drive repeat visits and deepen brand affinity at every touchpoint.",
-                color: "#34d399",
-                bg: "#f0fdf4",
+                color: "#5E82AE",
+                bg: "#EAF1F8",
                 icon: (
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09A5.99 5.99 0 0116.5 3C19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="#34d399" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09A5.99 5.99 0 0116.5 3C19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="#5E82AE" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 ),
               },
               {
                 title: "Retail Analytics & BI",
                 desc: "Dashboards and data pipelines that surface insights on sales trends, basket sizes, and customer behavior.",
-                color: "#fb923c",
-                bg: "#fff7ed",
+                color: "#E8B53D",
+                bg: "#FBF4DD",
                 icon: (
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                    <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke="#fb923c" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke="#E8B53D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 ),
               },
               {
                 title: "CRM & Personalization Engine",
                 desc: "AI-powered customer profiles that power targeted marketing, product recommendations, and lifecycle automation.",
-                color: "#f472b6",
-                bg: "#fdf2f8",
+                color: "#F3C34E",
+                bg: "#FBF4DD",
                 icon: (
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                    <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" stroke="#f472b6" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" stroke="#F3C34E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 ),
               },

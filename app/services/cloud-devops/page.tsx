@@ -7,11 +7,11 @@ import Footer from "@/components/Footer";
 function PipelineAnim() {
   const [step, setStep] = useState(0);
   const stages = [
-    { label: "Code", icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4", color: "#60a5fa" },
-    { label: "Build", icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10", color: "#a78bfa" },
-    { label: "Test", icon: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z", color: "#34d399" },
+    { label: "Code", icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4", color: "#86A8CE" },
+    { label: "Build", icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10", color: "#C99A2E" },
+    { label: "Test", icon: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z", color: "#5E82AE" },
     { label: "Deploy", icon: "M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z", color: "#E8B53D" },
-    { label: "Monitor", icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z", color: "#fb923c" },
+    { label: "Monitor", icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z", color: "#E8B53D" },
   ];
   useEffect(() => {
     const t = setInterval(() => setStep(s => (s + 1) % (stages.length + 2)), 1000);
@@ -23,8 +23,8 @@ function PipelineAnim() {
       <div className="rounded-2xl overflow-hidden" style={{ background: "#0d1117", border: "1px solid rgba(255,255,255,0.08)" }}>
         <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5" style={{ background: "#161b22" }}>
           <div className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
-          <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
-          <div className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
+          <div className="w-2.5 h-2.5 rounded-full bg-amber-500/70" />
+          <div className="w-2.5 h-2.5 rounded-full bg-slate-500/70" />
           <span className="ml-2 text-white/30 text-xs font-mono">CI/CD Pipeline</span>
           <div className="ml-auto flex items-center gap-1">
             <div className="w-1.5 h-1.5 rounded-full bg-[#E8B53D] animate-pulse" />
@@ -77,19 +77,19 @@ const capabilities = [
     title: "Cloud Architecture",
     desc: "Design scalable, cost-efficient cloud infrastructure on AWS, Azure, or GCP, purpose-built for your workload.",
     icon: "M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z",
-    color: "#60a5fa",
+    color: "#86A8CE",
   },
   {
     title: "CI/CD Pipelines",
     desc: "Automated build, test, and deployment pipelines. Ship code multiple times a day with confidence.",
     icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15",
-    color: "#a78bfa",
+    color: "#C99A2E",
   },
   {
     title: "Kubernetes & Containers",
     desc: "Container orchestration with Kubernetes, Docker, and Helm. Zero-downtime deployments at any scale.",
     icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10",
-    color: "#34d399",
+    color: "#5E82AE",
   },
   {
     title: "Infrastructure as Code",
@@ -101,13 +101,13 @@ const capabilities = [
     title: "Site Reliability Engineering",
     desc: "SRE practices that keep your systems at 99.9%+ uptime. On-call runbooks, SLOs, and incident playbooks.",
     icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
-    color: "#fb923c",
+    color: "#E8B53D",
   },
   {
     title: "Security & Compliance",
     desc: "DevSecOps baked into the pipeline. SOC 2, HIPAA, and PCI-ready architectures with automated security scanning.",
     icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z",
-    color: "#f472b6",
+    color: "#F3C34E",
   },
 ];
 

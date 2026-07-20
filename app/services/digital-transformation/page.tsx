@@ -8,10 +8,10 @@ function TransformAnim() {
   const [active, setActive] = useState(0);
   const phases = [
     { label: "Legacy", icon: "M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v11m0 0H5m4 0h10m-10 0v4a2 2 0 002 2h4a2 2 0 002-2v-4m0 0h4", color: "#94a3b8", bg: "#f1f5f9" },
-    { label: "Assess", icon: "M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z", color: "#60a5fa", bg: "#eff6ff" },
-    { label: "Design", icon: "M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z", color: "#a78bfa", bg: "#f5f3ff" },
+    { label: "Assess", icon: "M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z", color: "#86A8CE", bg: "#EAF1F8" },
+    { label: "Design", icon: "M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z", color: "#C99A2E", bg: "#FBF4DD" },
     { label: "Build", icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4", color: "#E8B53D", bg: "#f0fdfb" },
-    { label: "Modern", icon: "M13 10V3L4 14h7v7l9-11h-7z", color: "#34d399", bg: "#f0fdf4" },
+    { label: "Modern", icon: "M13 10V3L4 14h7v7l9-11h-7z", color: "#5E82AE", bg: "#EAF1F8" },
   ];
 
   useState(() => {
@@ -56,19 +56,19 @@ const pillars = [
     title: "Process Modernization",
     desc: "Audit, redesign, and automate business processes to eliminate bottlenecks and manual work that slows you down.",
     icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15",
-    color: "#60a5fa",
+    color: "#86A8CE",
   },
   {
     title: "Legacy System Migration",
     desc: "Modernize monolithic applications and outdated systems to cloud-native, microservices architectures, with zero data loss.",
     icon: "M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z",
-    color: "#a78bfa",
+    color: "#C99A2E",
   },
   {
     title: "Data & Analytics",
     desc: "Unified data platforms, real-time dashboards, and analytics pipelines that turn raw data into competitive advantage.",
     icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
-    color: "#34d399",
+    color: "#5E82AE",
   },
   {
     title: "AI-Powered Automation",
@@ -80,13 +80,13 @@ const pillars = [
     title: "Customer Experience",
     desc: "Redesign digital touchpoints, web, mobile, and portal, to deliver seamless, personalized experiences at scale.",
     icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z",
-    color: "#fb923c",
+    color: "#E8B53D",
   },
   {
     title: "Change Management",
     desc: "Technology is only half the transformation. We embed adoption frameworks so your teams actually embrace what's new.",
     icon: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z",
-    color: "#f472b6",
+    color: "#F3C34E",
   },
 ];
 

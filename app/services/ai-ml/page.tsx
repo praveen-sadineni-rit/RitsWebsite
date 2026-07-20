@@ -89,25 +89,25 @@ const aiStack = [
   {
     category: "Frameworks",
     pills: ["LangChain", "LlamaIndex", "Hugging Face", "CrewAI"],
-    color: "#60a5fa",
+    color: "#86A8CE",
     icon: <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>,
   },
   {
     category: "ML Libraries",
     pills: ["TensorFlow", "PyTorch", "scikit-learn", "XGBoost"],
-    color: "#a78bfa",
+    color: "#C99A2E",
     icon: <><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.6"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.6"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.6"/></>,
   },
   {
     category: "Vector DBs",
     pills: ["Pinecone", "Weaviate", "Chroma", "pgvector"],
-    color: "#22d3ee",
+    color: "#86A8CE",
     icon: <><ellipse cx="12" cy="5" rx="8" ry="3" stroke="currentColor" strokeWidth="1.6"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></>,
   },
   {
     category: "Infrastructure",
     pills: ["AWS SageMaker", "GCP Vertex AI", "Azure ML"],
-    color: "#fb923c",
+    color: "#E8B53D",
     icon: <path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>,
   },
 ];
@@ -127,7 +127,7 @@ function AIStackPipeline() {
       <div
         aria-hidden="true"
         className="hidden sm:block absolute top-8 bottom-8 z-0"
-        style={{ left: "27px", width: "2px", background: "linear-gradient(180deg, #F3C34E, #60a5fa, #a78bfa, #22d3ee, #fb923c)", opacity: 0.35 }}
+        style={{ left: "27px", width: "2px", background: "linear-gradient(180deg, #F3C34E, #86A8CE, #C99A2E, #86A8CE, #E8B53D)", opacity: 0.35 }}
       />
       <div className="space-y-5">
         {aiStack.map((group, i) => (

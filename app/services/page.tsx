@@ -6,12 +6,12 @@ import Link from "next/link";
 
 function FloatingServices() {
   const items = [
-    { icon: "M16 18L22 12L16 6M8 6L2 12L8 18", label: "Software", color: "#60a5fa" },
+    { icon: "M16 18L22 12L16 6M8 6L2 12L8 18", label: "Software", color: "#86A8CE" },
     { icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5", label: "Product", color: "#E8B53D" },
-    { icon: "M12 2v4M12 18v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M2 12h4M18 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83", label: "AI & ML", color: "#a78bfa" },
-    { icon: "M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z", label: "Staff Aug", color: "#34d399" },
-    { icon: "M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z", label: "Cloud", color: "#fb923c" },
-    { icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z", label: "Analytics", color: "#f472b6" },
+    { icon: "M12 2v4M12 18v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M2 12h4M18 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83", label: "AI & ML", color: "#C99A2E" },
+    { icon: "M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z", label: "Staff Aug", color: "#5E82AE" },
+    { icon: "M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z", label: "Cloud", color: "#E8B53D" },
+    { icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z", label: "Analytics", color: "#F3C34E" },
   ];
 
   // Fixed-position constellation: nodes evenly placed around a core, connected
@@ -141,13 +141,13 @@ const serviceCards = [
   {
     title: "Software Solutions",
     gradient: "linear-gradient(135deg, #0f2447 0%, #1B3C6E 100%)",
-    accentColor: "#4a9eff",
+    accentColor: "#86A8CE",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-        <rect x="4" y="8" width="32" height="24" rx="3" stroke="#4a9eff" strokeWidth="2" fill="none"/>
-        <path d="M12 17l-4 3 4 3" stroke="#4a9eff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M18 17l4 3-4 3" stroke="#4a9eff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M8 32h24" stroke="#4a9eff" strokeWidth="2" strokeLinecap="round"/>
+        <rect x="4" y="8" width="32" height="24" rx="3" stroke="#86A8CE" strokeWidth="2" fill="none"/>
+        <path d="M12 17l-4 3 4 3" stroke="#86A8CE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M18 17l4 3-4 3" stroke="#86A8CE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M8 32h24" stroke="#86A8CE" strokeWidth="2" strokeLinecap="round"/>
       </svg>
     ),
     capabilities: [
@@ -178,13 +178,13 @@ const serviceCards = [
   {
     title: "AI & ML",
     gradient: "linear-gradient(135deg, #0f2447 0%, #1B3C6E 100%)",
-    accentColor: "#a855f7",
+    accentColor: "#C99A2E",
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-        <circle cx="20" cy="20" r="7" stroke="#a855f7" strokeWidth="2" fill="none"/>
-        <circle cx="20" cy="20" r="2" fill="#a855f7"/>
-        <path d="M20 5v6M20 29v6M5 20h6M29 20h6" stroke="#a855f7" strokeWidth="2" strokeLinecap="round"/>
-        <path d="M9.4 9.4l4.2 4.2M26.4 26.4l4.2 4.2M30.6 9.4l-4.2 4.2M13.6 26.4l-4.2 4.2" stroke="#a855f7" strokeWidth="1.5" strokeLinecap="round"/>
+        <circle cx="20" cy="20" r="7" stroke="#C99A2E" strokeWidth="2" fill="none"/>
+        <circle cx="20" cy="20" r="2" fill="#C99A2E"/>
+        <path d="M20 5v6M20 29v6M5 20h6M29 20h6" stroke="#C99A2E" strokeWidth="2" strokeLinecap="round"/>
+        <path d="M9.4 9.4l4.2 4.2M26.4 26.4l4.2 4.2M30.6 9.4l-4.2 4.2M13.6 26.4l-4.2 4.2" stroke="#C99A2E" strokeWidth="1.5" strokeLinecap="round"/>
       </svg>
     ),
     capabilities: [
@@ -244,7 +244,7 @@ const processSteps = [
 const techStack = [
   {
     category: "Frontend",
-    color: "#4a9eff",
+    color: "#86A8CE",
     icon: "M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5zM3 9h18M7 6h.01",
     tags: ["React", "Next.js", "Vue", "Angular", "React Native", "Flutter"],
   },
@@ -256,19 +256,19 @@ const techStack = [
   },
   {
     category: "AI / ML",
-    color: "#a855f7",
+    color: "#C99A2E",
     icon: "M9 3v2m6-2v2M9 19v2m6-2v2M3 9h2m14 0h2M3 15h2m14 0h2M6 6h12v12H6zM10 10h4v4h-4z",
     tags: ["OpenAI", "LangChain", "TensorFlow", "PyTorch", "Hugging Face"],
   },
   {
     category: "Cloud",
-    color: "#f59e0b",
+    color: "#E8B53D",
     icon: "M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z",
     tags: ["AWS", "GCP", "Azure", "Vercel", "Docker", "Kubernetes"],
   },
   {
     category: "Database",
-    color: "#10b981",
+    color: "#3D5A80",
     icon: "M4 5a8 3 0 0016 0 8 3 0 00-16 0zM4 5v6a8 3 0 0016 0V5M4 11v6a8 3 0 0016 0v-6",
     tags: ["PostgreSQL", "MongoDB", "Redis", "Supabase", "MySQL"],
   },
@@ -295,7 +295,7 @@ export default function ServicesPage() {
               position: "absolute",
               inset: 0,
               backgroundImage:
-                "linear-gradient(rgba(74,158,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(74,158,255,0.04) 1px, transparent 1px)",
+                "linear-gradient(rgba(134,168,206,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(134,168,206,0.04) 1px, transparent 1px)",
               backgroundSize: "60px 60px",
             }}
           />
@@ -607,14 +607,14 @@ export default function ServicesPage() {
                   left: "12.5%",
                   right: "12.5%",
                   height: 2,
-                  background: "linear-gradient(90deg, #E8B53D, #4a9eff, #a855f7, #E8B53D)",
+                  background: "linear-gradient(90deg, #E8B53D, #86A8CE, #C99A2E, #E8B53D)",
                   opacity: 0.3,
                   zIndex: 0,
                 }}
               />
 
               {processSteps.map((step, i) => {
-                const stepColors = ["#4a9eff", "#E8B53D", "#a855f7", "#E8B53D"];
+                const stepColors = ["#86A8CE", "#E8B53D", "#C99A2E", "#E8B53D"];
                 return (
                   <div
                     key={step.number}

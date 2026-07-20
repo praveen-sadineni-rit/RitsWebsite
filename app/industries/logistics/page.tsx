@@ -67,12 +67,12 @@ export default function LogisticsPage() {
               {
                 title: "Fleet Management Systems",
                 desc: "Real-time GPS tracking, driver performance monitoring, and vehicle health dashboards to keep your fleet running at peak efficiency.",
-                color: "#60a5fa",
-                bg: "#eff6ff",
+                color: "#86A8CE",
+                bg: "#EAF1F8",
                 icon: (
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                    <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" stroke="#60a5fa" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M3 17V7a2 2 0 012-2h9l4 4v8M3 17h2m14 0h2m-4-8h-5V5" stroke="#60a5fa" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" stroke="#86A8CE" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M3 17V7a2 2 0 012-2h9l4 4v8M3 17h2m14 0h2m-4-8h-5V5" stroke="#86A8CE" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 ),
               },
@@ -90,46 +90,46 @@ export default function LogisticsPage() {
               {
                 title: "Route Optimization",
                 desc: "AI-powered routing that cuts miles, reduces fuel costs, and adapts dynamically to traffic and delivery windows.",
-                color: "#a78bfa",
-                bg: "#f5f3ff",
+                color: "#C99A2E",
+                bg: "#FBF4DD",
                 icon: (
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                    <path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4" stroke="#a78bfa" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4" stroke="#C99A2E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 ),
               },
               {
                 title: "Warehouse Management",
                 desc: "Smart WMS with barcode scanning, slot optimization, and pick-pack-ship automation that scales with your volume.",
-                color: "#34d399",
-                bg: "#f0fdf4",
+                color: "#5E82AE",
+                bg: "#EAF1F8",
                 icon: (
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="#34d399" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M9 22V12h6v10" stroke="#34d399" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="#5E82AE" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M9 22V12h6v10" stroke="#5E82AE" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 ),
               },
               {
                 title: "Last-Mile Delivery Tech",
                 desc: "Customer notification systems, proof-of-delivery capture, and dynamic slot booking for the final leg of every shipment.",
-                color: "#fb923c",
-                bg: "#fff7ed",
+                color: "#E8B53D",
+                bg: "#FBF4DD",
                 icon: (
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                    <path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0L6.343 16.657a8 8 0 1111.314 0z" stroke="#fb923c" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke="#fb923c" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0L6.343 16.657a8 8 0 1111.314 0z" stroke="#E8B53D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke="#E8B53D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 ),
               },
               {
                 title: "Customs & Compliance Automation",
                 desc: "Automated documentation, HS code classification, and compliance checks that accelerate cross-border shipments.",
-                color: "#f472b6",
-                bg: "#fdf2f8",
+                color: "#F3C34E",
+                bg: "#FBF4DD",
                 icon: (
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#f472b6" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#F3C34E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 ),
               },

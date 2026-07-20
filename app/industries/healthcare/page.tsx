@@ -8,12 +8,12 @@ const solutions = [
     title: "EHR/EMR Integrations",
     description:
       "Seamlessly connect with Epic, Cerner, Allscripts, and other leading EHR systems via certified HL7 FHIR and legacy HL7 v2 interfaces.",
-    color: "#60a5fa",
+    color: "#86A8CE",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
         <path
           d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7zM9 11h6M9 15h4M9 7h1"
-          stroke="#60a5fa"
+          stroke="#86A8CE"
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -42,12 +42,12 @@ const solutions = [
     title: "Patient Engagement Apps",
     description:
       "Mobile and web apps that empower patients with appointment booking, care plans, secure messaging, and medication reminders.",
-    color: "#a78bfa",
+    color: "#C99A2E",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
         <path
           d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM12 14a7 7 0 0 0-7 7h14a7 7 0 0 0-7-7z"
-          stroke="#a78bfa"
+          stroke="#C99A2E"
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -59,12 +59,12 @@ const solutions = [
     title: "Clinical Workflow Automation",
     description:
       "Automate referrals, prior authorizations, care transitions, and clinical documentation to reduce administrative burden on providers.",
-    color: "#34d399",
+    color: "#5E82AE",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
         <path
           d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 0 2-2h2a2 2 0 0 0 2 2M12 12v4M10 14h4"
-          stroke="#34d399"
+          stroke="#5E82AE"
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -76,12 +76,12 @@ const solutions = [
     title: "Health Data Analytics",
     description:
       "Population health dashboards, clinical intelligence tools, and predictive analytics that surface actionable insights from patient data.",
-    color: "#fb923c",
+    color: "#E8B53D",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
         <path
           d="M9 19v-6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2zm0 0V9a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v10m-6 0a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2m0 0V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"
-          stroke="#fb923c"
+          stroke="#E8B53D"
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -93,12 +93,12 @@ const solutions = [
     title: "Medical Billing Systems",
     description:
       "End-to-end revenue cycle management platforms with claims processing, denial management, and payer integration built in.",
-    color: "#f472b6",
+    color: "#F3C34E",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
         <path
           d="M9 14l2 2 4-4M7 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-2M9 3h6a1 1 0 0 1 1 1v1H8V4a1 1 0 0 1 1-1z"
-          stroke="#f472b6"
+          stroke="#F3C34E"
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"

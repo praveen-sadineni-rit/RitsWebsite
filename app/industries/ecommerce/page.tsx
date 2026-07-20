@@ -8,12 +8,12 @@ const solutions = [
     title: "Custom Storefront Development",
     description:
       "Performance-first storefronts built with Next.js, Remix, or your framework of choice, optimized for Core Web Vitals and conversion.",
-    color: "#60a5fa",
+    color: "#86A8CE",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
         <path
           d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z"
-          stroke="#60a5fa"
+          stroke="#86A8CE"
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -42,12 +42,12 @@ const solutions = [
     title: "Payment & Checkout Optimization",
     description:
       "Frictionless checkout flows, one-click payments, BNPL integrations, and multi-currency support that reduce cart abandonment.",
-    color: "#a78bfa",
+    color: "#C99A2E",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
         <path
           d="M2 8h20M2 12h6M6 16h4M3 6h18a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z"
-          stroke="#a78bfa"
+          stroke="#C99A2E"
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -59,12 +59,12 @@ const solutions = [
     title: "Inventory & Order Management",
     description:
       "Real-time inventory tracking, multi-warehouse order routing, returns automation, and ERP integrations that scale with your catalog.",
-    color: "#34d399",
+    color: "#5E82AE",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
         <path
           d="M20 7l-8-4-8 4m16 0v10l-8 4m-8-4V7m16 0l-8 4m0 10V11M4 7l8 4"
-          stroke="#34d399"
+          stroke="#5E82AE"
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -76,12 +76,12 @@ const solutions = [
     title: "Commerce Analytics",
     description:
       "Custom analytics dashboards tracking conversion funnels, customer LTV, cohort retention, and product performance in real time.",
-    color: "#fb923c",
+    color: "#E8B53D",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
         <path
           d="M3 17l4-4 4 2 4-6 4 3M3 21h18"
-          stroke="#fb923c"
+          stroke="#E8B53D"
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -93,12 +93,12 @@ const solutions = [
     title: "Headless Commerce Architecture",
     description:
       "Decouple your frontend from your commerce engine with headless architectures using Shopify, Commercetools, or custom-built backends.",
-    color: "#f472b6",
+    color: "#F3C34E",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
         <path
           d="M5 12H3l9-9 9 9h-2M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7M9 21V12h6v9"
-          stroke="#f472b6"
+          stroke="#F3C34E"
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"

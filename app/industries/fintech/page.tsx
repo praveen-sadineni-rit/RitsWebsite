@@ -3,19 +3,19 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const accentColors = ["#60a5fa", "#E8B53D", "#a78bfa", "#34d399", "#fb923c", "#f472b6"];
+const accentColors = ["#86A8CE", "#E8B53D", "#C99A2E", "#5E82AE", "#E8B53D", "#F3C34E"];
 
 const solutions = [
   {
     title: "Core Banking Systems",
     description:
       "Modernize legacy infrastructure with scalable, microservices-based core banking platforms built for reliability and growth.",
-    color: "#60a5fa",
+    color: "#86A8CE",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
         <path
           d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"
-          stroke="#60a5fa"
+          stroke="#86A8CE"
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -44,12 +44,12 @@ const solutions = [
     title: "Fraud Detection & ML",
     description:
       "Real-time transaction monitoring powered by machine learning models that detect anomalies and stop fraud before it impacts customers.",
-    color: "#a78bfa",
+    color: "#C99A2E",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
         <path
           d="M12 2l7 4v5c0 4.418-2.99 8.55-7 10-4.01-1.45-7-5.582-7-10V6l7-4zM9 12l2 2 4-4"
-          stroke="#a78bfa"
+          stroke="#C99A2E"
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -61,12 +61,12 @@ const solutions = [
     title: "Compliance Automation",
     description:
       "Automate KYC, AML, and regulatory reporting workflows to reduce manual effort and accelerate compliance cycles by up to 40%.",
-    color: "#34d399",
+    color: "#5E82AE",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
         <path
           d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 0 2-2h2a2 2 0 0 0 2 2m-6 9l2 2 4-4"
-          stroke="#34d399"
+          stroke="#5E82AE"
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -78,12 +78,12 @@ const solutions = [
     title: "Wealth Management Platforms",
     description:
       "Portfolio dashboards, robo-advisor engines, and client-facing investment tools built for asset managers and wealth advisors.",
-    color: "#fb923c",
+    color: "#E8B53D",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
         <path
           d="M3 17l4-4 4 2 4-6 4 3M3 21h18"
-          stroke="#fb923c"
+          stroke="#E8B53D"
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -95,12 +95,12 @@ const solutions = [
     title: "Open Banking Integrations",
     description:
       "PSD2-ready open banking connectors, API aggregators, and third-party fintech integrations that extend your financial ecosystem.",
-    color: "#f472b6",
+    color: "#F3C34E",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
         <path
           d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
-          stroke="#f472b6"
+          stroke="#F3C34E"
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"

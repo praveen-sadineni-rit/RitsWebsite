@@ -24,7 +24,7 @@ const SERVICE_COLUMNS = [
   },
   {
     category: "Technology",
-    accent: "#60a5fa",
+    accent: "#86A8CE",
     links: [
       { label: "Software Development", href: "/services/software-solutions" },
       { label: "AI & Machine Learning", href: "/services/ai-ml" },
@@ -36,7 +36,7 @@ const SERVICE_COLUMNS = [
   },
   {
     category: "Transformation",
-    accent: "#a78bfa",
+    accent: "#C99A2E",
     links: [
       { label: "Digital Transformation", href: "/services/digital-transformation" },
       { label: "System Integrations", href: "/services/software-solutions#system-integrations" },
@@ -46,7 +46,7 @@ const SERVICE_COLUMNS = [
   },
   {
     category: "Why RIT",
-    accent: "#34d399",
+    accent: "#5E82AE",
     links: [
       { label: "About Us", href: "/about" },
       { label: "Our Process", href: "/services/software-solutions#process" },
@@ -59,7 +59,7 @@ const SERVICE_COLUMNS = [
 const INDUSTRY_COLUMNS = [
   {
     category: "Financial",
-    accent: "#34d399",
+    accent: "#5E82AE",
     links: [
       { label: "FinTech", href: "/industries/fintech" },
       { label: "Banking & Lending", href: "/industries/fintech#banking" },
@@ -69,7 +69,7 @@ const INDUSTRY_COLUMNS = [
   },
   {
     category: "Healthcare & Life Sciences",
-    accent: "#f472b6",
+    accent: "#F3C34E",
     links: [
       { label: "Healthcare", href: "/industries/healthcare" },
       { label: "Telehealth", href: "/industries/healthcare#telehealth" },
@@ -79,7 +79,7 @@ const INDUSTRY_COLUMNS = [
   },
   {
     category: "Commerce & Retail",
-    accent: "#fb923c",
+    accent: "#E8B53D",
     links: [
       { label: "E-Commerce", href: "/industries/ecommerce" },
       { label: "Retail", href: "/industries/retail" },
@@ -89,7 +89,7 @@ const INDUSTRY_COLUMNS = [
   },
   {
     category: "Enterprise & Public Sector",
-    accent: "#a78bfa",
+    accent: "#C99A2E",
     links: [
       { label: "Manufacturing", href: "/industries/manufacturing" },
       { label: "Government", href: "/industries/government" },
@@ -203,8 +203,8 @@ export default function Navbar() {
                     </svg>
                   ) : (
                     <svg width="11" height="11" viewBox="0 0 24 24" fill="none">
-                      <circle cx="12" cy="12" r="5" fill="#f59e0b"/>
-                      <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round"/>
+                      <circle cx="12" cy="12" r="5" fill="#E8B53D"/>
+                      <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="#E8B53D" strokeWidth="2" strokeLinecap="round"/>
                     </svg>
                   )}
                 </span>

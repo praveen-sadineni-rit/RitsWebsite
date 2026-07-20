@@ -193,64 +193,64 @@ const jobs: Job[] = [
 const filters = ["All", "Engineering", "Design", "Product", "Operations", "Business"];
 
 const departmentColors: Record<string, string> = {
-  Engineering: "bg-blue-100 text-blue-700",
-  Design: "bg-purple-100 text-purple-700",
-  Product: "bg-green-100 text-green-700",
-  Operations: "bg-orange-100 text-orange-700",
+  Engineering: "bg-slate-100 text-slate-700",
+  Design: "bg-amber-100 text-amber-700",
+  Product: "bg-slate-100 text-slate-700",
+  Operations: "bg-amber-100 text-amber-700",
   Business: "bg-amber-100 text-amber-700",
 };
 
 const SKILL_PALETTE = [
-  { bg: "#eef4ff", text: "#2563eb" },
-  { bg: "#f3eeff", text: "#7c3aed" },
-  { bg: "#edfaf5", text: "#059669" },
-  { bg: "#fff7ed", text: "#ea580c" },
-  { bg: "#fff0f8", text: "#db2777" },
-  { bg: "#e6f7f6", text: "#B0810E" },
-  { bg: "#fffbeb", text: "#d97706" },
-  { bg: "#ecfeff", text: "#0891b2" },
-  { bg: "#f0fdf4", text: "#16a34a" },
+  { bg: "#EAF1F8", text: "#5E82AE" },
+  { bg: "#FBF4DD", text: "#A9781A" },
+  { bg: "#EAF1F8", text: "#3D5A80" },
+  { bg: "#FBF4DD", text: "#A9781A" },
+  { bg: "#FBF4DD", text: "#C99A2E" },
+  { bg: "#FBF4DD", text: "#B0810E" },
+  { bg: "#FBF4DD", text: "#A9781A" },
+  { bg: "#EAF1F8", text: "#0891b2" },
+  { bg: "#EAF1F8", text: "#3D5A80" },
 ];
 
 const perks = [
   {
     label: "Competitive Salary", desc: "Market-rate + performance bonuses",
-    color: "#E8B53D", bg: "#e6f7f6",
+    color: "#E8B53D", bg: "#FBF4DD",
     icon: <path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
   },
   {
     label: "Health Benefits", desc: "Medical, dental & vision coverage",
-    color: "#db2777", bg: "#fff0f8",
+    color: "#C99A2E", bg: "#FBF4DD",
     icon: <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 10-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
   },
   {
     label: "Remote Work", desc: "Work from anywhere in the world",
-    color: "#2563eb", bg: "#eef4ff",
+    color: "#5E82AE", bg: "#EAF1F8",
     icon: <><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.8"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" stroke="currentColor" strokeWidth="1.8"/></>,
   },
   {
     label: "Learning Budget", desc: "$2,000/year for courses & conferences",
-    color: "#7c3aed", bg: "#f3eeff",
+    color: "#A9781A", bg: "#FBF4DD",
     icon: <path d="M22 10L12 4 2 10l10 6 10-6zM6 12.5V17c0 1.1 2.7 3 6 3s6-1.9 6-3v-4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
   },
   {
     label: "Flexible Hours", desc: "Async-first, no rigid 9-to-5",
-    color: "#ea580c", bg: "#fff7ed",
+    color: "#A9781A", bg: "#FBF4DD",
     icon: <><circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.8"/><path d="M12 7v5l3.5 2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></>,
   },
   {
     label: "Annual Team Retreat", desc: "We all meet up once a year, in person",
-    color: "#059669", bg: "#edfaf5",
+    color: "#3D5A80", bg: "#EAF1F8",
     icon: <path d="M3 21l6-14 4 8 3-5 5 11H3z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
   },
   {
     label: "Equipment Stipend", desc: "Best-in-class gear, fully covered",
-    color: "#0891b2", bg: "#ecfeff",
+    color: "#0891b2", bg: "#EAF1F8",
     icon: <><rect x="3" y="4" width="18" height="12" rx="2" stroke="currentColor" strokeWidth="1.8"/><path d="M8 20h8M12 16v4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></>,
   },
   {
     label: "90-Day Onboarding", desc: "Structured ramp so you hit the ground running",
-    color: "#d97706", bg: "#fffbeb",
+    color: "#A9781A", bg: "#FBF4DD",
     icon: <path d="M9 11l3 3L22 4M21 12v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h11" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
   },
 ];
@@ -259,14 +259,14 @@ function TeamBubbles() {
   // Connected constellation: role nodes evenly ringed around a "We're hiring" hub,
   // linked by data lines with pulses flowing outward (the team growing).
   const members = [
-    { initials:"RK", role:"AI Engineer", color:"#60a5fa" },
-    { initials:"MK", role:"UX/UI", color:"#f472b6" },
-    { initials:"JP", role:"Product", color:"#a78bfa" },
-    { initials:"PR", role:"QA", color:"#fbbf24" },
-    { initials:"AT", role:"DevOps", color:"#34d399" },
-    { initials:"DL", role:"Mobile", color:"#fb923c" },
+    { initials:"RK", role:"AI Engineer", color:"#86A8CE" },
+    { initials:"MK", role:"UX/UI", color:"#F3C34E" },
+    { initials:"JP", role:"Product", color:"#C99A2E" },
+    { initials:"PR", role:"QA", color:"#E8B53D" },
+    { initials:"AT", role:"DevOps", color:"#5E82AE" },
+    { initials:"DL", role:"Mobile", color:"#E8B53D" },
     { initials:"SM", role:"Full Stack", color:"#E8B53D" },
-    { initials:"VC", role:"Backend", color:"#22d3ee" },
+    { initials:"VC", role:"Backend", color:"#86A8CE" },
   ];
   const VW = 480, VH = 380, cx = 240, cy = 190, rx = 188, ry = 150;
   const nodes = members.map((m, i) => {
@@ -418,25 +418,25 @@ export default function CareersPage() {
               {
                 title: "Remote-First Culture",
                 desc: "Work from anywhere. We care about output, not office attendance. Our processes are designed for async collaboration.",
-                color: "#2563eb", bg: "#eef4ff",
+                color: "#5E82AE", bg: "#EAF1F8",
                 icon: <path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20M12 2a10 10 0 100 20 10 10 0 000-20z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>,
               },
               {
                 title: "Senior Team",
                 desc: "You'll work alongside senior engineers and leaders who love to share knowledge. Every day is a learning opportunity.",
-                color: "#7c3aed", bg: "#f3eeff",
+                color: "#A9781A", bg: "#FBF4DD",
                 icon: <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
               },
               {
                 title: "Real Ownership",
                 desc: "Your ideas are heard. You'll own meaningful parts of the product and have real influence on roadmap decisions.",
-                color: "#059669", bg: "#edfaf5",
+                color: "#3D5A80", bg: "#EAF1F8",
                 icon: <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
               },
               {
                 title: "Competitive Pay + Equity",
                 desc: "Top-of-market salaries and equity in the projects you help build. When the company wins, you win.",
-                color: "#d97706", bg: "#fffbeb",
+                color: "#A9781A", bg: "#FBF4DD",
                 icon: <path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
               },
             ].map((card) => (
@@ -645,12 +645,12 @@ export default function CareersPage() {
               {
                 title: "Async by default.",
                 desc: "We respect your time and focus. Meetings are intentional and rare. Deep work is protected. You can do your best thinking without constant interruption.",
-                gradient: "from-indigo-800 to-indigo-600",
+                gradient: "from-slate-800 to-slate-600",
               },
               {
                 title: "Your growth is our growth.",
                 desc: "We promote from within, fund learning, and invest in your career. When you level up, we all level up. There is no ceiling here.",
-                gradient: "from-blue-900 to-blue-700",
+                gradient: "from-slate-900 to-slate-700",
               },
             ].map((item) => (
               <div

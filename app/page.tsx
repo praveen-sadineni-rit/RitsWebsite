@@ -44,7 +44,7 @@ const FEDERAL_HOLIDAYS: Holiday[] = [
     name: "New Year's Day",
     message: "🎉 Happy New Year from Resource Innovative Technologies",
     subMessage: "wishing you a year of growth, innovation, and success 🎊",
-    background: "linear-gradient(90deg, #6d28d9, #1B3C6E)",
+    background: "linear-gradient(90deg, #A9781A, #1B3C6E)",
     getDate: (y) => new Date(y, 0, 1),
   },
   {
@@ -93,7 +93,7 @@ const FEDERAL_HOLIDAYS: Holiday[] = [
     name: "Columbus Day",
     message: "🧭 Happy Columbus Day",
     subMessage: "marking a moment in the history of exploration",
-    background: "linear-gradient(90deg, #7c3aed, #1B3C6E)",
+    background: "linear-gradient(90deg, #A9781A, #1B3C6E)",
     getDate: (y) => nthWeekdayOfMonth(y, 9, 1, 2),
   },
   {
@@ -370,62 +370,62 @@ function NeuralNetwork() {
 
     const TECHS = [
       { label: "AI", color: "#E8B53D" },
-      { label: "Node.js", color: "#68d391" },
-      { label: "LLM", color: "#a78bfa" },
-      { label: "Data", color: "#60a5fa" },
-      { label: "React", color: "#38bdf8" },
-      { label: "Python", color: "#fbbf24" },
-      { label: "Cloud", color: "#34d399" },
-      { label: "ML", color: "#f472b6" },
+      { label: "Node.js", color: "#86A8CE" },
+      { label: "LLM", color: "#C99A2E" },
+      { label: "Data", color: "#86A8CE" },
+      { label: "React", color: "#86A8CE" },
+      { label: "Python", color: "#E8B53D" },
+      { label: "Cloud", color: "#5E82AE" },
+      { label: "ML", color: "#F3C34E" },
       { label: "API", color: "#E8B53D" },
-      { label: "DevOps", color: "#fb923c" },
-      { label: "TypeScript", color: "#60a5fa" },
-      { label: "Docker", color: "#38bdf8" },
+      { label: "DevOps", color: "#E8B53D" },
+      { label: "TypeScript", color: "#86A8CE" },
+      { label: "Docker", color: "#86A8CE" },
       { label: "Next.js", color: "#e2e8f0" },
-      { label: "GraphQL", color: "#e879f9" },
-      { label: "AWS", color: "#fbbf24" },
-      { label: "MongoDB", color: "#68d391" },
-      { label: "GPT-4", color: "#a78bfa" },
-      { label: "Vector DB", color: "#f472b6" },
-      { label: "Kubernetes", color: "#38bdf8" },
-      { label: "Terraform", color: "#a78bfa" },
-      { label: "CI/CD", color: "#34d399" },
-      { label: "Redis", color: "#fb923c" },
-      { label: "PostgreSQL", color: "#60a5fa" },
-      { label: "NLP", color: "#f472b6" },
+      { label: "GraphQL", color: "#C99A2E" },
+      { label: "AWS", color: "#E8B53D" },
+      { label: "MongoDB", color: "#86A8CE" },
+      { label: "GPT-4", color: "#C99A2E" },
+      { label: "Vector DB", color: "#F3C34E" },
+      { label: "Kubernetes", color: "#86A8CE" },
+      { label: "Terraform", color: "#C99A2E" },
+      { label: "CI/CD", color: "#5E82AE" },
+      { label: "Redis", color: "#E8B53D" },
+      { label: "PostgreSQL", color: "#86A8CE" },
+      { label: "NLP", color: "#F3C34E" },
       { label: "RAG", color: "#E8B53D" },
-      { label: "Microservices", color: "#fbbf24" },
-      { label: "Azure", color: "#38bdf8" },
-      { label: "GCP", color: "#68d391" },
-      { label: "Kafka", color: "#e879f9" },
-      { label: "Langchain", color: "#a78bfa" },
-      { label: "Pinecone", color: "#34d399" },
+      { label: "Microservices", color: "#E8B53D" },
+      { label: "Azure", color: "#86A8CE" },
+      { label: "GCP", color: "#86A8CE" },
+      { label: "Kafka", color: "#C99A2E" },
+      { label: "Langchain", color: "#C99A2E" },
+      { label: "Pinecone", color: "#5E82AE" },
       { label: "OpenAI", color: "#e2e8f0" },
-      { label: "Gemini", color: "#60a5fa" },
-      { label: "Claude", color: "#f472b6" },
-      { label: "Anthropic", color: "#a78bfa" },
-      { label: "Hugging Face", color: "#fbbf24" },
-      { label: "Spark", color: "#fb923c" },
-      { label: "Snowflake", color: "#38bdf8" },
-      { label: "dbt", color: "#68d391" },
-      { label: "Airflow", color: "#34d399" },
+      { label: "Gemini", color: "#86A8CE" },
+      { label: "Claude", color: "#F3C34E" },
+      { label: "Anthropic", color: "#C99A2E" },
+      { label: "Hugging Face", color: "#E8B53D" },
+      { label: "Spark", color: "#E8B53D" },
+      { label: "Snowflake", color: "#86A8CE" },
+      { label: "dbt", color: "#86A8CE" },
+      { label: "Airflow", color: "#5E82AE" },
       { label: "FastAPI", color: "#E8B53D" },
-      { label: "Go", color: "#38bdf8" },
-      { label: "Rust", color: "#fb923c" },
-      { label: "Java", color: "#fbbf24" },
-      { label: "Scala", color: "#e879f9" },
-      { label: "Elasticsearch", color: "#60a5fa" },
-      { label: "gRPC", color: "#a78bfa" },
-      { label: "Prometheus", color: "#fb923c" },
-      { label: "Grafana", color: "#f472b6" },
-      { label: "Istio", color: "#34d399" },
-      { label: "Helm", color: "#38bdf8" },
-      { label: "ArgoCD", color: "#e879f9" },
-      { label: "Databricks", color: "#fb923c" },
-      { label: "CUDA", color: "#68d391" },
-      { label: "PyTorch", color: "#f472b6" },
-      { label: "TensorFlow", color: "#fbbf24" },
-      { label: "Fine-Tuning", color: "#a78bfa" },
+      { label: "Go", color: "#86A8CE" },
+      { label: "Rust", color: "#E8B53D" },
+      { label: "Java", color: "#E8B53D" },
+      { label: "Scala", color: "#C99A2E" },
+      { label: "Elasticsearch", color: "#86A8CE" },
+      { label: "gRPC", color: "#C99A2E" },
+      { label: "Prometheus", color: "#E8B53D" },
+      { label: "Grafana", color: "#F3C34E" },
+      { label: "Istio", color: "#5E82AE" },
+      { label: "Helm", color: "#86A8CE" },
+      { label: "ArgoCD", color: "#C99A2E" },
+      { label: "Databricks", color: "#E8B53D" },
+      { label: "CUDA", color: "#86A8CE" },
+      { label: "PyTorch", color: "#F3C34E" },
+      { label: "TensorFlow", color: "#E8B53D" },
+      { label: "Fine-Tuning", color: "#C99A2E" },
       { label: "Embeddings", color: "#E8B53D" },
       { label: "Zero-Shot", color: "#e2e8f0" },
     ];
@@ -594,7 +594,7 @@ function NeuralNetwork() {
       const startAngle = Math.PI / 2 + totalAngle / 2;
       const charSpacing = totalAngle / (text.length - 1);
       // Indices of R (0), I (10), T (22) in "RESOURCE  INNOVATIVE  TECHNOLOGIES"
-      const ritIndices: Record<number, string> = { 0: "#F3C34E", 10: "#60a5fa", 22: "#f472b6" };
+      const ritIndices: Record<number, string> = { 0: "#F3C34E", 10: "#86A8CE", 22: "#F3C34E" };
 
       for (let k = 0; k < text.length; k++) {
         const charAngle = startAngle - k * charSpacing;
@@ -687,7 +687,7 @@ const ALL_SERVICES = [
     short: "Web · Mobile · API",
     desc: "Enterprise-grade web apps, mobile products, and APIs, architected to last and designed to scale. From MVPs to complex distributed systems.",
     tags: ["React", "Next.js", "Node.js", "PostgreSQL"],
-    accent: "#60a5fa",
+    accent: "#86A8CE",
     href: "/services/software-solutions",
     iconPath: "M16 18L22 12L16 6M8 6L2 12L8 18",
   },
@@ -707,7 +707,7 @@ const ALL_SERVICES = [
     short: "LLMs · NLP · Vision",
     desc: "Production-ready AI, not just demos. We embed LLMs, computer vision, and predictive models directly into your products and workflows.",
     tags: ["LLMs", "OpenAI", "Computer Vision", "NLP"],
-    accent: "#a78bfa",
+    accent: "#C99A2E",
     href: "/services/ai-ml",
     iconPath: "M12 2v4M12 18v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M2 12h4M18 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83",
   },
@@ -717,7 +717,7 @@ const ALL_SERVICES = [
     short: "Vetted · Senior · Ready",
     desc: "Rigorously screened senior engineers. ID-verified, technically tested, reference-checked. Plug them into your team from day one.",
     tags: ["Senior Only", "ID Verified", "5-Day Onboard", "Flexible"],
-    accent: "#34d399",
+    accent: "#5E82AE",
     href: "/services/staff-augmentation",
     iconPath: "M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75",
   },
@@ -727,7 +727,7 @@ const ALL_SERVICES = [
     short: "AWS · GCP · Azure",
     desc: "Modern cloud infrastructure, CI/CD pipelines, and SRE practices that let your team ship with confidence, multiple times a day.",
     tags: ["AWS", "Kubernetes", "Terraform", "CI/CD"],
-    accent: "#fb923c",
+    accent: "#E8B53D",
     href: "/services/cloud-devops",
     iconPath: "M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z",
   },
@@ -737,7 +737,7 @@ const ALL_SERVICES = [
     short: "Strategy · Execution · Scale",
     desc: "From legacy systems to leading-edge architecture. We reimagine how your business operates, process, technology, and people together.",
     tags: ["Modernization", "Data & Analytics", "Change Mgmt", "ROI-Focused"],
-    accent: "#f472b6",
+    accent: "#F3C34E",
     href: "/services/digital-transformation",
     iconPath: "M13 10V3L4 14h7v7l9-11h-7z",
   },
@@ -1342,16 +1342,16 @@ export default function Home() {
 
             {/* Card 5 */}
             <Reveal delay={0.14}>
-              <div className="relative rounded-2xl bg-[#fff8f0] border border-orange-100 p-8 h-full overflow-hidden group hover:shadow-lg transition-shadow duration-300">
-                <span className="text-orange-200 text-xs font-bold uppercase tracking-widest mb-4 block">05</span>
-                <div className="w-10 h-10 rounded-xl bg-orange-500 flex items-center justify-center mb-5">
+              <div className="relative rounded-2xl bg-[#fff8f0] border border-amber-100 p-8 h-full overflow-hidden group hover:shadow-lg transition-shadow duration-300">
+                <span className="text-amber-200 text-xs font-bold uppercase tracking-widest mb-4 block">05</span>
+                <div className="w-10 h-10 rounded-xl bg-amber-500 flex items-center justify-center mb-5">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </div>
                 <h3 className="text-lg font-black text-gray-900 mb-2">NDA within 24 hours</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">Confidentiality signed within 24 hours of first contact. Your IP is protected from day one.</p>
-                <div className="mt-4 inline-flex items-center gap-2 bg-orange-50 border border-orange-100 rounded-full px-3 py-1">
-                  <div className="w-1.5 h-1.5 rounded-full bg-orange-400"/>
-                  <span className="text-orange-500 text-xs font-bold">&lt; 24hr turnaround</span>
+                <div className="mt-4 inline-flex items-center gap-2 bg-amber-50 border border-amber-100 rounded-full px-3 py-1">
+                  <div className="w-1.5 h-1.5 rounded-full bg-amber-400"/>
+                  <span className="text-amber-500 text-xs font-bold">&lt; 24hr turnaround</span>
                 </div>
               </div>
             </Reveal>
@@ -1401,7 +1401,7 @@ export default function Home() {
                   <div className="flex gap-1 mb-5 mt-2">
                     {Array.from({ length: 5 }).map((_, j) => (
                       <svg key={j} width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#f59e0b" stroke="#f59e0b" strokeWidth="1" strokeLinejoin="round"/>
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#E8B53D" stroke="#E8B53D" strokeWidth="1" strokeLinejoin="round"/>
                       </svg>
                     ))}
                   </div>
@@ -1498,7 +1498,7 @@ export default function Home() {
                       <div className="flex items-center gap-2 mb-1.5">
                         <span className="text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full"
                           style={{
-                            background: post.tag === "Popular" ? "#fef3c7" : post.tag === "New" ? "#f0fdf4" : "#fff7ed",
+                            background: post.tag === "Popular" ? "#fef3c7" : post.tag === "New" ? "#EAF1F8" : "#FBF4DD",
                             color: post.tag === "Popular" ? "#92400e" : post.tag === "New" ? "#065f46" : "#9a3412",
                           }}>
                           {post.tag}

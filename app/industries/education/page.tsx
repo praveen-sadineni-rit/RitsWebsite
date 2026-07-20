@@ -4,12 +4,12 @@ import Footer from "@/components/Footer";
 import { useState, useEffect } from "react";
 
 const FLOATING_SUBJECTS = [
-  { emoji: "📐", top: "6%", left: "8%", color: "#60a5fa", delay: "0s", duration: "3.2s" },
-  { emoji: "🔬", top: "10%", left: "78%", color: "#34d399", delay: "0.4s", duration: "3.6s" },
-  { emoji: "🌍", top: "68%", left: "4%", color: "#fb923c", delay: "0.8s", duration: "3.4s" },
-  { emoji: "💡", top: "72%", left: "82%", color: "#fbbf24", delay: "1.1s", duration: "3s" },
-  { emoji: "🎨", top: "38%", left: "86%", color: "#f472b6", delay: "0.6s", duration: "3.8s" },
-  { emoji: "📊", top: "42%", left: "2%", color: "#a78bfa", delay: "1.4s", duration: "3.3s" },
+  { emoji: "📐", top: "6%", left: "8%", color: "#86A8CE", delay: "0s", duration: "3.2s" },
+  { emoji: "🔬", top: "10%", left: "78%", color: "#5E82AE", delay: "0.4s", duration: "3.6s" },
+  { emoji: "🌍", top: "68%", left: "4%", color: "#E8B53D", delay: "0.8s", duration: "3.4s" },
+  { emoji: "💡", top: "72%", left: "82%", color: "#E8B53D", delay: "1.1s", duration: "3s" },
+  { emoji: "🎨", top: "38%", left: "86%", color: "#F3C34E", delay: "0.6s", duration: "3.8s" },
+  { emoji: "📊", top: "42%", left: "2%", color: "#C99A2E", delay: "1.4s", duration: "3.3s" },
 ];
 
 const SPARKLES = [
@@ -37,7 +37,7 @@ function LearningVisual() {
       `}</style>
 
       {/* Warm glow backdrop */}
-      <div className="edu-glow absolute inset-0 rounded-full" style={{ background: "radial-gradient(circle, rgba(251,191,36,0.18) 0%, rgba(244,114,182,0.1) 45%, transparent 70%)" }} />
+      <div className="edu-glow absolute inset-0 rounded-full" style={{ background: "radial-gradient(circle, rgba(232,181,61,0.18) 0%, rgba(243,195,78,0.1) 45%, transparent 70%)" }} />
 
       {/* Twinkling sparkles */}
       {SPARKLES.map((s, i) => (
@@ -58,7 +58,7 @@ function LearningVisual() {
           {/* Spinning soft rays */}
           <g className="edu-rays" opacity="0.15">
             {Array.from({ length: 8 }).map((_, i) => (
-              <rect key={i} x="98" y="10" width="4" height="30" rx="2" fill="#fbbf24" transform={`rotate(${i * 45} 100 100)`} />
+              <rect key={i} x="98" y="10" width="4" height="30" rx="2" fill="#E8B53D" transform={`rotate(${i * 45} 100 100)`} />
             ))}
           </g>
 
@@ -79,8 +79,8 @@ function LearningVisual() {
           <g className="edu-cap">
             <path d="M100 34 L146 54 L100 74 L54 54 Z" fill="#0f2447" />
             <path d="M100 74 L100 90 Q100 98 115 98 Q130 98 130 90 L130 62" fill="none" stroke="#0f2447" strokeWidth="4" strokeLinecap="round" />
-            <circle cx="130" cy="62" r="4.5" fill="#fbbf24" />
-            <line x1="130" y1="62" x2="130" y2="80" stroke="#fbbf24" strokeWidth="2" />
+            <circle cx="130" cy="62" r="4.5" fill="#E8B53D" />
+            <line x1="130" y1="62" x2="130" y2="80" stroke="#E8B53D" strokeWidth="2" />
           </g>
         </svg>
       </div>
@@ -159,7 +159,7 @@ export default function EducationPage() {
               {
                 title: "LMS Development",
                 desc: "Custom learning management systems built on open standards, featuring course authoring, progress tracking, and seamless third-party integrations.",
-                color: "#60a5fa",
+                color: "#86A8CE",
                 path: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
               },
               {
@@ -171,25 +171,25 @@ export default function EducationPage() {
               {
                 title: "Assessment & Testing Tools",
                 desc: "Secure, adaptive assessment platforms with auto-grading, plagiarism detection, and proctoring integrations to ensure academic integrity at scale.",
-                color: "#a78bfa",
+                color: "#C99A2E",
                 path: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4",
               },
               {
                 title: "Learning Analytics & Reporting",
                 desc: "Real-time dashboards that surface at-risk students, course completion trends, and learning outcome metrics, enabling data-driven academic decisions.",
-                color: "#34d399",
+                color: "#5E82AE",
                 path: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
               },
               {
                 title: "Mobile Learning Apps",
                 desc: "Native iOS and Android apps with offline content access, push notifications, and microlearning modules that fit into students' busy lives.",
-                color: "#fb923c",
+                color: "#E8B53D",
                 path: "M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z",
               },
               {
                 title: "Administrative Automation",
                 desc: "Automated enrollment workflows, scheduling tools, and reporting pipelines that reduce administrative burden and free staff to focus on students.",
-                color: "#f472b6",
+                color: "#F3C34E",
                 path: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z",
               },
             ].map(({ title, desc, color, path }) => (

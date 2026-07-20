@@ -5,11 +5,11 @@ import { useState, useEffect } from "react";
 
 const GRID_NODES = [
   { label: "Substation A", angle: -90, color: "#F3C34E" },
-  { label: "Solar Farm", angle: -30, color: "#fbbf24" },
-  { label: "Wind Site", angle: 30, color: "#60a5fa" },
+  { label: "Solar Farm", angle: -30, color: "#E8B53D" },
+  { label: "Wind Site", angle: 30, color: "#86A8CE" },
   { label: "Substation B", angle: 90, color: "#F3C34E" },
-  { label: "Battery Storage", angle: 150, color: "#a78bfa" },
-  { label: "Smart Meter Hub", angle: -150, color: "#34d399" },
+  { label: "Battery Storage", angle: 150, color: "#C99A2E" },
+  { label: "Smart Meter Hub", angle: -150, color: "#5E82AE" },
 ];
 
 function EnergyGridVisual() {
@@ -153,7 +153,7 @@ export default function EnergyPage() {
               {
                 title: "Smart Grid Management",
                 desc: "Real-time grid monitoring, automated fault detection, and demand response controls that maximize reliability and reduce operational costs.",
-                color: "#60a5fa",
+                color: "#86A8CE",
                 path: "M13 10V3L4 14h7v7l9-11h-7z",
               },
               {
@@ -165,25 +165,25 @@ export default function EnergyPage() {
               {
                 title: "Predictive Maintenance",
                 desc: "ML-powered models that analyze sensor data and historical failure patterns to predict equipment issues before they cause outages or safety incidents.",
-                color: "#a78bfa",
+                color: "#C99A2E",
                 path: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z",
               },
               {
                 title: "IoT Sensor Integration",
                 desc: "Scalable IoT data pipelines that ingest millions of sensor readings per second from smart meters, substations, and field devices into a unified data lake.",
-                color: "#34d399",
+                color: "#5E82AE",
                 path: "M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.14 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0",
               },
               {
                 title: "Sustainability & ESG Reporting",
                 desc: "Automated carbon accounting, emissions tracking, and ESG report generation that meets GRI, TCFD, and SEC climate disclosure requirements.",
-                color: "#fb923c",
+                color: "#E8B53D",
                 path: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
               },
               {
                 title: "Customer Portal & Billing",
                 desc: "Self-service customer portals with real-time usage data, smart billing, outage notifications, and renewable energy program enrollment.",
-                color: "#f472b6",
+                color: "#F3C34E",
                 path: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z",
               },
             ].map(({ title, desc, color, path }) => (

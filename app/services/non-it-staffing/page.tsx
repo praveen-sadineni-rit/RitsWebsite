@@ -15,37 +15,37 @@ const ROLES = [
   {
     title: "Finance & Accounting",
     desc: "AP/AR clerks, staff accountants, controllers, bookkeepers, payroll specialists.",
-    color: "#E8B53D", bg: "#e6f7f6",
+    color: "#E8B53D", bg: "#FBF4DD",
     icon: <path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
   },
   {
     title: "HR & Administration",
     desc: "HR generalists, recruiters, office managers, executive assistants.",
-    color: "#2563eb", bg: "#eef4ff",
+    color: "#5E82AE", bg: "#EAF1F8",
     icon: <><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="1.8"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></>,
   },
   {
     title: "Customer Support",
     desc: "Call center reps, customer success, technical support, help desk.",
-    color: "#7c3aed", bg: "#f3eeff",
+    color: "#A9781A", bg: "#FBF4DD",
     icon: <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
   },
   {
     title: "Sales & Marketing",
     desc: "Sales reps, account managers, marketing coordinators, SDRs.",
-    color: "#ea580c", bg: "#fff7ed",
+    color: "#A9781A", bg: "#FBF4DD",
     icon: <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
   },
   {
     title: "Healthcare",
     desc: "Medical assistants, billing & coding specialists, front office staff.",
-    color: "#db2777", bg: "#fff0f8",
+    color: "#C99A2E", bg: "#FBF4DD",
     icon: <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 10-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
   },
   {
     title: "Supply Chain & Logistics",
     desc: "Warehouse supervisors, dispatchers, procurement, inventory coordinators.",
-    color: "#059669", bg: "#edfaf5",
+    color: "#3D5A80", bg: "#EAF1F8",
     icon: <path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
   },
 ];
@@ -117,7 +117,7 @@ export default function NonITStaffingPage() {
               {ROLES.map((role) => (
                 <div
                   key={role.title}
-                  style={{ background: "#ffffff", border: "1px solid #dce4f0", borderRadius: "16px", padding: "28px", transition: "box-shadow 0.2s ease, transform 0.2s ease" }}
+                  style={{ background: "#ffffff", border: "1px solid #E6EDF7", borderRadius: "16px", padding: "28px", transition: "box-shadow 0.2s ease, transform 0.2s ease" }}
                   className="hover:shadow-md hover:-translate-y-0.5"
                 >
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: role.bg, color: role.color }}>
@@ -144,7 +144,7 @@ export default function NonITStaffingPage() {
               {INDUSTRIES.map((ind) => (
                 <span
                   key={ind}
-                  style={{ fontSize: "0.9rem", fontWeight: 600, padding: "10px 20px", borderRadius: "100px", background: "#edf2fb", color: "#1B3C6E", border: "1px solid #dce4f0" }}
+                  style={{ fontSize: "0.9rem", fontWeight: 600, padding: "10px 20px", borderRadius: "100px", background: "#edf2fb", color: "#1B3C6E", border: "1px solid #E6EDF7" }}
                 >
                   {ind}
                 </span>

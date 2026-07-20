@@ -32,7 +32,7 @@ const PILLARS: Pillar[] = [
   {
     key: "build",
     title: "Build & Integrate AI Solutions",
-    color: "#60a5fa",
+    color: "#86A8CE",
     area: "tr",
     items: [
       "Rapid prototyping & application development",
@@ -45,7 +45,7 @@ const PILLARS: Pillar[] = [
   {
     key: "influence",
     title: "Influence & Feedback Loop",
-    color: "#a78bfa",
+    color: "#C99A2E",
     area: "bl",
     items: [
       "Translate customer needs into product insights",
@@ -56,7 +56,7 @@ const PILLARS: Pillar[] = [
   {
     key: "deploy",
     title: "Deploy, Monitor & Iterate",
-    color: "#fb923c",
+    color: "#E8B53D",
     area: "br",
     items: [
       "Monitor performance & user impact",
@@ -133,10 +133,10 @@ export default function FDEModel() {
           {/* hub at 50,50 -> corners + top + bottom */}
           {[
             { x: 20, y: 30, c: "#E8B53D" },
-            { x: 80, y: 30, c: "#60a5fa" },
-            { x: 20, y: 74, c: "#a78bfa" },
-            { x: 80, y: 74, c: "#fb923c" },
-            { x: 50, y: 12, c: "#22d3ee" },
+            { x: 80, y: 30, c: "#86A8CE" },
+            { x: 20, y: 74, c: "#C99A2E" },
+            { x: 80, y: 74, c: "#E8B53D" },
+            { x: 50, y: 12, c: "#86A8CE" },
             { x: 50, y: 88, c: "#94a3b8" },
           ].map((p, i) => (
             <line
@@ -154,9 +154,9 @@ export default function FDEModel() {
           <div className="fde-a-top">
             <div
               className="rounded-2xl p-5 text-center"
-              style={{ background: "rgba(34,211,238,0.06)", border: "1px solid rgba(34,211,238,0.28)" }}
+              style={{ background: "rgba(134,168,206,0.06)", border: "1px solid rgba(134,168,206,0.28)" }}
             >
-              <p className="text-[11px] font-bold tracking-widest uppercase mb-3" style={{ color: "#22d3ee" }}>
+              <p className="text-[11px] font-bold tracking-widest uppercase mb-3" style={{ color: "#86A8CE" }}>
                 AI Solutions & Techniques
               </p>
               <div className="flex flex-wrap justify-center gap-2">
@@ -164,7 +164,7 @@ export default function FDEModel() {
                   <span
                     key={t}
                     className="text-[12px] font-semibold rounded-lg px-3 py-1.5 text-gray-200"
-                    style={{ background: "rgba(34,211,238,0.1)", border: "1px solid rgba(34,211,238,0.25)" }}
+                    style={{ background: "rgba(134,168,206,0.1)", border: "1px solid rgba(134,168,206,0.25)" }}
                   >
                     {t}
                   </span>

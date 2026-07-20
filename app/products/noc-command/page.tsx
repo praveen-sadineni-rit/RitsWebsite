@@ -53,7 +53,7 @@ const TOPO_ICONS: Record<string, JSX.Element> = {
   folder: <path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/>,
 };
 
-const TOPO_COLORS: Record<string, string> = { healthy: "#34d399", warning: "#f59e0b" };
+const TOPO_COLORS: Record<string, string> = { healthy: "#5E82AE", warning: "#E8B53D" };
 
 function elbowPath(x1: number, y1: number, x2: number, y2: number) {
   const my = (y1 + y2) / 2;
@@ -101,27 +101,27 @@ function TopologyDiagram() {
               const parent = TOPO_SUBS.find((s) => s.id === rg.parent)!;
               const x1 = parent.x + parent.w / 2, y1 = parent.y + parent.h;
               const x2 = rg.x + rg.w / 2;
-              return <path key={rg.id} className="topo-line" d={elbowPath(x1, y1, x2, rg.y)} stroke="rgba(167,139,250,0.45)" strokeWidth="1.5" fill="none" />;
+              return <path key={rg.id} className="topo-line" d={elbowPath(x1, y1, x2, rg.y)} stroke="rgba(201,154,46,0.45)" strokeWidth="1.5" fill="none" />;
             })}
             {TOPO_SERVICES.map((svc, i) => {
               const parent = TOPO_RGS.find((r) => r.id === svc.parent)!;
               const x1 = parent.x + parent.w / 2, y1 = parent.y + parent.h;
               const x2 = svc.x + svc.w / 2;
-              return <path key={i} className="topo-line" d={elbowPath(x1, y1, x2, svc.y)} stroke="rgba(96,165,250,0.4)" strokeWidth="1.5" fill="none" />;
+              return <path key={i} className="topo-line" d={elbowPath(x1, y1, x2, svc.y)} stroke="rgba(134,168,206,0.4)" strokeWidth="1.5" fill="none" />;
             })}
             {/* Joint dots */}
-            <circle className="topo-joint" cx={tenantBottom.x} cy={tenantBottom.y} r="3" fill="#eab308" />
-            {TOPO_SUBS.map((s) => <circle key={s.id} className="topo-joint" cx={s.x + s.w / 2} cy={s.y + s.h} r="3" fill="#a78bfa" />)}
-            {TOPO_RGS.map((rg) => <circle key={rg.id} className="topo-joint" cx={rg.x + rg.w / 2} cy={rg.y + rg.h} r="2.5" fill="#60a5fa" />)}
+            <circle className="topo-joint" cx={tenantBottom.x} cy={tenantBottom.y} r="3" fill="#C99A2E" />
+            {TOPO_SUBS.map((s) => <circle key={s.id} className="topo-joint" cx={s.x + s.w / 2} cy={s.y + s.h} r="3" fill="#C99A2E" />)}
+            {TOPO_RGS.map((rg) => <circle key={rg.id} className="topo-joint" cx={rg.x + rg.w / 2} cy={rg.y + rg.h} r="2.5" fill="#86A8CE" />)}
           </svg>
 
           {/* Tenant node */}
           <div style={{ position: "absolute", left: TOPO_TENANT.x, top: TOPO_TENANT.y, width: TOPO_TENANT.w, height: TOPO_TENANT.h, borderRadius: 12, background: "linear-gradient(135deg,#1a1509,#0a0f1e)", border: "1.5px solid rgba(234,179,8,0.5)", boxShadow: "0 0 24px rgba(234,179,8,0.15)", padding: "10px 14px", display: "flex", gap: 10 }}>
-            <div style={{ width: 34, height: 34, borderRadius: 8, background: "rgba(234,179,8,0.15)", border: "1px solid rgba(234,179,8,0.4)", color: "#eab308", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+            <div style={{ width: 34, height: 34, borderRadius: 8, background: "rgba(234,179,8,0.15)", border: "1px solid rgba(234,179,8,0.4)", color: "#C99A2E", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">{TOPO_ICONS.building}</svg>
             </div>
             <div style={{ minWidth: 0 }}>
-              <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.1em", color: "#eab308", margin: 0 }}>TENANT</p>
+              <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.1em", color: "#C99A2E", margin: 0 }}>TENANT</p>
               <p style={{ fontSize: 12.5, fontWeight: 800, color: "white", margin: "1px 0 3px", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{TOPO_TENANT.label}</p>
               <div style={{ display: "flex", gap: 6 }}>
                 <span style={{ fontSize: 9, fontWeight: 700, color: "rgba(234,179,8,0.9)", background: "rgba(234,179,8,0.12)", borderRadius: 5, padding: "2px 6px" }}>{TOPO_TENANT.subs} Subscriptions</span>
@@ -134,7 +134,7 @@ function TopologyDiagram() {
           {TOPO_SUBS.map((s) => (
             <div key={s.id} style={{ position: "absolute", left: s.x, top: s.y, width: s.w, height: s.h, borderRadius: 10, background: "#0f1424", border: `1.5px solid ${TOPO_COLORS[s.status]}55`, padding: "10px 12px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
-                <div style={{ width: 24, height: 24, borderRadius: 6, background: "rgba(167,139,250,0.15)", color: "#a78bfa", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                <div style={{ width: 24, height: 24, borderRadius: 6, background: "rgba(201,154,46,0.15)", color: "#C99A2E", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none">{TOPO_ICONS.layer2}</svg>
                 </div>
                 <p style={{ fontSize: 12, fontWeight: 800, color: "white", margin: 0 }}>{s.label}</p>
@@ -155,7 +155,7 @@ function TopologyDiagram() {
             <div key={rg.id} style={{ position: "absolute", left: rg.x, top: rg.y, width: rg.w, height: rg.h, borderRadius: 9, background: "#0f1424", border: `1.3px solid ${TOPO_COLORS[rg.status]}55`, padding: "9px 10px" }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 5 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 6, minWidth: 0 }}>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" style={{ color: "#60a5fa", flexShrink: 0 }}>{TOPO_ICONS.folder}</svg>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" style={{ color: "#86A8CE", flexShrink: 0 }}>{TOPO_ICONS.folder}</svg>
                   <span style={{ fontSize: 10.5, fontWeight: 700, color: "white", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{rg.label}</span>
                 </div>
                 {rg.badge && <span style={{ flexShrink: 0, width: 15, height: 15, borderRadius: "50%", background: "#ef4444", color: "white", fontSize: 8.5, fontWeight: 800, display: "flex", alignItems: "center", justifyContent: "center" }}>{rg.badge}</span>}
@@ -197,7 +197,7 @@ const WHAT_IT_IS = [
   {
     title: "Sees Everything",
     desc: "Every server, cloud service, network connection, and cost, monitored 24x7.",
-    color: "#60a5fa",
+    color: "#86A8CE",
     icon: <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>,
   },
   {
@@ -209,7 +209,7 @@ const WHAT_IT_IS = [
   {
     title: "Tells You What To Do",
     desc: "Not “something is wrong.” But: “Server X is failing because of Y, here are the steps to fix it, and which engineer to call.”",
-    color: "#a78bfa",
+    color: "#C99A2E",
     icon: <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>,
   },
 ];
@@ -223,35 +223,35 @@ const COST_SCENARIOS = [
 ];
 
 const AGENTS = [
-  { name: "Ingestion Analyst", desc: "Reads every alert from every system the moment it fires", color: "#60a5fa" },
+  { name: "Ingestion Analyst", desc: "Reads every alert from every system the moment it fires", color: "#86A8CE" },
   { name: "Correlation Engine", desc: "Spots that 5 separate alerts are actually one single problem", color: "#F3C34E" },
-  { name: "Severity Classifier", desc: "Decides what's a genuine emergency vs. background noise", color: "#a78bfa" },
-  { name: "Alert Router", desc: "Sends the right alert to the right engineer at the right time", color: "#f472b6" },
-  { name: "Triage & Runbook", desc: "Writes step-by-step fix instructions and sends them instantly", color: "#34d399" },
-  { name: "Reporting Agent", desc: "Generates the monthly board report automatically", color: "#fb923c" },
-  { name: "DevOps Analyst", desc: "Watches every deployment, flags failures, security risks, quality issues", color: "#fbbf24" },
+  { name: "Severity Classifier", desc: "Decides what's a genuine emergency vs. background noise", color: "#C99A2E" },
+  { name: "Alert Router", desc: "Sends the right alert to the right engineer at the right time", color: "#F3C34E" },
+  { name: "Triage & Runbook", desc: "Writes step-by-step fix instructions and sends them instantly", color: "#5E82AE" },
+  { name: "Reporting Agent", desc: "Generates the monthly board report automatically", color: "#E8B53D" },
+  { name: "DevOps Analyst", desc: "Watches every deployment, flags failures, security risks, quality issues", color: "#E8B53D" },
 ];
 
 const DASHBOARDS = [
   { persona: "Senior Leadership", name: "Cloud Health", desc: "One screen. Traffic lights. Plain English.", points: ["Certificate expiry warnings", "Budget tracking in real time", "All services status at a glance", "Zero Azure knowledge required"], color: "#F3C34E" },
-  { persona: "IT Manager", name: "Full Platform View", desc: "Everything in detail.", points: ["Alerts, incidents, topology maps", "No digging through logs", "Root cause already identified", "All in one platform"], color: "#60a5fa" },
-  { persona: "On-Call Engineer", name: "Incident Command", desc: "At 3am, what broke, when, why, how to fix it.", points: ["AI-generated runbooks", "Security vulnerability alerts", "Step-by-step resolution guide", "Compliance scores"], color: "#a78bfa" },
-  { persona: "Delivery Head", name: "DevOps Center", desc: "Full deployment & pipeline visibility.", points: ["Pipeline failure tracking", "Network health & device status", "Quality gap identification", "Team performance metrics"], color: "#fb923c" },
+  { persona: "IT Manager", name: "Full Platform View", desc: "Everything in detail.", points: ["Alerts, incidents, topology maps", "No digging through logs", "Root cause already identified", "All in one platform"], color: "#86A8CE" },
+  { persona: "On-Call Engineer", name: "Incident Command", desc: "At 3am, what broke, when, why, how to fix it.", points: ["AI-generated runbooks", "Security vulnerability alerts", "Step-by-step resolution guide", "Compliance scores"], color: "#C99A2E" },
+  { persona: "Delivery Head", name: "DevOps Center", desc: "Full deployment & pipeline visibility.", points: ["Pipeline failure tracking", "Network health & device status", "Quality gap identification", "Team performance metrics"], color: "#E8B53D" },
 ];
 
 const SEVERITIES = [
   { level: "SEV-1", label: "Critical, Production down", detail: "Instant SMS + WhatsApp + phone call to on-call engineer AND manager", color: "#ef4444" },
-  { level: "SEV-2", label: "High, Major degradation", detail: "Slack message + email to the team within 60 seconds", color: "#f97316" },
-  { level: "SEV-3", label: "Medium, Something needs attention", detail: "Email during business hours, no one woken up", color: "#eab308" },
+  { level: "SEV-2", label: "High, Major degradation", detail: "Slack message + email to the team within 60 seconds", color: "#E8B53D" },
+  { level: "SEV-3", label: "Medium, Something needs attention", detail: "Email during business hours, no one woken up", color: "#C99A2E" },
   { level: "SEV-4", label: "Low, Advisory only", detail: "Appears in the dashboard. Zero interruption to anyone.", color: "#94a3b8" },
 ];
 
 /* ── Live Dashboard mock data ── */
 const DASH_STATS = [
   { label: "SEV-1 Open", value: "4", sub: "Critical, immediate", color: "#ef4444", icon: "bell" },
-  { label: "Open Alerts", value: "17", sub: "6 SEV-2 active", color: "#f97316", icon: "bell" },
-  { label: "Open Incidents", value: "5", sub: "Across all sites", color: "#eab308", icon: "warning" },
-  { label: "SLA Compliance", value: "98.4%", sub: "30-day rolling", color: "#22c55e", icon: "trend" },
+  { label: "Open Alerts", value: "17", sub: "6 SEV-2 active", color: "#E8B53D", icon: "bell" },
+  { label: "Open Incidents", value: "5", sub: "Across all sites", color: "#C99A2E", icon: "warning" },
+  { label: "SLA Compliance", value: "98.4%", sub: "30-day rolling", color: "#5E82AE", icon: "trend" },
   { label: "MTTD / MTTR", value: "2.3m", sub: "MTTR: 28 min", color: "#6366f1", icon: "clock" },
   { label: "Delivery Health", value: "78%", sub: "2 pipelines failing", color: "#ef4444", icon: "trendDown" },
 ];
@@ -268,20 +268,20 @@ const DASH_ALERTS = [
 ];
 
 const DASH_DEVICES = [
-  { label: "Healthy", value: 8, color: "#22c55e" },
-  { label: "Degraded", value: 9, color: "#f97316" },
+  { label: "Healthy", value: 8, color: "#5E82AE" },
+  { label: "Degraded", value: 9, color: "#E8B53D" },
   { label: "Down", value: 3, color: "#ef4444" },
 ];
 
 const DASH_INCIDENTS = [
-  { sev: "SEV-1", title: "Core Router BGP Failure, Rock Hill DC1", meta: "INC-001 · 18 minutes ago", status: "IN PROGRESS", statusColor: "#f59e0b" },
-  { sev: "SEV-1", title: "Firewall CPU Saturation, FW-CORE-01", meta: "INC-006 · 33 minutes ago", status: "IN PROGRESS", statusColor: "#f59e0b" },
-  { sev: "SEV-1", title: "ExpressRoute Failure + AKS Node Degradation", meta: "INC-002 · 40 minutes ago", status: "ACK'D", statusColor: "#3b82f6" },
-  { sev: "SEV-2", title: "VPN Tunnel Failure, Charlotte Branch", meta: "INC-003 · about 1 hour ago", status: "IN PROGRESS", statusColor: "#f59e0b" },
-  { sev: "SEV-3", title: "Database Server Memory Pressure, SRV-DB-02", meta: "INC-004 · about 1 hour ago", status: "NEW", statusColor: "#8b5cf6" },
+  { sev: "SEV-1", title: "Core Router BGP Failure, Rock Hill DC1", meta: "INC-001 · 18 minutes ago", status: "IN PROGRESS", statusColor: "#E8B53D" },
+  { sev: "SEV-1", title: "Firewall CPU Saturation, FW-CORE-01", meta: "INC-006 · 33 minutes ago", status: "IN PROGRESS", statusColor: "#E8B53D" },
+  { sev: "SEV-1", title: "ExpressRoute Failure + AKS Node Degradation", meta: "INC-002 · 40 minutes ago", status: "ACK'D", statusColor: "#5E82AE" },
+  { sev: "SEV-2", title: "VPN Tunnel Failure, Charlotte Branch", meta: "INC-003 · about 1 hour ago", status: "IN PROGRESS", statusColor: "#E8B53D" },
+  { sev: "SEV-3", title: "Database Server Memory Pressure, SRV-DB-02", meta: "INC-004 · about 1 hour ago", status: "NEW", statusColor: "#C99A2E" },
 ];
 
-const SEV_COLOR: Record<string, string> = { "SEV-1": "#ef4444", "SEV-2": "#f97316", "SEV-3": "#eab308" };
+const SEV_COLOR: Record<string, string> = { "SEV-1": "#ef4444", "SEV-2": "#E8B53D", "SEV-3": "#C99A2E" };
 
 const DASH_ICONS: Record<string, JSX.Element> = {
   bell: <path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>,
@@ -384,7 +384,7 @@ function LiveDashboardMock() {
           <div style={{ background: "#ffffff", padding: "18px 20px", flex: 1 }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style={{ color: "#f59e0b" }}><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style={{ color: "#E8B53D" }}><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: "0.06em", color: "#0f2447" }}>ACTIVE INCIDENTS</span>
               </div>
               <span style={{ fontSize: 10.5, fontWeight: 700, color: "#E8B53D" }}>ALL →</span>
@@ -442,8 +442,8 @@ const DEPLOYMENT = [
 
 const NEXT_STEPS = [
   { num: "01", title: "Live Demo (30 min)", desc: "See NOC Command with real data from a sample Azure environment. Watch an alert fire, correlate, classify, and resolve, in under 2 minutes.", color: "#F3C34E" },
-  { num: "02", title: "Pilot Programme", desc: "Connect to your Azure environment in read-only mode. No infrastructure changes. Your real Azure data visible in the dashboards from day one of your Pilot.", color: "#60a5fa" },
-  { num: "03", title: "Technical Deep-Dive", desc: "For IT leadership, a full walkthrough of the architecture, security model, and integration points.", color: "#a78bfa" },
+  { num: "02", title: "Pilot Programme", desc: "Connect to your Azure environment in read-only mode. No infrastructure changes. Your real Azure data visible in the dashboards from day one of your Pilot.", color: "#86A8CE" },
+  { num: "03", title: "Technical Deep-Dive", desc: "For IT leadership, a full walkthrough of the architecture, security model, and integration points.", color: "#C99A2E" },
 ];
 
 function useReveal(count: number) {
@@ -471,10 +471,10 @@ function LiveAlertDemo() {
   const [stage, setStage] = useState(0);
   const stages = [
     { label: "5 alerts fire simultaneously", color: "#ef4444" },
-    { label: "AI correlating causes…", color: "#f97316" },
-    { label: "Root cause identified", color: "#eab308" },
+    { label: "AI correlating causes…", color: "#E8B53D" },
+    { label: "Root cause identified", color: "#C99A2E" },
     { label: "Runbook sent to engineer", color: "#F3C34E" },
-    { label: "✓ Resolved in 41 sec", color: "#34d399" },
+    { label: "✓ Resolved in 41 sec", color: "#5E82AE" },
   ];
   useEffect(() => {
     const t = setInterval(() => setStage((s) => (s + 1) % stages.length), 1600);
@@ -579,7 +579,7 @@ export default function NocCommandPage() {
             </div>
             <div ref={(el) => addReveal(el, 1)} className="reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
               {WHAT_IT_IS.map((item) => (
-                <div key={item.title} style={{ background: "#f8f9fa", border: "1px solid #dce4f0", borderRadius: "16px", padding: "32px" }}>
+                <div key={item.title} style={{ background: "#f8f9fa", border: "1px solid #E6EDF7", borderRadius: "16px", padding: "32px" }}>
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: `${item.color}15`, border: `1px solid ${item.color}35`, color: item.color }}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">{item.icon}</svg>
                   </div>
@@ -650,7 +650,7 @@ export default function NocCommandPage() {
             </div>
             <div ref={(el) => addReveal(el, 7)} className="reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "20px" }}>
               {DASHBOARDS.map((d) => (
-                <div key={d.persona} style={{ background: "#ffffff", border: "1px solid #dce4f0", borderRadius: "16px", padding: "26px", position: "relative", overflow: "hidden" }}>
+                <div key={d.persona} style={{ background: "#ffffff", border: "1px solid #E6EDF7", borderRadius: "16px", padding: "26px", position: "relative", overflow: "hidden" }}>
                   <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: d.color }} />
                   <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: d.color, marginBottom: "8px" }}>{d.persona}</p>
                   <h3 style={{ fontWeight: 800, fontSize: "1.15rem", color: "#0f2447", marginBottom: "6px" }}>{d.name}</h3>
@@ -799,7 +799,7 @@ export default function NocCommandPage() {
                 What you can expect.
               </h2>
             </div>
-            <div ref={(el) => addReveal(el, 13)} className="reveal" style={{ background: "#ffffff", border: "1px solid #dce4f0", borderRadius: "16px", overflow: "hidden", marginBottom: "24px" }}>
+            <div ref={(el) => addReveal(el, 13)} className="reveal" style={{ background: "#ffffff", border: "1px solid #E6EDF7", borderRadius: "16px", overflow: "hidden", marginBottom: "24px" }}>
               <div style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr 1fr", background: "#0f2447" }}>
                 <div style={{ padding: "14px 20px" }}><span style={{ fontSize: "0.7rem", fontWeight: 700, color: "rgba(255,255,255,0.5)", textTransform: "uppercase", letterSpacing: "0.06em" }}>Metric</span></div>
                 <div style={{ padding: "14px 20px" }}><span style={{ fontSize: "0.7rem", fontWeight: 700, color: "rgba(255,255,255,0.5)", textTransform: "uppercase", letterSpacing: "0.06em" }}>Industry Avg</span></div>
@@ -830,7 +830,7 @@ export default function NocCommandPage() {
             </div>
             <div ref={(el) => addReveal(el, 15)} className="reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "20px" }}>
               {SECURITY.map((s) => (
-                <div key={s.title} style={{ background: "#f8f9fa", border: "1px solid #dce4f0", borderRadius: "14px", padding: "24px" }}>
+                <div key={s.title} style={{ background: "#f8f9fa", border: "1px solid #E6EDF7", borderRadius: "14px", padding: "24px" }}>
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ background: "rgba(232,181,61,0.1)", color: "#E8B53D" }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">{s.icon}</svg>
                   </div>
@@ -856,7 +856,7 @@ export default function NocCommandPage() {
             </div>
             <div ref={(el) => addReveal(el, 17)} className="reveal" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "24px", marginBottom: "32px" }}>
               {DEPLOYMENT.map((d) => (
-                <div key={d.step} style={{ background: "#ffffff", border: "1px solid #dce4f0", borderRadius: "16px", padding: "28px", position: "relative" }}>
+                <div key={d.step} style={{ background: "#ffffff", border: "1px solid #E6EDF7", borderRadius: "16px", padding: "28px", position: "relative" }}>
                   <div style={{ width: 40, height: 40, borderRadius: "50%", background: "#E8B53D", color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, marginBottom: "16px" }}>{d.step}</div>
                   <span style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#E8B53D" }}>{d.when}</span>
                   <h3 style={{ fontWeight: 700, fontSize: "1.05rem", color: "#0f2447", margin: "6px 0 10px" }}>{d.title}</h3>

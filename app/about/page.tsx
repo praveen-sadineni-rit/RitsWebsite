@@ -196,7 +196,7 @@ function AnimatedGlobe() {
 
     const offices = [
       { lon: 78.5, lat: 17.4, color: "#F3C34E" },
-      { lon: -80.8, lat: 35.2, color: "#60a5fa" },
+      { lon: -80.8, lat: 35.2, color: "#86A8CE" },
     ];
 
     let rot = 55; // start near India
@@ -293,7 +293,7 @@ function AnimatedGlobe() {
         <canvas ref={ref} style={{ display: "block", borderRadius: "50%", background: "radial-gradient(ellipse at 38% 32%, #0d2060 0%, #040c20 70%)" }} />
       </div>
       <div style={{ marginTop: 18, display: "flex", gap: 12 }}>
-        {[{ color: "#F3C34E", label: "Hyderabad, India" }, { color: "#60a5fa", label: "Rock Hill, USA" }].map(item => (
+        {[{ color: "#F3C34E", label: "Hyderabad, India" }, { color: "#86A8CE", label: "Rock Hill, USA" }].map(item => (
           <div key={item.label} style={{ display: "flex", alignItems: "center", gap: 6, background: "rgba(15,25,60,0.7)", borderRadius: 99, padding: "5px 14px", border: "1px solid rgba(255,255,255,0.08)", backdropFilter: "blur(8px)" }}>
             <div style={{ width: 8, height: 8, borderRadius: "50%", background: item.color, boxShadow: `0 0 8px ${item.color}` }} />
             <span style={{ fontSize: 11, color: "rgba(255,255,255,0.75)", fontWeight: 600 }}>{item.label}</span>
@@ -357,9 +357,9 @@ export default function AboutPage() {
               `}</style>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
                 {[
-                  { icon: "🤝", label: "50+ Clients", bg: "linear-gradient(135deg,#E8B53D,#0284c7)", ring: "rgba(232,181,61,0.35)" },
-                  { icon: "🌍", label: "Global Reach", bg: "linear-gradient(135deg,#f59e0b,#ef4444)", ring: "rgba(245,158,11,0.35)" },
-                  { icon: "💡", label: "AI-First", bg: "linear-gradient(135deg,#10b981,#0ea5e9)", ring: "rgba(16,185,129,0.35)" },
+                  { icon: "🤝", label: "50+ Clients", bg: "linear-gradient(135deg,#E8B53D,#5E82AE)", ring: "rgba(232,181,61,0.35)" },
+                  { icon: "🌍", label: "Global Reach", bg: "linear-gradient(135deg,#E8B53D,#ef4444)", ring: "rgba(232,181,61,0.35)" },
+                  { icon: "💡", label: "AI-First", bg: "linear-gradient(135deg,#3D5A80,#0ea5e9)", ring: "rgba(61,90,128,0.35)" },
                 ].map((chip) => (
                   <div key={chip.label} className="about-chip" style={{ "--ring": chip.ring } as React.CSSProperties}>
                     <div style={{
@@ -490,14 +490,14 @@ export default function AboutPage() {
             </div>
 
             {/* Speed card */}
-            <div style={{ gridColumn: "span 4", background: "linear-gradient(135deg,#E8B53D 0%,#0284c7 100%)", borderRadius: 20, padding: 28, position: "relative", overflow: "hidden" }}>
+            <div style={{ gridColumn: "span 4", background: "linear-gradient(135deg,#E8B53D 0%,#5E82AE 100%)", borderRadius: 20, padding: 28, position: "relative", overflow: "hidden" }}>
               <div style={{ fontSize: 36, marginBottom: 12 }}>⚡</div>
               <h3 style={{ fontSize: "1.2rem", fontWeight: 800, color: "white", marginBottom: 8 }}>5-Day Average Placement</h3>
               <p style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.6, margin: 0 }}>From brief to shortlisted candidates in under a week. No slow agency cycles.</p>
             </div>
 
             {/* Global card */}
-            <div style={{ gridColumn: "span 3", background: "linear-gradient(135deg,#7c3aed 0%,#a855f7 100%)", borderRadius: 20, padding: 28, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+            <div style={{ gridColumn: "span 3", background: "linear-gradient(135deg,#A9781A 0%,#C99A2E 100%)", borderRadius: 20, padding: 28, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
               <div style={{ fontSize: 36 }}>🌍</div>
               <div>
                 <p style={{ fontSize: "2rem", fontWeight: 900, color: "white", margin: "0 0 4px" }}>15</p>
@@ -513,7 +513,7 @@ export default function AboutPage() {
             </div>
 
             {/* Clients counter */}
-            <div style={{ gridColumn: "span 3", background: "linear-gradient(135deg,#f59e0b 0%,#ef4444 100%)", borderRadius: 20, padding: 28, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+            <div style={{ gridColumn: "span 3", background: "linear-gradient(135deg,#E8B53D 0%,#ef4444 100%)", borderRadius: 20, padding: 28, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
               <div style={{ fontSize: 36 }}>🤝</div>
               <div>
                 <p style={{ fontSize: "2rem", fontWeight: 900, color: "white", margin: "0 0 4px" }}>50+</p>
@@ -592,35 +592,35 @@ export default function AboutPage() {
               {
                 title: "Excellence",
                 desc: "Senior only, no exceptions. Every engagement deserves our best.",
-                color: "#60a5fa",
-                glow: "rgba(96,165,250,0.15)",
+                color: "#86A8CE",
+                glow: "rgba(134,168,206,0.15)",
                 svg: (
                   <svg className="val-svg" width="52" height="52" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#60a5fa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#86A8CE" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 ),
               },
               {
                 title: "Partnership",
                 desc: "We succeed when our clients succeed. That is not a tagline, it is how we operate.",
-                color: "#a78bfa",
-                glow: "rgba(167,139,250,0.15)",
+                color: "#C99A2E",
+                glow: "rgba(201,154,46,0.15)",
                 svg: (
                   <svg className="val-svg" width="52" height="52" viewBox="0 0 24 24" fill="none">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <circle cx="9" cy="7" r="4" stroke="#a78bfa" strokeWidth="1.5"/>
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#a78bfa" strokeWidth="1.5" strokeLinecap="round"/>
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#C99A2E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="9" cy="7" r="4" stroke="#C99A2E" strokeWidth="1.5"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#C99A2E" strokeWidth="1.5" strokeLinecap="round"/>
                   </svg>
                 ),
               },
               {
                 title: "Innovation",
                 desc: "Staying ahead so our clients can too. We bring what is next, not what was.",
-                color: "#f472b6",
-                glow: "rgba(244,114,182,0.15)",
+                color: "#F3C34E",
+                glow: "rgba(243,195,78,0.15)",
                 svg: (
                   <svg className="val-svg" width="52" height="52" viewBox="0 0 24 24" fill="none">
-                    <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke="#f472b6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke="#F3C34E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 ),
               },

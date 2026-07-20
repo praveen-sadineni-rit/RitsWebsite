@@ -84,22 +84,22 @@ export default function ContactPage() {
               },
               {
                 label: "Availability", value: "Mon–Fri 9–6 EST",
-                bg: "linear-gradient(135deg,#3b82f6,#60a5fa)", shadow: "rgba(59,130,246,0.4)",
+                bg: "linear-gradient(135deg,#5E82AE,#86A8CE)", shadow: "rgba(59,130,246,0.4)",
                 icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="2" stroke="white" strokeWidth="2"/><path d="M8 2v4M16 2v4M3 10h18" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>,
               },
               {
                 label: "NDA Signing", value: "Same day",
-                bg: "linear-gradient(135deg,#8b5cf6,#a78bfa)", shadow: "rgba(139,92,246,0.4)",
+                bg: "linear-gradient(135deg,#C99A2E,#C99A2E)", shadow: "rgba(139,92,246,0.4)",
                 icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z" stroke="white" strokeWidth="2"/></svg>,
               },
               {
                 label: "No Commitment", value: "Free scoping call",
-                bg: "linear-gradient(135deg,#f59e0b,#fbbf24)", shadow: "rgba(245,158,11,0.4)",
+                bg: "linear-gradient(135deg,#E8B53D,#E8B53D)", shadow: "rgba(232,181,61,0.4)",
                 icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="white" strokeWidth="2" strokeLinejoin="round"/></svg>,
               },
               {
                 label: "Direct Access", value: "Talk to engineers",
-                bg: "linear-gradient(135deg,#ec4899,#f472b6)", shadow: "rgba(236,72,153,0.4)",
+                bg: "linear-gradient(135deg,#F3C34E,#F3C34E)", shadow: "rgba(236,72,153,0.4)",
                 icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="white" strokeWidth="2" strokeLinecap="round"/><circle cx="9" cy="7" r="4" stroke="white" strokeWidth="2"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>,
               },
             ].map((chip) => (
@@ -202,10 +202,10 @@ export default function ContactPage() {
                   </h2>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
                     {[
-                      { label: "🔒 Confidential", bg: "#f0fdf4", color: "#16a34a", border: "#bbf7d0" },
-                      { label: "⚡ Fast Response", bg: "#eff6ff", color: "#2563eb", border: "#bfdbfe" },
+                      { label: "🔒 Confidential", bg: "#EAF1F8", color: "#3D5A80", border: "#bbf7d0" },
+                      { label: "⚡ Fast Response", bg: "#EAF1F8", color: "#5E82AE", border: "#bfdbfe" },
                       { label: "🤝 No Obligation", bg: "#fdf4ff", color: "#9333ea", border: "#e9d5ff" },
-                      { label: "✅ No Spam", bg: "#fff7ed", color: "#ea580c", border: "#fed7aa" },
+                      { label: "✅ No Spam", bg: "#FBF4DD", color: "#A9781A", border: "#fed7aa" },
                     ].map((chip) => (
                       <span key={chip.label} style={{
                         display: "inline-flex", alignItems: "center",
@@ -220,7 +220,7 @@ export default function ContactPage() {
                   <div>
                     <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 13, fontWeight: 600, color: "#374151", marginBottom: 6 }}>
                       <span style={{ display:"inline-flex", alignItems:"center", justifyContent:"center", width:22, height:22, borderRadius:6, background:"#e0f2fe" }}>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="#0284c7" strokeWidth="2" strokeLinecap="round"/><circle cx="12" cy="7" r="4" stroke="#0284c7" strokeWidth="2"/></svg>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="#5E82AE" strokeWidth="2" strokeLinecap="round"/><circle cx="12" cy="7" r="4" stroke="#5E82AE" strokeWidth="2"/></svg>
                       </span>
                       Full Name <span style={{ color: "#E8B53D" }}>*</span>
                     </label>
@@ -229,8 +229,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 13, fontWeight: 600, color: "#374151", marginBottom: 6 }}>
-                      <span style={{ display:"inline-flex", alignItems:"center", justifyContent:"center", width:22, height:22, borderRadius:6, background:"#f0fdf4" }}>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#16a34a" strokeWidth="2"/><polyline points="22,6 12,13 2,6" stroke="#16a34a" strokeWidth="2"/></svg>
+                      <span style={{ display:"inline-flex", alignItems:"center", justifyContent:"center", width:22, height:22, borderRadius:6, background:"#EAF1F8" }}>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#3D5A80" strokeWidth="2"/><polyline points="22,6 12,13 2,6" stroke="#3D5A80" strokeWidth="2"/></svg>
                       </span>
                       Work Email <span style={{ color: "#E8B53D" }}>*</span>
                     </label>
@@ -252,8 +252,8 @@ export default function ContactPage() {
 
                 <div style={{ marginBottom: 16 }}>
                   <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 13, fontWeight: 600, color: "#374151", marginBottom: 6 }}>
-                    <span style={{ display:"inline-flex", alignItems:"center", justifyContent:"center", width:22, height:22, borderRadius:6, background:"#fff7ed" }}>
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="#ea580c" strokeWidth="2"/><path d="M21 21l-4.35-4.35" stroke="#ea580c" strokeWidth="2" strokeLinecap="round"/></svg>
+                    <span style={{ display:"inline-flex", alignItems:"center", justifyContent:"center", width:22, height:22, borderRadius:6, background:"#FBF4DD" }}>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="#A9781A" strokeWidth="2"/><path d="M21 21l-4.35-4.35" stroke="#A9781A" strokeWidth="2" strokeLinecap="round"/></svg>
                     </span>
                     What are you looking for? <span style={{ color: "#E8B53D" }}>*</span>
                   </label>
@@ -270,8 +270,8 @@ export default function ContactPage() {
 
                 <div style={{ marginBottom: 16 }}>
                   <label style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 13, fontWeight: 600, color: "#374151", marginBottom: 6 }}>
-                    <span style={{ display:"inline-flex", alignItems:"center", justifyContent:"center", width:22, height:22, borderRadius:6, background:"#eff6ff" }}>
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" stroke="#2563eb" strokeWidth="2" strokeLinecap="round"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" stroke="#2563eb" strokeWidth="2" strokeLinecap="round"/></svg>
+                    <span style={{ display:"inline-flex", alignItems:"center", justifyContent:"center", width:22, height:22, borderRadius:6, background:"#EAF1F8" }}>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" stroke="#5E82AE" strokeWidth="2" strokeLinecap="round"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" stroke="#5E82AE" strokeWidth="2" strokeLinecap="round"/></svg>
                     </span>
                     Tell us about your project
                   </label>
@@ -300,7 +300,7 @@ export default function ContactPage() {
                 </div>
 
                 <button type="submit" style={{
-                  background: "linear-gradient(135deg, #E8B53D, #0284c7)",
+                  background: "linear-gradient(135deg, #E8B53D, #5E82AE)",
                   color: "#ffffff", border: "none", borderRadius: 10,
                   padding: "15px 32px", fontSize: 15, fontWeight: 700,
                   cursor: "pointer", width: "100%", letterSpacing: "0.01em",
@@ -619,7 +619,7 @@ export default function ContactPage() {
                       width: 28,
                       height: 28,
                       borderRadius: "50%",
-                      background: openFaq === i ? "#E8B53D" : "#EFF6FF",
+                      background: openFaq === i ? "#E8B53D" : "#EAF1F8",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
