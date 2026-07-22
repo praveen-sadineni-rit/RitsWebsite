@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import TrustStrip from "@/components/TrustStrip";
 import Link from "next/link";
 
 const stats = [
@@ -811,6 +812,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <TrustStrip compact />
 
       <Footer />
     </main>

@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import TrustStrip from "@/components/TrustStrip";
 
 /* ── Hero announcement banner ──
    Auto-detects US federal holidays by date (see FEDERAL_HOLIDAYS below) and shows
@@ -327,27 +328,26 @@ const insights = [
   },
 ];
 
+// NOTE: attributions are anonymized client feedback (no invented individuals).
+// Replace with real named testimonials + logos once approved by the client.
 const testimonials = [
   {
     quote: "Resource IT placed senior engineers who hit the ground running from day one. The quality of talent and their communication throughout was exceptional.",
-    name: "Sarah Johnson",
     role: "CTO",
-    company: "FinTech Scale-up",
-    initials: "SJ",
+    company: "FinTech scale-up",
+    tag: "Staff Augmentation",
   },
   {
     quote: "They built our AI recommendation engine in 8 weeks. It's been 18 months and we're still iterating on the same solid architecture. No rewrites needed.",
-    name: "Marcus Williams",
     role: "VP Engineering",
-    company: "E-Commerce Platform",
-    initials: "MW",
+    company: "E-commerce platform",
+    tag: "AI & Product",
   },
   {
-    quote: "From MVP to Series A. Resource IT was our technology partner every step of the way. They think like founders, not just developers.",
-    name: "Priya Sharma",
+    quote: "From MVP to Series A, Resource IT was our technology partner every step of the way. They think like founders, not just developers.",
     role: "Founder & CEO",
-    company: "HealthTech Startup",
-    initials: "PS",
+    company: "HealthTech startup",
+    tag: "Product Development",
   },
 ];
 
@@ -1012,6 +1012,10 @@ export default function Home() {
               className="flex flex-wrap gap-4"
               style={{ animation: "revealUp 0.9s ease 0.45s both" }}
             >
+              <a href="/contact" className="btn-primary">
+                Talk to an Expert
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </a>
               <a href="#services" className="btn-outline-white">
                 See What We Do
               </a>
@@ -1045,6 +1049,9 @@ export default function Home() {
         </div>
 
       </section>
+
+      {/* ═══════════════════════ TRUST: CERTIFICATIONS & PARTNERSHIPS ═══════════════════════ */}
+      <TrustStrip />
 
       {/* ═══════════════════════ ABOUT / APPROACH ═══════════════════════ */}
       <section id="about" className="pt-10 pb-24 bg-white">
@@ -1395,27 +1402,34 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (
-              <Reveal key={t.name} delay={i * 0.1}>
-                <div className="testimonial-card h-full flex flex-col">
+              <Reveal key={t.company} delay={i * 0.1}>
+                <div className="testimonial-card h-full flex flex-col relative overflow-hidden">
+                  {/* Big gold quote mark */}
+                  <svg className="absolute -top-3 right-4 opacity-[0.12]" width="72" height="72" viewBox="0 0 24 24" fill="#E8B53D" aria-hidden>
+                    <path d="M7.17 6A5.17 5.17 0 002 11.17V18h6.83v-6.83H5.5A1.67 1.67 0 017.17 9.5V6zm10 0A5.17 5.17 0 0012 11.17V18h6.83v-6.83H15.5A1.67 1.67 0 0117.17 9.5V6z"/>
+                  </svg>
                   {/* Stars */}
-                  <div className="flex gap-1 mb-5 mt-2">
+                  <div className="flex gap-1 mb-5 mt-2 relative">
                     {Array.from({ length: 5 }).map((_, j) => (
                       <svg key={j} width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#E8B53D" stroke="#E8B53D" strokeWidth="1" strokeLinejoin="round"/>
                       </svg>
                     ))}
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed flex-1 mb-6 italic">
+                  <p className="text-gray-700 text-[15px] leading-relaxed flex-1 mb-6 relative">
                     &ldquo;{t.quote}&rdquo;
                   </p>
-                  <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-                    <div className="w-10 h-10 rounded-full bg-[#1B3C6E] flex items-center justify-center text-white font-black text-xs">
-                      {t.initials}
+                  <div className="flex items-center justify-between gap-3 pt-4 border-t border-gray-100">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "rgba(27,60,110,0.08)" }}>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="#1B3C6E" strokeWidth="1.8" strokeLinecap="round"/><circle cx="12" cy="7" r="4" stroke="#1B3C6E" strokeWidth="1.8"/></svg>
+                      </div>
+                      <div>
+                        <div className="font-bold text-sm text-gray-900">{t.role}</div>
+                        <div className="text-gray-400 text-xs">{t.company}</div>
+                      </div>
                     </div>
-                    <div>
-                      <div className="font-bold text-sm text-gray-900">{t.name}</div>
-                      <div className="text-gray-400 text-xs">{t.role} · {t.company}</div>
-                    </div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full flex-shrink-0" style={{ background: "rgba(232,181,61,0.14)", color: "#B0810E" }}>{t.tag}</span>
                   </div>
                 </div>
               </Reveal>
@@ -1445,7 +1459,7 @@ export default function Home() {
 
             {/* Hero card — spans 3 cols, tall */}
             <Reveal className="lg:col-span-3">
-              <a href="#" className="group block h-full rounded-2xl overflow-hidden relative min-h-[480px] cursor-pointer">
+              <a href="/insights" className="group block h-full rounded-2xl overflow-hidden relative min-h-[480px] cursor-pointer">
                 <div className="absolute inset-0" style={{ background: insights[0].gradient }} />
                 {/* Noise texture overlay */}
                 <div className="absolute inset-0 opacity-20" style={{
@@ -1489,7 +1503,7 @@ export default function Home() {
             <div className="lg:col-span-2 flex flex-col gap-5">
               {insights.slice(1).map((post, i) => (
                 <Reveal key={post.title} delay={i * 0.1}>
-                  <a href="#" className="group flex gap-4 bg-white rounded-2xl p-5 border border-gray-100 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 cursor-pointer">
+                  <a href="/insights" className="group flex gap-4 bg-white rounded-2xl p-5 border border-gray-100 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 cursor-pointer">
                     {/* Color swatch */}
                     <div className="w-16 h-16 rounded-xl flex-shrink-0 flex items-end p-1.5" style={{ background: post.gradient }}>
                       <span className="text-[8px] font-black text-white/70 uppercase tracking-widest leading-tight">{post.category.split(" ")[0]}</span>

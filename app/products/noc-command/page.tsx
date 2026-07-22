@@ -427,7 +427,7 @@ const RESULTS = [
 
 const SECURITY = [
   { title: "US Data Residency", desc: "All data held in Azure East US and West US, fully SOC 2 compliant.", icon: <path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/> },
-  { title: "SOC 2 & ISO 27001", desc: "Certification roadmap built in from day one.", icon: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/> },
+  { title: "SOC 2 Certified", desc: "Independently audited security controls, in place from day one.", icon: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/> },
   { title: "Role-Based Access", desc: "CEO sees a business summary; junior engineers see only what they need.", icon: <><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="1.7"/></> },
   { title: "Private AI Processing", desc: "No models touch customer data, all AI processing uses dedicated private capacity.", icon: <path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/> },
   { title: "Full Audit Trail", desc: "Every alert, every action, every decision logged and searchable.", icon: <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/> },
