@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ApplyModal, { type ApplyTarget } from "@/components/ApplyModal";
 
 type Job = {
   id: number;
@@ -357,6 +358,7 @@ function TeamBubbles() {
 export default function CareersPage() {
   const [activeFilter, setActiveFilter] = useState("All");
   const [openJob, setOpenJob] = useState<number | null>(null);
+  const [applyTarget, setApplyTarget] = useState<ApplyTarget | null>(null);
 
   const filteredJobs =
     activeFilter === "All"
@@ -582,42 +584,30 @@ export default function CareersPage() {
                         ))}
                       </div>
                     )}
-                    {job.mailApply ? (
-                      <div className="bg-gray-50 border border-gray-100 rounded-xl p-5">
-                        <p className="text-sm font-semibold text-gray-900 mb-2">
-                          Aspiring candidates should mail their resumes to:
-                        </p>
-                        <address className="not-italic text-sm text-gray-600 leading-relaxed">
-                          Resource Innovative Technologies LLC<br />
-                          331 E Main Street, Ste 200<br />
-                          Rock Hill, SC 29730
-                        </address>
-                      </div>
-                    ) : job.applyEmails && job.applyEmails.length > 0 ? (
-                      <div className="bg-gray-50 border border-gray-100 rounded-xl p-5">
-                        <p className="text-sm font-semibold text-gray-900 mb-3">
-                          Send your resume to:
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {job.applyEmails.map((em) => (
-                            <a
-                              key={em}
-                              href={`mailto:${em}`}
-                              className="inline-block bg-[#1B3C6E] hover:bg-[#0f2447] text-white font-semibold px-5 py-2 rounded-lg transition text-sm"
-                            >
-                              {em}
-                            </a>
-                          ))}
-                        </div>
-                      </div>
-                    ) : (
-                      <a
-                        href="mailto:careers@rits-it.com"
-                        className="inline-block bg-[#1B3C6E] hover:bg-[#0f2447] text-white font-semibold px-6 py-2.5 rounded-lg transition"
+                    <div className="flex flex-col gap-3">
+                      <button
+                        onClick={() =>
+                          setApplyTarget({ jobTitle: job.title, applyTo: job.applyEmails })
+                        }
+                        className="inline-flex items-center gap-2 self-start bg-[#1B3C6E] hover:bg-[#0f2447] text-white font-semibold px-6 py-2.5 rounded-lg transition"
                       >
                         Apply Now
-                      </a>
-                    )}
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                      </button>
+
+                      {job.mailApply && (
+                        <div className="bg-gray-50 border border-gray-100 rounded-xl p-5">
+                          <p className="text-sm font-semibold text-gray-900 mb-2">
+                            Prefer to mail a physical copy? Send your resume to:
+                          </p>
+                          <address className="not-italic text-sm text-gray-600 leading-relaxed">
+                            Resource Innovative Technologies LLC<br />
+                            331 E Main Street, Ste 200<br />
+                            Rock Hill, SC 29730
+                          </address>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 )}
               </div>
@@ -714,16 +704,18 @@ export default function CareersPage() {
             Send us your r&eacute;sum&eacute; anyway. We&apos;re always on the lookout for
             exceptional people, even when we don&apos;t have a perfect open req.
           </p>
-          <a
-            href="mailto:careers@rits-it.com"
+          <button
+            onClick={() => setApplyTarget({ jobTitle: "General application" })}
             className="inline-block bg-[#1B3C6E] hover:bg-[#0f2447] text-white font-bold px-10 py-4 rounded-xl text-lg transition"
           >
             Send Your Resume
-          </a>
+          </button>
         </div>
       </section>
 
       <Footer />
+
+      <ApplyModal target={applyTarget} onClose={() => setApplyTarget(null)} />
     </>
   );
 }
