@@ -4,6 +4,12 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getPost, getAllPosts, formatDate } from "@/content/posts";
+import StaffAugArticle from "@/components/articles/StaffAugArticle";
+
+// Posts that have a bespoke, fully-designed layout instead of the generic renderer.
+const CUSTOM_ARTICLES: Record<string, React.ComponentType> = {
+  "scope-a-staff-augmentation-engagement": StaffAugArticle,
+};
 
 export function generateStaticParams() {
   return getAllPosts().map((p) => ({ slug: p.slug }));
@@ -28,6 +34,10 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 export default function ArticlePage({ params }: { params: { slug: string } }) {
   const post = getPost(params.slug);
   if (!post) notFound();
+
+  // Bespoke article layout takes over the whole page (own Navbar/Footer).
+  const Custom = CUSTOM_ARTICLES[params.slug];
+  if (Custom) return <Custom />;
 
   const related = getAllPosts().filter((p) => p.slug !== post.slug).slice(0, 2);
 

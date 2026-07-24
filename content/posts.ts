@@ -22,9 +22,9 @@ export type Post = {
 export const POSTS: Post[] = [
   {
     slug: "scope-a-staff-augmentation-engagement",
-    title: "How to scope a staff-augmentation engagement (without regretting it later)",
+    title: "Staff Augmentation Done Right",
     excerpt:
-      "Most staffing engagements go sideways in the first two weeks, not the last two. Here is the checklist we use to get scope, expectations, and ramp-up right from day one.",
+      "The engagements that fail rarely fail because of raw talent — they fail because nobody defined what \"done\" looks like. The four pillars, three operating models, and 10-day ramp plan we use to get it right.",
     date: "2026-07-15",
     author: "Resource Innovative Technologies",
     readTime: "6 min read",
