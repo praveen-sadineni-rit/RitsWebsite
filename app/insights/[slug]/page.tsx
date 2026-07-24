@@ -7,12 +7,20 @@ import { getPost, getAllPosts, formatDate } from "@/content/posts";
 import StaffAugArticle from "@/components/articles/StaffAugArticle";
 import NocCommandArticle from "@/components/articles/NocCommandArticle";
 import FdeAiArticle from "@/components/articles/FdeAiArticle";
+import AiEvalArticle from "@/components/articles/AiEvalArticle";
+import LlmCostArticle from "@/components/articles/LlmCostArticle";
+import RagArticle from "@/components/articles/RagArticle";
+import AiAgentsArticle from "@/components/articles/AiAgentsArticle";
 
 // Posts that have a bespoke, fully-designed layout instead of the generic renderer.
 const CUSTOM_ARTICLES: Record<string, React.ComponentType> = {
   "scope-a-staff-augmentation-engagement": StaffAugArticle,
   "what-noc-command-watches": NocCommandArticle,
   "shipping-ai-that-survives-production": FdeAiArticle,
+  "building-real-ai-quality-gates": AiEvalArticle,
+  "llm-cost-optimization": LlmCostArticle,
+  "rag-that-actually-works": RagArticle,
+  "building-ai-agents-that-work": AiAgentsArticle,
 };
 
 export function generateStaticParams() {

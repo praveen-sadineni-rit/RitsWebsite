@@ -21,6 +21,78 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: "building-real-ai-quality-gates",
+    title: "Vibes Are Not an Eval: Building Real Quality Gates for AI",
+    excerpt:
+      "Every team says their AI works great until it doesn't. This is how to replace vibes-based testing with a real eval harness: golden datasets, unit and regression evals, LLM-as-judge, and a flywheel that compounds quality over time.",
+    date: "2026-07-24",
+    author: "Resource Innovative Technologies",
+    readTime: "9 min read",
+    category: "AI & Machine Learning",
+    tags: ["AI Evaluation", "LLM Testing", "Quality Gates", "MLOps", "Regression Testing"],
+    body: [
+      {
+        paragraphs: [
+          "Every team says their AI \"works great\" — until it doesn't. The difference between teams that catch regressions and teams that get surprised by them is a real eval harness: golden datasets, unit and regression evals, LLM-as-judge, and a flywheel that turns every production failure into a permanent test.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "llm-cost-optimization",
+    title: "The Hidden Cost of Running AI at Scale",
+    excerpt:
+      "What costs $0.002 per call at demo scale can cost $200,000 a year in production — and most teams find out too late. A field guide to the four dimensions of LLM cost, the latency users actually feel, and the levers that cut spend before you scale.",
+    date: "2026-07-22",
+    author: "Resource Innovative Technologies",
+    readTime: "9 min read",
+    category: "AI & Machine Learning",
+    tags: ["LLM Cost Optimization", "Token Economics", "Model Routing", "Latency", "Production AI"],
+    body: [
+      {
+        paragraphs: [
+          "What costs a fraction of a cent per call at demo scale can cost six figures a year in production — and most teams find out too late. Here are the four dimensions of LLM cost, the latency users actually feel, and the levers that cut spend dramatically before you scale.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "rag-that-actually-works",
+    title: "RAG Done Right — What Nobody Tells You About Retrieval in Production",
+    excerpt:
+      "Most RAG implementations work fine on your test data but fall apart on real user questions, and the gap is almost always in retrieval quality rather than the LLM. The five silent failure modes, a quality ladder, and what a production eval pipeline actually measures.",
+    date: "2026-07-20",
+    author: "Resource Innovative Technologies",
+    readTime: "9 min read",
+    category: "AI & Machine Learning",
+    tags: ["RAG", "Retrieval", "Vector Search", "LLM Evaluation", "Production AI"],
+    body: [
+      {
+        paragraphs: [
+          "Most RAG implementations work fine on your test data but fall apart on real user questions — and the gap is almost always in retrieval quality, not the LLM. This covers the silent failure modes, a retrieval quality ladder, and how to tell a hallucination from a retrieval failure.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "building-ai-agents-that-work",
+    title: "AI Agents in Production: Why They Break and How to Fix Them",
+    excerpt:
+      "AI agents look magical in demos but loop, hallucinate, and call the wrong tool in production. The four failure modes that kill production agents, and the reliability stack — validation, loop detection, structured output, human checkpoints, and cost guardrails — that makes them dependable.",
+    date: "2026-07-18",
+    author: "Resource Innovative Technologies",
+    readTime: "9 min read",
+    category: "AI & Machine Learning",
+    tags: ["AI Agents", "Agentic Systems", "LLM Reliability", "Production Engineering", "Observability"],
+    body: [
+      {
+        paragraphs: [
+          "AI agents look magical in demos but loop, hallucinate, and call the wrong tool in production. Here are the four failure modes that kill production agents and the reliability stack — validation, loop detection, structured output, human checkpoints, and cost guardrails — that makes them dependable.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "scope-a-staff-augmentation-engagement",
     title: "Staff Augmentation Done Right",
     excerpt:
