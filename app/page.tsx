@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TrustStrip from "@/components/TrustStrip";
+import { getAllPosts, formatDate } from "@/content/posts";
 
 /* ── Hero announcement banner ──
    Auto-detects US federal holidays by date (see FEDERAL_HOLIDAYS below) and shows
@@ -273,60 +274,30 @@ const whyUs = [
   { title: "Dedicated project manager", desc: "A dedicated PM on every project, your single point of contact for communication, planning, and escalations." },
 ];
 
-const insights = [
-  {
-    category: "AI & Technology",
-    tag: "Featured",
-    title: "GPT-4o, Gemini 1.5, Claude 3. What Each Model Actually Does Best in 2025",
-    excerpt: "OpenAI, Google, and Anthropic have each shipped major model upgrades this year. We break down real benchmark differences, cost-per-token tradeoffs, and which tasks each excels at, so you can stop guessing and start building.",
-    author: "MIT Technology Review",
-    initials: "MT",
-    avatarColor: "#1B3C6E",
-    date: "June 12, 2025",
-    readTime: "7 min read",
-    gradient: "linear-gradient(135deg, #0f2447 0%, #1B3C6E 50%, #E8B53D 100%)",
-    href: "https://www.technologyreview.com/",
-  },
-  {
-    category: "AI in Enterprise",
-    tag: "Trending",
-    title: "McKinsey: AI Could Add $4.4 Trillion Annually to the Global Economy",
-    excerpt: "McKinsey's 2025 AI report found that generative AI alone could add the equivalent of $2.6–$4.4 trillion annually across 63 analyzed use cases, with knowledge work and software development leading adoption.",
-    author: "McKinsey & Company",
-    initials: "MC",
-    avatarColor: "#B0810E",
-    date: "May 20, 2025",
-    readTime: "5 min read",
-    gradient: "linear-gradient(135deg, #003d3a 0%, #E8B53D 100%)",
-    href: "https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai",
-  },
-  {
-    category: "AI Engineering",
-    tag: "New",
-    title: "RAG vs. Fine-Tuning: Choosing the Right Strategy for Your LLM Application",
-    excerpt: "Retrieval-Augmented Generation and fine-tuning solve different problems. RAG keeps models current with live data; fine-tuning bakes domain knowledge into weights. Here's how to decide, with real cost and latency comparisons.",
-    author: "Google DeepMind Blog",
-    initials: "GD",
-    avatarColor: "#5b21b6",
-    date: "June 3, 2025",
-    readTime: "8 min read",
-    gradient: "linear-gradient(135deg, #1a1a4e 0%, #2a5298 100%)",
-    href: "https://deepmind.google/",
-  },
-  {
-    category: "AI Regulation",
-    tag: "Popular",
-    title: "EU AI Act Is Now in Force. What Every Tech Company Must Do by 2026",
-    excerpt: "The European Union's AI Act took effect in August 2024 and begins phased enforcement in 2025–2026. High-risk AI systems face mandatory conformity assessments, transparency requirements, and human oversight rules.",
-    author: "European Commission",
-    initials: "EC",
-    avatarColor: "#b45309",
-    date: "April 30, 2025",
-    readTime: "6 min read",
-    gradient: "linear-gradient(135deg, #1B3C6E 0%, #0f2447 100%)",
-    href: "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
-  },
+// Homepage "Resources & Insights" cards — driven by our own published posts
+// (content/posts.ts), so this always reflects the real blog. Newest first.
+const INSIGHT_TAGS = ["Featured", "Trending", "New", "Popular"];
+const INSIGHT_GRADIENTS = [
+  "linear-gradient(135deg, #0f2447 0%, #1B3C6E 50%, #E8B53D 100%)",
+  "linear-gradient(135deg, #1B3C6E 0%, #B0810E 100%)",
+  "linear-gradient(135deg, #0f2447 0%, #5E82AE 100%)",
+  "linear-gradient(135deg, #1B3C6E 0%, #0f2447 100%)",
 ];
+const insights = getAllPosts()
+  .slice(0, 4)
+  .map((post, i) => ({
+    category: post.category,
+    tag: INSIGHT_TAGS[i] || "Insight",
+    title: post.title,
+    excerpt: post.excerpt,
+    author: post.author,
+    initials: "RIT",
+    avatarColor: i === 1 ? "#B0810E" : "#1B3C6E",
+    date: formatDate(post.date),
+    readTime: post.readTime,
+    gradient: INSIGHT_GRADIENTS[i % INSIGHT_GRADIENTS.length],
+    href: `/insights/${post.slug}`,
+  }));
 
 // NOTE: attributions are anonymized client feedback (no invented individuals).
 // Replace with real named testimonials + logos once approved by the client.
@@ -1459,7 +1430,7 @@ export default function Home() {
 
             {/* Hero card — spans 3 cols, tall */}
             <Reveal className="lg:col-span-3">
-              <a href="/insights" className="group block h-full rounded-2xl overflow-hidden relative min-h-[480px] cursor-pointer">
+              <a href={insights[0].href} className="group block h-full rounded-2xl overflow-hidden relative min-h-[480px] cursor-pointer">
                 <div className="absolute inset-0" style={{ background: insights[0].gradient }} />
                 {/* Noise texture overlay */}
                 <div className="absolute inset-0 opacity-20" style={{
@@ -1503,7 +1474,7 @@ export default function Home() {
             <div className="lg:col-span-2 flex flex-col gap-5">
               {insights.slice(1).map((post, i) => (
                 <Reveal key={post.title} delay={i * 0.1}>
-                  <a href="/insights" className="group flex gap-4 bg-white rounded-2xl p-5 border border-gray-100 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 cursor-pointer">
+                  <a href={post.href} className="group flex gap-4 bg-white rounded-2xl p-5 border border-gray-100 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 cursor-pointer">
                     {/* Color swatch */}
                     <div className="w-16 h-16 rounded-xl flex-shrink-0 flex items-end p-1.5" style={{ background: post.gradient }}>
                       <span className="text-[8px] font-black text-white/70 uppercase tracking-widest leading-tight">{post.category.split(" ")[0]}</span>
