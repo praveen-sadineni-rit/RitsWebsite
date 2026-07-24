@@ -6,11 +6,13 @@ import Footer from "@/components/Footer";
 import { getPost, getAllPosts, formatDate } from "@/content/posts";
 import StaffAugArticle from "@/components/articles/StaffAugArticle";
 import NocCommandArticle from "@/components/articles/NocCommandArticle";
+import FdeAiArticle from "@/components/articles/FdeAiArticle";
 
 // Posts that have a bespoke, fully-designed layout instead of the generic renderer.
 const CUSTOM_ARTICLES: Record<string, React.ComponentType> = {
   "scope-a-staff-augmentation-engagement": StaffAugArticle,
   "what-noc-command-watches": NocCommandArticle,
+  "shipping-ai-that-survives-production": FdeAiArticle,
 };
 
 export function generateStaticParams() {
