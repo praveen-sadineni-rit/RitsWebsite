@@ -119,6 +119,20 @@ const FEDERAL_HOLIDAYS: Holiday[] = [
     background: "linear-gradient(90deg, #b91c1c, #E8B53D)",
     getDate: (y) => new Date(y, 11, 25),
   },
+  {
+    name: "India Republic Day",
+    message: "🇮🇳 Happy Republic Day from Resource Innovative Technologies",
+    subMessage: "celebrating the spirit, unity, and democracy of India 🎉",
+    background: "linear-gradient(90deg, #FF9933, #138808)",
+    getDate: (y) => new Date(y, 0, 26),
+  },
+  {
+    name: "India Independence Day",
+    message: "🇮🇳 Happy Independence Day from Resource Innovative Technologies",
+    subMessage: "celebrating freedom, progress, and the people who build the future 🎊",
+    background: "linear-gradient(90deg, #FF9933, #138808)",
+    getDate: (y) => new Date(y, 7, 15),
+  },
 ];
 
 function isSameCalendarDay(a: Date, b: Date): boolean {
