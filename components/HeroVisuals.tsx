@@ -219,12 +219,63 @@ export function TeamViz() {
   const radius = 150;
 
   const roles = [
-    { initials: "AI", label: "AI/ML", color: GOLD },
-    { initials: "FE", label: "Frontend", color: STEEL_LIGHT },
-    { initials: "BE", label: "Backend", color: GOLD_DEEP },
-    { initials: "DO", label: "DevOps", color: STEEL },
-    { initials: "QA", label: "QA", color: GOLD_LIGHT },
-    { initials: "DA", label: "Data", color: STEEL_LIGHT },
+    {
+      label: "AI/ML",
+      color: GOLD,
+      // cpu / chip
+      icon: (
+        <>
+          <rect x="7" y="7" width="10" height="10" rx="1.5" />
+          <path d="M10 3v2M14 3v2M10 19v2M14 19v2M3 10h2M3 14h2M19 10h2M19 14h2" />
+        </>
+      ),
+    },
+    {
+      label: "Frontend",
+      color: STEEL_LIGHT,
+      // code brackets </>
+      icon: <path d="M15 17l5-5-5-5M9 7l-5 5 5 5" />,
+    },
+    {
+      label: "Backend",
+      color: GOLD_DEEP,
+      // stacked servers
+      icon: (
+        <>
+          <rect x="3" y="4" width="18" height="7" rx="1.5" />
+          <rect x="3" y="13" width="18" height="7" rx="1.5" />
+          <path d="M7 7.5h0M7 16.5h0" />
+        </>
+      ),
+    },
+    {
+      label: "DevOps",
+      color: STEEL,
+      // continuous loop (infinity)
+      icon: <path d="M8 12c0-2 1.6-3.5 3.5-3.5S15 10 15 12s-1.6 3.5-3.5 3.5S8 14 8 12zm7 0c0-2 1.6-3.5 3.5-3.5S22 10 22 12s-1.6 3.5-3.5 3.5S15 14 15 12zm-7 0c0-2-1.6-3.5-3.5-3.5S2 10 2 12s1.6 3.5 3.5 3.5S8 14 8 12z" />,
+    },
+    {
+      label: "QA",
+      color: GOLD_LIGHT,
+      // check in circle
+      icon: (
+        <>
+          <circle cx="12" cy="12" r="9" />
+          <path d="M8 12l3 3 5-6" />
+        </>
+      ),
+    },
+    {
+      label: "Data",
+      color: STEEL_LIGHT,
+      // database cylinder
+      icon: (
+        <>
+          <ellipse cx="12" cy="6" rx="7" ry="3" />
+          <path d="M5 6v12c0 1.66 3.13 3 7 3s7-1.34 7-3V6M5 12c0 1.66 3.13 3 7 3s7-1.34 7-3" />
+        </>
+      ),
+    },
   ];
 
   // Deterministic ring positions (start at top, evenly spaced).
@@ -239,15 +290,20 @@ export function TeamViz() {
     <div className="relative w-full select-none teamv-scope" style={{ maxWidth: 560, margin: "0 auto" }}>
       <style>{`
         @keyframes teamv-dash { to { stroke-dashoffset: -32; } }
-        @keyframes teamv-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+        @keyframes teamv-orbit { to { transform: rotate(360deg); } }
+        @keyframes teamv-counter { to { transform: rotate(-360deg); } }
         @keyframes teamv-ring { 0%,100% { opacity:.3; transform: scale(1); } 50% { opacity:.6; transform: scale(1.06); } }
         @keyframes teamv-hubglow { 0%,100% { opacity:.4; } 50% { opacity:.85; } }
+        @keyframes teamv-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+        /* whole ring orbits the hub; each avatar counter-rotates so text stays upright */
+        .teamv-orbit { transform-box: view-box; transform-origin: 240px 230px; animation: teamv-orbit 34s linear infinite; }
         .teamv-line { stroke-dasharray: 5 7; animation: teamv-dash 1.1s linear infinite; }
-        .teamv-avatar { transform-box: fill-box; transform-origin: center; animation: teamv-bob 4.4s ease-in-out infinite; }
+        .teamv-avatar { transform-box: fill-box; transform-origin: center; animation: teamv-counter 34s linear infinite; }
+        .teamv-bob { transform-box: fill-box; transform-origin: center; animation: teamv-bob 4.4s ease-in-out infinite; }
         .teamv-ring { transform-origin: 240px 230px; animation: teamv-ring 4.5s ease-in-out infinite; }
         .teamv-hubglow { animation: teamv-hubglow 3.6s ease-in-out infinite; transform-origin: center; }
         @media (prefers-reduced-motion: reduce) {
-          .teamv-line, .teamv-avatar, .teamv-ring, .teamv-hubglow { animation: none !important; }
+          .teamv-line, .teamv-orbit, .teamv-avatar, .teamv-bob, .teamv-ring, .teamv-hubglow { animation: none !important; }
         }
       `}</style>
 
@@ -272,50 +328,66 @@ export function TeamViz() {
         {/* hub glow */}
         <circle className="teamv-hubglow" cx={cx} cy={cy} r="110" fill="url(#teamvGlow)" />
 
-        {/* dashed connectors + travelling pulse dots (hub -> avatar) */}
-        {avatars.map((a, i) => (
-          <g key={`c-${i}`}>
-            <line
-              className="teamv-line"
-              x1={cx}
-              y1={cy}
-              x2={a.x}
-              y2={a.y}
-              stroke={a.color}
-              strokeOpacity="0.55"
-              strokeWidth="1.4"
-              style={{ animationDelay: `${i * 0.15}s` }}
-            />
-            <circle r="3" fill={a.color}>
-              <animateMotion
-                path={`M${cx},${cy} L${a.x},${a.y}`}
-                dur="2.6s"
-                begin={`${i * 0.35}s`}
-                repeatCount="indefinite"
+        {/* everything in here orbits the hub as one ring */}
+        <g className="teamv-orbit">
+          {/* dashed connectors + travelling pulse dots (hub -> avatar) */}
+          {avatars.map((a, i) => (
+            <g key={`c-${i}`}>
+              <line
+                className="teamv-line"
+                x1={cx}
+                y1={cy}
+                x2={a.x}
+                y2={a.y}
+                stroke={a.color}
+                strokeOpacity="0.55"
+                strokeWidth="1.4"
+                style={{ animationDelay: `${i * 0.15}s` }}
               />
-              <animate
-                attributeName="opacity"
-                values="0;1;1;0"
-                dur="2.6s"
-                begin={`${i * 0.35}s`}
-                repeatCount="indefinite"
-              />
-            </circle>
-          </g>
-        ))}
+              <circle r="3" fill={a.color}>
+                <animateMotion
+                  path={`M${cx},${cy} L${a.x},${a.y}`}
+                  dur="2.6s"
+                  begin={`${i * 0.35}s`}
+                  repeatCount="indefinite"
+                />
+                <animate
+                  attributeName="opacity"
+                  values="0;1;1;0"
+                  dur="2.6s"
+                  begin={`${i * 0.35}s`}
+                  repeatCount="indefinite"
+                />
+              </circle>
+            </g>
+          ))}
 
-        {/* role avatars */}
-        {avatars.map((a, i) => (
-          <g key={`a-${i}`} className="teamv-avatar" style={{ animationDelay: `${i * 0.4}s` }}>
-            <circle cx={a.x} cy={a.y} r="24" fill="rgba(13,26,46,0.9)" stroke={a.color} strokeWidth="1.6" />
-            <text x={a.x} y={a.y + 5} textAnchor="middle" fontSize="15" fontWeight="700" fontFamily="ui-sans-serif, system-ui, sans-serif" fill={a.color}>
-              {a.initials}
-            </text>
-            <text x={a.x} y={a.y + 40} textAnchor="middle" fontSize="11" fontFamily="ui-sans-serif, system-ui, sans-serif" fill={OFFWHITE} opacity="0.85">
-              {a.label}
-            </text>
-          </g>
-        ))}
+          {/* role avatars — counter-rotate so initials/labels stay upright */}
+          {avatars.map((a, i) => (
+            <g key={`a-${i}`} className="teamv-avatar">
+              <g className="teamv-bob" style={{ animationDelay: `${i * 0.4}s` }}>
+                <circle cx={a.x} cy={a.y} r="24" fill="rgba(13,26,46,0.9)" stroke={a.color} strokeWidth="1.6" />
+                <svg
+                  x={a.x - 12}
+                  y={a.y - 12}
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke={a.color}
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  {a.icon}
+                </svg>
+                <text x={a.x} y={a.y + 40} textAnchor="middle" fontSize="11" fontFamily="ui-sans-serif, system-ui, sans-serif" fill={OFFWHITE} opacity="0.85">
+                  {a.label}
+                </text>
+              </g>
+            </g>
+          ))}
+        </g>
 
         {/* central hub pill */}
         <g>
