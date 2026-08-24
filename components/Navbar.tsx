@@ -29,6 +29,7 @@ const SERVICE_COLUMNS = [
       { label: "Software Development", href: "/services/software-solutions" },
       { label: "AI & Machine Learning", href: "/services/ai-ml" },
       { label: "Cloud & DevOps", href: "/services/cloud-devops" },
+      { label: "SAP & Enterprise Platforms", href: "/services/sap-enterprise" },
       { label: "Product Engineering", href: "/services/product-development" },
       { label: "Backend & API Engineering", href: "/services/software-solutions#backend" },
       { label: "Mobile Development", href: "/services/software-solutions#mobile" },

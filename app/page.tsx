@@ -727,6 +727,16 @@ const ALL_SERVICES = [
     href: "/services/digital-transformation",
     iconPath: "M13 10V3L4 14h7v7l9-11h-7z",
   },
+  {
+    num: "07",
+    title: "SAP & Enterprise Platforms",
+    short: "S/4HANA · Rollouts · AMS",
+    desc: "Full-lifecycle SAP — S/4HANA transformation, global template rollouts, integration and PLM, analytics on BTP, and 24×7 application support.",
+    tags: ["S/4HANA", "Rollouts", "Integration & PLM", "AMS"],
+    accent: "#5E82AE",
+    href: "/services/sap-enterprise",
+    iconPath: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
+  },
 ];
 
 function ServiceShowcase() {

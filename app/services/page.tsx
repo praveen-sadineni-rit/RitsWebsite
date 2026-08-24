@@ -212,6 +212,24 @@ const serviceCards = [
     ],
     href: "/services/staff-augmentation",
   },
+  {
+    title: "SAP & Enterprise Platforms",
+    gradient: "linear-gradient(135deg, #0f2447 0%, #1B3C6E 55%, #B0810E 100%)",
+    accentColor: "#5E82AE",
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+        <path d="M20 4L6 11l14 7 14-7-14-7z" stroke="#5E82AE" strokeWidth="2" strokeLinejoin="round" fill="none" />
+        <path d="M6 20l14 7 14-7" stroke="#5E82AE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M6 29l14 7 14-7" stroke="#5E82AE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    capabilities: [
+      "S/4HANA transformation, rollouts & upgrades",
+      "SAP integration, PLM & analytics on BTP",
+      "Application management & 24×7 support",
+    ],
+    href: "/services/sap-enterprise",
+  },
 ];
 
 const processSteps = [
