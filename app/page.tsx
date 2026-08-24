@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TrustStrip from "@/components/TrustStrip";
+import { AiMlViz, TeamViz, OpsViz } from "@/components/HeroVisuals";
 import { getAllPosts, formatDate } from "@/content/posts";
 
 /* ── Hero announcement banner ──
@@ -903,9 +904,46 @@ const CLIENT_LOGOS = [
 ];
 
 /* ═══════════════════════════════════════════════════════ */
+// Rotating hero slides (trinamix-style). The headline, eyebrow and subtext
+// cycle through these; CTAs stay constant. Keep to short, punchy lines.
+const HERO_SLIDES = [
+  {
+    eyebrow: "Talent · Tech · Transformation",
+    plain: "The right technology",
+    accent: "changes everything.",
+    sub: "Software solutions, AI-powered products, and engineering talent. Embedded in the work with your team, invested in the result.",
+  },
+  {
+    eyebrow: "AI & Machine Learning",
+    plain: "AI that survives",
+    accent: "production.",
+    sub: "From LLM apps and RAG to agents and real evals — we build AI you can actually depend on, not just demo.",
+  },
+  {
+    eyebrow: "Staff Augmentation",
+    plain: "Senior engineers,",
+    accent: "embedded in your team.",
+    sub: "No juniors on your budget. Senior-only talent, productive in days and invested in the outcome — not the hours.",
+  },
+  {
+    eyebrow: "Products",
+    plain: "Software that runs",
+    accent: "while you sleep.",
+    sub: "NOC Command and AI-driven operations turn a wall of alert noise into the short list that actually matters.",
+  },
+];
+
 export default function Home() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [heroSlide, setHeroSlide] = useState(0);
+
+  // Auto-advance the hero slides, unless the visitor prefers reduced motion.
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = setInterval(() => setHeroSlide((s) => (s + 1) % HERO_SLIDES.length), 5000);
+    return () => clearInterval(id);
+  }, []);
 
   // Computed client-side (not at build time) so the banner reflects the visitor's actual date,
   // since this page is statically generated and wouldn't otherwise re-check the date per visit.
@@ -928,11 +966,11 @@ export default function Home() {
           <div className="absolute inset-0" style={{
             background: "linear-gradient(135deg, #0f2447 0%, #1B3C6E 40%, #1a4a7a 70%, #0d3d6b 100%)"
           }}/>
-          {/* Decorative shapes */}
-          <div className="absolute top-0 right-0 w-2/3 h-full opacity-10" style={{
+          {/* Decorative shapes — slow cinematic drift (trinamix-style) */}
+          <div className="hero-glow-1 absolute top-0 right-0 w-2/3 h-full" style={{
             background: "radial-gradient(ellipse at 80% 50%, #E8B53D 0%, transparent 60%)"
           }}/>
-          <div className="absolute bottom-0 left-0 w-1/2 h-1/2 opacity-5" style={{
+          <div className="hero-glow-2 absolute bottom-0 left-0 w-1/2 h-1/2" style={{
             background: "radial-gradient(ellipse at 20% 80%, #ffffff 0%, transparent 60%)"
           }}/>
           {/* Grid pattern */}
@@ -964,33 +1002,53 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-4 pb-4">
           <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 items-center">
           <div className="">{/* text col */}
-            {/* Eyebrow */}
-            <div className="animate-fade-up mb-6">
+            {/* Eyebrow — re-keyed per slide so it re-animates */}
+            <div key={`eb-${heroSlide}`} className="mb-6" style={{ animation: "revealUp 0.7s ease both" }}>
               <span className="inline-flex items-center gap-2 text-[#E8B53D] text-sm font-semibold uppercase tracking-widest">
                 <span className="w-8 h-px bg-[#E8B53D]" />
-                Talent · Tech · Transformation
+                {HERO_SLIDES[heroSlide].eyebrow}
               </span>
             </div>
 
-            {/* Headline */}
+            {/* Headline — rotates through HERO_SLIDES */}
             <h1
+              key={`hl-${heroSlide}`}
               className="text-white font-black leading-tight mb-6"
               style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)", lineHeight: 1.05, letterSpacing: "-0.02em",
-                animation: "revealUp 0.9s cubic-bezier(0.25,0.46,0.45,0.94) 0.15s both" }}
+                minHeight: "2.1em",
+                animation: "revealUp 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 0.1s both" }}
             >
-              The right technology
+              {HERO_SLIDES[heroSlide].plain}
               <br />
-              <span className="text-[#E8B53D]">changes everything.</span>
+              <span className="text-[#E8B53D]">{HERO_SLIDES[heroSlide].accent}</span>
             </h1>
 
             {/* Subtext */}
             <p
-              className="text-white/70 text-lg leading-relaxed mb-10 max-w-xl font-light"
-              style={{ animation: "revealUp 0.9s ease 0.3s both" }}
+              key={`sub-${heroSlide}`}
+              className="text-white/70 text-lg leading-relaxed mb-8 max-w-xl font-light"
+              style={{ minHeight: "3.4em", animation: "revealUp 0.8s ease 0.2s both" }}
             >
-              Software solutions, AI-powered products, and engineering talent.
-              Embedded in the work with your team, invested in the result.
+              {HERO_SLIDES[heroSlide].sub}
             </p>
+
+            {/* Slide indicators */}
+            <div className="flex items-center gap-2.5 mb-8" role="tablist" aria-label="Hero highlights">
+              {HERO_SLIDES.map((s, i) => (
+                <button
+                  key={s.eyebrow}
+                  role="tab"
+                  aria-selected={i === heroSlide}
+                  aria-label={s.eyebrow}
+                  onClick={() => setHeroSlide(i)}
+                  className="h-1.5 rounded-full transition-all duration-500"
+                  style={{
+                    width: i === heroSlide ? 32 : 10,
+                    background: i === heroSlide ? "#E8B53D" : "rgba(255,255,255,0.25)",
+                  }}
+                />
+              ))}
+            </div>
 
             {/* CTAs */}
             <div
@@ -1008,12 +1066,26 @@ export default function Home() {
 
           </div>{/* end text col */}
 
-          {/* ── AI Neural Network Animation ── */}
-          <div className="hidden lg:flex items-center justify-end relative">
-            <div style={{ transform: "translateX(80px)" }}>
-              <NeuralNetwork />
+          {/* ── Per-slide hero animation (crossfades with the headline) ── */}
+          <div className="hidden lg:flex items-center justify-end relative" style={{ minHeight: 460 }}>
+            {/* Slide 0 — tech sphere (flagship) */}
+            <div
+              key={`viz-${heroSlide}`}
+              className="w-full flex items-center justify-end"
+              style={{ animation: "revealUp 0.8s ease both" }}
+            >
+              {heroSlide === 0 ? (
+                <div style={{ transform: "translateX(80px)" }}>
+                  <NeuralNetwork />
+                </div>
+              ) : heroSlide === 1 ? (
+                <AiMlViz />
+              ) : heroSlide === 2 ? (
+                <TeamViz />
+              ) : (
+                <OpsViz />
+              )}
             </div>
-
           </div>
 
           </div>{/* end grid */}
