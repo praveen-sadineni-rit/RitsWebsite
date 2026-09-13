@@ -939,7 +939,7 @@ const HERO_SLIDES = [
     eyebrow: "Products",
     plain: "Software that runs",
     accent: "while you sleep.",
-    sub: "NOC Command and AI-driven operations turn a wall of alert noise into the short list that actually matters.",
+    sub: "NOC Command turns alert noise into the short list that matters. AtsIcloud runs US IT staffing from req to cash.",
   },
 ];
 
