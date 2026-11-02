@@ -170,7 +170,7 @@ const jobs: Job[] = [
     location: "Rock Hill, SC",
     type: "Full-time",
     openDate: "06/15/2026",
-    closeDate: "07/10/2026",
+    closeDate: "12/03/2026",
     description:
       "Seeking qualified Software Developer with a master's in Science, Engineering, or CIS and 6 months of work experience with strong C#/.NET experience, building and maintaining cross-platform mobile apps using .NET MAUI/Xamarin, following clean architecture, MVVM, and solid engineering practices. Hands-on with Azure DevOps CI/CD, iOS/Android build pipelines, provisioning/certificates, and troubleshooting complex build/release issues across macOS/Windows environments. Comfortable owning features end-to-end, including requirements, implementation, debugging, and production support, while collaborating with teams and continuously learning new tech stacks. Frequent/occasional travel may be required to unanticipated work-site locations within the US as a roving employee. No relocation required.",
     skills: ["C#/.NET", ".NET MAUI", "Xamarin", "MVVM", "Azure DevOps", "CI/CD", "iOS/Android", "macOS/Windows"],
@@ -183,7 +183,7 @@ const jobs: Job[] = [
     location: "Rock Hill, SC",
     type: "Full-time",
     openDate: "06/15/2026",
-    closeDate: "07/10/2026",
+    closeDate: "12/03/2026",
     description:
       "Seeking qualified Software Engineer with a master's in Information Systems, CS, or Engineering and 6 months of work experience to design, develop, and maintain backend services using Java and Spring Boot. Creates REST APIs and maintains interface specifications using Swagger/OpenAPI for system integrations. Applies core Java concepts including multithreading, concurrency handling, exception management, and collections for real-time processing. Implements application security and compliance updates, including Blackduck vulnerability remediation and internal code policy changes across multiple services. Must be willing to travel and work at unanticipated worksite locations in the US. Travel may be required at least once or twice a month based on end-clients' needs as a roving employee. No relocation required.",
     skills: ["Java", "Spring Boot", "REST APIs", "Swagger/OpenAPI", "Multithreading", "Blackduck", "App Security"],
@@ -196,7 +196,7 @@ const jobs: Job[] = [
     location: "Rock Hill, SC",
     type: "Full-time",
     openDate: "08/18/2026",
-    closeDate: "09/11/2026",
+    closeDate: "12/03/2026",
     description:
       "Seeking qualified Software Developer with a bachelor's in CS, Engineering, or IT and 60 months of work experience for designing, developing, data ingestion, data profiling, data flows, and optimizing data integration processes. Proficient in creating robust ETL pipelines to extract, transform, and load large datasets from various sources into data warehouses or data lakes, ensuring data integrity, accuracy, and high performance. Adept at using tools like Informatica PowerCenter, Informatica Intelligent Cloud Services (IICS), Pentaho, and DataStage with strong proficiency in SQL, Snowflake, and Unix Shell scripting languages for complex data manipulations. Expertise in understanding business requirements and translating them into technical specifications, designing scalable data solutions that meet organizational needs. Demonstrated ability to troubleshoot and resolve ETL process issues, perform performance tuning, and implement best practices for data governance and security. Frequent/occasional travel may be required to unanticipated work-site locations within the US as a roving employee. No relocation required.",
     skills: ["ETL", "Informatica PowerCenter", "IICS", "Pentaho", "DataStage", "SQL", "Snowflake", "Unix Shell", "Data Warehousing", "Data Governance"],
@@ -209,7 +209,7 @@ const jobs: Job[] = [
     location: "Rock Hill, SC",
     type: "Full-time",
     openDate: "08/17/2026",
-    closeDate: "09/11/2026",
+    closeDate: "12/03/2026",
     description:
       "Seeking qualified Sr. Programmer Analyst with a master's in Analytical Chemistry or Science and 12 months of work experience to perform statistical programming to develop models for prediction, estimation of responses, and tuning of parameters based on clinical research data. Works directly with project team leaders and client representatives to conduct team meetings, develop and maintain project timelines, assess and forecast resources, and ensure adherence to study budgets and any relevant contractual obligations or limits with clients. Develops SAS programs to implement the end-to-end data flow to support the data models, along with procedures to correct data inconsistencies during data loads from operational sources. Establishes connections to various data servers like Medidata Rave, Oracle Clinical, and Veeva Vault CDMS using SAS engines and defining the options for data transfer in an efficient manner. Frequent/occasional travel may be required to unanticipated work-site locations within the US as a roving employee. No relocation required.",
     skills: ["SAS", "Statistical Programming", "Clinical Research Data", "Medidata Rave", "Oracle Clinical", "Veeva Vault CDMS", "Data Modeling"],
