@@ -4,6 +4,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ApplyModal, { type ApplyTarget } from "@/components/ApplyModal";
+import CareerSiteJobs from "@/components/CareerSiteJobs";
 
 type Job = {
   id: number;
@@ -487,6 +488,23 @@ export default function CareersPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* LIVE OPENINGS — synced from the RITS ATS */}
+      <section id="live-jobs" className="bg-white py-20 px-6 border-b border-gray-100">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="inline-flex items-center gap-2 text-[#B0810E] text-xs font-bold uppercase tracking-widest mb-3">
+              <span className="w-2 h-2 rounded-full bg-[#E8B53D] animate-pulse" />
+              Live openings
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Current openings</h2>
+            <p className="text-gray-500 max-w-xl mx-auto">
+              Synced in real time from our applicant tracking system &mdash; every role here is approved and actively hiring.
+            </p>
+          </div>
+          <CareerSiteJobs />
         </div>
       </section>
 

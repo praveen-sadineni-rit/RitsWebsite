@@ -348,3 +348,21 @@ html.dark input, html.dark textarea, html.dark select {
   opacity: 0.2;
   font-weight: 900;
 }
+
+/* RITS ATS career-site widget: re-theme its CSS variables to the brand */
+.rits-jobs-widget .rits-jobs {
+  --rits-accent: #1B3C6E;
+  --rits-text: #0f2447;
+  --rits-muted: #6b7280;
+  --rits-border: #E6EDF7;
+  --rits-surface: #ffffff;
+  --rits-accent-2: #0f2447;
+  --rits-gold: #E8B53D;
+  --rits-bg: #f8f9fa;
+}
+/* Safety net: never show ATS test requisitions publicly, even if left Active.
+   (Real fix is closing them in the ATS — this only hides the cards.) */
+.rits-jobs-widget .rits-job-card[data-job-code^="RITS-TEST"],
+.rits-jobs-widget .rits-job-card:has(.rits-quickapply[data-job-code^="RITS-TEST"]) {
+  display: none;
+}
