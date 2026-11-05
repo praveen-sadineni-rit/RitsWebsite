@@ -70,19 +70,19 @@ export default function ApplyModal({
   }
 
   return (
-    <div
-      className="fixed inset-0 z-[100] flex items-start sm:items-center justify-center p-4 overflow-y-auto"
-      style={{ background: "rgba(10,22,40,0.6)", backdropFilter: "blur(2px)" }}
-      onMouseDown={(e) => {
-        if (e.target === e.currentTarget) onClose();
-      }}
-    >
+    <div className="fixed inset-0 z-[100] overflow-y-auto" style={{ background: "rgba(10,22,40,0.6)", backdropFilter: "blur(2px)" }}>
+      <div
+        className="min-h-full flex items-center justify-center p-4"
+        onMouseDown={(e) => {
+          if (e.target === e.currentTarget) onClose();
+        }}
+      >
       <div
         ref={dialogRef}
         role="dialog"
         aria-modal="true"
         aria-label={`Apply for ${target.jobTitle}`}
-        className="relative w-full max-w-lg my-8 bg-white rounded-2xl shadow-2xl"
+        className="modal-scroll relative w-full max-w-lg my-4 max-h-[90vh] overflow-y-auto bg-white rounded-2xl shadow-2xl"
       >
         {/* Header */}
         <div className="flex items-start justify-between gap-4 px-6 pt-6 pb-4 border-b border-gray-100">
@@ -167,6 +167,7 @@ export default function ApplyModal({
             </p>
           </form>
         )}
+      </div>
       </div>
     </div>
   );

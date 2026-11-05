@@ -366,3 +366,58 @@ html.dark input, html.dark textarea, html.dark select {
 .rits-jobs-widget .rits-job-card:has(.rits-quickapply[data-job-code^="RITS-TEST"]) {
   display: none;
 }
+
+/* Careers widget: keep "View details" and "Quick Apply" side by side. The cards are narrower
+   here than in the widget's reference layout, so the actions row was wrapping into a stack. */
+.rits-jobs-widget .rits-job-footer { flex-wrap: wrap; row-gap: 10px; }
+.rits-jobs-widget .rits-job-date { white-space: nowrap; }
+.rits-jobs-widget .rits-job-actions { flex-wrap: nowrap; margin-left: auto; }
+.rits-jobs-widget .rits-btn { padding: 10px 12px; font-size: 11.5px; font-weight: 800; line-height: 1.25; }
+
+/* Careers: the page supplies the section headline, so hide the widget's internal one; keep its
+   "Showing N opportunities" line and the sort control. */
+.rits-jobs-widget .rits-jobs-heading { display: none; }
+.rits-jobs-widget .rits-jobs-results { margin: 24px 0 16px; }
+.rits-jobs-widget .rits-jobs-count { margin: 0; font-size: 13.5px; }
+/* Widget primary buttons: its own ".rits-jobs button { color: inherit }" outranks ".rits-btn-primary { color: #fff }",
+   leaving navy text on a navy button. Force the label white here. */
+.rits-jobs-widget .rits-btn-primary,
+.rits-jobs-widget .rits-job-apply,
+.rits-jobs-widget .rits-jobs-submit { color: #ffffff; }
+
+/* Scrolling dialogs (site modals + the ATS widget's modal): a thin, rounded navy scrollbar on a
+   transparent track, inset from the dialog's rounded corners, instead of the browser default. */
+.modal-scroll,
+.rits-jobs-widget .rits-jobs-modal {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(27, 60, 110, 0.35) transparent;
+  overscroll-behavior: contain;
+}
+.modal-scroll::-webkit-scrollbar,
+.rits-jobs-widget .rits-jobs-modal::-webkit-scrollbar { width: 8px; }
+.modal-scroll::-webkit-scrollbar-track,
+.rits-jobs-widget .rits-jobs-modal::-webkit-scrollbar-track { background: transparent; margin: 16px 0; }
+.modal-scroll::-webkit-scrollbar-thumb,
+.rits-jobs-widget .rits-jobs-modal::-webkit-scrollbar-thumb {
+  background: rgba(27, 60, 110, 0.3);
+  border-radius: 999px;
+  border: 2px solid #ffffff;
+}
+.modal-scroll::-webkit-scrollbar-thumb:hover,
+.rits-jobs-widget .rits-jobs-modal::-webkit-scrollbar-thumb:hover { background: rgba(27, 60, 110, 0.55); }
+
+/* Widget outline buttons: same navy as the curated cards' outline buttons. */
+.rits-jobs-widget .rits-btn-outline { color: #1B3C6E; }
+
+/* Widget filter controls: match the curated filters card (14px, same color/placeholder/weight). */
+.rits-jobs-widget .rits-jobs-filters input,
+.rits-jobs-widget .rits-jobs-filters select {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #31445b;
+}
+.rits-jobs-widget .rits-jobs-filters input::placeholder { color: #9ca3af; opacity: 1; }
+.rits-jobs-widget .rits-jobs-clear { font-size: 14px; font-weight: 700; color: #3e526b; }
+.rits-jobs-widget .rits-jobs-sort { font-size: 13px; color: #6b7280; }
+.rits-jobs-widget .rits-jobs-sort select { font-size: 13px; color: #111827; border-color: #e5e7eb; border-radius: 8px; padding: 8px 10px; }

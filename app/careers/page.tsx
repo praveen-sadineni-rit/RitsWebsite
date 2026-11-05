@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ApplyModal, { type ApplyTarget } from "@/components/ApplyModal";
@@ -382,15 +382,137 @@ function TeamBubbles() {
   );
 }
 
+/* ── Card helpers (mirror the live ATS widget's look) ── */
+function jobIcon(title: string) {
+  const t = title.toLowerCase();
+  if (/cloud|azure|aws|gcp|devops|platform|infra/.test(t)) return "☁️";
+  if (/\bai\b|data|\bml\b|analytics|validation|analyst/.test(t)) return "✦";
+  if (/secur|cyber|immigration|compliance/.test(t)) return "🛡️";
+  if (/mobile|ios|android/.test(t)) return "📱";
+  if (/front|\bui\b|\bux\b|design/.test(t)) return "🎨";
+  if (/\bqa\b|test|quality/.test(t)) return "✅";
+  if (/talent|recruit|\bhr\b/.test(t)) return "🤝";
+  if (/manager|lead|director|head of|delivery/.test(t)) return "🧭";
+  return "💼";
+}
+
+function summarize(text: string, max = 220) {
+  const t = text.replace(/\s+/g, " ").trim();
+  if (t.length <= max) return t;
+  const cut = t.slice(0, max);
+  const sp = cut.lastIndexOf(" ");
+  return (sp > 120 ? cut.slice(0, sp) : cut) + "…";
+}
+
+function JobDetailsModal({ job, onClose, onApply }: { job: Job | null; onClose: () => void; onApply: (job: Job) => void }) {
+  useEffect(() => {
+    if (!job) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.removeEventListener("keydown", onKey); document.body.style.overflow = prev; };
+  }, [job, onClose]);
+  if (!job) return null;
+  const meta = [job.location, job.type, job.workMode, job.experience].filter(Boolean).join(" · ");
+  const facts = [
+    job.openDate && `Date of opening: ${job.openDate}`,
+    job.closeDate && `Date of closing: ${job.closeDate}`,
+    job.openings && `Open positions: ${job.openings}`,
+  ].filter(Boolean) as string[];
+  return (
+    <div className="fixed inset-0 z-[100] overflow-y-auto" style={{ background: "rgba(12,32,57,0.67)", backdropFilter: "blur(4px)" }}>
+      <div className="min-h-full flex items-center justify-center p-4" onMouseDown={(e) => { if (e.target === e.currentTarget) onClose(); }}>
+      <div role="dialog" aria-modal="true" aria-labelledby="job-details-title" className="modal-scroll relative w-full max-w-[560px] my-4 max-h-[90vh] overflow-y-auto bg-white rounded-[19px] p-7 sm:p-8 shadow-2xl">
+        <div className="sticky top-0 z-10 flex justify-end h-0">
+          <button onClick={onClose} aria-label="Close dialog" className="-mt-3 -mr-3 w-8 h-8 rounded-full bg-[#f2f5f9] text-xl leading-none text-gray-600 hover:bg-gray-200 shadow-sm">×</button>
+        </div>
+        <p className="text-[12px] tracking-[2px] uppercase font-extrabold text-[#9b6a12]">Open position · {job.department}</p>
+        <h2 id="job-details-title" className="text-2xl font-extrabold text-gray-900 mt-3 mb-2 mr-10 leading-tight">{job.title}</h2>
+        <p className="text-[13px] text-gray-500 mb-5">📍 {meta}</p>
+        <div className="text-sm leading-[1.85] text-[#5d6e82]">
+          <h3 className="text-[#1B3C6E] text-[15px] font-bold mt-4 mb-1.5">About this role</h3>
+          <p>{job.description}</p>
+          {job.responsibilities && job.responsibilities.length > 0 && (
+            <>
+              <h3 className="text-[#1B3C6E] text-[15px] font-bold mt-4 mb-1.5">What you&apos;ll do</h3>
+              <ul className="list-disc pl-5 space-y-1">{job.responsibilities.map((r) => <li key={r}>{r}</li>)}</ul>
+            </>
+          )}
+          {job.skills && job.skills.length > 0 && (
+            <>
+              <h3 className="text-[#1B3C6E] text-[15px] font-bold mt-4 mb-1.5">Key skills</h3>
+              <p>{job.skills.join(" · ")}</p>
+            </>
+          )}
+          {facts.length > 0 && (
+            <>
+              <h3 className="text-[#1B3C6E] text-[15px] font-bold mt-4 mb-1.5">Details</h3>
+              <p>{facts.join(" · ")}</p>
+            </>
+          )}
+          {job.mailApply && (
+            <div className="mt-4 bg-gray-50 border border-gray-100 rounded-xl p-4 text-[13px] text-gray-600">
+              <p className="font-semibold text-gray-900 mb-1">Prefer to mail a physical copy? Send your resume to:</p>
+              <address className="not-italic leading-relaxed">Resource Innovative Technologies LLC<br />331 E Main Street, Ste 200<br />Rock Hill, SC 29730</address>
+            </div>
+          )}
+        </div>
+        <button type="button" onClick={() => onApply(job)} className="mt-6 w-full rounded-[9px] bg-[#1B3C6E] hover:bg-[#0f2447] text-white text-sm font-extrabold py-3.5 transition">
+          Apply for this role →
+        </button>
+      </div>
+      </div>
+    </div>
+  );
+}
+
 export default function CareersPage() {
   const [activeFilter, setActiveFilter] = useState("All");
-  const [openJob, setOpenJob] = useState<number | null>(null);
+  const [detailsJob, setDetailsJob] = useState<Job | null>(null);
   const [applyTarget, setApplyTarget] = useState<ApplyTarget | null>(null);
 
-  const filteredJobs =
-    activeFilter === "All"
-      ? jobs
-      : jobs.filter((j) => j.department === activeFilter);
+  // Curated-list controls (mirror the live widget: search → filter → sort → cards, shown 6 at a time)
+  const PAGE = 6;
+  const [query, setQuery] = useState("");
+  const [locFilter, setLocFilter] = useState("");
+  const [typeFilter, setTypeFilter] = useState("");
+  const [sortBy, setSortBy] = useState<"featured" | "newest" | "az">("featured");
+  const [visibleCount, setVisibleCount] = useState(PAGE);
+
+  const locations = useMemo(() => Array.from(new Set(jobs.map((j) => j.location))).sort(), []);
+  const jobTypes = useMemo(() => Array.from(new Set(jobs.map((j) => j.type))).sort(), []);
+
+  const filteredJobs = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    const parse = (d?: string) => {
+      if (!d) return 0;
+      const [m, dd, y] = d.split("/").map(Number);
+      return new Date(y, m - 1, dd).getTime() || 0;
+    };
+    const list = jobs.filter((j) => {
+      if (activeFilter !== "All" && j.department !== activeFilter) return false;
+      if (locFilter && j.location !== locFilter) return false;
+      if (typeFilter && j.type !== typeFilter) return false;
+      if (q) {
+        const hay = [j.title, j.description, j.location, j.department, ...(j.skills || [])].join(" ").toLowerCase();
+        if (!hay.includes(q)) return false;
+      }
+      return true;
+    });
+    if (sortBy === "az") return [...list].sort((a, b) => a.title.localeCompare(b.title));
+    if (sortBy === "newest") return [...list].sort((a, b) => parse(b.openDate) - parse(a.openDate));
+    return list;
+  }, [activeFilter, query, locFilter, typeFilter, sortBy]);
+
+  const visibleJobs = filteredJobs.slice(0, visibleCount);
+
+  // Any change to the controls starts the list over from the first page.
+  useEffect(() => { setVisibleCount(PAGE); }, [activeFilter, query, locFilter, typeFilter, sortBy]);
+
+  const resetCurated = () => {
+    setQuery(""); setLocFilter(""); setTypeFilter(""); setSortBy("featured"); setActiveFilter("All");
+  };
 
   return (
     <>
@@ -491,23 +613,6 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* LIVE OPENINGS — synced from the RITS ATS */}
-      <section id="live-jobs" className="bg-white py-20 px-6 border-b border-gray-100">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-10">
-            <span className="inline-flex items-center gap-2 text-[#B0810E] text-xs font-bold uppercase tracking-widest mb-3">
-              <span className="w-2 h-2 rounded-full bg-[#E8B53D] animate-pulse" />
-              Live openings
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Current openings</h2>
-            <p className="text-gray-500 max-w-xl mx-auto">
-              Synced in real time from our applicant tracking system &mdash; every role here is approved and actively hiring.
-            </p>
-          </div>
-          <CareerSiteJobs />
-        </div>
-      </section>
-
       {/* OPEN POSITIONS */}
       <section id="jobs" className="bg-gray-50 py-20 px-6">
         <div className="max-w-4xl mx-auto">
@@ -518,14 +623,54 @@ export default function CareersPage() {
             We&apos;re hiring across multiple teams. Find your fit.
           </p>
 
+          {/* Live group — synced from the RITS ATS (career-site widget) */}
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <span className="w-2 h-2 rounded-full bg-[#E8B53D] animate-pulse" />
+            <span className="text-[#B0810E] text-xs font-bold uppercase tracking-widest">
+              Live openings &mdash; synced from our ATS
+            </span>
+          </div>
+          <CareerSiteJobs />
+
+          {/* Divider into the curated postings */}
+          <div className="flex items-center gap-4 my-14">
+            <div className="h-px flex-1 bg-gray-200" />
+            <span className="text-xs font-bold uppercase tracking-widest text-gray-400">More openings</span>
+            <div className="h-px flex-1 bg-gray-200" />
+          </div>
+
+          {/* Search + filters (same layout as the live widget's filters card) */}
+          <div className="bg-white border border-gray-200 rounded-2xl p-4 grid gap-2.5 md:grid-cols-[1.7fr_1fr_1fr_auto] mb-8" style={{ boxShadow: "0 15px 38px rgba(18,46,81,0.08)" }}>
+            <div className="relative">
+              <svg className="absolute left-4 top-1/2 -translate-y-1/2 text-[#8494a6]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-4-4" /></svg>
+              <input
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                aria-label="Search more openings"
+                placeholder="Search by job title, keyword or skill..."
+                className="h-12 w-full rounded-[10px] border border-[#dce5ef] bg-white pl-11 pr-3 text-sm text-[#31445b] outline-none focus:border-[#E8B53D] focus:ring-[3px] focus:ring-[#E8B53D]/20"
+              />
+            </div>
+            <select value={locFilter} onChange={(e) => setLocFilter(e.target.value)} aria-label="Filter more openings by location" className="h-12 w-full rounded-[10px] border border-[#dce5ef] bg-white px-3 text-sm text-[#31445b] outline-none focus:border-[#E8B53D]">
+              <option value="">All locations</option>
+              {locations.map((l) => <option key={l} value={l}>{l}</option>)}
+            </select>
+            <select value={typeFilter} onChange={(e) => setTypeFilter(e.target.value)} aria-label="Filter more openings by job type" className="h-12 w-full rounded-[10px] border border-[#dce5ef] bg-white px-3 text-sm text-[#31445b] outline-none focus:border-[#E8B53D]">
+              <option value="">All job types</option>
+              {jobTypes.map((t) => <option key={t} value={t}>{t}</option>)}
+            </select>
+            <button type="button" onClick={resetCurated} className="h-12 rounded-[10px] bg-[#f4f6f9] px-4 text-sm font-bold text-[#3e526b] whitespace-nowrap hover:bg-gray-200 transition">Reset ↺</button>
+          </div>
+
           {/* Filter Tabs */}
-          <div className="flex flex-wrap gap-2 justify-center mb-10">
+          <div className="flex flex-wrap gap-2 justify-center mb-8">
             {filters.map((f) => (
               <button
                 key={f}
                 onClick={() => {
                   setActiveFilter(f);
-                  setOpenJob(null);
+                  setDetailsJob(null);
                 }}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition ${
                   activeFilter === f
@@ -538,125 +683,95 @@ export default function CareersPage() {
             ))}
           </div>
 
-          {/* Job Cards */}
-          <div className="space-y-4">
-            {filteredJobs.map((job) => (
-              <div
-                key={job.id}
-                className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition"
-              >
-                <button
-                  className="w-full text-left px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
-                  onClick={() =>
-                    setOpenJob(openJob === job.id ? null : job.id)
-                  }
-                >
-                  <div className="flex flex-col gap-1">
-                    <span className="text-lg font-semibold text-gray-900">
-                      {job.title}
-                    </span>
-                    <div className="flex flex-wrap gap-2 items-center">
-                      <span
-                        className={`text-xs font-medium px-2.5 py-0.5 rounded-full ${
-                          departmentColors[job.department]
-                        }`}
-                      >
-                        {job.department}
-                      </span>
-                      <span className="text-gray-400 text-sm">
-                        {job.location}
-                      </span>
-                      <span className="text-gray-400 text-sm">&bull;</span>
-                      <span className="text-gray-400 text-sm">{job.type}</span>
-                    </div>
-                  </div>
-                  <span className="text-[#1B3C6E] text-sm font-medium shrink-0">
-                    {openJob === job.id ? "Hide details" : "View details"}
-                  </span>
-                </button>
-
-                {openJob === job.id && (
-                  <div className="px-6 pb-6 border-t border-gray-100 pt-4">
-                    {(job.openDate || job.closeDate || job.experience || job.workMode || job.openings) && (
-                      <div className="flex flex-wrap gap-x-6 gap-y-1 mb-4 text-sm text-gray-500">
-                        {job.openDate && (
-                          <span><span className="font-semibold text-gray-700">Date of Opening:</span> {job.openDate}</span>
-                        )}
-                        {job.closeDate && (
-                          <span><span className="font-semibold text-gray-700">Date of Closing:</span> {job.closeDate}</span>
-                        )}
-                        {job.experience && (
-                          <span><span className="font-semibold text-gray-700">Experience:</span> {job.experience}</span>
-                        )}
-                        {job.workMode && (
-                          <span><span className="font-semibold text-gray-700">Work Mode:</span> {job.workMode}</span>
-                        )}
-                        {job.openings && (
-                          <span><span className="font-semibold text-gray-700">Open Positions:</span> {job.openings}</span>
-                        )}
-                      </div>
-                    )}
-                    <p className="text-gray-600 leading-relaxed mb-5">
-                      {job.description}
-                    </p>
-                    {job.responsibilities && job.responsibilities.length > 0 && (
-                      <div className="mb-5">
-                        <p className="text-sm font-semibold text-gray-900 mb-2">Key Responsibilities</p>
-                        <ul className="space-y-1.5">
-                          {job.responsibilities.map((r) => (
-                            <li key={r} className="flex gap-2 text-gray-600 text-sm leading-relaxed">
-                              <span className="text-[#E8B53D] mt-0.5 shrink-0">✓</span>
-                              <span>{r}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                    {job.skills && job.skills.length > 0 && (
-                      <div className="flex flex-wrap gap-2 mb-5">
-                        {job.skills.map((skill, i) => (
-                          <span
-                            key={skill}
-                            className="text-xs font-semibold px-3 py-1.5 rounded-full"
-                            style={{
-                              background: SKILL_PALETTE[i % SKILL_PALETTE.length].bg,
-                              color: SKILL_PALETTE[i % SKILL_PALETTE.length].text,
-                            }}
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                    <div className="flex flex-col gap-3">
-                      <button
-                        onClick={() =>
-                          setApplyTarget({ jobTitle: job.title, applyTo: job.applyEmails })
-                        }
-                        className="inline-flex items-center gap-2 self-start bg-[#1B3C6E] hover:bg-[#0f2447] text-white font-semibold px-6 py-2.5 rounded-lg transition"
-                      >
-                        Apply Now
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                      </button>
-
-                      {job.mailApply && (
-                        <div className="bg-gray-50 border border-gray-100 rounded-xl p-5">
-                          <p className="text-sm font-semibold text-gray-900 mb-2">
-                            Prefer to mail a physical copy? Send your resume to:
-                          </p>
-                          <address className="not-italic text-sm text-gray-600 leading-relaxed">
-                            Resource Innovative Technologies LLC<br />
-                            331 E Main Street, Ste 200<br />
-                            Rock Hill, SC 29730
-                          </address>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
+          {/* Count + sort */}
+          <div className="flex items-center justify-between flex-wrap gap-3 mb-5">
+            <p className="text-[13.5px] text-gray-500">
+              Showing {visibleJobs.length} of {filteredJobs.length} {filteredJobs.length === 1 ? "opportunity" : "opportunities"}
+            </p>
+            <label className="text-[13px] text-gray-500 flex items-center gap-2">
+              Sort by
+              <select value={sortBy} onChange={(e) => setSortBy(e.target.value as "featured" | "newest" | "az")} aria-label="Sort more openings" className="rounded-lg border border-gray-200 bg-white px-2.5 py-2 text-[13px] text-gray-900">
+                <option value="featured">Featured</option>
+                <option value="newest">Newest first</option>
+                <option value="az">Job title A–Z</option>
+              </select>
+            </label>
           </div>
+
+          {/* Job Cards — same design as the live ATS cards above */}
+          <div className="grid md:grid-cols-2 gap-5">
+            {filteredJobs.length === 0 && (
+              <div className="md:col-span-2 text-center bg-white border border-gray-200 rounded-2xl py-16 px-5 text-gray-500">
+                <div className="text-4xl">⌕</div>
+                <h3 className="text-gray-900 font-bold mt-2 mb-1">No matching positions</h3>
+                <p className="text-sm">Try a different keyword or reset your filters.</p>
+              </div>
+            )}
+            {visibleJobs.map((job) => {
+              const skills = (job.skills || []).slice(0, 5);
+              const subline = job.openDate ? `Opens ${job.openDate} · Closes ${job.closeDate}` : job.workMode || job.department;
+              const footer = job.openings ? `${job.openings} open positions` : job.openDate ? `Posted ${job.openDate}` : "Open role";
+              return (
+                <article
+                  key={job.id}
+                  className="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col transition hover:-translate-y-0.5 hover:shadow-lg"
+                >
+                  <div className="flex items-start gap-3.5">
+                    <div className="w-[51px] h-[51px] flex-none rounded-[13px] bg-[#edf3fa] flex items-center justify-center text-[23px]">
+                      {jobIcon(job.title)}
+                    </div>
+                    <div className="min-w-0">
+                      <h3 className="text-[18px] leading-snug font-extrabold text-gray-900 mb-1">{job.title}</h3>
+                      <div className="text-xs text-[#8794a4]">{subline}</div>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5 my-4">
+                    <span className="bg-[#f0f4f9] text-[#405979] rounded-md text-xs px-2.5 py-1.5">📍 {job.location}</span>
+                    <span className="bg-[#f0f4f9] text-[#405979] rounded-md text-xs px-2.5 py-1.5">◷ {job.type}</span>
+                    <span className="bg-[#fff6e5] text-[#9b6a12] rounded-md text-xs px-2.5 py-1.5">Hiring now</span>
+                  </div>
+                  <p className="text-[#64748b] text-[13.5px] leading-[1.75] mb-5 flex-1">{summarize(job.description)}</p>
+                  {skills.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 mb-5">
+                      {skills.map((sk) => (
+                        <span key={sk} className="border border-[#e4eaf2] rounded-md px-2 py-1 text-[11px] text-[#5e7188]">{sk}</span>
+                      ))}
+                    </div>
+                  )}
+                  <div className="border-t border-[#edf0f4] pt-4 mt-auto flex items-center justify-between gap-2.5 flex-wrap">
+                    <span className="text-xs text-[#8290a0] whitespace-nowrap">{footer}</span>
+                    <div className="flex items-center gap-2 ml-auto">
+                      <button
+                        type="button"
+                        onClick={() => setDetailsJob(job)}
+                        className="rounded-[9px] border border-[#dce5ee] bg-white text-[#1B3C6E] text-[11.5px] leading-[1.25] font-extrabold px-3 py-2.5 whitespace-nowrap hover:bg-gray-50 transition"
+                      >
+                        View details
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setApplyTarget({ jobTitle: job.title, applyTo: job.applyEmails })}
+                        className="rounded-[9px] bg-[#1B3C6E] hover:bg-[#0f2447] text-white text-[11.5px] leading-[1.25] font-extrabold px-3 py-2.5 whitespace-nowrap transition"
+                      >
+                        Quick Apply →
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+          {visibleJobs.length < filteredJobs.length && (
+            <div className="flex justify-center mt-8">
+              <button
+                type="button"
+                onClick={() => setVisibleCount((c) => c + PAGE)}
+                className="rounded-[9px] border border-[#dce5ee] bg-white text-[#1B3C6E] text-sm font-extrabold px-5 py-3 hover:bg-gray-50 transition"
+              >
+                Show more · {filteredJobs.length - visibleJobs.length} remaining
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
@@ -759,6 +874,14 @@ export default function CareersPage() {
 
       <Footer />
 
+      <JobDetailsModal
+        job={detailsJob}
+        onClose={() => setDetailsJob(null)}
+        onApply={(job) => {
+          setDetailsJob(null);
+          setApplyTarget({ jobTitle: job.title, applyTo: job.applyEmails });
+        }}
+      />
       <ApplyModal target={applyTarget} onClose={() => setApplyTarget(null)} />
     </>
   );
